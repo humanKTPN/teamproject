@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- html -->
+    <!-- 배경이미지 -->
+    <!-- <p id = 'b1'></p> -->
+    <!-- 로그인 로고(회사(KTPN)) -->
+    <h2 id='logo'> KTPN Status </h2>
+
+    <!-- 로그인 안내문 -->
+    <!-- 공장 인트라넷임을 표시하는 내용 -->
+    <div id='information'>
+        ** 여기는 KTPN 현황 시스템입니다. 로그인을 하기 위해서는 관리자의 승인이 필요합니다. **
+    </div>
+
+    <!-- 로그인 디자인 -->
+    <!-- 입력칸 -->
+    <!-- input type = 'text', value -->
+    <!-- input type = 'password', value -->
+    <!-- button -->
+    <!-- labal -->
+    <!-- checkbox(기본 체크해제) -->
+    <div class='login-info'>
+        아이디 : <input type='text' id='Vid'>
+        <label>
+            <input type='checkbox' id='id-remember'> 아이디 저장하기
+        </label>
+        <br>
+        비밀번호 : <input type='password' id='Vpw'><br>
+        <button type="button" id='login'> 로그인 </button>
+
+    </div>
+
+    <!-- css -->
+    <!-- 배경화면 -->
+    <!-- 컬러? / 이미지? -->
+    <style>
+        body {
+            /* background-image: url(''); */
+            background-color: white;
+            background-image: url('https://poc-cf-image.cjenm.com/resize/1076/public/pcms/photogroup/B120214100/kr/B120214100_photogroup_1667984594953.jpg?v=1668051784');
+            background-size: cover;
+            /* width: 70%; */
+        }
+
+        #logo {
+            background-color: aqua;
+            width: 70%;
+
+        }
+
+        #information {
+            margin-bottom: 5px;
+            height: 70px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            width: 70%;
+        }
+
+        #login {
+            border-radius: 10px;
+            border: 1px solid white;
+            background-color: green;
+            width: 70%;
+            color: white;
+            margin-top: 10px;
+            height: 40px;
+        }
+
+        .login-info {
+            border: 1px solid black;
+            width: 70%;
+        }
+
+        /* 사이트의 모든 디자인을 가운데로 만들고 싶다. */
+    </style>
+
+    <!-- 자바스크립트 -->
+    <!-- 클릭이벤트 발생 -->
+    <!-- 내부인 확인작업 -->
+    <!-- fillter 적용해서 true만 넘긴다. 
+        if (변수(아이디) = 사용값 && 변수(비밀번호) = 사용값) {
+        콘솔로 찍고 확인 팝업과 함께 내부시스템 표사} else {
+        일치하지 않는 회원입니다}-->
+</body>
+
+</html>
