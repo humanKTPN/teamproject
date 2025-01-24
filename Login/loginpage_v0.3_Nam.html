@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id = 'blank'>
+        <!-- 정리를 위한 공간 -->
+    </div>
+    <div class='login_area'>
+        <div class = 'middle_login' style = 'height : 400px'>
+            <p id='pageinfo'>
+                <span id = 'text'>로그인</span>
+            </p>
+            <div class='send'>
+                <!-- 아이디 입력창 -->
+                <div class='idarea'>
+                    <input type='text' id='uid' placeholder="아이디 입력" style = 'height : 30px'>
+                    <!-- 아이디 저장체크여부 -->
+                    <label id = 'uidchkre' >
+                        <input type='checkbox'> 아이디 저장
+                    </label>
+                </div>
+                <br>
+                <div class='pwarea'>
+                    <!-- 비밀번호 입력창 -->
+                    <input type='password' id='upw' placeholder="비밀번호 입력" style = 'height : 30px'>
+                    <button type='button' id='login' style = 'height : 30px'> 로그인</button>
+                </div>
+                <!-- 로그인 버튼 -->
+            </div>
+            <br>
+            <!-- 유저여부체크 -->
+            <div id='uchkmessege'> <!-- 자바스크립트로 조건에 따라 추가할 예정-->
+                <!-- ( 여기는 회원이 맞는지 확인하는 구간입니다! 추후 자동으로 삽입될 예정 ) -->
+            </div>
+            <!-- 주의사항메시지 -->
+            <div id='lost_messege'>
+                ** 회원가입이 필요한 경우 관리자에게 문의하시기 바랍니다. **
+            </div>
+            <!-- 회원정보 찾기 메뉴 -->
+            <div class = 'buttons'>
+                <button type = 'button' style = 'height : 30px' id = 'idfind'> 아이디 찾기</button>
+                <button type = 'button' style = 'height : 30px' id = 'pwfind'> 비밀번호 찾기</button>
+            </div>
+            <br>
+        </div>
+        <div id="blank">
+            <!-- 정리를 위한 공간 -->
+        </div>
+    </div>
+
+    <style>
+        /* 반응형 해결책마련 */
+        #blank {
+            height: 200px;
+            display: inline-block;
+        }
+        /* 반응형 해결책마련 */
+
+        .login_area {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* 세로 방향 가운데 정렬 해결(flex 옵션으로 해결) */
+        .middle_login{
+            width : 500px;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column ;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #pageinfo {
+            border: 1px solid black;
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            margin-top: 0px;
+        }
+
+        .send {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #text {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .idarea{
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #uidchkre{
+            padding-left: 10px;
+        }
+
+        .pwarea{
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #login{
+            width: 110px;
+        }
+
+        #lost_messege {
+            padding: 3px;
+            border : dotted 2px red;
+            text-align: center;
+            color: red;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function(){
+            let login = document.querySelector('#login')
+            console.log(login)
+            login.addEventListener('click', function(){
+                console.log('로그인 버튼 클릭')
+
+                const id = document.querySelector('#uid')
+                const pw = document.querySelector('#upw')
+                console.log(id, id.value) 
+                console.log(pw, pw.value)
+            })
+        })
+    </script>
+
+    
+</body>
+
+</html>
