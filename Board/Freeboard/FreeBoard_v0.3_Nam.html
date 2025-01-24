@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <style>
+        .menu-con {
+            display: flex;
+            width: 100%;
+            border: 5px solid #0C4A60;
+        }
+
+        .menu {
+            border: 1px solid rgba(255, 255, 255, 0.267);
+            background-color: #0C4A60;
+            width: 30%;
+            height: 80px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 80px;
+            color: white;
+        }
+
+        .clickMenu {
+            border: 1px solid rgba(255, 255, 255, 0.267);
+            background-color: #082d3a;
+            width: 30%;
+            height: 80px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 80px;
+            color: white;
+        }
+
+        .menu:hover {
+            background-color: #082d3a;
+        }
+
+        .board {
+            border: 5px solid #0C4A60;
+            width: 100%;
+            height: 700px;
+            padding-top: 3%;
+            position: relative;
+        }
+
+        /* td {
+            border-bottom: 1px solid darkblue;
+            border-top: 1px solid darkblue;
+            text-align: center;
+            width: 500px;
+            height: 50px;
+        } */
+
+        .dayWork {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title {
+            /* margin-top: 3%; */
+            font-size: 30px;
+            border: 1px solid red;
+        }
+
+        /* table {
+            margin: 0;
+            display: flex;
+        } */
+
+        .table-con {
+            /* border: 1px solid darkblue; */
+            margin-top: 1%;
+            width: 100%;
+            height: 400px;
+        }
+
+        .chart-con {
+            /* border: 1px solid darkblue; */
+            margin-top: 1%;
+            width: 400px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            margin-bottom: 3%;
+
+        }
+
+        .point {
+            background-color: darkred;
+            color: white;
+        }
+
+        .bdChart {
+            border: 1px solid red;
+        }
+
+        .side-con {
+            border: 5px solid red;
+            width: 300px;
+            height: 100%;
+        }
+
+        .chart-con-con {
+            display: flex;
+            flex-direction: row;
+            border: 5px solid pink;
+            width: 130px;
+            height: 300px;
+
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .mainManu {
+            border: 1px solid black;
+            width: 17%;
+            height: 740px;
+            position: absolute;
+            top: 0px;
+            background-color: #0559689f;
+        }
+
+        .manuBut {
+            border-bottom: 2px solid black;
+
+            padding: 10px;
+        }
+
+        .manuBut:hover {
+            background-color: #9395969f;
+            cursor: pointer;
+        }
+
+        .manuPage {
+            width: 1027px;
+            height: 740px;
+            border: 1px solid red;
+            position: absolute;
+            top: -2px;
+            left: 211px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .dayWork-T {
+            padding: 0 20px;
+        }
+
+        .dayWork-T td {
+            border-bottom: 1px solid darkblue;
+            /* border-top: 1px solid darkblue; */
+            text-align: center;
+            width: 70px;
+            height: 30px;
+        }
+
+        #table-T {
+            margin: 0;
+        }
+
+        .lineManu td {
+            width: 140px;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="menu-con work">
+        <div class="work1 menu">Manu</div>
+        <div class="work2 menu">작업관리</div>
+        <div class="work3 menu">생산관리</div>
+        <div class="work4 menu">생산리포팅</div>
+        <div class="work5 menu">자재관리</div>
+        <div class="work6 menu">품질관리</div>
+    </div>
+    <div class="board">
+
+        <div class="mainManu" id="work1">
+            <div class=manuBut>대시보드</div>
+            <div class=manuBut>게시판</div>
+            <div class=manuBut>공지사항</div>
+            <div class="manuPage" id="manuPage1">대시보드내용 추후에 추가예정</div>
+            <style>
+                #pageinfo {
+                    display: flex;
+                    border: 1px solid black;
+                    width: 150px;
+                    height: 30px;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .boardarea {
+                    display: flex;
+                }
+
+                .middle_board {
+                    width: 100%;
+                }
+
+                .searcharea {
+                    display: flex;
+                    height: 40px;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: gray;
+                }
+
+                .boardtable {
+                    border: 1px solid black;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                /* .boardlist {
+                    display: table-column;
+                    border: 1px solid black;
+                    height: 40px;
+                    align-items: center;
+                } */
+
+                .boardlist>tr {
+                    /* display: table-cell; */
+                    /* border: 1px solid black; */
+                    /* height: 50px; */
+                    align-items: center;
+                }
+
+                .num {
+                    text-align: center;
+                    width: 100px;
+                }
+
+                .writetitle {
+                    text-align: center;
+                    width: auto;
+                }
+
+                .writeuser {
+                    text-align: center;
+                    width: 120px;
+                }
+
+                .writedate {
+                    text-align: center;
+                    width: 120px;
+                }
+
+                .viewcount {
+                    text-align: center;
+                    width: 120px;
+                }
+            </style>
+
+            <div class="manuPage hide" id="manuPage2">
+                <div>
+                    <p id='pageinfo'>
+                        자유게시판
+                        <hr>
+                    <div class='boardarea'>
+                        <div class='middle_board'>
+                            <div class='searcharea'>
+                                <div class='selectbox'>
+                                    <form>
+                                        <select name='viewfilter'>
+                                            <option vaule='allview'>모두</option>
+                                            <option vaule='tilteview'>제목</option>
+                                            <option vaule='contentview'>내용</option>
+                                            <option vaule='writeuserview'>작성자</option>
+                                        </select>
+                                    </form>
+                                </div>
+                                <div id='fillvalue'>
+                                    <input type='text' placeholder="검색어를 입력해주세요">
+                                </div>
+                                <div id='search'>
+                                    <button type="button">검색</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <table class='boardtable'>
+                                <tr class='boardlist' style="height: 30px; border: 1px solid black;">
+                                    <td class='num'> 번호 </td>
+                                    <td class='writetitle'> 제목 </td>
+                                    <td class='writeuser'> 작성자 </td>
+                                    <td class='writedate'> 작성일 </td>
+                                    <td class='viewcount'> 조회수 </td>
+                                </tr>
+                            </table>
+                            
+                        </div>
+                    </div>
+                    </p>
+                </div>
+            </div>
+            <div class="manuPage hide" id="manuPage3">공지사항내용 추후에 추가예정</div>
+        </div>
+
+        <div class="dayWork hide" id="work2">
+            <div class="title"> 금일 작업 지시사항</div>
+            <div class="table-con">
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>1호기</td>
+                        <td>생산</td>
+                        <td>정비완료<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>1호기</td>
+                        <td>생산</td>
+                        <td>정비완료<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>A제품</td>
+                        <td>생산</td>
+                        <td>100ea 필요<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>B제품</td>
+                        <td>생산</td>
+                        <td>50ea 필요<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>C제품</td>
+                        <td>생산</td>
+                        <td>8,000ea 필요<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="dayWork-T hide" id="work3">
+            <div class="title">라인 별 생산 현황</div>
+            <div class="table-con">
+                <table id="table-T">
+                    <tr>
+                        <td>전체라인</td>
+                        <td class="point">A라인</td>
+                        <td>B라인</td>
+                        <td>C라인</td>
+                    </tr>
+                    <tr class="lineManu">
+                        <td>설비</td>
+                        <td>제품코드</td>
+                        <td>품번코드</td>
+                        <td>품명</td>
+                        <td>생산시작시간</td>
+                        <td>생산완료시간</td>
+                        <td>생산자</td>
+                        <td>설비상태</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="hide" id="work4">
+            <div>설비가동실적 생산량 및 불량률 현황</div>
+            <div>작업자 생산량 조회</div>
+            <div>자재현황 그래프</div>
+        </div>
+
+        <div class="dayWork hide" id="work5">
+            <div class="title">재고 현황</div>
+            <div class="table-con">
+                <table>
+                    <tr>
+                        <td>못</td>
+                        <td>W5</td>
+                        <td>750ea / 1,000ea</td>
+                    </tr>
+                    <tr>
+                        <td>판자</td>
+                        <td>W6</td>
+                        <td>650ea / 1,000ea</td>
+                    </tr>
+                    <tr>
+                        <td>다이아몬드</td>
+                        <td>P65</td>
+                        <td>1ea / 10ea</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="dayWork hide" id="work6">
+            <div class="title">생산/품질 불량 검출유형</div>
+            <div class="chart-con">
+                <div id="bad">
+                    <div id="badChart">
+                        <canvas id="bdChart" style="height:346px; width:356px"></canvas>
+                    </div>
+
+                </div>
+            </div>
+            <div class="table-con">
+                <table>
+                    <tr class="bold">
+                        <td>흠집</td>
+                        <td>변색</td>
+                        <td>오조립</td>
+                        <td>파손</td>
+                        <td>양부족</td>
+                    </tr>
+
+                    <tr>
+                        <td>8.77</td>
+                        <td>55.61</td>
+                        <td>21.69</td>
+                        <td>6.62</td>
+                        <td>6.82</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+    <div>
+        댓글 입력<br>
+        <textarea id="add"></textarea><button id="done">등록</button>
+        <div id="list"></div>
+
+    </div>
+
+    <script>
+        let num = 1
+
+        document.querySelector('#done').addEventListener('click', function (e) {
+
+            // 요소생성
+            const newDiv = document.createElement('div');
+
+            // html 요소 추가
+            newDiv.innerHTML = `<div class="btns">
+            <input type="checkbox" onclick="is_chx(this)" data-box ="box${num}" class="chx"><span id="box${num}">${add.value}</span><button class = "btn">삭제</button>
+                                </div>`;
+            num = 1
+
+            newDiv.querySelector('.btn').addEventListener('click', function (e) {
+                e.target.parentNode.remove()
+            })
+            document.body.appendChild(newDiv);
+        })
+
+    </script>
+
+    <script>
+
+        let workmanus = document.querySelector('.work')
+        workmanus.addEventListener('click', function (evt) {
+            console.log("////", evt.target)
+            console.log("////", evt.target.parentNode.children)
+            let clickMenu = evt.target.parentNode.children
+            for (let j = 0; j < clickMenu.length; j++) {
+                clickMenu[j].classList.remove('clickMenu')
+
+            }
+            evt.target.classList.add('clickMenu')
+            console.log(evt.target.getAttribute('class'))
+
+            let firstId = evt.target.getAttribute('class')
+            let id = firstId.split(' ')
+            console.log(id[0])
+            const works = document.querySelectorAll("[id^=work]")
+            console.log(works)
+            for (let i = 0; i < works.length; i++) {
+                works[i].classList.add('hide')
+            }
+            document.querySelector("#" + id[0]).classList.remove('hide')
+        })
+
+        // let menu = document.querySelectorAll('.menu')
+
+        // for (let i = 0; i < menu.length; i++) {
+        //     menu[i].addEventListener('click', function () {
+        //         for (let j = 0; j < menu.length; j++) {
+        //             menu[j].classList.remove('clickMenu')
+        //         }
+        //         let clickMenu = document.querySelector('.clickMenu')
+        //         // const newDiv = document.createElement('div')
+        //         // newDiv.innerHTML = `<div>gg</div>`
+
+
+        //         if (menu[i].textContent == 'Manu') {
+        //             menu[i].classList.add('clickMenu')
+
+
+        //         } else if (menu[i].textContent == '작업관리') {
+        //             menu[i].classList.add('clickMenu')
+        //             document.querySelector('.board').innerHTML = `<div class="dayWork">
+        //                                                             <div class="title"> 금일 작업 지시사항</div>
+        //                                                             <div class="table-con">
+        //                                                              <table>
+        //                                                               <tr>
+        //                                                                   <td>1</td>
+        //                                                                   <td>1호기</td>
+        //                                                                   <td>생산</td>
+        //                                                                   <td>정비완료<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+        //                                                               </tr>
+        //                                                               <tr>
+        //                                                                   <td>2</td>
+        //                                                                   <td>1호기</td>
+        //                                                                   <td>생산</td>
+        //                                                                   <td>정비완료<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+        //                                                               </tr>
+        //                                                               <tr>
+        //                                                                   <td>3</td>
+        //                                                                   <td>A제품</td>
+        //                                                                   <td>생산</td>
+        //                                                                   <td>100ea 필요<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+        //                                                               </tr>
+        //                                                               <tr>
+        //                                                                   <td>4</td>
+        //                                                                   <td>B제품</td>
+        //                                                                   <td>생산</td>
+        //                                                                   <td>50ea 필요<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+        //                                                               </tr>
+        //                                                               <tr>
+        //                                                                   <td>5</td>
+        //                                                                   <td>C제품</td>
+        //                                                                   <td>생산</td>
+        //                                                                   <td>8,000ea 필요<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+        //                                                               </tr>
+        //                                                             </table>
+        //                                                             </div>
+        //                                                             </div>`
+        //         } else if (menu[i].textContent == '생산관리') {
+        //             menu[i].classList.add('clickMenu')
+        //             document.querySelector('.board').innerHTML = `<div class="dayWork-T">
+        //                                                             <div class="title">라인 별 생산 현황</div>
+        //                                                             <div class="table-con">
+        //                                                              <table id="table-T">
+        //                                                               <tr>
+        //                                                                   <td>전체라인</td>
+        //                                                                   <td class="point">A라인</td>
+        //                                                                   <td>B라인</td>
+        //                                                                   <td>C라인</td>
+        //                                                               </tr>
+        //                                                               <tr class="lineManu">
+        //                                                                 <td>설비</td>
+        //                                                                 <td>제품코드</td>
+        //                                                                 <td>품번코드</td>
+        //                                                                 <td>품명</td>
+        //                                                                 <td>생산시작시간</td>
+        //                                                                 <td>생산완료시간</td>
+        //                                                                 <td>생산자</td>
+        //                                                                 <td>설비상태</td>
+        //                                                               <tr>
+        //                                                               </div>
+        //                                                             </div>`
+        //         } else if (menu[i].textContent == '생산리포팅') {
+        //             menu[i].classList.add('clickMenu')
+        //             document.querySelector('.board').innerHTML = `<div>
+        //                                                           <div>설비가동실적 생산량 및 불량률 현황
+        //                                                             <canvas id="pr-bar" width="300" height="230"></canvas>
+        //                                                             <canvas id="dr-bar" width="300" height="230"></canvas>
+
+        //                                                             </div>
+        //                                                           <div>작업자 생산량 조회</div>
+        //                                                           <div>자재현황 그래프</div>
+        //                                                          </div>
+        //             `
+
+
+
+
+        //         } else if (menu[i].textContent == '자재관리') {
+        //             menu[i].classList.add('clickMenu')
+        //             document.querySelector('.board').innerHTML = `<div class="dayWork">
+        //                                                             <div class="title">재고 현황</div>
+        //                                                             <div class="table-con">
+        //                                                              <table>
+        //                                                               <tr>
+        //                                                                   <td>못</td>
+        //                                                                   <td>W5</td>
+        //                                                                   <td>750ea / 1,000ea</td>
+        //                                                               </tr>
+        //                                                               <tr>
+        //                                                                   <td>판자</td>
+        //                                                                   <td>W6</td>
+        //                                                                   <td>650ea / 1,000ea</td>
+        //                                                               </tr>
+        //                                                               <tr>
+        //                                                                   <td>다이아몬드</td>
+        //                                                                   <td>P65</td>
+        //                                                                   <td>1ea / 10ea</td>
+        //                                                               </tr>
+        //                                                               </div>
+        //                                                             </div>`
+        //         } else if (menu[i].textContent == '품질관리') {
+        //             menu[i].classList.add('clickMenu')
+        //             document.querySelector('.board').innerHTML = `<div class="dayWork">
+        //                                                             <div class="title">생산/품질 불량 검출유형</div>
+        //                                                             <div class="chart-con">
+        //                                                                 <div id="bad">
+        //                                                                     <div id = "badChart">
+        //                                                                         <canvas id = "bdChart" style="height:346px width:356px"></canvas>
+        //                                                                     </div>
+
+        //                                                                 </div>
+        //                                                             </div>
+        //                                                             <div class="table-con">
+        //                                                              <table>
+        //                                                                         <tr class="bold">
+        //                                                                             <td>흠집</td>
+        //                                                                             <td>변색</td>
+        //                                                                             <td>오조립</td>
+        //                                                                             <td>파손</td>
+        //                                                                             <td>양부족</td>
+        //                                                                         </tr>
+
+        //                                                                         <tr>
+        //                                                                             <td>8.77</td>
+        //                                                                             <td>55.61</td>
+        //                                                                             <td>21.69</td>
+        //                                                                             <td>6.62</td>
+        //                                                                             <td>6.82</td>
+        //                                                                         </tr>
+        //                                                                      </table>
+        //                                                         </div>
+        //                                                     </div>`
+        //         }
+
+        // new Chart(document.getElementById("bdChart"), {
+        //     type: 'radar',
+        //     data: {
+        //         labels: ["흠집", "변색", "오조립", "파손", "양부족"],
+        //         datasets: [
+        //             {
+        //                 label: "1950",
+        //                 fill: true,
+        //                 backgroundColor: "rgba(179,181,198,0.2)",
+        //                 borderColor: "rgba(179,181,198,1)",
+        //                 pointBorderColor: "#fff",
+        //                 pointBackgroundColor: "rgba(179,181,198,1)",
+        //                 data: [8.77, 55.61, 21.69, 6.62, 6.82],
+
+        //             }, {
+        //                 label: "2050",
+        //                 fill: true,
+        //                 backgroundColor: "rgba(255,99,132,0.2)",
+        //                 borderColor: "rgba(255,99,132,1)",
+        //                 pointBorderColor: "#fff",
+        //                 pointBackgroundColor: "rgba(255,99,132,1)",
+        //                 pointBorderColor: "#fff",
+        //                 data: [25.48, 54.16, 7.61, 8.06, 4.45]
+        //             }
+        //         ]
+        //     },
+        //     options: {
+        //         responsive: false,
+        //         plugins: {
+        //             legend: { display: false }
+        //         }
+
+        //     }
+        // });
+        // console.log(newDiv)
+        //     })
+        // }
+
+        //메뉴 버튼별 창표시 표시내용 추가 필요
+        // function bind() {
+        let manuBut = document.querySelectorAll('.manuBut')
+        // let hides = document.querySelectorAll('.hide')
+        for (let i = 0; i < manuBut.length; i++) {
+            manuBut[i].addEventListener('click', function () {
+                let manuPages = document.querySelectorAll('.manuPage')
+                for (let j = 0; j < manuPages.length; j++) {
+                    manuPages[j].classList.add('hide')
+                }
+                if (manuBut[i].textContent == '대시보드') {
+                    manuPages[i].classList.remove('hide')
+                } else if (manuBut[i].textContent == '게시판') {
+                    manuPages[i].classList.remove('hide')
+                } else if (manuBut[i].textContent == '공지사항') {
+                    manuPages[i].classList.remove('hide')
+                }
+
+            })
+        }
+        // }
+        // bind()
+
+
+    </script>
+
+</body>
+
+</html>
