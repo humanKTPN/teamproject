@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <!-- <script>
+        import { library, icon } from '@fortawesome/fontawesome-svg-core'
+        import { faCamera } from '@fortawesome/free-solid-svg-icons'
+        library.add(...all)
+        const camera = icon({ prefix: 'fas', iconName: 'camera' })
+    </script> -->
+    
+
+    <style>
+         body{
+            min-width: 500px;
+            max-height: 5000px;
+         }
+        .container{
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-around; */
+            align-items: center;
+            /* padding: 1% 0; */
+            /* border: 5px solid darkblue; */
+            background-color: rgba(87, 59, 27, 0.329);
+            height:auto;
+            box-sizing: border-box;
+        }
+        #head{
+            box-sizing: border-box;
+            width: 100%;
+            height: 50px;
+            /* background-color: rgba(32, 30, 30, 0.502); */
+            background-color: rgba(23, 20, 20, 0.814);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 10px 10px 0px 0px;
+        }
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        .slideMenu-off{
+            height: auto;
+            width: 400px;
+            /* border: 5px solid rgba(2, 2, 85, 0.742); */
+            background-color: rgba(161, 161, 161, 0.845);
+            /* background-color: rgba(0, 3, 82, 0.845); */
+            position: fixed;
+            z-index: 1;
+            left: -400px;
+            transition: right 0.5s ease-in;
+        }
+        .slideMenu-on{
+            height: inherit;
+            width: 400px;
+            /* border: 5px solid rgba(2, 2, 85, 0.742); */
+            background-color: rgba(161, 161, 161, 0.845);
+            position: fixed;
+            z-index: 1;
+            transition: right 0.5s ease-in;
+            /* left: -120px; */
+        }
+        #slideMenu{
+            text-align: right;
+        }
+        #slide-x{
+            display: inline-block;
+            cursor: pointer;
+            text-align: right;
+            color: white;
+            /* margin-right: 10%; */
+            /* padding-right: 10%; */
+            font-size: large;
+            /* border: 1px solid red; */
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            padding-right: 3%;
+
+        }
+        td{
+            box-sizing: border-box;
+            border-bottom: 1px solid darkgrey;
+            /* padding: 7px 0; */
+            font-family: 'Pretendard-Regular';
+        }
+        table {
+            box-sizing: border-box;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            background-color: white;
+        }
+        .title{
+            /* border-bottom: 1px solid darkgrey; */
+            box-sizing: border-box;
+            border: 1px solid darkgrey;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 10px 10px 0 0;
+            background-color: rgb(255, 255, 255);
+            padding-left: 2%;
+            
+        }
+        .fas{
+            color:white;
+        }
+        .icon, .icon-sub{
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 0.5%;
+            padding-left: 1%;
+        }
+        #title-name{
+            color: white;
+            text-align: left;
+            /* border: 1px solid red; */
+            width: 93%;
+            font-family: 'Pretendard-Regular';
+            font-weight: bold;
+            font-size: large;
+            padding-left: 1%;
+        }
+        #ham{
+            cursor: pointer;
+        }
+        #arrow-up{
+            color: red;
+        }
+        #arrow-down{
+            color: blue;
+        }
+        .arrow{
+            /* border: 1px solid red; */
+            text-align: center;
+            width: 20px;
+        }
+/* ==================================================== */
+
+        .goal{
+            box-sizing: border-box;
+            height: 125px;
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid darkgrey;
+            border-radius: 10px 10px;
+            width: 100%;
+
+        }
+        .goal:hover{
+            background-color: rgba(87, 59, 27, 0.329);
+            cursor: pointer;
+            border: 1px solid rgba(87, 59, 27, 0.329);
+        }
+        .layer{
+            /* border: 5px solid blue; */
+            box-sizing: border-box;
+            width: 90%;
+            /* height: 100%; */
+            display: flex;
+            justify-content: center;
+        }
+        .border-2{
+            /* border: 5px solid pink; */
+            box-sizing: border-box;
+            /* height: 50%;  */
+            width: 100%;
+            display: inline-block;
+            text-align:center;
+            /* margin: 3% 3%; */
+        }
+        .border-1{
+            /* border: 5px solid pink; */
+            box-sizing: border-box;
+            height: 40%; 
+            width: 100%;
+            display: inline-block;
+            text-align:center;
+            /* margin: 3% 3%; */
+        }
+        .goal-con,.border{
+            box-sizing: border-box;
+            height: 400px;
+            /* border: 1px solid purple; */
+            display: inline-flex;
+            width: 27%;
+            min-width: 400px;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 1%;
+        }
+        .border-top{
+            box-sizing: border-box;
+            height: 400px;
+            /* border: 1px solid purple; */
+            display: inline-flex;
+            width: 85%;
+            min-width: 400px;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 1%;
+        }
+        .title{
+            /* border-bottom: 1px solid darkgrey; */
+            box-sizing: border-box;
+            border: 1px solid darkgrey;
+            /* width: 100%; */
+            height: 40px;
+            line-height: 40px;
+            border-radius: 10px 10px 0 0;
+            background-color: rgb(255, 255, 255);
+            padding-left: 2%;
+            text-align: left;
+            font-family: 'Pretendard-Regular';
+            font-weight: bold;
+        }
+        .lineCon,.board{
+            overflow: scroll;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-around; */
+            border-bottom: 1px solid darkgrey;
+            border-left: 1px solid darkgrey;
+            border-right: 1px solid darkgrey;
+            background-color: rgb(255, 255, 255);
+            border-radius: 0 0 2% 2%;
+            width: 100%;
+            min-width: 400px;
+            height: 400px;
+        }
+        .list-con{
+            overflow: scroll;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            /* border-bottom: 1px solid darkgrey;
+            border-left: 1px solid darkgrey;
+            border-right: 1px solid darkgrey; */
+            background-color: rgb(255, 255, 255);
+            border-radius: 0 0 2% 2%;
+            width: 100%;
+            min-width: 200px;
+            height: 300px;
+            max-height: 400px;
+        }
+        #bad, #tempHu, #planReq{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid darkgrey;
+            border-left: 1px solid darkgrey;
+            border-right: 1px solid darkgrey;
+            background-color: rgb(255, 255, 255);
+            border-radius: 0 0 2% 2%;
+            box-sizing: border-box;
+            width: 100%;
+            height: 380px;
+        }
+        .dayWork{
+            display: flex;
+            align-content: center;
+            flex-direction: row;
+            /* border: 1px solid darkgrey; */
+            border-bottom: 1px solid darkgrey;
+            border-left: 1px solid darkgrey;
+            border-right: 1px solid darkgrey;
+            background-color: rgb(255, 255, 255);
+            border-radius: 0 0 2% 2%;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            /* max-height: 1000px; */
+        }
+        .menu-list{
+            text-align: left;
+            list-style-type: none;
+        }
+        #goal-line{
+            box-sizing: border-box;
+            text-align: left;
+            display: inline-block;
+            /* border: 1px solid red; */
+            height: 50%;
+            width: 50%;
+            margin-top: 3%;
+            font-size: 20px;
+            font-family: 'Pretendard-Regular';
+            margin-left: 3%;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        .cnt{
+            box-sizing: border-box;
+            /* border: 1px solid darkblue; */
+            display: inline-block;
+            height: 30px;
+            width: 220px;
+            margin-top: 3%;
+            text-align: right;
+        }
+        .cnt-block{
+            box-sizing: border-box;
+            display: inline-block;
+            height: 30px;
+            width: 120px;
+            border: 1px solid darkblue;
+            text-align: center;
+            color: white;
+            background-color: darkblue;
+            border-radius: 5px;
+            font-size: 15px;
+            line-height: 30px;
+        }
+        .dayWork{
+            display: flex;
+            justify-content: space-around;
+            box-sizing: border-box;
+            height: 100%;
+        }
+        #dayWork-board{
+            box-sizing: border-box;
+            /* border: 1px solid red; */
+            width: 30%;
+            min-width: 300px;
+            height: 100%;
+            /* min-height: 100px; */
+        }
+        #day-list{
+            box-sizing: border-box;
+            display: inline-block;
+            border-bottom: 1px solid purple;
+            width: 60%;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+        }
+        .list-con-gragh{
+            height: 80%;
+            /* border: 1px solid darkblue; */
+        }
+        .gragh{
+            /* border: 1px solid red; */
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        #thchart{
+            height: 304px;
+            
+        }
+        @media (max-width: 767px){
+
+            #dayWork-board{
+                height: 300px;
+            }
+            .dayWork,.border-top,#dayWork-board{
+                display: inline-block;
+                height: auto;
+                /* flex-direction: row; */
+            }           
+
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="slideMenu" class="slideMenu-off">
+            <div id="slide-x">X</div>
+            <div class="menu-list">
+                <ul class="menu-list">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+        </div>
+        <div id = "head">
+            <div class ="icon">
+                <i id="ham" class="fas fa-solid fa-bars fa-lg"></i>
+                <div id ="title-name"><i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution</div>  
+                <div class="icon-sub">
+                    <i class="fas fa-solid fa-gear fa-lg" style="display: flex; width: 60px; justify-content: space-between;" >
+                        <i class="fas fa-regular fa-arrow-right-from-bracket fa-lg"></i>
+                    </i>
+                </div>
+            </div>
+            
+            <script>
+                document.querySelector('#ham').addEventListener('click',function(e){
+                    // console.log(document.querySelector('#slideMenu'))
+                    document.querySelector('#slideMenu').classList.remove('slideMenu-off')
+                    document.querySelector('#slideMenu').classList.add('slideMenu-on')
+                })
+                document.querySelector('#slide-x').addEventListener('click',function(e){
+                    // console.log(document.querySelector('#slideMenu'))
+                    document.querySelector('#slideMenu').classList.add('slideMenu-off')
+                    // document.querySelector('#slideMenu').classList.add('slideMenu-on')
+                })
+
+            </script>
+        </div>
+    </section>
+    <div class="container">
+                <div class="border-1">
+                    <div class="border-top">
+                        <div class="title">작업/생산관리</div>
+                        <div class="dayWork" media="screen">
+                            <div id = "dayWork-board" >
+                                <div id = "day-list">
+                                    금일 생산 지시 사항
+                                </div>
+                                <div class="list-con">
+                                    <table>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>1호기</td>
+                                            <td>생산</td>
+                                            <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>1호기</td>
+                                            <td>생산</td>
+                                            <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>A제품</td>
+                                            <td>생산</td>
+                                            <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>B제품</td>
+                                            <td>생산</td>
+                                            <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>C제품</td>
+                                            <td>생산</td>
+                                            <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                        </tr>
+                                       
+
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- <div class = "dayWork-board-con"> -->
+                                <div id = "dayWork-board">
+                                    <div id = "day-list">
+                                        금일 생산 지시 사항
+                                    </div>
+                                    <div class="list-con">
+                                        <table>
+                                            <tr>
+                                                <td>S</td>
+                                                <td>1호기</td>
+                                                <td>문성원</td>
+                                                <td>37,489<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                            </tr>
+    
+                                        </table>
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+                            <div id = "dayWork-board">
+                                <div id = "day-list">
+                                    금일 생산량
+                                </div>
+                                <div class="list-con-gragh">
+                                    <div class="gragh">
+                                        <!-- <span>&ensp;&ensp;원재료 숙성실 온/습도</span> -->
+                                        <canvas id="thchart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                <!-- asdfasdfasdfasfsadfsaf -->
+                <!-- dsafsdfasdfasdfsa -->
+                </div>
+            </div>
+                <div class="border-2">
+                    <div class="border">
+                        <div class="title">생산/품질 불량 검출유형</div>
+                        <div id="bad">
+                            <!-- <span>&ensp;&ensp;생산/품질 불량 검출유형</span> -->
+                            <div id = "badChart">
+                                <canvas id = "bdChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border">
+                        <div class="title">원재료 숙성실 온/습도</div>
+                        <div id="tempHu">
+                            <!-- <span>&ensp;&ensp;원재료 숙성실 온/습도</span> -->
+                            <div id = "tempHuChart">
+                                <canvas id="thchart" style="width: 400px; height: 300px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border">
+                        <div class="title">출하계획 대 실적</div>
+                        <div id="planReq">
+                            <div id = "planReqChart">
+                                <canvas id="prchart" style="width: 400px; height: 300px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <script>
+// new Chart(document.getElementById("myChart"), {
+//     type: 'pie',
+//     data: {
+//         labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+//         datasets: [{
+//         label: "Population (millions)",
+//         backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+//         data: [2478,5267,734,784,433]
+//       }]
+//     },
+//     options: {
+//         plugins:{
+//             legend: { display: false },
+//         },
+//       title: {
+//         display: true,
+//         text: 'Predicted world population (millions) in 2050'
+//       }
+//     }
+// });
+
+    new Chart(document.getElementById("bdChart"), {
+    type: 'radar',
+    data: {
+        labels: ["a", "b", "c", "d", "f"],
+        datasets: [
+            {
+                label: "1950",
+                fill: true,
+                backgroundColor: "rgba(179,181,198,0.2)",
+                borderColor: "rgba(179,181,198,1)",
+                pointBorderColor: "#fff",
+                pointBackgroundColor: "rgba(179,181,198,1)",
+                data: [8.77,55.61,21.69,6.62,6.82],
+                
+        }, {
+            label: "2050",
+          fill: true,
+          backgroundColor: "rgba(255,99,132,0.2)",
+          borderColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          data: [25.48,54.16,7.61,8.06,4.45]
+        }
+      ]
+    },
+    options: { 
+        responsive: false,
+        plugins:{
+            legend: { display: false }
+        }
+
+    }
+});
+
+new Chart(document.getElementById("thchart"), {
+  type: 'line',
+  data: {
+    labels: [1500,1600,1700],
+    datasets: [{ 
+        data: [221,783,2478],
+        label: "온도",
+        borderColor: "#3e95cd",
+        fill: true
+      }, { 
+        data: [1402,3700,5267],
+        label: "습도",
+        borderColor: "#8e5ea2",
+        fill: true
+      }, { 
+        data: [547,675,734],
+        label: "산소포화도",
+        borderColor: "#3cba9f",
+        fill: true
+      }
+    ]
+  },
+  options: {
+       plugins:{
+            legend: { display: false },
+        },
+    // title: {
+    //   display: true,
+    //   text: 'World population per region (in millions)'
+    // }
+  }
+});
+
+// Bar chart
+new Chart(document.getElementById("prchart"), {
+    type: 'bar',
+    data: {
+      labels: ["a", "b", "c", "d", "e"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+        plugins:{
+            legend: { display: false },
+        },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+
+
+
+      </script>
+</body>
+</html>
