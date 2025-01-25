@@ -14,7 +14,8 @@ const write = document.querySelector('.write');
 write.addEventListener('click', writeprocess)
 function writeprocess(){
     const writeprocess = document.querySelector('.boardcontents')
-    writeprocess.innerHTML += `<td class='num'> 번호 </td>
+    writeprocess.innerHTML += `<tr class='boardcontents' style="height: 30px; border: 1px solid black;">
+    <td class='num'> 번호 </td>
 <td class='writetitle'> 제목 </td>
 <td class='writeuser'> 작성자 </td>
 <td class='writedate'> 작성일 </td>
