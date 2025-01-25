@@ -1,0 +1,238 @@
+.menu-con {
+    display: flex;
+    width: 100%;
+    border: 5px solid #0C4A60;
+}
+
+.menu {
+    border: 1px solid rgba(255, 255, 255, 0.267);
+    background-color: #0C4A60;
+    width: 30%;
+    height: 80px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 80px;
+    color: white;
+}
+
+.clickMenu {
+    border: 1px solid rgba(255, 255, 255, 0.267);
+    background-color: #082d3a;
+    width: 30%;
+    height: 80px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 80px;
+    color: white;
+}
+
+.menu:hover {
+    background-color: #082d3a;
+}
+
+.board {
+    border: 5px solid #0C4A60;
+    width: 100%;
+    height: 700px;
+    padding-top: 3%;
+    position: relative;
+}
+
+/* td {
+            border-bottom: 1px solid darkblue;
+            border-top: 1px solid darkblue;
+            text-align: center;
+            width: 500px;
+            height: 50px;
+        } */
+
+.dayWork {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    /* margin-top: 3%; */
+    font-size: 30px;
+    border: 1px solid red;
+}
+
+/* table {
+            margin: 0;
+            display: flex;
+        } */
+
+.table-con {
+    /* border: 1px solid darkblue; */
+    margin-top: 1%;
+    width: 100%;
+    height: 400px;
+}
+
+.chart-con {
+    /* border: 1px solid darkblue; */
+    margin-top: 1%;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 3%;
+
+}
+
+.point {
+    background-color: darkred;
+    color: white;
+}
+
+.bdChart {
+    border: 1px solid red;
+}
+
+.side-con {
+    border: 5px solid red;
+    width: 300px;
+    height: 100%;
+}
+
+.chart-con-con {
+    display: flex;
+    flex-direction: row;
+    border: 5px solid pink;
+    width: 130px;
+    height: 300px;
+
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.mainManu {
+    border: 1px solid black;
+    width: 17%;
+    height: 740px;
+    position: absolute;
+    top: 0px;
+    background-color: #0559689f;
+}
+
+.manuBut {
+    border-bottom: 2px solid black;
+
+    padding: 10px;
+}
+
+.manuBut:hover {
+    background-color: #9395969f;
+    cursor: pointer;
+}
+
+.manuPage {
+    width: 1027px;
+    height: 740px;
+    border: 1px solid red;
+    position: absolute;
+    top: -2px;
+    left: 211px;
+}
+
+.hide {
+    display: none;
+}
+
+.dayWork-T {
+    padding: 0 20px;
+}
+
+.dayWork-T td {
+    border-bottom: 1px solid darkblue;
+    /* border-top: 1px solid darkblue; */
+    text-align: center;
+    width: 70px;
+    height: 30px;
+}
+
+#table-T {
+    margin: 0;
+}
+
+.lineManu td {
+    width: 140px;
+    border: 1px solid black;
+}
+
+/* 개발영역역 */
+#pageinfo {
+    display: flex;
+    border: 1px solid black;
+    width: 150px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.boardarea {
+    display: flex;
+}
+
+.middle_board {
+    width: 100%;
+}
+
+.searcharea {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.boardtable {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .boardlist {
+    display: table-column;
+    border: 1px solid black;
+    height: 40px;
+    align-items: center;
+} */
+
+.boardlist>tr {
+    /* display: table-cell; */
+    /* border: 1px solid black; */
+    /* height: 50px; */
+    align-items: center;
+}
+
+.num {
+    text-align: center;
+    width: 100px;
+}
+
+.writetitle {
+    text-align: center;
+    width: auto;
+}
+
+.writeuser {
+    text-align: center;
+    width: 120px;
+}
+
+.writedate {
+    text-align: center;
+    width: 120px;
+}
+
+.viewcount {
+    text-align: center;
+    width: 120px;
+}
