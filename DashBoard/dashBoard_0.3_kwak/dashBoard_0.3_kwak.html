@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 여기에 대시보드 css 파일옮기기 -->
+    <link rel="stylesheet" href="/project/dashBoard_0.3_kwak.css">
+    <style>
+        /* 
+        모바일 버전 없음음
+        */
+        body{
+            margin: 0;
+        }
+        .menu-con {
+            display: flex;
+            width: 100%;
+            border: 5px solid #0C4A60;
+        }
+        #main-menu {
+            border: 1px solid rgba(255, 255, 255, 0.267);
+            background-color: #0C4A60;
+            width: 19.8%;
+            height: 80px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 80px;
+            color: white;
+            font-size: 100%;
+        }
+        .menu {
+            border: 1px solid rgba(255, 255, 255, 0.267);
+            background-color: #0C4A60;
+            width: 19.8%;
+            height: 80px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 80px;
+            color: white;
+            font-size: 100%;
+            /* font-size: 1em; */
+        }
+        .mainmenu {
+            /* border: 1px solid black; */
+            width: 20.4%;
+            /* width: 300px; */
+            height: 100%;
+            background-color: #0559689f;
+            position: relative;
+        }
+        .board {
+            border: 5px solid #0C4A60;
+            /* border: 5px solid pink; */
+            width: 100%;
+            height: 700px;
+        }
+        .bome-con{
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: space-between;
+            /* border: 5px solid rebeccapurple; */
+            height: 100%;
+            width: 100%;
+
+        }
+
+        .menuBut {
+            border-bottom: 2px solid black;
+            text-align: center;
+            height: 70px;
+            line-height: 70px;   
+            width: 100%;
+        }
+        .menuBut:hover {
+            background-color: #9395969f;
+            cursor: pointer;
+        }
+        .menu:hover, #main-menu:hover {
+            background-color: #082d3a;
+        }
+        .hide{
+            display: none;
+        }
+        .menuPage {
+            width: 100%;
+            height: 100%;
+            top: -2px;
+            left: 211px;
+        }
+        .menuPage-con{
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 100%;
+        }
+        @media screen and (max-width: 500px) {
+            .mainmenu{
+                width: 100%;
+                height: 18%;
+                display: inline-block;
+            }
+            #menuPage1{
+                width: 100%;
+                display: inline-block;
+            } 
+            .bome-con{
+                display: flex;
+                flex-direction: column;
+            }
+            .menuBut {
+                /* border: 1px solid red; */
+                text-align: center;
+                height: 32%;
+                line-height: 238%;
+            }
+            .menuPage {
+                /* position: relative; */
+                left: -1px;
+                width: 100%;
+                height: 455%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <body>
+
+        <div class="menu-con work">
+            <div class="main-menu" id="main-menu">MENU 닫기</div>
+            <div class="menu">작업관리</div>
+            <div class="menu">생산관리</div>
+            <div class="menu">생산리포팅</div>
+            <div class="menu">자재관리</div>
+            <div class="menu">품질관리</div>
+        </div>
+        <div class="board">
+            
+            <div class="bome-con">
+
+                    <div class="mainmenu" id="work1">
+                        <div class="menuBut">대시보드</div>
+                        <div class="menuBut">게시판</div>
+                        <div class="menuBut">공지사항</div>
+
+                    </div>
+                    <div class="menuPage-con">    
+                        <div class="container">
+                        <div class="border-1">
+                            <div class="border-top">
+                                <div class="title">작업/생산관리</div>
+                                <div class="dayWork" media="screen">
+                                    <div id = "dayWork-board" >
+                                        <div id = "day-list">
+                                            금일 생산 지시 사항
+                                        </div>
+                                        <div class="list-con">
+                                            <!-- <table>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>1호기</td>
+                                                    <td>생산</td>
+                                                    <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>1호기</td>
+                                                    <td>생산</td>
+                                                    <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>A제품</td>
+                                                    <td>생산</td>
+                                                    <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>B제품</td>
+                                                    <td>생산</td>
+                                                    <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>C제품</td>
+                                                    <td>생산</td>
+                                                    <td>...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+                                               
+        
+                                            </table> -->
+                                        </div>
+                                    </div>
+                                    <!-- <div class = "dayWork-board-con"> -->
+                                        <div id = "dayWork-board">
+                                            <div id = "day-list">
+                                                금일 생산 지시 사항
+                                            </div>
+                                            <div class="list-con">
+                                                <!-- <table>
+                                                    <tr>
+                                                        <td>S</td>
+                                                        <td>1호기</td>
+                                                        <td>문성원</td>
+                                                        <td>37,489<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                    </tr>
+            
+                                                </table> -->
+                                            </div>
+                                        </div>
+                                    <!-- </div> -->
+                                    <div id = "dayWork-board">
+                                        <div id = "day-list">
+                                            금일 생산량
+                                        </div>
+                                        <div class="list-con-gragh">
+                                            <div class="gragh">
+                                                <!-- <span>&ensp;&ensp;원재료 숙성실 온/습도</span> -->
+                                                <canvas id="thchart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                            </div>
+                        <!-- asdfasdfasdfasfsadfsaf -->
+                        <!-- dsafsdfasdfasdfsa -->
+                        <!-- </div> -->
+                    </div>
+                        <div class="border-2">
+                            <div class="border">
+                                <div class="title">생산/품질 불량 검출유형</div>
+                                <div id="bad">
+                                    <div id = "badChart">
+                                        <canvas id = "bdChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border2">
+                                <div class="title">원재료 숙성실 온/습도</div>
+                                <div id="tempHu">
+                                    <div id = "tempHuChart">
+                                        <canvas id="thchart" style="width: 400px; height: 300px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+              
+                        </div>
+                    </div> 
+                </div>
+            </div>
+    
+    
+            <script>
+                window.addEventListener('load',init)
+
+                
+                
+                function init(){
+                    if(window.innerWidth == 500){ // 새로고침일때만 적용됨 일단 보류
+                        document.querySelector('#main-menu').textContent = 'MENU'
+                    }
+                    
+
+
+                    //메뉴 열었다 닫았다 하기<시작>
+                    document.querySelector('#main-menu').addEventListener('click',function(){
+                        
+                        
+                        if(document.querySelector('.mainmenu').classList.length == 1){
+                            document.querySelector('.mainmenu').classList.add('hide')
+                            document.querySelector('#main-menu').textContent = 'MENU 열기'
+                        } else if (document.querySelector('.mainmenu').classList.length == 2){
+                            document.querySelector('.mainmenu').classList.remove('hide')
+                            document.querySelector('#main-menu').textContent = 'MENU 닫기'
+                        }
+    
+                    }) //메뉴 열었다 닫았다 하기<끝>
+                    // 탑 버튼 내용나오게 하기 <시작>
+                    console.log(document.querySelector('.mainmenu').classList.length)// 클래스 개수
+                    let menus = document.querySelectorAll('.menu')
+                    for (menu of menus){//탑 메뉴탭에 클릭이벤트 주기
+                        menu.addEventListener('click',function(e){
+    
+                            console.log(e.target.textContent) // 어떤 메뉴를 눌렀는지 확인
+    
+                            if(e.target.textContent=='작업관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `작업관리내용`
+                            } else if (e.target.textContent=='생산관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `생산관리내용`
+                            } else if (e.target.textContent=='생산리포팅'){
+                                document.querySelector('.menuPage-con').innerHTML = `생산리포팅`
+                            } else if (e.target.textContent=='자재관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `자재관리`
+                            } else if (e.target.textContent=='품질관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `품질관리`
+                            } 
+                        })
+                    }// 탑 버튼 내용나오게 하기  <끝>
+                
+    
+                    // 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<시작>
+                    let buttons = document.querySelectorAll('.menuBut')
+                    for(button of buttons){
+                        button.addEventListener('click',function(e){
+    
+                            console.log(e.target.textContent) // 클릭한 요소 텍스트 나오는지 확인
+    
+                            if(e.target.textContent=='대시보드'){
+                                document.querySelector('.menuPage-con').innerHTML = `대시보드`
+                            } else if (e.target.textContent=='게시판'){
+                                document.querySelector('.menuPage-con').innerHTML = `게시판`
+                            } else if (e.target.textContent=='공지사항'){
+                                document.querySelector('.menuPage-con').innerHTML = `공지사항`
+                            }
+                        })
+                    }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
+
+                }
+
+                    
+                    
+
+
+            </script>
+    
+    </body>
+    
+</body>
+</html>
