@@ -1,0 +1,198 @@
+/* 
+        저번에 강사님께서 메뉴는 자유롭게 열리고 닫히고, 메뉴가 열릴때 옆 컨텐츠의 크기가 같이 줄어드는 ui를 구성해보라고 하셔서 그것 좀 적용했습니다.
+        그리고 메뉴를 열고 닫을때 메뉴열기 ->  메뉴 닫기로 바뀌는 것도 추가 했습니다.
+        정현님 하신 양식에 그 정도 기능 넣었습니다.
+        일단 틀만 만들어 놓고 기능 구현한것 하나씩 적용하는걸로 가면 좋을 것 같아서 틀만 올립니다~!
+        */
+.menu-con {
+    display: flex;
+    width: 100%;
+    border: 5px solid #0C4A60;
+}
+
+#main-menu {
+    border: 1px solid rgba(255, 255, 255, 0.267);
+    background-color: #0C4A60;
+    width: 19.8%;
+    height: 80px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 80px;
+    color: white;
+    font-size: 100%;
+}
+
+.menu {
+    border: 1px solid rgba(255, 255, 255, 0.267);
+    background-color: #0C4A60;
+    width: 19.8%;
+    height: 80px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 80px;
+    color: white;
+    font-size: 100%;
+    /* font-size: 1em; */
+}
+
+.board {
+    border: 5px solid #0C4A60;
+    width: 100%;
+    height: 700px;
+}
+
+.bome-con {
+    display: flex;
+    align-items: space-around;
+    /* border: 5px solid rebeccapurple; */
+    height: 100%;
+    width: 100%;
+}
+
+.mainmenu {
+    /* border: 1px solid black; */
+    width: 19.8%;
+    height: 100%;
+    background-color: #0559689f;
+}
+
+.main-menu {
+    /* border: 1px solid black; */
+    width: 19.8%;
+    height: 100%;
+    background-color: #0559689f;
+}
+
+.menuBut {
+    border-bottom: 2px solid black;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+}
+
+.menuBut:hover {
+    background-color: #9395969f;
+    cursor: pointer;
+}
+
+.menu:hover,
+#main-menu:hover {
+    background-color: #082d3a;
+}
+
+.hide {
+    display: none;
+}
+
+.menuPage {
+    width: 100%;
+    height: 100%;
+    top: -2px;
+    left: 211px;
+}
+
+.menuPage-con {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .mainmenu {
+        width: 100%;
+        height: 18%;
+        display: inline-block;
+    }
+
+    #menuPage1 {
+        width: 100%;
+        display: inline-block;
+    }
+
+    .bome-con {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menuBut {
+        /* border: 1px solid red; */
+        text-align: center;
+        height: 32%;
+        line-height: 238%;
+    }
+
+    .menuPage {
+        /* position: relative; */
+        left: -1px;
+        width: 100%;
+        height: 455%;
+    }
+}
+
+
+/* 개발영역 */
+#pageinfo {
+    display: flex;
+    border: 1px solid black;
+    width: 150px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.boardarea {
+    display: flex;
+}
+
+.middle_board {
+    width: 100%;
+}
+
+.searcharea {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.boardtable {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.boardlist>tr {
+    align-items: center;
+}
+
+.num {
+    text-align: center;
+    width: 100px;
+}
+
+.writetitle {
+    text-align: center;
+    width: auto;
+}
+
+.writeuser {
+    text-align: center;
+    width: 120px;
+}
+
+.writedate {
+    text-align: center;
+    width: 120px;
+}
+
+.viewcount {
+    text-align: center;
+    width: 120px;
+}
+
+.pageline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
