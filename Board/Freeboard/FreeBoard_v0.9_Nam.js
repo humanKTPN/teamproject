@@ -8,6 +8,7 @@ function filter() {
     const optionT = document.querySelector('#fillvalue')
     console.log(optionS.value)
     console.log(optionT.value)
+    
 }
 
 const write = document.querySelector('.write');
