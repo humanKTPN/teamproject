@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="workManage_v0.1_kwak.css">
+    <script srcv=""></script>
+    <style>
+        /* 
+        저번에 강사님께서 메뉴는 자유롭게 열리고 닫히고, 메뉴가 열릴때 옆 컨텐츠의 크기가 같이 줄어드는 ui를 구성해보라고 하셔서 그것 좀 적용했습니다.
+        그리고 메뉴를 열고 닫을때 메뉴열기 ->  메뉴 닫기로 바뀌는 것도 추가 했습니다.
+        정현님 하신 양식에 그 정도 기능 넣었습니다.
+        일단 틀만 만들어 놓고 기능 구현한것 하나씩 적용하는걸로 가면 좋을 것 같아서 틀만 올립니다~!
+        */
+        .menu-con {
+            display: flex;
+            width: 100%;
+            border: 5px solid #0C4A60;
+        }
+        #main-menu {
+            border: 1px solid rgba(255, 255, 255, 0.267);
+            background-color: #0C4A60;
+            width: 19.8%;
+            height: 80px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 80px;
+            color: white;
+            font-size: 100%;
+        }
+        .menu {
+            border: 1px solid rgba(255, 255, 255, 0.267);
+            background-color: #0C4A60;
+            width: 19.8%;
+            height: 80px;
+            text-align: center;
+            cursor: pointer;
+            line-height: 80px;
+            color: white;
+            font-size: 100%;
+            /* font-size: 1em; */
+        }
+        .board {
+            border: 5px solid #0C4A60;
+            width: 100%;
+            height: 700px;
+        }
+        .bome-con{
+            display: flex;
+            align-items: space-around;
+            /* border: 5px solid rebeccapurple; */
+            height: 100%;
+            width: 100%;
+        }
+        .mainmenu {
+            /* border: 1px solid black; */
+            width: 19.8%;
+            height: 100%;
+            background-color: #0559689f;
+        }
+        .main-menu {
+            /* border: 1px solid black; */
+            width: 19.8%;
+            height: 100%;
+            background-color: #0559689f;
+        }
+        .menuBut {
+            border-bottom: 2px solid black;
+            text-align: center;
+            height: 70px;
+            line-height: 70px;   
+        }
+        .menuBut:hover {
+            background-color: #9395969f;
+            cursor: pointer;
+        }
+        .menu:hover, #main-menu:hover {
+            background-color: #082d3a;
+        }
+        .hide{
+            display: none;
+        }
+        .menuPage {
+            width: 100%;
+            height: 100%;
+            top: -2px;
+            left: 211px;
+        }
+        .menuPage-con{
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 100%;
+        }
+        @media screen and (max-width: 500px) {
+            .mainmenu{
+                width: 100%;
+                height: 18%;
+                display: inline-block;
+            }
+            #menuPage1{
+                width: 100%;
+                display: inline-block;
+            } 
+            .bome-con{
+                display: flex;
+                flex-direction: column;
+            }
+            .menuBut {
+                /* border: 1px solid red; */
+                text-align: center;
+                height: 32%;
+                line-height: 238%;
+            }
+            .menuPage {
+                /* position: relative; */
+                left: -1px;
+                width: 100%;
+                height: 455%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <body>
+
+        <div class="menu-con work">
+            <div class="main-menu" id="main-menu">MENU 닫기</div>
+            <div class="menu">작업관리</div>
+            <div class="menu">생산관리</div>
+            <div class="menu">생산리포팅</div>
+            <div class="menu">자재관리</div>
+            <div class="menu">품질관리</div>
+        </div>
+        <div class="board">
+            
+            <div class="bome-con">
+
+                    <div class="mainmenu" id="work1">
+                        <div class="menuBut">대시보드</div>
+                        <div class="menuBut">게시판</div>
+                        <div class="menuBut">공지사항</div>
+
+                    </div>
+                    <div class="menuPage-con">대시보드</div>
+            </div>
+    
+    
+            <script>
+                window.addEventListener('load',init)
+
+                
+                
+                function init(){
+                    if(window.innerWidth == 500){ // 새로고침일때만 적용됨 일단 보류
+                        document.querySelector('#main-menu').textContent = 'MENU'
+                    }
+                    
+
+
+                    //메뉴 열었다 닫았다 하기<시작>
+                    document.querySelector('#main-menu').addEventListener('click',function(){
+                        
+                        
+                        if(document.querySelector('.mainmenu').classList.length == 1){
+                            document.querySelector('.mainmenu').classList.add('hide')
+                            document.querySelector('#main-menu').textContent = 'MENU 열기'
+                        } else if (document.querySelector('.mainmenu').classList.length == 2){
+                            document.querySelector('.mainmenu').classList.remove('hide')
+                            document.querySelector('#main-menu').textContent = 'MENU 닫기'
+                        }
+    
+                    }) //메뉴 열었다 닫았다 하기<끝>
+                    // 탑 버튼 내용나오게 하기 <시작>
+                    console.log(document.querySelector('.mainmenu').classList.length)// 클래스 개수
+                    let menus = document.querySelectorAll('.menu')
+                    for (menu of menus){//탑 메뉴탭에 클릭이벤트 주기
+                        menu.addEventListener('click',function(e){
+    
+                            console.log(e.target.textContent) // 어떤 메뉴를 눌렀는지 확인
+    
+                            if(e.target.textContent=='작업관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `
+                                                                                    <div class="background">
+                                                                                        <div class = "tab-name-div">
+                                                                                            <div class="tab-name">작업지시서 조회</div>
+                                                                                        </div>
+                                                                                        <div class="dropBox">
+                                                                                        <form action="#">
+                                                                                            <select name="languages" id="lang">
+                                                                                                <option value="전체">전체</option>
+                                                                                                <option value="품목명">품목명</option>
+                                                                                                <option value="담당자명">담당자명</option>
+                                                                                                <option value="호기">호기</option>
+                                                                                                <option value="종결여부">종결여부</option>
+                                                                                            </select>
+                                                                                            <input type="select">
+                                                                                            <input type="submit" value="검색" />
+                                                                                            </form>
+                                                                                        </div>
+                                                                                        
+                                                                                        <div class="command-loc">
+                                                                                            <div class="command-div">
+                                                                                                <table class="command-table">
+                                                                                                    <tr>
+                                                                                                        <th scope = "col">작업지시번호</th>
+                                                                                                        <th scope = "col">납품처명</th>
+                                                                                                        <th scope = "col">납기일자</th>
+                                                                                                        <th scope = "col">품목명</th>
+                                                                                                        <th scope = "col">담당자</th>
+                                                                                                        <th scope = "col">지시수량</th>
+                                                                                                        <th scope = "col">생산수량</th>
+                                                                                                        <th scope = "col">종결여부</th>
+                                                                                                        <th scope = "col">BOM</th>
+                                                                                                        <th scope = "col">공정</th>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>1호기</td>
+                                                                                                        <td>다이소</td>
+                                                                                                        <td>2025/01/22</td>
+                                                                                                        <td>싹싹지우개</td>
+                                                                                                        <td>김길동</td>
+                                                                                                        <td>4000</td>
+                                                                                                        <td>500</td>
+                                                                                                        <td>진행중</td>
+                                                                                                        <td>SS-01</td>
+                                                                                                        <td>A07</td>
+                                                                                                    </tr>
+                                                                                                    
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                            <div class="page-num-con">
+                                                                                                <div class="page-num">
+                                                                                                    <div class="page">
+                                                                                                        < 이전페이지
+                                                                                                    </div>
+                                                                                                    <div class="page">
+                                                                                                        <span>1 2 3 4 5</span>
+                                                                                                    </div>
+                                                                                                    <div class = "page">
+                                                                                                        다음페이지 >
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="add-con">
+                                                                                                    <div class="add">
+                                                                                                        추가
+                                                                                                    </div>
+                                                                                                </div> 
+                                                                                            </div>   
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                        `
+                            } else if (e.target.textContent=='생산관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `생산관리내용`
+                            } else if (e.target.textContent=='생산리포팅'){
+                                document.querySelector('.menuPage-con').innerHTML = `생산리포팅`
+                            } else if (e.target.textContent=='자재관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `자재관리`
+                            } else if (e.target.textContent=='품질관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `품질관리`
+                            } 
+                        })
+                    }// 탑 버튼 내용나오게 하기  <끝>
+                
+    
+                    // 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<시작>
+                    let buttons = document.querySelectorAll('.menuBut')
+                    for(button of buttons){
+                        button.addEventListener('click',function(e){
+    
+                            console.log(e.target.textContent) // 클릭한 요소 텍스트 나오는지 확인
+    
+                            if(e.target.textContent=='대시보드'){
+                                document.querySelector('.menuPage-con').innerHTML = `대시보드`
+                            } else if (e.target.textContent=='게시판'){
+                                document.querySelector('.menuPage-con').innerHTML = `게시판`
+                            } else if (e.target.textContent=='공지사항'){
+                                document.querySelector('.menuPage-con').innerHTML = `공지사항`
+                            }
+                        })
+                    }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
+
+                }
+
+                    
+                    
+
+
+            </script>
+    
+    </body>
+    
+</body>
+</html>
