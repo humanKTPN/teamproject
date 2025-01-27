@@ -1,0 +1,32 @@
+.findarea{
+    display: flex;
+    width: 350px;
+    height : 150px;
+    border: 1px solid black;
+    flex-direction: column;
+}
+
+.menu{
+    display: flex;
+    height: 50px;
+    border: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#idfindC, #pwfindC{
+    display: flex;
+    border: 1px solid black;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.idfindInfo{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
