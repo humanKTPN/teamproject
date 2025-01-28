@@ -1,0 +1,65 @@
+.findarea{
+    display: flex;
+    width: 350px;
+    height : 200px;
+    border: 1px solid black;
+    flex-direction: column;
+}
+
+.menu{
+    display: flex;
+    height: 50px;
+    border: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#idfindC, #pwfindC{
+    display: flex;
+    border: 1px solid black;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.idfindInfo{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height : 90px;
+}
+
+.nameInfo, .telInfo{
+    display : flex;
+    width : 300px;
+    justify-content :space-around;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+#conid, #connum {
+    text-align: center;
+    width : 100px;
+}
+
+#idfindprocess{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: blue;
+    color : white;
+}
