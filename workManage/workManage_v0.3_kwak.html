@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="workManage_v0.3_kwak.css">
+    <script src="workManage_v0.3_kwak.js"></script>
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <body>
+
+        <div class="menu-con work">
+            <div class="main-menu" id="main-menu">MENU 닫기</div>
+            <div class="menu">작업관리</div>
+            <div class="menu">생산관리</div>
+            <div class="menu">생산리포팅</div>
+            <div class="menu">자재관리</div>
+            <div class="menu">품질관리</div>
+        </div>
+        <div class="board">
+            
+            <div class="bome-con">
+
+                    <div class="mainmenu" id="work1">
+                        <div class="menuBut">대시보드</div>
+                        <div class="menuBut">게시판</div>
+                        <div class="menuBut">공지사항</div>
+
+                    </div>
+                    <div class="menuPage-con">대시보드</div>
+            </div>
+    
+    
+            <script>
+                window.addEventListener('load',init)
+
+                
+                
+                function init(){
+                    if(window.innerWidth == 500){ // 새로고침일때만 적용됨 일단 보류
+                        document.querySelector('#main-menu').textContent = 'MENU'
+                    }
+                    
+
+
+                    //메뉴 열었다 닫았다 하기<시작>
+                    document.querySelector('#main-menu').addEventListener('click',function(){
+                        
+                        
+                        if(document.querySelector('.mainmenu').classList.length == 1){
+                            document.querySelector('.mainmenu').classList.add('hide')
+                            document.querySelector('#main-menu').textContent = 'MENU 열기'
+                        } else if (document.querySelector('.mainmenu').classList.length == 2){
+                            document.querySelector('.mainmenu').classList.remove('hide')
+                            document.querySelector('#main-menu').textContent = 'MENU 닫기'
+                        }
+    
+                    }) //메뉴 열었다 닫았다 하기<끝>
+                    // 탑 버튼 내용나오게 하기 <시작>
+                    console.log(document.querySelector('.mainmenu').classList.length)// 클래스 개수
+                    let menus = document.querySelectorAll('.menu')
+                    for (menu of menus){//탑 메뉴탭에 클릭이벤트 주기
+                        menu.addEventListener('click',function(e){
+                            
+                            console.log(e.target.textContent) // 어떤 메뉴를 눌렀는지 확인
+    
+                            if(e.target.textContent=='작업관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `
+                                                                                    <div class="background">
+                                                                                        <div class = "tab-name-div">
+                                                                                            <div class="tab-name">작업지시서 조회</div>
+                                                                                        </div>
+                                                                                        <div class="dropBox">
+                                                                                        <form action="#">
+                                                                                            <select name="categories" id="cate">
+                                                                                                <option value="전체">전체</option>
+                                                                                                <option value="품목명">품목명</option>
+                                                                                                <option value="담당자명">담당자명</option>
+                                                                                                <option value="호기">호기</option>
+                                                                                                <option value="종결여부">종결여부</option>
+                                                                                            </select>
+                                                                                            <input type="select">
+                                                                                            <input type="submit" value="검색" />
+                                                                                            </form>
+                                                                                        </div>
+                                                                                        
+                                                                                        <div class="command-loc">
+                                                                                            <div class="command-div">
+                                                                                                <table class="command-table">
+                                                                                                    <tr>
+                                                                                                        <th class="command-th" scope = "col">작업지시번호</th>
+                                                                                                        <th class="command-th" scope = "col">납품처명</th>
+                                                                                                        <th class="command-th" scope = "col">납기일자</th>
+                                                                                                        <th class="command-th" scope = "col">품목명</th>
+                                                                                                        <th class="command-th" scope = "col">담당자</th>
+                                                                                                        <th class="command-th" scope = "col">지시수량</th>
+                                                                                                        <th class="command-th" scope = "col">생산수량</th>
+                                                                                                        <th class="command-th" scope = "col">종결여부</th>
+                                                                                                        <th class="command-th" scope = "col">BOM</th>
+                                                                                                        <th class="command-th" scope = "col">공정</th>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td class="command-td">1호기</td>
+                                                                                                        <td class="command-td">다이소</td>
+                                                                                                        <td class="command-td">2025/01/22</td>
+                                                                                                        <td class="command-td">싹싹지우개</td>
+                                                                                                        <td class="command-td">김길동</td>
+                                                                                                        <td class="command-td">4000</td>
+                                                                                                        <td class="command-td">500</td>
+                                                                                                        <td class="command-td">진행중</td>
+                                                                                                        <td class="command-td">SS-01</td>
+                                                                                                        <td class="command-td">A07</td>
+                                                                                                    </tr>
+                                                                                                    
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                            <div class="page-num-con">
+                                                                                                <div class="page-num">
+                                                                                                    <div class="page">
+                                                                                                        < 이전페이지
+                                                                                                    </div>
+                                                                                                    <div class="page">
+                                                                                                        <span>1 2 3 4 5</span>
+                                                                                                    </div>
+                                                                                                    <div class = "page">
+                                                                                                        다음페이지 >
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="add-con">
+                                                                                                    <div class="add">
+                                                                                                        추가
+                                                                                                    </div>
+                                                                                                </div> 
+                                                                                            </div>   
+                                                                                        </div>
+                                                                                    </div>
+                                                                                        `
+                                                         workManage(e.target.textContent,document.querySelectorAll('td'))
+                                                        //  console.log(document.querySelector('td'))
+                                                        //  select(document.getElementsByTagName('td'))
+                            } else if (e.target.textContent=='생산관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `생산관리내용`
+                            } else if (e.target.textContent=='생산리포팅'){
+                                document.querySelector('.menuPage-con').innerHTML = `생산리포팅`
+                            } else if (e.target.textContent=='자재관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `자재관리`
+                            } else if (e.target.textContent=='품질관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `품질관리`
+                            } 
+                        })
+                    }// 탑 버튼 내용나오게 하기  <끝>
+                
+    
+                    // 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<시작>
+                    let buttons = document.querySelectorAll('.menuBut')
+                    for(button of buttons){
+                        button.addEventListener('click',function(e){
+    
+                            console.log(e.target.textContent) // 클릭한 요소 텍스트 나오는지 확인
+    
+                            if(e.target.textContent=='대시보드'){
+                                document.querySelector('.menuPage-con').innerHTML = `대시보드`
+                            } else if (e.target.textContent=='게시판'){
+                                document.querySelector('.menuPage-con').innerHTML = `게시판`
+                            } else if (e.target.textContent=='공지사항'){
+                                document.querySelector('.menuPage-con').innerHTML = `공지사항`
+                            }
+                        })
+                    }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
+
+                }
+
+                    
+                    
+
+
+            </script>
+    
+    </body>
+    
+</body>
+</html>
