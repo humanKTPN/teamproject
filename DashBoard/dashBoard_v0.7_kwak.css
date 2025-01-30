@@ -39,7 +39,7 @@ body{
     /* width: 300px; */
     height: 100%;
     background-color: #0559689f;
-    min-width: 120px;
+    min-width: 155.92px;
 }
 .board {
     border: 5px solid #0C4A60;
@@ -498,6 +498,9 @@ body{
     .list-con{
         width: 400px;
     }
+    .hide{
+        display: none;
+    }
 
 
 
@@ -523,6 +526,7 @@ body{
     margin: 0.5%;
     padding-right: 1%;
     padding-bottom: 0.5%;
+    min-width: 155.92px;
 
 }
 .fas{
