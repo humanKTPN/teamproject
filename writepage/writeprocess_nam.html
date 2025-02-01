@@ -12,31 +12,18 @@
 <body>
     <div class="dom">
         <div class="writeprocess">
-            <span class='text'>title</span>
-            <input type="text" id='title' placeholder="제목을 입력하시오">
-            <span class='text'>content</span>
-            <textarea type="text" id="content" placeholder="내용을 입력하세요"></textarea>
+            <!-- 글쓰기 조회페이지 있어야 됨. -->
+            <form action="nextpage.html" method="get" id="summit">
+                <span class='text'>title</span>
+                <input type="text" id='title' placeholder="제목을 입력하시오">
+                <span class='text'>content</span>
+                <textarea type="text" id="content" placeholder="내용을 입력하세요"></textarea>
+            </form>
         </div>
         <div class='writebutton'>
-            <button type='button' id='button'>글쓰기</button>
+            <button type='submit' id='button' onclick="alert('작성완료!')">글쓰기</button>
         </div>
     </div>
-
-    <script>
-        window.addEventListener("load", function () {
-            console.log('글쓰기 페이지에 들어옴')
-        })
-
-        const button1 = document.querySelector('#button')
-        button1.addEventListener('click', write)
-
-        function write() {
-            const title = document.querySelector('#title')
-            const content = document.querySelector('#content')
-            console.log(title.value)
-            console.log(content.value)
-        }
-    </script>
 </body>
 
 </html>
