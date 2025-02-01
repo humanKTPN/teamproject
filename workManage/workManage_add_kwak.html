@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="workManage_kwak.css">
+    <script src="workManage_kwak.js"></script>
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <body>
+
+        <div class="menu-con work">
+            <div class="main-menu" id="main-menu">MENU 닫기</div>
+            <div class="menu">작업관리</div>
+            <div class="menu">생산관리</div>
+            <div class="menu">생산리포팅</div>
+            <div class="menu">자재관리</div>
+            <div class="menu">품질관리</div>
+        </div>
+        <div class="board">
+            
+            <div class="bome-con">
+
+                    <div class="mainmenu" id="work1">
+                        <div class="menuBut">대시보드</div>
+                        <div class="menuBut">게시판</div>
+                        <div class="menuBut">공지사항</div>
+
+                    </div>
+                    <div class="menuPage-con">
+                        <div class="pop">
+                        <div class="add-table">
+                         <img class="eraser-img">
+                         
+                         <div class="select-body">
+                            <div class="select-con">
+                                <div class="select-1">
+                                담당자<input type="text" placeholder="담당자입력">
+                                납기일자<input type="text" placeholder="일자입력">
+                                수량<input type="text" placeholder="수량입력">
+                                </div>
+                            </div>
+
+                            <div class="select-con">
+                                <div class="select-1">
+                                품목명<input type="text" placeholder="품목명입력">
+                                일자<input type="text" placeholder="일자입력">
+                                납품처<input type="text" placeholder="납품처입력">
+                                </div>
+                            </div>
+
+                            <div class="select-con">
+                                <div class="select-1">
+                                BOM<input type="text" placeholder="BOM입력">
+                                공정<input type="text" placeholder="공정입력">
+                                품목코드<input type="text" placeholder="품목코드">
+                                </div>
+                            </div>
+                        </div>
+                         
+                         </div>
+
+                        </div>
+                        <div class="bompro-con">
+                            <div class="bom-con">
+                                <h4>BOM : </h4>
+                            </div>
+                            <div class="process">
+                                <h4>공정 : </h4>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+    
+    
+            <script>
+                window.addEventListener('load',init)
+
+                
+                
+                function init(){
+                    if(window.innerWidth == 500){ // 새로고침일때만 적용됨 일단 보류
+                        document.querySelector('#main-menu').textContent = 'MENU'
+                    }
+                    
+
+
+                    //메뉴 열었다 닫았다 하기<시작>
+                    document.querySelector('#main-menu').addEventListener('click',function(){
+                        
+                        
+                        if(document.querySelector('.mainmenu').classList.length == 1){
+                            document.querySelector('.mainmenu').classList.add('hide')
+                            document.querySelector('#main-menu').textContent = 'MENU 열기'
+                        } else if (document.querySelector('.mainmenu').classList.length == 2){
+                            document.querySelector('.mainmenu').classList.remove('hide')
+                            document.querySelector('#main-menu').textContent = 'MENU 닫기'
+                        }
+    
+                    }) //메뉴 열었다 닫았다 하기<끝>
+                    // 탑 버튼 내용나오게 하기 <시작>
+                    console.log(document.querySelector('.mainmenu').classList.length)// 클래스 개수
+                    let menus = document.querySelectorAll('.menu')
+                    for (menu of menus){//탑 메뉴탭에 클릭이벤트 주기
+                        menu.addEventListener('click',function(e){
+                            
+                            console.log(e.target.textContent) // 어떤 메뉴를 눌렀는지 확인
+    
+                            if(e.target.textContent=='작업관리'){
+                                window.location.href="workManage_main_v0.4_kwak.html"
+                                                        //  console.log(document.querySelector('td'))
+                                                        //  select(document.getElementsByTagName('td'))
+                            } else if (e.target.textContent=='생산관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `생산관리내용`
+                            } else if (e.target.textContent=='생산리포팅'){
+                                document.querySelector('.menuPage-con').innerHTML = `생산리포팅`
+                            } else if (e.target.textContent=='자재관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `자재관리`
+                            } else if (e.target.textContent=='품질관리'){
+                                document.querySelector('.menuPage-con').innerHTML = `품질관리`
+                            } 
+                        })
+                    }// 탑 버튼 내용나오게 하기  <끝>
+                
+    
+                    // 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<시작>
+                    let buttons = document.querySelectorAll('.menuBut')
+                    for(button of buttons){
+                        button.addEventListener('click',function(e){
+    
+                            console.log(e.target.textContent) // 클릭한 요소 텍스트 나오는지 확인
+    
+                            if(e.target.textContent=='대시보드'){
+                                document.querySelector('.menuPage-con').innerHTML = `대시보드`
+                            } else if (e.target.textContent=='게시판'){
+                                document.querySelector('.menuPage-con').innerHTML = `게시판`
+                            } else if (e.target.textContent=='공지사항'){
+                                document.querySelector('.menuPage-con').innerHTML = `공지사항`
+                            }
+                        })
+                    }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
+
+                }
+
+                    
+                    
+
+
+            </script>
+    
+    </body>
+    
+</body>
+</html>
