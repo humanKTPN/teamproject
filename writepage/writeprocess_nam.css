@@ -1,0 +1,28 @@
+.dom{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.writeprocess{
+    display: flex;
+    flex-direction: column;
+}
+
+#title{
+    text-align: left;
+    width: 600px;
+}
+
+#content{
+    width: 600px;
+    height: 150px;
+}
+
+#button{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width : 70px;
+}
