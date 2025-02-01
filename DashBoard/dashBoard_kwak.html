@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 여기에 대시보드 css 파일옮기기 -->
+    <link rel="stylesheet" href="dashBoard_kwak.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="dashBoard_kwak.js"></script>    
+    <style>
+        /******************
+        모바일 버전 구현(불량쪽 차트는 ....)
+        *******************/
+    </style>
+</head>
+<body>
+    <body>
+        <div class="menu-con work">
+            <div class="main-menu" id="main-menu">MENU 닫기</div>
+            <div class="menu">작업관리</div>
+            <div class="menu">생산관리</div>
+            <div class="menu">생산리포팅</div>
+            <div class="menu">자재관리</div>
+            <div class="menu">품질관리</div>
+        </div>
+        <div class="board">
+            
+            <div class="mainmenu" id="work1">
+                <div class="menuBut">대시보드</div>
+                <div class="menuBut">게시판</div>
+                <div class="menuBut">공지사항</div>
+                <div class="menuBut">기준관리</div>
+                <div class="sub-menu">
+                    <div class="subBut"><i class="fas fa-regular fa-arrow-right-from-bracket fa-lg"></i>&nbsp;로그아웃</div>
+                </div>
+            </div>
+            <div class="bome-con">
+
+
+                    <div class="menuPage-con">    
+                        <div class="container">
+                        <div class="border-1">
+                            <div class="border-top">
+                                <div class="title">작업/생산관리</div>
+                                <div class="dayWork" media="screen">
+                                    <div id = "dayWork-board" >
+                                        <div id = "day-list">
+                                            금일 생산 지시 사항
+                                        </div>
+                                        <div class="list-con">
+                                            <table class="list-table">
+                                                <tr>
+                                                    <td class="list-td">1</td>
+                                                    <td class="list-td">1호기</td>
+                                                    <td class="list-td">생산</td>
+                                                    <td class="list-td">...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="list-td">2</td>
+                                                    <td class="list-td">1호기</td>
+                                                    <td class="list-td">생산</td>
+                                                    <td class="list-td">...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="list-td">3</td>
+                                                    <td class="list-td">A제품</td>
+                                                    <td class="list-td">생산</td>
+                                                    <td class="list-td">...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="list-td">4</td>
+                                                    <td class="list-td">B제품</td>
+                                                    <td class="list-td">생산</td>
+                                                    <td class="list-td">...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="list-td">5</td>
+                                                    <td class="list-td">C제품</td>
+                                                    <td class="list-td">생산</td>
+                                                    <td class="list-td">...<i id="arrow-up" class="arrow fa-solid fa-arrow-up"></i></td>
+                                                </tr>
+        
+                                            </table>
+                                        </div>
+                                    </div>
+                                        <div id = "dayWork-board2">
+                                                <table class="command-table">
+                                                    <tr>
+                                                        <th colspan='2' class="th">작업지시번호</th>
+                                                        <th colspan='2' class="th">납기일자</th>
+                                                        <th colspan='2' class="th">담당자</th>
+                                                    </tr>
+                                                        <tr>
+                                                            <td class="td">1호기</td>
+                                                            <td class="td">2호기</td>
+                                                            <td class="td">1호기</td>
+                                                            <td class="td">2호기</td>
+                                                            <td class="td">김기동</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td">3호기</td>
+                                                            <td class="td">4호기</td>
+                                                            <td class="td">3호기</td>
+                                                            <td class="td">4호기</td>
+                                                            <td class="td">홍희야</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td">5호기</td>
+                                                            <td class="td">6호기</td>
+                                                            <td class="td">5호기</td>
+                                                            <td class="td">6호기</td>
+                                                            <td class="td">김둘리</td>
+                                                        </tr>
+                                                </table>
+                                        </div>                                  
+                                </div>
+                            </div>
+                    </div>
+                        <div class="border-2">
+                            <div class="border">
+                                <div class="title">재고현황</div>
+                                <div id="bad">
+                                    <div id = "badChart">
+                                        <canvas id = "bdChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border2">
+                                <div class="title">불량률 현황</div>
+                                <div id="tempHu">
+                                    <div class="th2-con">
+                                        <table class="th2-table">
+                                            <tr>
+                                                <th class="th2">품목명</th>
+                                                <th class="th2">불량률</th>
+                                            </tr>
+                                            <!-- <tbody> -->
+                                                <tr>
+                                                    <td class="td">1호기</td>
+                                                    <td class="td">2호기</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td">3호기</td>
+                                                    <td class="td">4호기</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="td">3호기</td>
+                                                    <td class="td">4호기</td>
+                                                </tr>
+                                            <!-- </tbody> -->
+                                        </table>
+                                        <div id = "thchart-con">
+                                            <canvas id="thchart" ></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+    </body>
+    
+</body>
+</html>
