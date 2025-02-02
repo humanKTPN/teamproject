@@ -5,10 +5,10 @@ function workManage_select(){
     select_td= document.querySelectorAll('.command-td')
     for(sel of select_td){
         sel.addEventListener('click',function(){
-            window.location.href="workManage_select_v0.4_kwak.html"
+            window.location.href="workManage_select_kwak.html"
         })
     }
     document.querySelector('.add').addEventListener('click',function(){
-        window.location.href="workManage_add_v0.4_kwak.html"
+        window.location.href="workManage_add_kwak.html"
     })
 }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 여기에 대시보드 css 파일옮기기 -->
+    <link rel="stylesheet" href="workManage_main_kwak.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="workManage_main_kwak.js"></script>    
+    <style>
+        /******************
+        모바일 버전 구현(불량쪽 차트는 ....)
+        *******************/
+    </style>
+</head>
+<body>
+    <body>
+        <div class="menu-con work">
+            <div class="main-menu" id="main-menu">MENU 열기</div>
+            <div class="menu">작업관리</div>
+            <div class="menu">생산관리</div>
+            <div class="menu">생산리포팅</div>
+            <div class="menu">자재관리</div>
+            <div class="menu">품질관리</div>
+        </div>
+        <div class="board">
+            
+            <div class="mainmenu hide" id="work1">
+                <div class="menuBut">대시보드</div>
+                <div class="menuBut">게시판</div>
+                <div class="menuBut">공지사항</div>
+                <div class="menuBut">기준관리</div>
+                <div class="sub-menu">
+                    <div class="subBut"><i class="fas fa-regular fa-arrow-right-from-bracket fa-lg"></i>&nbsp;로그아웃</div>
+                </div>
+            </div>
+            <div class="bome-con">
+
+
+                    <div class="menuPage-con">    
+                       <!-- html 들어갈 곳 -->
+                       <div class="background">
+                        <div class = "tab-name-div">
+                            <div class="tab-name">작업지시서 조회</div>
+                        </div>
+                        <div class="dropBox">
+                        <form action="#">
+                            <select name="categories" id="cate">
+                                <option value="전체">전체</option>
+                                <option value="품목명">품목명</option>
+                                <option value="담당자명">담당자명</option>
+                                <option value="호기">호기</option>
+                                <option value="종결여부">종결여부</option>
+                            </select>
+                            <input type="select" class="select">
+                            <input type="submit" class="submit" value="검색" />
+                            </form>
+                        </div>
+                        
+                        <div class="command-loc">
+                            <div class="command-div">
+                                <table class="command-table">
+                                    <tr>
+                                        <th class="command-th" scope = "col">작업지시번호</th>
+                                        <th class="command-th" scope = "col">납품처명</th>
+                                        <th class="command-th" scope = "col">납기일자</th>
+                                        <th class="command-th" scope = "col">품목명</th>
+                                        <th class="command-th" scope = "col">담당자</th>
+                                        <th class="command-th" scope = "col">지시수량</th>
+                                        <th class="command-th" scope = "col">생산수량</th>
+                                        <th class="command-th" scope = "col">종결여부</th>
+                                        <th class="command-th" scope = "col">BOM</th>
+                                        <th class="command-th" scope = "col">공정</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="command-td">1호기</td>
+                                        <td class="command-td">다이소</td>
+                                        <td class="command-td">2025/01/22</td>
+                                        <td class="command-td">싹싹지우개</td>
+                                        <td class="command-td">김길동</td>
+                                        <td class="command-td">4000</td>
+                                        <td class="command-td">500</td>
+                                        <td class="command-td">진행중</td>
+                                        <td class="command-td">SS-01</td>
+                                        <td class="command-td">A07</td>
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+                        </div>
+                            <div class="page-num-con">
+                                <div class="page-num">
+                                    <div class="page pre-page">
+                                        < 이전페이지
+                                    </div>
+                                    <div class="page">
+                                        <span>1 2 3 4 5</span>
+                                    </div>
+                                    <div class = "page next-page">
+                                        다음페이지 >
+                                    </div>
+                                </div>
+                                <div class="add-con">
+                                    <div class="add">
+                                        추가
+                                    </div>
+                                </div> 
+                            </div>   
+                        </div>
+                    </div>
+                    </div>
+             
+                    </div> 
+                </div>
+            </div>
+    </body>
+    
+</body>
+</html>
