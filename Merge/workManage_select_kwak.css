@@ -718,7 +718,7 @@ form{
     width: 100%;
     min-width: 300px;
 }
-@media screen and (max-width: 500px) {
+@media (max-width: 800px) {
     .board{
         height: auto;
     }
@@ -773,6 +773,9 @@ form{
     }
     .eraser-img{
         margin-top: 5px;
+    }
+    .hide{
+        display: none;
     }
 }
 .confirm-con{
