@@ -54,10 +54,10 @@ function init(){
                 window.location.href="dashBoard_kwak.html"
             } else if (e.target.textContent=='게시판'){
                  // 게시판 메인
-                window.location.href="#"
+
             } else if (e.target.textContent=='공지사항'){
                  // 공지사항 메인
-                window.location.href="#"
+
             }  else if (e.target.textContent=='기준관리'){
                  // 기준관리 메인
                 window.location.href="workManage_main_kwak.html"
@@ -65,6 +65,10 @@ function init(){
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
     workManage_select()
+    // 로그아웃 버튼 
+    document.querySelector('.subBut').addEventListener('click',function(){
+        window.location.href = "loginpage_Nam.html"
+        })
 }
 
 function workManage_select(){

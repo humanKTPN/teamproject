@@ -18,7 +18,7 @@ function init(){
 
     }) //메뉴 열었다 닫았다 하기<끝>
     // 탑 버튼 내용나오게 하기 <시작>
-    console.log(document.querySelector('.mainmenu').classList.length)// 클래스 개수
+    // console.log(document.querySelector('.mainmenu').classList.length)// 클래스 개수
     let menus = document.querySelectorAll('.menu')
     for (menu of menus){//탑 메뉴탭에 클릭이벤트 주기
         menu.addEventListener('click',function(e){
@@ -34,7 +34,7 @@ function init(){
               } else if (e.target.textContent=='자재관리'){
                 
               } else if (e.target.textContent=='품질관리'){
-                window.location.href="workManage_main_kwak.html"
+
             } 
         })
     }// 탑 버튼 내용나오게 하기  <끝>
@@ -48,7 +48,6 @@ function init(){
             // console.log(e.target.textContent) // 클릭한 요소 텍스트 나오는지 확인
            
             if(e.target.textContent=='대시보드'){
-                // document.querySelector('.menuPage-con').innerHTML = ``
                 window.location.href="dashBoard_kwak.html"
             } else if (e.target.textContent=='게시판'){
                 
@@ -59,6 +58,9 @@ function init(){
             }
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
+    document.querySelector('.subBut').addEventListener('click',function(){
+      window.location.href = "loginpage_Nam.html"
+    })
 
 }
 

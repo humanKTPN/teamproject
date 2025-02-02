@@ -67,6 +67,10 @@ function init(){
         // alert("추가되었습니다.")
         window.location.href="masterdataManage_edit_kwak.html"
     })
+    // 로그아웃 버튼 
+    document.querySelector('.subBut').addEventListener('click',function(){
+        window.location.href = "loginpage_Nam.html"
+        })
 
 }
 

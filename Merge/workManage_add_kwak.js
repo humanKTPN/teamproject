@@ -99,5 +99,9 @@ function init(){
 
 
     })
+    // 로그아웃 버튼 
+    document.querySelector('.subBut').addEventListener('click',function(){
+        window.location.href = "loginpage_Nam.html"
+        })
 }
 

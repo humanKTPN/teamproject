@@ -61,4 +61,8 @@ function init(){
     document.querySelector('.store').addEventListener('click',function(){
         alert("저장되었습니다.")
     })
+    // 로그아웃 버튼 
+    document.querySelector('.subBut').addEventListener('click',function(){
+    window.location.href = "loginpage_Nam.html"
+    })
 }

@@ -655,7 +655,7 @@ form{
     width: 100%;
     /* min-width: 700px; */
 }
-.add,.prev{
+.add,.del,.mod{
     border: 1px solid darkgray;
     width: 50px;
     text-align: center;
