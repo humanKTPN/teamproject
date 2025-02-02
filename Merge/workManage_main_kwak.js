@@ -22,7 +22,6 @@ function init(){
     let menus = document.querySelectorAll('.menu')
     for (menu of menus){//탑 메뉴탭에 클릭이벤트 주기
         menu.addEventListener('click',function(e){
-
             // console.log(e.target.textContent) // 어떤 메뉴를 눌렀는지 확인
             // 클릭했을때 해당 페이지로 넘어가는 Java Script
             if(e.target.textContent=='작업관리'){
@@ -72,7 +71,6 @@ function init(){
 }
 
 function workManage_select(){
-    // console.log('ㅎㅇ')
     select_td= document.querySelectorAll('.command-td')
     for(sel of select_td){
         sel.addEventListener('click',function(){
@@ -81,6 +79,12 @@ function workManage_select(){
     }
     document.querySelector('.add').addEventListener('click',function(){
         window.location.href="workManage_add_kwak.html"
+    })
+    document.querySelector('.mod').addEventListener('click',function(){
+        alert("수정되었습니다.")
+    })
+    document.querySelector('.del').addEventListener('click',function(){
+        alert("삭제되었습니다.")
     })
 
     document.querySelector('.pre-page').addEventListener('click',function(){
