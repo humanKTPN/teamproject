@@ -60,7 +60,7 @@ function init(){
                 window.location.href="#"
             }  else if (e.target.textContent=='기준관리'){
                  // 기준관리 메인
-                window.location.href="workManage_main_kwak.html"
+                window.location.href="masterdataManage_main_kwak.html"
             }
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>

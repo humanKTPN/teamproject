@@ -25,7 +25,6 @@ function init(){
 
             // console.log(e.target.textContent) // 어떤 메뉴를 눌렀는지 확인
             // 클릭했을때 해당 페이지로 넘어가는 Java Script
-            dashBoard (e.target.textContent)
             if(e.target.textContent=='작업관리'){
                 // 작업관리 메인
                 window.location.href="#"
