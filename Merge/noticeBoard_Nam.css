@@ -7,6 +7,7 @@ body{
 }
 .menu-con {
     display: flex;
+    flex-direction: column;
     width: 100%;
     border: 5px solid #2f373a;
 }
@@ -192,11 +193,18 @@ body{
     color: white;
     text-align: left;
     /* border: 1px solid red; */
-    width: 93%;
+    width:100%;
+    height: 46px;
     font-family: 'Pretendard-Regular';
     font-weight: bold;
     font-size: large;
-    padding-left: 1%;
+    align-items: center;
+    /* padding-left: 1%; */
+    /* padding: 0 1%; */
+    background-color: #2f373a;
+    border: 1px solid #2f373a;
+    display: flex;
+    justify-content: space-between;
 }
 #ham{
     cursor: pointer;
@@ -720,4 +728,40 @@ body{
 
 .pnum {
     margin: 0px 10px;
+}
+.main-menu-con{
+    display: flex;
+    flex-direction: row;
+}
+#title-name{
+    color: white;
+    text-align: left;
+    /* border: 1px solid red; */
+    width:100%;
+    height: 46px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+    font-size: large;
+    align-items: center;
+    /* padding-left: 1%; */
+    /* padding: 0 1%; */
+    background-color: #2f373a;
+    border: 1px solid #2f373a;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleName{
+    /* border: 1px solid rebeccapurple; */
+    width: 13%;
+    text-align: center;
+    min-width: 268px;
+}
+.icon-sub{
+    /* border: 10px solid red; */
+    display: flex;
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    min-width: 268px;
 }
