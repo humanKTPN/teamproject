@@ -1,0 +1,23 @@
+/* TestMM_main_park.html */
+
+.material-table {
+    background: white;
+    width: 100%;
+}
+
+
+
+.material-th {
+    width: 1000px;
+}
+
+.material-td {
+    width: 1000px;
+    text-align: center;
+}
+
+/* a 태그 밑줄 제거 */
+a {
+    text-decoration-line: none;
+    color: black;
+}

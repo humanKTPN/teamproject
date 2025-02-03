@@ -1,0 +1,19 @@
+/* TestQA_report_park.html */
+
+.div_report {
+    text-align: center;
+}
+
+.div_report_content {
+    display: flex;
+}
+
+.div_report_item {
+    text-align: center;
+}
+
+/* a 태그 밑줄 제거 */
+a {
+    text-decoration-line: none;
+    color: black;
+}

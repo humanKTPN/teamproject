@@ -1,0 +1,7 @@
+/* TestQA_main_park_html */
+
+/* a 태그 밑줄 제거 */
+a {
+    text-decoration-line: none;
+    color: black;
+}

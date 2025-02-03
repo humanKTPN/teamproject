@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 여기에 대시보드 css 파일옮기기 -->
+    <link rel="stylesheet" href="../TestQA_css/layOut_kwak.css" type="text/css">
+    <link rel="stylesheet" href="../TestQA_css/TestQA_report_park.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="../TestQA_js/layOut_kwak.js"></script>
+    <script src="../TestQA_js/TestQA_report_park.js" defer></script>
+    <style>
+        /******************
+        모바일 버전 구현(불량쪽 차트는 ....)
+        *******************/
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="menu-con work">
+            <div class="main-menu" id="main-menu">MENU 닫기</div>
+            <div class="menu">작업관리</div>
+            <div class="menu">생산관리</div>
+            <div class="menu">생산리포팅</div>
+            <div class="menu">자재관리</div>
+            <div class="menu">품질관리</div>
+        </div>
+        <div class="board">
+
+            <div class="mainmenu" id="work1">
+                <div class="menuBut">대시보드</div>
+                <div class="menuBut">게시판</div>
+                <div class="menuBut">공지사항</div>
+                <div class="menuBut">기준관리</div>
+                <div class="sub-menu">
+                    <div class="subBut"><i class="fas fa-regular fa-arrow-right-from-bracket fa-lg"></i>&nbsp;로그아웃</div>
+                </div>
+            </div>
+            <div class="bome-con">
+
+                <div>
+                    <div class="menuPage-con">
+                        <!-- html 들어갈 곳 -->
+                        <!-- TestQA_report -->
+
+                        <div class="div_report">
+                            품질 보고서
+                        </div>
+
+                        <div class="div_report_content">
+                            <div class="div_report_item">항목</div>
+                            <div class="div_report_item">내용</div>
+                        </div>
+
+                        <div class="div_report_content">
+                            <div class="div_report_item">
+                                <div>1. 배치번호</div>
+                                <div>2. 품목코드</div>
+                                <div>3. 품목명</div>
+                                <div>4. 작업자</div>
+                                <div>5. 생산일시</div>
+                                <div>6. 투입량</div>
+                                <div>7. 생산량</div>
+                                <div>8. 생산률</div>
+                                <div>9. 불량률</div>
+                                <div>10. 검수자</div>
+                                <div>11. 검수일시</div>
+                                <div>12. 강도</div>
+                                <div>13. 크기</div>
+                                <div>14. 색상</div>
+                                <div>15. 잘지워지는 정도</div>
+                                <div>16. 기타</div>
+                                <div>17. 최종 결과</div>
+                            </div>
+
+                            <div class="div_report_item">
+                                <div>생산에서 넘어옴</div>
+                                <div>생산에서 넘어옴</div>
+                                <div>생산에서 넘어옴</div>
+                                <div>생산에서 넘어옴</div>
+                                <div>생산에서 넘어옴</div>
+                                <div>생산에서 넘어옴</div>
+                                <div>생산에서 넘어옴</div>
+                                <div>생산에서 넘어옴</div>
+                                <div>생산에서 넘어옴</div>
+
+                                <form action="./TestQA.html">
+                                    <input id="QA_tester" type="text" value="" placeholder="입력하시오" onchange="change()">
+                                    <br>
+                                    <input id="QA_day" type="text" value="" placeholder="입력하시오" onchange="change()">
+                                    <br>
+                                    <input id="QA_fiber" type="text" value="" placeholder="입력하시오" onchange="change()">
+                                    <br>
+                                    <input id="QA_size" type="text" value="" placeholder="입력하시오" onchange="change()">
+                                    <br>
+                                    <input id="QA_color" type="text" value="" placeholder="입력하시오" onchange="change()">
+                                    <br>
+                                    <input id="QA_erase" type="text" value="" placeholder="입력하시오" onchange="change()">
+                                    <br>
+                                    <input id="QA_etc" type="text" value="" placeholder="입력하시오" onchange="change()">
+                                    <br>
+                                    <input id="QA_result" type="text" value="" placeholder="입력하시오" onchange="change()">
+                                    <br>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <button type="button" id="btn_report_confirm"><a href="./TestQA_main_park.html">확인</a></button>
+                        </div>
+                    </div>
+
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</body>
+
+</html>

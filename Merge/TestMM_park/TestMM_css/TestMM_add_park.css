@@ -1,0 +1,47 @@
+/* TestMM_add_park.html */
+
+.flex_child {
+    display: flex;
+}
+
+.item {
+    width: 20%;
+    text-align: center;
+}
+
+.btn_input_add {
+   width: 10%;
+}
+
+ .div_btn_input_add {
+    text-align: center;
+ }
+
+ .div_btn_add_confirm {
+    text-align: right;
+ }
+
+ .div_btn {
+    
+ }
+
+
+/*  */
+.flex_page {
+   display: flex;
+   justify-self: center;
+}
+
+.item_page {
+   text-align: center;
+   width: 200px;
+}
+
+/* a 태그 밑줄 제거 */
+a {
+   text-decoration-line: none;
+}
+
+.div_button {
+   
+}
