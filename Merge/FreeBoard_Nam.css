@@ -1,0 +1,82 @@
+.pagecon {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+#pageinfo {
+    display: flex;
+    border: 1px solid black;
+    width: 150px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.boardarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.middle_board {
+    display: flex;
+    width: 800px;
+    flex-direction: column;
+}
+
+.searcharea {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.boardtable,
+.boardcontents {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+}
+
+.boardlist>tr {
+    align-items: center;
+}
+
+.num {
+    text-align: center;
+    width: 100px;
+}
+
+.writetitle {
+    text-align: center;
+    width: auto;
+}
+
+.writeuser {
+    text-align: center;
+    width: 120px;
+}
+
+.writedate {
+    text-align: center;
+    width: 120px;
+}
+
+.viewcount {
+    text-align: center;
+    width: 120px;
+}
+
+.pageline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.pnum {
+    margin: 0px 10px;
+}
