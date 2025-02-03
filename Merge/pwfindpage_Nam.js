@@ -34,4 +34,11 @@ function message() {
             userfind.textContent = '전화번호는 필수입니다!';
         }
     }
+
+    document.querySelector('#idfindC').addEventListener('click', pwprocess)
+    function pwprocess() {
+        let pwfinder = document.querySelector('#idfindC')
+        console.log('아이디 찾기로 이동')
+        location.href = "idfindpage_Nam.html"
+    }
 }
