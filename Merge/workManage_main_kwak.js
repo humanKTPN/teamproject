@@ -83,8 +83,22 @@ function workManage_select(){
     document.querySelector('.mod').addEventListener('click',function(){
         alert("수정되었습니다.")
     })
-    document.querySelector('.del').addEventListener('click',function(){
-        alert("삭제되었습니다.")
+    document.querySelector('.del').addEventListener('click',function(e){
+        // document.querySelector('.delcheck').classList.remove('hide')
+        let chks = document.querySelectorAll('.delcheck')
+        let smpl = document.querySelector('.delcheck')
+        if(smpl.classList.length == 2){
+            for(chk of chks){
+                chk.classList.remove('hide')    
+            }
+        } else{
+            for(chk of chks){
+                chk.classList.add('hide')    
+            } 
+        }
+        // alert("삭제되었습니다.")
+        // console.log(e.target)
+        
     })
 
     document.querySelector('.pre-page').addEventListener('click',function(){

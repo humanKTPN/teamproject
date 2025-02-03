@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
         if ((id.value == "admin" && pw.value == 1234) || (id.value == "user" && pw.value == 5678)) {
             console.log('로그인 성공')
             userchk.textContent = ''
-            location.href = "mesSolution_v0.1.html"
+            location.href = "dashBoard_kwak.html"
         } else {
             console.log('회원정보 없음')
             userchk.textContent = '회원정보가 일치하지 않습니다.'

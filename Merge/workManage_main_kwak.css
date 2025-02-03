@@ -7,8 +7,13 @@ body{
 }
 .menu-con {
     display: flex;
+    flex-direction: column;
     width: 100%;
     border: 5px solid #2f373a;
+}
+.main-menu-con{
+    display: flex;
+    flex-direction: row;
 }
 #main-menu {
     border: 1px solid rgba(255, 255, 255, 0.267);
@@ -180,22 +185,12 @@ body{
 .fas{
     color:white;
 }
-.icon, .icon-sub{
+.icon{
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-right: 0.5%;
-    padding-left: 1%;
-}
-#title-name{
-    color: white;
-    text-align: left;
-    /* border: 1px solid red; */
-    width: 93%;
-    font-family: 'Pretendard-Regular';
-    font-weight: bold;
-    font-size: large;
     padding-left: 1%;
 }
 #ham{
@@ -517,19 +512,7 @@ body{
     width: 45%;
     min-width: 90px;
 }
-.sub-menu{
-    /* border: 5px solid red; */
-    height: 58%;
-    /* width: 100%; */
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    margin: 0.5%;
-    padding-right: 1%;
-    padding-bottom: 0.5%;
-    min-width: 127.92px;
 
-}
 .fas{
     /* color: black; */
     margin: 0;
@@ -722,7 +705,35 @@ form{
     min-width: 300px;
 }
 
-
-
+#title-name{
+    color: white;
+    text-align: left;
+    /* border: 1px solid red; */
+    width:100%;
+    height: 46px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+    font-size: large;
+    align-items: center;
+    /* padding-left: 1%; */
+    /* padding: 0 1%; */
+    background-color: #2f373a;
+    border: 1px solid #2f373a;
+    display: flex;
+    justify-content: space-between;
+}
 
 /* html에서 옮김 (끝)*/
+.titleName{
+    /* border: 1px solid rebeccapurple; */
+    width: 13%;
+    text-align: center;
+}
+.icon-sub{
+    /* border: 10px solid red; */
+    display: flex;
+    width: 15%;
+    display: flex;
+    justify-content: space-around
+    /* min-width: 500px; */
+}
