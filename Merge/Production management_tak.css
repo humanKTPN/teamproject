@@ -1,0 +1,108 @@
+.dayWork-T {
+    padding: 0 20px;
+}
+
+.dayWork-T td {
+    border-bottom: 1px solid darkblue;
+    /* border-top: 1px solid darkblue; */
+    text-align: center;
+    width: 70px;
+    height: 30px;
+}
+
+#table-T {
+    margin: 0;
+}
+
+.lineManu td {
+    width: 140px;
+    border: 1px solid black;
+}
+
+.ssTable table,
+.ssTable tr,
+.ssTable th,
+.ssTable td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 35px;
+}
+
+.ssTable td {
+    width: 25%;
+    text-align: center;
+}
+
+.ssTable {
+    border: 1px solid black;
+}
+
+.ssTable table {
+    width: 100%;
+}
+
+.schedule table,
+.schedule tr,
+.schedule th,
+.schedule td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 35px;
+}
+
+.schedule table {
+    width: 100%;
+    /* border: 1px solid black; */
+
+}
+
+.schedule {
+    width: 80%;
+    /* margin: 20px 0; */
+    width: 60%;
+}
+
+.ssmanu {
+    border: 1px solid black;
+    width: 100%;
+    height: 300px;
+    text-align: left;
+    line-height: 40px;
+    display: flex;
+    flex-direction: column
+        /* align-items: flex-start */
+}
+
+.ssmanu div {
+    margin: 0 20px 0;
+}
+
+.ss {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start
+}
+.point {
+    background-color: darkred;
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .mainManu {
+        width: 100%;
+        height: 18%;
+    }
+
+    .manuBut {
+
+        text-align: center;
+    }
+
+    .manuPage {
+        position: relative;
+        left: -1px;
+        width: 100%;
+        height: 455%;
+    }
+
+}

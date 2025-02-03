@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 여기에 대시보드 css 파일옮기기 -->
+    <link rel="stylesheet" href="project1_css/layOut_kwak.css">
+    <link rel="stylesheet" href="project1_css/Production reporting_tak.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="project1_js/layOut_kwak.js"></script>
+    <script src="project1_js/Production reporting_tak.js"></script>
+    <style>
+        /******************
+        모바일 버전 구현(불량쪽 차트는 ....)
+        *******************/
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="menu-con work">
+            <div class="main-menu" id="main-menu">MENU 닫기</div>
+            <div class="menu">작업관리</div>
+            <div class="menu">생산관리</div>
+            <div class="menu">생산리포팅</div>
+            <div class="menu">자재관리</div>
+            <div class="menu">품질관리</div>
+        </div>
+        <div class="board">
+
+            <div class="mainmenu" id="work1">
+                <div class="menuBut">대시보드</div>
+                <div class="menuBut">게시판</div>
+                <div class="menuBut">공지사항</div>
+                <div class="menuBut">기준관리</div>
+                <div class="sub-menu">
+                    <div class="subBut"><i class="fas fa-regular fa-arrow-right-from-bracket fa-lg"></i>&nbsp;로그아웃</div>
+                </div>
+            </div>
+
+            <div class="bome-con">
+                <!-- 배경색 -->
+                <!-- style="background-color: rgba(87, 59, 27, 0.329);" -->
+                <div class="menuPage-con">
+                    <!-- html 들어갈 곳 -->
+                    <div id="work4">
+                        <div style="display: flex;">
+                            <div style="width: 58%; margin: 0 6px 0;">
+                                <table
+                                    style="width: 100%; text-align: center; border: 1px solid black; margin-top: 10px;">
+                                    <tr>
+                                        <td class="point" style="border: 1px solid black;">일별 생산량</td>
+                                        <td class="" style="border: 1px solid black;">주간별 생산량</td>
+                                        <td class="" style="border: 1px solid black;">월별 생산량</td>
+                                        <td class="" style="border: 1px solid black;">월별 주문량</td>
+                                    </tr>
+                                </table>
+                                <div style="height: 300px; border: 1px solid black;">
+                                    <div class="graph_wrap">
+                                        <div class="graph">
+                                            <!-- 기준 -->
+                                            <ul class="y-axis">
+                                                <li><span>100</span></li>
+                                                <li><span>75</span></li>
+                                                <li><span>50</span></li>
+                                                <li><span>40</span></li>
+                                                <li><span>30</span></li>
+                                                <li><span>20</span></li>
+                                                <li><span>10</span></li>
+                                                <li><span>0</span></li>
+                                            </ul>
+                                            <!-- 목록 -->
+                                            <ul class="x-axis">
+                                                <li><span>품목1</span></li>
+                                                <li><span>품목2</span></li>
+                                                <li><span>품목3</span></li>
+                                                <li><span>품목4</span></li>
+                                                <li><span>품목5</span></li>
+                                                <li><span>품목6</span></li>
+                                                <li><span>품목7</span></li>
+                                                <li><span>품목8</span></li>
+                                            </ul>
+                                            <!-- 바 그래프 (백분율 만큼 height값) -->
+                                            <ul class="bar">
+                                                <li style="height:100%;"><span></span></li>
+                                                <li style="height:70%;"><span></span></li>
+                                                <li style="height:70%;"><span></span></li>
+                                                <li style="height:70%;"><span></span></li>
+                                                <li style="height:70%;"><span></span></li>
+                                                <li style="height:30%;"><span></span></li>
+                                                <li style="height:30%;"><span></span></li>
+                                                <li style="height:30%;"><span></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="border: 1px solid black; width: 38%; margin: 0 6px 0; margin-top: 10px;">
+                                <div style="margin: 10px 5%;">작업자 생산량 조회</div>
+                                <input type="search" placeholder="작업자명을 입력하시오." style="margin: 0 5% 0 ;">
+                                <input type="button" value="검색">
+                                <div
+                                    style="width: 90%; height: 75%; border: 1px solid black; margin: 10px 5%; line-height: 48px;">
+                                    <div style="margin: 0 10px;">금일 생산량 :
+                                    </div>
+                                    <div style="margin: 0 10px;">금월 생산량 :</div>
+                                    <div style="margin: 0 10px;">금주 생산량 :</div>
+                                    <div style="margin: 0 10px;">금월 불량률 :</div>
+                                    <div style="margin: 0 10px;">현 가동 설비 :</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="ssTable" style="width: 58%; height: 350px; margin: 0 6px;">
+                                <div style="height: 100%; border: 1px solid black;">
+                                    <div style="margin: 10px; font-size: 20px; font-weight: 600;">*일별 생산량*</div>
+                                    <div style="display: flex;">
+                                        <div style="line-height: 30px; margin-left: 40px; margin-right: 40px;">
+                                            <div>A라인 1호기 :</div>
+                                            <div>A라인 2호기 :</div>
+                                            <div>A라인 3호기 :</div>
+                                            <div>A라인 4호기 :</div>
+                                        </div>
+                                        <div style="line-height: 30px; margin-left: 40px; margin-right: 40px;">
+                                            <div>B라인 1호기 :</div>
+                                            <div>B라인 2호기 :</div>
+                                            <div>B라인 3호기 :</div>
+                                            <div>B라인 4호기 :</div>
+                                        </div>
+                                        <div style="line-height: 30px; margin-left: 40px; margin-right: 40px;">
+                                            <div>C라인 1호기 :</div>
+                                            <div>C라인 2호기 :</div>
+                                            <div>C라인 3호기 :</div>
+                                            <div>C라인 4호기 :</div>
+                                        </div>
+                                    </div>
+                                    <div style="margin: 10px; font-size: 20px; font-weight: 600;">*품목별 금일 총 생산량*</div>
+                                    <select style="margin-left: 20px;">
+                                        <option value="1">품목1</option>
+                                        <option value="1">품목2</option>
+                                        <option value="1">품목3</option>
+                                        <option value="1">품목4</option>
+                                    </select>
+                                    <div style="text-align: center; font-size: 70px; font-weight: 600;">169ea</div>
+                                </div>
+                            </div>
+                            <div style="border: 1px solid black; width: 38%; margin: 0 6px;">
+                                <div style="margin: 10px 5% 20px; font-size: 20px; font-weight: 600;">가동 설비 현황</div>
+                                <div style="display: flex; height: 250px; width: 90%; overflow-y: scroll;">
+                                    <div style="margin: 10px 8%; line-height: 30px;">
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                    </div>
+                                    <div style="margin: 10px 8%; line-height: 30px;">
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                        <div>A라인 1호기 :</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+
+</body>
+
+</html>
