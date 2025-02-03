@@ -34,4 +34,11 @@ function message() {
             userfind.textContent = '전화번호는 필수입니다!';
         }
     }
+    document.querySelector('#pwfindC').addEventListener('click', pwprocess)
+    function pwprocess() {
+        let pwfinder = document.querySelector('#pwfindC')
+        console.log('비밀번호 찾기로 이동')
+        location.href = "pwfindpage_Nam.html"
+    }
+    
 }
