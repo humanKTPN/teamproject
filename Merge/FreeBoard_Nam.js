@@ -54,7 +54,7 @@ function init(){
                 window.location.href="#"
             } else if (e.target.textContent=='게시판'){
                  // 게시판 메인
-                window.location.href="#"
+                window.location.href="FreeBoard_Nam.html"
             } else if (e.target.textContent=='공지사항'){
                  // 공지사항 메인
                 window.location.href="#"
