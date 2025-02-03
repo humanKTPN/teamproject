@@ -1,3 +1,8 @@
+.idfindp{
+    display: flex;
+    justify-content: center;
+}
+
 .findarea{
     display: flex;
     width: 350px;
