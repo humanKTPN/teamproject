@@ -57,7 +57,7 @@ function init(){
                 window.location.href="#"
             } else if (e.target.textContent=='공지사항'){
                  // 공지사항 메인
-                window.location.href="#"
+                window.location.href="noticeBoard_Nam.html"
             }  else if (e.target.textContent=='기준관리'){
                  // 기준관리 메인
                 window.location.href="#"
