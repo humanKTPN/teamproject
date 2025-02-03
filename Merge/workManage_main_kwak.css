@@ -11,10 +11,7 @@ body{
     width: 100%;
     border: 5px solid #2f373a;
 }
-.main-menu-con{
-    display: flex;
-    flex-direction: row;
-}
+
 #main-menu {
     border: 1px solid rgba(255, 255, 255, 0.267);
     background-color: #2f373a;
@@ -704,7 +701,11 @@ form{
     justify-content: space-around;
     min-width: 300px;
 }
-
+/* html에서 옮김 (끝)*/
+.main-menu-con{
+    display: flex;
+    flex-direction: row;
+}
 #title-name{
     color: white;
     text-align: left;
@@ -723,17 +724,17 @@ form{
     justify-content: space-between;
 }
 
-/* html에서 옮김 (끝)*/
 .titleName{
     /* border: 1px solid rebeccapurple; */
     width: 13%;
     text-align: center;
+    min-width: 268px;
 }
 .icon-sub{
     /* border: 10px solid red; */
     display: flex;
     width: 15%;
     display: flex;
-    justify-content: space-around
-    /* min-width: 500px; */
+    justify-content: space-around;
+    min-width: 268px;
 }
