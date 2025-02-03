@@ -27,7 +27,7 @@ function message() {
         if (id.value == '') {
             console.log('미입력된 항목이 있음')
             userfind.style.color = '#f00';
-            userfind.textContent = '이름은 필수입니다!';
+            userfind.textContent = '아이디는 필수입니다!';
         } else if (tel.value == '') {
             console.log('미입력된 항목이 있음')
             userfind.style.color = '#f00';
