@@ -16,7 +16,6 @@ window.addEventListener('load', function () {
         if ((id.value == "admin" && pw.value == 1234) || (id.value == "user" && pw.value == 5678)) {
             console.log('로그인 성공')
             userchk.textContent = ''
-            // 메인페이지로 점프
             location.href = "mesSolution_v0.1.html"
         } else {
             console.log('회원정보 없음')
@@ -39,13 +38,13 @@ window.addEventListener('load', function () {
     function idfindprocess() {
         let idfinder = document.querySelector('#idfind')
         console.log('아이디 찾기 버튼 클릭')
-        location.href = "idfindpage_v0.3_Nam.html"
+        location.href = "idfindpage_Nam.html"
     }
 
     document.querySelector('#pwfind').addEventListener('click', pwfindprocess)
     function pwfindprocess() {
         let pwfinder = document.querySelector('#pwfind')
         console.log('비밀번호 찾기 버튼 클릭')
-        location.href = "pwfindpage_v0.3_Nam.html"
+        location.href = "pwfindpage_Nam.html"
     }
 })
