@@ -36,10 +36,10 @@ function init(){
                 window.location.href="Production reporting_tak.html"
             } else if (e.target.textContent=='자재관리'){
                 // 자재관리 메인 
-                window.location.href="#"
+                window.location.href="./TestMM_park/TestMM_html/TestMM_main_park.html"
             } else if (e.target.textContent=='품질관리'){
                 // 품질관리 메인 
-                window.location.href="#"
+                window.location.href="./TestQA_park/TestQA_html/TestQA_main_park.html"
             } 
         })
     }// 탑 버튼 내용나오게 하기  <끝>
@@ -51,16 +51,16 @@ function init(){
         button.addEventListener('click',function(e){
             if(e.target.textContent=='대시보드'){
                  // 대시보드 메인
-                window.location.href="#"
+                window.location.href="dashBoard_kwak.html"
             } else if (e.target.textContent=='게시판'){
                  // 게시판 메인
-                window.location.href="#"
+                window.location.href="FreeBoard_Nam.html"
             } else if (e.target.textContent=='공지사항'){
                  // 공지사항 메인
-                window.location.href="#"
+                window.location.href="noticeBoard_Nam.html"
             }  else if (e.target.textContent=='기준관리'){
                  // 기준관리 메인
-                window.location.href="#"
+                window.location.href="masterdataManage_main_kwak.html"
             }
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
