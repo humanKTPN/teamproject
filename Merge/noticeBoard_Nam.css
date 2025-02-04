@@ -630,6 +630,10 @@ body{
     border-collapse: collapse;
 }
 
+.boardtable{
+    min-width: 800px;
+}
+
 .boardlist>tr {
     align-items: center;
     border: 1px solid black;
@@ -718,4 +722,10 @@ body{
 }
 .bold{
     font-weight: bold;
+}
+
+@media (max-width:800px){
+    .middle_board{
+        overflow: scroll;
+    }
 }
