@@ -65,7 +65,6 @@ function init(){
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
 
-    window.addEventListener("load", function () {
         console.log('글쓰기 페이지에 들어옴')
         
         const button2 = document.querySelector('#button')
@@ -79,6 +78,7 @@ function init(){
     
             // 값 가지고 작성된 글을 보내야됨.
             // 표시해주는 페이지가 있어야됨.
+            console.log('작성완료')
+            window.location.href="writeview_Nam.html"
         }
-    })
 }
