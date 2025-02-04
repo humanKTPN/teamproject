@@ -119,4 +119,23 @@ function init() {
         console.log('5페이지 진입')
     })
 
+    const nums = document.querySelectorAll('.pnum')        
+
+    // for(let i =0; i< nums.length; i++){
+    //     nums.forEach(num => { num.addEventListener('click',function(e){
+    //         nums.forEach(nm => nm.classList.remove('bold'));
+    //         e.target.classList.add('bold')
+    //     })
+    // });
+    // }
+
+    for(let i =0; i< nums.length; i++){
+        nums[i].addEventListener('click',function(e){
+            for(let j=0; j<nums.length; j++){
+                nums[j].classList.remove('bold')
+                e.target.classList.add('bold')
+            }
+        })
+    }
+
 }

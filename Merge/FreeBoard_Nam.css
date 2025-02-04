@@ -677,7 +677,7 @@ body{
     margin: 10px;
 }
 
-.pnum {
+.pnum-con {
     margin: 0px 10px;
 }
 .titleName{
@@ -693,4 +693,11 @@ body{
     display: flex;
     justify-content: space-around;
     min-width: 268px;
+}
+
+.num{
+    font-weight: normal;
+}
+.bold{
+    font-weight: bold;
 }
