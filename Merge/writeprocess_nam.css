@@ -591,6 +591,8 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    min-width: 400px;
+    /* width: ; */
 }
 
 .pagecon {
@@ -615,12 +617,13 @@ body{
 
 #title{
     text-align: left;
-    width: 600px;
+    width: 50%;
 }
 
 #content{
-    width: 600px;
+    width: 50%;
     height: 150px;
+    min-width: 400px;
 }
 
 #button{
@@ -629,4 +632,10 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
     width : 70px;
+}
+
+@media (max-width:800px){
+    .dom{
+        overflow: scroll;
+    }
 }
