@@ -593,6 +593,16 @@ body{
     align-items: center;
 }
 
+.pagecon {
+    display :flex;
+    height: 40px;
+    margin-top: 10px;
+    width: 15%;
+    justify-content: center;
+    border : 1px solid black;
+    align-items: center;
+}
+
 .writeprocess{
     display: flex;
     flex-direction: column;
@@ -617,5 +627,6 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    margin-bottom: 10px;
     width : 70px;
 }
