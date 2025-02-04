@@ -669,3 +669,8 @@ body{
     align-items: center;
     width: 98%;
 }
+
+.button{
+    display: flex;
+    justify-content: flex-end;
+}
