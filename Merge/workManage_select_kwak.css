@@ -575,13 +575,14 @@ form{
     margin-right: 5px;
     display: flex;
     justify-content: right;
-    width: 100%;
+    width: 97.7%;
     /* min-width: 700px; */
 }
-.add,.prev{
+.del,.prev{
     border: 1px solid darkgray;
     width: 50px;
     text-align: center;
+    cursor: pointer;
 }
 .prev{
     width: 80px;

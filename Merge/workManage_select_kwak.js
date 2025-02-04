@@ -69,5 +69,8 @@ function init(){
     document.querySelector('.subBut').addEventListener('click',function(){
         window.location.href = "loginpage_Nam.html"
         })
+    document.querySelector('.del').addEventListener('click',function(){
+        alert('삭제되었습니다.')
+    })
 }
 

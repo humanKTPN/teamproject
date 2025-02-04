@@ -1,10 +1,10 @@
 body{
     min-width: 500px;
     max-height: 5000px;
- }
- body{
     margin: 0;
-}
+    /* width: 99%; */
+    padding-right: 0.5%;
+ }
 .menu-con {
     display: flex;
     flex-direction: column;
@@ -560,6 +560,9 @@ body{
    th{
     background-color: darkgrey;
    }
+   .command-td{
+    cursor: pointer;
+   }
    .command-div{
     /* border: 1px solid red; */
     display: flex;
@@ -604,7 +607,7 @@ form{
     /* border: 5px solid purple; */
     display: flex;
     justify-content: space-around;
-    width: 40%;
+    width: 20%;
     height: 50px;
     align-items: center;
     min-width: 300px;
@@ -614,8 +617,9 @@ form{
     height: 60%;
     width: 58%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    cursor: pointer;
     
 }
 .page-num-con{
@@ -639,6 +643,7 @@ form{
     border: 1px solid darkgray;
     width: 50px;
     text-align: center;
+    cursor: pointer;
 }
 .prev{
     width: 80px;
@@ -737,4 +742,10 @@ form{
     display: flex;
     justify-content: space-around;
     min-width: 268px;
+}
+.pre-page,.next-page{
+        width: 30%;
+}
+.bold{
+    font-weight: bold;
 }

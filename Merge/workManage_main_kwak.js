@@ -80,26 +80,26 @@ function workManage_select(){
     document.querySelector('.add').addEventListener('click',function(){
         window.location.href="workManage_add_kwak.html"
     })
-    document.querySelector('.mod').addEventListener('click',function(){
-        alert("수정되었습니다.")
-    })
-    document.querySelector('.del').addEventListener('click',function(e){
-        // document.querySelector('.delcheck').classList.remove('hide')
-        let chks = document.querySelectorAll('.delcheck')
-        let smpl = document.querySelector('.delcheck')
-        if(smpl.classList.length == 2){
-            for(chk of chks){
-                chk.classList.remove('hide')    
-            }
-        } else{
-            for(chk of chks){
-                chk.classList.add('hide')    
-            } 
-        }
-        // alert("삭제되었습니다.")
-        // console.log(e.target)
+    // document.querySelector('.mod').addEventListener('click',function(){
+    //     alert("수정되었습니다.")
+    // })
+    // document.querySelector('.del').addEventListener('click',function(e){
+    //     // document.querySelector('.delcheck').classList.remove('hide')
+    //     let chks = document.querySelectorAll('.delcheck')
+    //     let smpl = document.querySelector('.delcheck')
+    //     if(smpl.classList.length == 2){
+    //         for(chk of chks){
+    //             chk.classList.remove('hide')    
+    //         }
+    //     } else{
+    //         for(chk of chks){
+    //             chk.classList.add('hide')    
+    //         } 
+    //     }
+    //     // alert("삭제되었습니다.")
+    //     // console.log(e.target)
         
-    })
+    // })
 
     document.querySelector('.pre-page').addEventListener('click',function(){
         alert("이전페이지로 이동")
@@ -111,4 +111,16 @@ function workManage_select(){
         alert(document.querySelector('.select').value+" 검색")
         // console.log(document.querySelector('.select').value)
     })
+
+    //페이지 표시
+    const nums = document.querySelectorAll('.num')
+
+    for(let i =0; i< nums.length; i++){
+        nums[i].addEventListener('click',function(e){
+            for(let j=0; j<nums.length; j++){
+                nums[j].classList.remove('bold')
+                e.target.classList.add('bold')
+            }
+        })
+    }
 }
