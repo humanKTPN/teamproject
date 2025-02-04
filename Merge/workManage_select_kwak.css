@@ -798,6 +798,7 @@ form{
     border: 1px solid darkgrey;
     margin-right: 45px;
     width: 50px;
+    cursor: pointer;
 }
 /* html에서 옮김 (끝)*/
 .main-menu-con{

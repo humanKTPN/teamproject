@@ -74,6 +74,7 @@ function init(){
         document.querySelector('#prc').value += 'NY-80'
         document.querySelector('#pcd').value += 'A80'
 
+        document.querySelector(".bomTitle").innerHTML = 'A-NY-80'
         document.querySelector('#bomDesc').innerHTML = `고무로 접착된 식물성 기름 5%<br>
                                                         고운 속돌가루 54%<br>
                                                         황 10%<br>
@@ -81,6 +82,7 @@ function init(){
                                                         프탈레이트계 가소제1%<br>
                                                         color-blue 1%<br>
                                                         탄산칼슘 10%`
+        document.querySelector(".prcTitle").innerHTML = 'NY-80'
         document.querySelector('#prcDesc').innerHTML = `1. 지우개 재료를 혼합기에 넣고 반죽을 만든다<br>
                                                             2. 지우개 반죽을 롤러에 넣는다<br>
                                                             3. 롤러에 다른 재료를 넣는다<br>
