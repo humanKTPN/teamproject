@@ -619,6 +619,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: gray;
+    min-width: 700px;
 }
 
 .boardtable,
@@ -631,7 +632,7 @@ body{
 }
 
 .boardtable{
-    min-width: 800px;
+    min-width: 700px;
 }
 
 .boardlist>tr {
