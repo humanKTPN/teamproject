@@ -26,12 +26,15 @@ function init(){
             // console.log(e.target.textContent) // 어떤 메뉴를 눌렀는지 확인
             if(e.target.textContent=='작업관리'){
                 window.location.href="workManage_main_kwak.html"
-            } else if (e.target.textContent=='생산관리'){
-               
-            } else if (e.target.textContent=='생산리포팅'){
-               
-            } else if (e.target.textContent=='자재관리'){
-               
+            } else if (e.target.textContent == '생산관리') {
+                // 생산관리 메인 
+                window.location.href = "Production management_tak.html"
+            } else if (e.target.textContent == '생산리포팅') {
+                // 생산리포팅 메인 
+                window.location.href = "Production reporting_tak.html"
+            } else if (e.target.textContent == '자재관리') {
+                // 자재관리 메인 
+                window.location.href = "./TestMM_park/TestMM_html/TestMM_main_park.html" 
             } else if (e.target.textContent=='품질관리'){
                 window.location.href="workManage_main_kwak.html"
             } 
@@ -48,10 +51,12 @@ function init(){
            
             if(e.target.textContent=='대시보드'){
                 window.location.href="dashBoard_kwak.html"
-            } else if (e.target.textContent=='게시판'){
-                
-            } else if (e.target.textContent=='공지사항'){
-                
+            } else if (e.target.textContent == '게시판') {
+                // 게시판 메인
+                window.location.href = "FreeBoard_Nam.html"
+            } else if (e.target.textContent == '공지사항') {
+                // 공지사항 메인
+                window.location.href = "noticeBoard_Nam.html"
             }  else if (e.target.textContent=='기준관리'){
                 window.location.href="masterdataManage_main_kwak.html"
             }
