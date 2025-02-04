@@ -64,6 +64,7 @@ function init(){
             }
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
+
     console.log('게시판에 들어옴')
 
     const search = document.querySelector("#search");
