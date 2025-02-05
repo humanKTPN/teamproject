@@ -1,138 +1,112 @@
 /* TestQA_report_park.html */
 
+
+/* .div_report_menu{ */
+    /* min-width: 175px; */
+/* } */
+
+
 /* 반응형 웹 */
 /* 모바일 */
 @media screen and (max-width : 800px) {
-    .div_report_name {
-        text-align: center;
-        border: 1px solid black;
-        /* width: 1059.12px; */
+  .t_con{
+    flex-direction: column;
     }
-
-    .div_report_QA {
-        display: flex;
-        border: 1px solid black;
-
+    .hide_menu{
+        display: none;
     }
-
-    .div_report_content {
-        display: flex;
-        border: 1px solid black;
-        height: 500px;
-    }
-
-    .div_report_item {
-        text-align: center;
-        width: 25%;
-        border: 1px solid black;
-
-    }
-
-    /* a 태그 밑줄 제거 */
-    a {
-        text-decoration-line: none;
-        color: black;
-    }
-
-    .div_report_item_QA {
-        text-align: left;
-        width: 70%;
-        height: 50px;
-        border: 1px solid blue;
-        position: relative;
-        left: 100px;
-    }
-
-    .div_button {
-        text-align: right;
-    }
-
-    .div_none {
-        height: 10px;
-    }
-
 }
 
-/* pc */
-@media screen and (min-width : 801px) {
-
-    .div_report_parent {
-        width: calc(100vw - 19.8%);
+    .con_1,.con_2{
+        display: flex;
+        width: 100%;
     }
-
+    /* pc */
+    .div_report_parent{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .t_con{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+    }
+    #QA_color,#QA_size,#QA_tester,#QA_etc,#QA_result,#QA_day,#QA_fiber,#QA_erase{
+        width: 100%;
+    }
+    
     .div_report_name {
         text-align: center;
-        border: 1px solid black;
-        /* width: calc(100vw - 19.8%); */
-        /* width: 1059.12px; */
     }
-
-    .div_report_QA {
-        display: flex;
-        border: 1px solid black;
-
-    }
-
-   
-    .div_flex_1, .div_flex_2 {
-        display: flex;
-        width: 50%;
-    }
-
     
+    .div_report_QA {
+        width: 100%;
+        min-width: 170px;
+    }
     
     .div_report_menu {
-        width: 50%;
+        width: 100%;
         text-align: center;
-        border: 1px solid black;
+        border-bottom: 1px solid black; 
+        background-color: darkgrey;
     }
-
+    
     .div_report_content {
         display: flex;
-        border: 1px solid black;
+        border-right: 1px solid black;
         height: 500px;
     }
-
+    
     .div_report_item {
         text-align: center;
-        width: 25%;
+        width: 100%;
         border: 1px solid black;
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 170px;
+        border-collapse: collapse;
+    
     }
-
+    
     /* a 태그 밑줄 제거 */
     a {
         text-decoration-line: none;
         color: black;
     }
-
+    
     .div_report_item_QA {
+        display: flex;
+        align-items: center;
         text-align: left;
-        width: 70%;
         height: 50px;
-        border: 1px solid blue;
-        position: relative;
         left: 100px;
     }
-
+    
     .div_button {
         text-align: right;
     }
-
+    
     .div_none {
         height: 10px;
     }
-}
-/* pc는 그대로 */
+    
+    
+    /* pc는 그대로 */
+    
+    /* 모바일로 했을 때 나오는 레이아웃
+        품질보고서
+        항목 내용
+        1. ~ 생산
+        2. ~ 생산
+        ...
+        항목 내용
+        10.  입력
+        11.  입력
+        ...
+    */
+    
 
-/* 모바일로 했을 때 나오는 레이아웃
-    품질보고서
-    항목 내용
-    1. ~ 생산
-    2. ~ 생산
-    ...
-    항목 내용
-    10.  입력
-    11.  입력
-    ...
-*/
