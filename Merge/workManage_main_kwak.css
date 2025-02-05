@@ -779,3 +779,11 @@ form{
 .bold{
     font-weight: bold;
 }
+#cate,.submit{
+    background-color: #2f373a;
+    height: 25px;
+    color: white;
+}
+.select{
+    height: 21px;
+}
