@@ -1,4 +1,10 @@
-
+body{
+    min-width: 500px;
+    max-height: 5000px;
+    margin: 0;
+    /* width: 99%; */
+    padding-right: 0.5%;
+ }
 
 .background{
     /* border: 5px solid red; */

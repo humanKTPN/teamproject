@@ -5,16 +5,16 @@ window.addEventListener('load',init)
 function init(){
 
     //메뉴 열었다 닫았다 하기<시작>
-    document.querySelector('#main-menu').addEventListener('click',function(){
+    document.querySelector('#ham').addEventListener('click',function(){
         
         
         if(document.querySelector('.mainmenu').classList.length == 1){
             document.querySelector('.mainmenu').classList.add('hide')
-            document.querySelector('#main-menu').textContent = 'MENU 열기'
+            // document.querySelector('#main-menu').textContent = 'MENU 열기'
             // document.querySelector('.div_report_name').style.width = "1272px";
         } else if (document.querySelector('.mainmenu').classList.length == 2){
             document.querySelector('.mainmenu').classList.remove('hide')
-            document.querySelector('#main-menu').textContent = 'MENU 닫기'
+            // document.querySelector('#main-menu').textContent = 'MENU 닫기'
             // document.querySelector('.div_report_name').style.width = "1059.12px";
         }
 
@@ -42,7 +42,10 @@ function init(){
             } else if (e.target.textContent=='품질관리'){
                 // 품질관리 메인 
                 window.location.href="./TestQA_park/TestQA_html/TestQA_main_park.html"
-            } 
+            } else if (e.target.textContent=='기준관리'){
+                // 기준관리 메인
+               window.location.href="masterdataManage_main_kwak.html"
+           }
         })
     }// 탑 버튼 내용나오게 하기  <끝>
 
@@ -60,10 +63,7 @@ function init(){
             } else if (e.target.textContent=='공지사항'){
                  // 공지사항 메인
                 window.location.href="noticeBoard_Nam.html"
-            }  else if (e.target.textContent=='기준관리'){
-                 // 기준관리 메인
-                window.location.href="masterdataManage_main_kwak.html"
-            }
+            }  
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
 

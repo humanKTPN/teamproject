@@ -1,10 +1,10 @@
 body{
     min-width: 500px;
     max-height: 5000px;
- }
- body{
     margin: 0;
-}
+    /* width: 99%; */
+    padding-right: 0.5%;
+ }
 .menu-con {
     display: flex;
     flex-direction: column;
@@ -593,6 +593,7 @@ body{
     justify-content: center;
     border : 1px solid black;
     align-items: center;
+    margin-left: 1%;
 }
 
 #area {
@@ -614,6 +615,9 @@ body{
     flex-direction: row;
     width: 100%;
     align-items: center;
+    height:60px;
+    border-bottom: 2px solid #2f373a;
+    border-top: 2px solid #2f373a;
 }
 
 .title{
@@ -661,13 +665,14 @@ body{
 
 #content{
     display: flex;
-    margin: 3px 3px 0px 0px;
+    margin: 10px 0;
     padding-top: 5px;
     padding-left: 10px;
     padding-bottom: 5px;
-    border: 1px solid black;
+    border: 2px solid #2f373a;
     align-items: center;
-    width: 98%;
+    width: 99%;
+    height: 350px;
 }
 
 .button{
@@ -676,6 +681,12 @@ body{
 }
 
 #edit, #list, #remove{
-    margin-left : 3px;
-    margin-right : 3px;
+    all: unset;
+    border: 1px solid #2f373a;
+    background-color: #2f373a;
+    color: white;
+    margin: 0.5%;
+    padding: 0.5% 1%;
+    cursor: pointer;
+    
 }

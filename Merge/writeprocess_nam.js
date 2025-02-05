@@ -5,15 +5,15 @@ window.addEventListener('load', init)
 function init() {
 
     //메뉴 열었다 닫았다 하기<시작>
-    document.querySelector('#main-menu').addEventListener('click', function () {
+    document.querySelector('#ham').addEventListener('click', function () {
 
 
         if (document.querySelector('.mainmenu').classList.length == 1) {
             document.querySelector('.mainmenu').classList.add('hide')
-            document.querySelector('#main-menu').textContent = 'MENU 열기'
+            // document.querySelector('#main-menu').textContent = 'MENU 열기'
         } else if (document.querySelector('.mainmenu').classList.length == 2) {
             document.querySelector('.mainmenu').classList.remove('hide')
-            document.querySelector('#main-menu').textContent = 'MENU 닫기'
+            // document.querySelector('#main-menu').textContent = 'MENU 닫기'
         }
 
     }) ///메뉴 열었다 닫았다 하기<끝>

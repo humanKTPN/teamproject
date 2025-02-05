@@ -533,6 +533,7 @@ body{
     /* border: 5px solid red; */
     width: 100%;
     height:  100%;
+    /* background-color: ; */
 }
 .tab-name{
     border: 1px solid darkgray;
@@ -551,8 +552,9 @@ body{
 ,.command-td
 ,.detail-th
 ,.detail-td{
+    /* padding; */
      width: 100px;
-     height: 50px;
+     height: 30px;
      text-align: center;
      border: 1px solid #000;
      vertical-align: middle;   /* 가운데 */
@@ -560,6 +562,27 @@ body{
    th{
     background-color: darkgrey;
    }
+   .command-table th:nth-child(1){ /*작업지시번호*/
+    width: 7%;
+  }
+   .command-table th:nth-child(2){ /*납품처명*/
+    width: 7%;
+  }
+   .command-table th:nth-child(3){ /*납기일자*/
+    width: 7%;
+  }
+   .command-table th:nth-child(4){ /*품목명*/
+    width: 20%;
+  }
+   .command-table th:nth-child(5){ /*담당자*/
+    width: 8%;
+  }
+   .command-table th:nth-child(6){ /*지시수량*/
+    width: 5%;
+  }
+   .command-table th:nth-child(7){ /*지시수량*/
+    width: 5%;
+  }
    .command-td{
     cursor: pointer;
    }

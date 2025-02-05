@@ -26,7 +26,7 @@
             <div>
                 <div id="title-name">
                     <div class="titleName">
-                        <i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution
+                        <i id="ham" class=" main-menu fas fa-solid fa-bars fa-lg"></i>&nbsp;&nbsp;<i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution
                     </div>
                     <div class="icon-sub">
                         관리자님 환영합니다.
@@ -39,20 +39,22 @@
                 </div>
             </div>
             <div class="main-menu-con">
-                <div class="main-menu" id="main-menu">MENU 닫기</div>
+                <!-- <div class="main-menu" id="main-menu">MENU 닫기</div> -->
+                <div class="menu">기준관리</div>
                 <div class="menu">작업관리</div>
                 <div class="menu">생산관리</div>
                 <div class="menu">생산리포팅</div>
                 <div class="menu">자재관리</div>
                 <div class="menu">품질관리</div>
             </div>
+        </div>
             <div class="board">
 
                 <div class="mainmenu" id="work1">
                     <div class="menuBut">대시보드</div>
                     <div class="menuBut">게시판</div>
                     <div class="menuBut">공지사항</div>
-                    <div class="menuBut">기준관리</div>
+                    <!-- <div class="menuBut">기준관리</div> -->
                 </div>
 
                 <div class="bome-con">
@@ -75,7 +77,7 @@
                                     <table>
                                         <tr>
                                             <th class="cs1">설비</th>
-                                            <th class="cs2">생산코드</th>
+                                            <th class="cs2">제품코드</th>
                                             <th class="cs3">품번코드</th>
                                             <th class="cs4">품명</th>
                                             <th class="cs5">생산시작시간</th>
@@ -542,20 +544,20 @@
                                                     <td class="schedule4">1000ea</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="schedule1">UBJ-01</td>
+                                                    <td class="schedule1">UUBJ-01</td>
                                                     <td class="schedule2">우유 빛깔지우개</td>
                                                     <td class="schedule3">2025.01.01~2025.02.15</td>
                                                     <td class="schedule4">2000ea</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="schedule1">MDJ-04</td>
-                                                    <td class="schedule2">뭐든지우개</td>
+                                                    <td class="schedule1">MDSJ-04</td>
+                                                    <td class="schedule2">뭐든싹지우개</td>
                                                     <td class="schedule3">2025.03.1~2025.03.15</td>
                                                     <td class="schedule4">500ea</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="schedule1">RSJ-07</td>
-                                                    <td class="schedule2">리셋지우개</td>
+                                                    <td class="schedule1">HPJ-07</td>
+                                                    <td class="schedule2">하츄핑지우개</td>
                                                     <td class="schedule3">2025.03.5~2025.04.15</td>
                                                     <td class="schedule4">3000ea</td>
                                                 </tr>
@@ -613,17 +615,11 @@
                                                 </div>
                                             </div>
                                             <div class="pm_correction_con">
-                                                <div style="width:100px;">품번코드:</div>
-                                                <select>
-                                                    <option>SSJ-02</option>
-                                                    <option>FTJ-05</option>
-                                                    <option>UBJ-01</option>
-                                                    <option>MDJ-04</option>
-                                                    <option>RSJ-07</option>
-                                                </select>
+                                                <div style="width:100px;">제품코드:</div>
+                                                <input type="text">
                                             </div>
                                             <div class="pm_correction_con">
-                                                <div style="width:100px;">생산코드:</div>
+                                                <div style="width:100px;">품번코드:</div>
                                                 <input type="text">
                                             </div>
                                             <div class="pm_correction_con">
@@ -649,13 +645,7 @@
                                             <div class="ssTitle">생산 일정 관리</div>
                                             <div class="pr_correction_con">
                                                 <div style="width:100px;">품목코드:</div>
-                                                <select>
-                                                    <option>SSJ-02</option>
-                                                    <option>FTJ-05</option>
-                                                    <option>UBJ-01</option>
-                                                    <option>MDJ-04</option>
-                                                    <option>RSJ-07</option>
-                                                </select>
+                                                <input type="text" style="height: 18px;">
                                             </div>
                                             <div class="pr_correction_con">
                                                 <div style="width:100px;">품명:</div>
