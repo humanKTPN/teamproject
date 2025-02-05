@@ -65,4 +65,21 @@ function init(){
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
 
+    let edit = document.querySelector('#edit')
+
+    edit.addEventListener('click', editprocess)
+    
+    function editprocess(){
+        console.log('수정화면으로 넘어갑니다')
+        // 수정화면으로 넘어가게 하기
+    }
+
+    let list = document.querySelector('#list')
+
+    list.addEventListener('click', listviewprocess)
+    
+    function listviewprocess(){
+        console.log('목록페이지로 넘어갑니다')
+        // 목록화면으로 넘어가게 하기(공지사항, 자유게시판)
+    }
 }
