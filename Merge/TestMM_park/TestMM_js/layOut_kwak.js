@@ -11,13 +11,13 @@ function init(){
         if(document.querySelector('.mainmenu').classList.length == 1){
             document.querySelector('.mainmenu').classList.add('hide')
             document.querySelector('#main-menu').textContent = 'MENU 열기'
-            document.querySelector('.div_add').style.width = "100vw";
+            // document.querySelector('.div_add').style.width = "100vw";
             // document.querySelector('#input').style.width = "1272px";
             // document.querySelector('.flex_child').style.width = "1272px";
         } else if (document.querySelector('.mainmenu').classList.length == 2){
             document.querySelector('.mainmenu').classList.remove('hide')
             document.querySelector('#main-menu').textContent = 'MENU 닫기'
-            document.querySelector('.div_add').style.width = "calc(100vw - 87%)";
+            // document.querySelector('.div_add').style.width = "calc(100vw - 87%)";
             // document.querySelector('#input').style.width = "1059.12px";
             // document.querySelector('.flex_child').style.width = "1080px";
         }

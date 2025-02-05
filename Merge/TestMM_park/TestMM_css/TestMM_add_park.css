@@ -3,28 +3,6 @@
 /* 반응형 웹 만들기 */
 /* 모바일 */
 @media screen and (max-width: 800px) {
-   #input {
-      /* 메뉴가 열렸을 때 값 */
-      width: 1059.12px;
-
-      /* 메뉴가 닫혔을 때 값 */
-      /* width: 1272px; */
-
-      /* 해상도가 다를  때? */
-
-   }
-
-   /* 문제 처음 add페이지로 왔을때 크기가 이상함 */
-
-   .flex_child {
-      display: flex;
-
-      /* 메뉴가 열렸을 때 값 */
-      /* width: 1059.12px; */
-
-      /* 메뉴가 닫혔을 때 값 */
-      /* width: 1272px; */
-   }
 
    .item {
 
@@ -57,53 +35,17 @@
 }
 
 /* pc */
-@media screen and (min-width:801px) {
-
-   .div_add {
-      /* width: 1059.12px; */
-      width: calc(100vw - 87%);
-      
-      /* width: 100vw; */
-   }
-
-   #input {
-      /* 메뉴가 열렸을 때 값 */
-      /* width: 1059.12px; */
-
-      /* 메뉴가 닫혔을 때 값 */
-      /* width: 1272px; */
-
-      /* 해상도가 다를  때? */
-      /* width: calc(100vw - 19.8%); */
-
-   }
-
-   /* 문제 처음 add페이지로 왔을때 크기가 이상함 */
 
    .flex_child {
       display: flex;
-      width: 100%;
-      /* 메뉴가 열렸을 때 값 */
-      /* width: 1059.12px; */
-
-      /* 메뉴가 닫혔을 때 값 */
-      /* width: 1272px; */
    }
 
    .item {
-
-      width: 25%;
+      width: 100%;
       text-align: center;
       border: 1px solid black;
    }
 
-   .new_input {
-      width: 100%;
-   }
-
-   .btn_input_add {
-      width: 10%;
-   }
 
    .div_btn_input_add {
       text-align: center;
@@ -122,7 +64,7 @@
    a {
       text-decoration-line: none;
    }
-}
+
 
 
 
