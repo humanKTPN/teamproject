@@ -71,7 +71,7 @@ function init(){
     
     function editprocess(){
         console.log('수정화면으로 넘어갑니다')
-        // 수정화면으로 넘어가게 하기
+        window.location.href = "edit_Nam.html"
     }
 
     let list = document.querySelector('#list')
