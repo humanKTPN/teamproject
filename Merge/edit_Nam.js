@@ -65,5 +65,13 @@ function init(){
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
 
-
+    console.log('수정화면 진입')
+    document.querySelector('#content').addEventListener('click', trim)
+    function trim(){
+        let content_T = document.querySelector('#content')
+        if (content_T.value) {
+        content_T.value = content_T.value.trim().replace(/\s*\n\s*/g, "\n");
+        }
+        console.log('공백제거')
+    }
 }
