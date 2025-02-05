@@ -82,4 +82,14 @@ function init(){
         console.log('목록페이지로 넘어갑니다')
         // 목록화면으로 넘어가게 하기(공지사항, 자유게시판)
     }
+
+    let remove = document.querySelector('#remove')
+
+    remove.addEventListener('click', removeprocess)
+    
+    function removeprocess(){
+        console.log('삭제되었습니다.')
+        alert('삭제되었습니다.')
+        // 목록화면으로 넘어가게 하기(공지사항, 자유게시판)
+    }
 }

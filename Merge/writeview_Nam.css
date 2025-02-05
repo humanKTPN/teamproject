@@ -675,7 +675,7 @@ body{
     justify-content: flex-end;
 }
 
-#edit, #list{
+#edit, #list, #remove{
     margin-left : 3px;
     margin-right : 3px;
 }
