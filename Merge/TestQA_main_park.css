@@ -1,0 +1,43 @@
+/* TestQA_main_park_html */
+
+/* a 태그 밑줄 제거 */
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.enter_reportPage {
+    text-decoration-line: underline;
+}
+
+.QA-table {
+    border: 1px solid black;
+    /* width: 1000px; */
+    border-collapse: collapse;
+}
+
+.QA-th {
+    border: 1px solid black;
+    width: 1000px;
+}
+
+.QA-td {
+    border: 1px solid black;
+    width: 1000px;
+    text-align: center;
+}
+
+.flex_page {
+    display: flex;
+    justify-self: center;
+}
+
+.div_none {
+    height: 100px;
+}
+
+.item_page {
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+}

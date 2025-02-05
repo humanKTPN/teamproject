@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 여기에 대시보드 css 파일옮기기 -->
-    <link rel="stylesheet" href="edit_Nam.css">
+    <link rel="stylesheet" href="layOut_kwak.css" type="text/css">
+    <link rel="stylesheet" href="TestMM_order_park.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="edit_nam.js"></script>
+    <script src="layOut_kwak.js"></script>
+    <script src="TestMM_order_park.js" defer></script>
     <style>
         /******************
         모바일 버전 구현(불량쪽 차트는 ....)
@@ -22,7 +24,7 @@
     <body>
         <div class="menu-con work">
             <div>
-                <div id="title-name">
+                <div id ="title-name">
                     <div class="titleName">
                         <i id="ham" class=" main-menu fas fa-solid fa-bars fa-lg"></i>&nbsp;&nbsp;<i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution
                     </div>
@@ -33,7 +35,7 @@
                             <span class="subBut">로그아웃</span>
                         </i>
                         <!-- </i> -->
-                    </div>
+                    </div>  
                 </div>
             </div>
             <div class="main-menu-con">
@@ -56,38 +58,45 @@
             </div>
             <div class="bome-con">
 
+                <div>
+                    <div class="menuPage-con">
+                        <!-- html 들어갈 곳 -->
+                        <!-- TestMM_order -->
 
-                <div class="menuPage-con">
-                    <!-- html 들어갈 곳 -->
-                    <div class='pagecon'>
-                        <span id='pageinfo'>
-                            글수정
-                        </span>
+                        <div>
+                            <table class="order_table">
+                                <tr>
+                                    <th scope="col" class="order_th">회사명</th>
+                                    <th scope="col" class="order_th">담당자</th>
+                                    <th scope="col" class="order_th">연락처</th>
+                                </tr>
+                    
+                                <tr>
+                                    <td class="order_td">ab회사</td>
+                                    <td class="order_td">김철수</td>
+                                    <td class="order_td">010-1234-1123</td>
+                                </tr>
+                    
+                                <tr>
+                                    <td class="order_td">ac회사</td>
+                                    <td class="order_td">김영희</td>
+                                    <td class="order_td">010-0123-1124</td>
+                                </tr>
+                            </table>
+                            
+                            <div class="div_none">
+                                <!-- 빈 공간 -->
+                            </div>
+
+                            <div class="div_button">
+                                <button type="button" id="btn_order_confirm"><a href="TestMM_main_park.html">확인</a></button>
+                            </div>
+                        </div>
+
+
                     </div>
-                    <hr>
-                    <div class="dom">
-                        <div class="editprocess">
-                            <!-- 글쓰기 조회페이지 있어야 됨. -->
-                            <form action="writeview_Nam.html" method="get" id="summit">
-                                <span class='text'>제목</span>
-                                <input type="text" id='title' placeholder="제목을 입력하시오" value="신규직원 오리엔테이션 안내">
-                                <span class='text'>내용</span>
-                                <textarea type="text" id="content" placeholder="내용을 입력하세요">
-                                    신규직원들은 2025.2.20 14:30까지 테스트관으로 와주시기 바랍니다.
-                                    
-                                    장소 : 본 회사 테스트관
-                                    시간 : 2025.2.20 14:30
-                                    준비물 : 필기구, 신분증, 반명함사진 1매
-                                </textarea>
-                            </form>
-                        </div>
-                        <div id='writemsg'>
-                            <!-- 메시지 -->
-                        </div>
-                        <div class='buttons'>
-                            <button type='submit' class = 'button edit'>수정</button>
-                            <button type='submit' class = 'button cancel'>취소</button>
-                        </div>
+
+                    <div>
                     </div>
                 </div>
             </div>

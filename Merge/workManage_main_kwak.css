@@ -536,7 +536,9 @@ body{
     /* background-color: ; */
 }
 .tab-name{
-    border: 1px solid darkgray;
+    /* border: 1px solid darkgray; */
+    background-color: #2f373a;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -556,11 +558,13 @@ body{
      width: 100px;
      height: 30px;
      text-align: center;
-     border: 1px solid #000;
+     border: 1px solid darkgrey;
      vertical-align: middle;   /* 가운데 */
-   }
-   th{
-    background-color: darkgrey;
+    }
+    th{
+        /* background-color: darkgrey; */
+        background-color: #2f373a;
+        color: white;
    }
    .command-table th:nth-child(1){ /*작업지시번호*/
     width: 7%;
@@ -662,11 +666,13 @@ form{
     width: 100%;
     /* min-width: 700px; */
 }
-.add,.del,.mod{
+.add{
     border: 1px solid darkgray;
     width: 50px;
     text-align: center;
     cursor: pointer;
+    background-color: #2f373a;
+    color: white;
 }
 .prev{
     width: 80px;
@@ -678,6 +684,7 @@ form{
     margin: 0 5px;
     min-width: 400px;
 }
+
 
 .eraser-img{
     width: 150px;

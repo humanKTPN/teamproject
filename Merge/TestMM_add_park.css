@@ -1,0 +1,76 @@
+/* TestMM_add_park.html */
+
+/* 반응형 웹 만들기 */
+/* 모바일 */
+@media screen and (max-width: 800px) {
+
+   .item {
+
+      width: 25%;
+      text-align: center;
+      border: 1px solid black;
+   }
+
+   .btn_input_add {
+      width: 10%;
+   }
+
+   .div_btn_input_add {
+      text-align: center;
+   }
+
+   .div_btn_add_confirm {
+      text-align: right;
+   }
+
+   .div_none {
+      height: 10px;
+   }
+
+
+   /* a 태그 밑줄 제거 */
+   a {
+      text-decoration-line: none;
+   }
+}
+
+/* pc */
+
+   .flex_child {
+      display: flex;
+   }
+
+   .item {
+      width: 100%;
+      text-align: center;
+      border: 1px solid black;
+   }
+
+
+   .div_btn_input_add {
+      text-align: center;
+   }
+
+   .div_btn_add_confirm {
+      text-align: right;
+   }
+
+   .div_none {
+      height: 10px;
+   }
+
+
+   /* a 태그 밑줄 제거 */
+   a {
+      text-decoration-line: none;
+   }
+
+
+
+
+
+/* 크기별 사이즈
+mobile 최대 767px 
+tablet 최소 768px
+netbook 1200px
+pc 1440 */

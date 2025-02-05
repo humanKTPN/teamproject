@@ -36,10 +36,10 @@ function init() {
                 window.location.href = "Production reporting_tak.html"
             } else if (e.target.textContent == '자재관리') {
                 // 자재관리 메인 
-                window.location.href = "./TestMM_park/TestMM_html/TestMM_main_park.html"
+                window.location.href = "TestMM_main_park.html"
             } else if (e.target.textContent == '품질관리') {
                 // 품질관리 메인 
-                window.location.href = "./TestQA_park/TestQA_html/TestQA_main_park.html"
+                window.location.href = "TestQA_main_park.html"
             }
         })
     }// 탑 버튼 내용나오게 하기  <끝>

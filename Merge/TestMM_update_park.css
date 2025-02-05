@@ -1,0 +1,33 @@
+/* TestMM_update_park.html */
+
+/* a 태그 밑줄 제거 */
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.material-table {
+    background: white;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.material-th {
+    width: 1000px;
+    /* height: 100px; */
+    border: 1px solid black;
+
+}
+
+.material-td {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.div_none {
+    height: 10px;
+}
+
+.div_button {
+    text-align: right;
+}

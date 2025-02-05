@@ -35,10 +35,10 @@ function init(){
                 window.location.href="Production reporting_tak.html"
                 
               } else if (e.target.textContent=='자재관리'){
-                window.location.href="./TestMM_park/TestMM_html/TestMM_main_park.html"
+                window.location.href="TestMM_main_park.html"
                 
               } else if (e.target.textContent=='품질관리'){
-                window.location.href="./TestQA_park/TestQA_html/TestQA_main_park.html"
+                window.location.href="TestQA_main_park.html"
 
             } else if (e.target.textContent=='기준관리'){
               window.location.href="masterdataManage_main_kwak.html"

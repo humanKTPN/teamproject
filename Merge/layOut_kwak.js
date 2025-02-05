@@ -11,9 +11,11 @@ function init(){
         if(document.querySelector('.mainmenu').classList.length == 1){
             document.querySelector('.mainmenu').classList.add('hide')
             // document.querySelector('#main-menu').textContent = 'MENU 열기'
+            // document.querySelector('.div_report_name').style.width = "1272px";
         } else if (document.querySelector('.mainmenu').classList.length == 2){
             document.querySelector('.mainmenu').classList.remove('hide')
             // document.querySelector('#main-menu').textContent = 'MENU 닫기'
+            // document.querySelector('.div_report_name').style.width = "1059.12px";
         }
 
     }) //메뉴 열었다 닫았다 하기<끝>

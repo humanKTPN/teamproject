@@ -1,0 +1,33 @@
+/* TestMM_order_park.html */
+
+/* a 태그 밑줄 제거 */
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.order_table {
+    border: 1px solid black;
+    /* width: 100%; */
+    border-collapse: collapse;
+    background: white;
+}
+
+.order_th {
+    border: 1px solid black;
+    text-align: center;
+    width: 1000px;
+}
+
+.order_td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.div_none {
+    height: 10px;
+}
+
+.div_button {
+    text-align: right;
+}

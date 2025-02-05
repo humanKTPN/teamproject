@@ -1,0 +1,66 @@
+/* TestMM_main_park.html */
+
+.material-table {
+    background: white;
+    
+    /* width: 1000px; */
+    border: 1px solid darkgrey;
+    border-collapse: collapse;
+    margin: 0 1%;
+}
+
+.material-th {
+    width: 1000px;
+    border: 1px solid darkgrey;
+    background-color: #2f373a;
+    color: white;
+}
+
+.material-td {
+    /* width: 1000px; */
+    text-align: center;
+    border: 1px solid darkgrey;
+}
+
+/* a 태그 밑줄 제거 */
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.div_none {
+    height: 10px;
+}
+
+.div_button {
+    text-align: right;
+    height: 100px;
+}
+
+.flex_page {
+    display: flex;
+    justify-self: center;
+}
+
+.item_page {
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+}
+.tab-name-con{
+    /* width: 100px; */
+    height: 75px;
+    display: flex;
+    align-items: center;
+    /* border: 5px solid  darkgrey; */
+}
+.tab-name{
+    /* border: 1px solid  darkgrey; */
+    background-color: #2f373a;
+    color: white;
+    width: 150px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin: 1%;
+}
