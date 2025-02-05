@@ -57,15 +57,24 @@
 }
 
 /* pc */
-@media screen and(min-width:801px) {
+@media screen and (min-width:801px) {
+
+   .div_add {
+      /* width: 1059.12px; */
+      width: calc(100vw - 87%);
+      
+      /* width: 100vw; */
+   }
+
    #input {
       /* 메뉴가 열렸을 때 값 */
-      width: 1059.12px;
+      /* width: 1059.12px; */
 
       /* 메뉴가 닫혔을 때 값 */
       /* width: 1272px; */
 
       /* 해상도가 다를  때? */
+      /* width: calc(100vw - 19.8%); */
 
    }
 
@@ -73,7 +82,7 @@
 
    .flex_child {
       display: flex;
-
+      width: 100%;
       /* 메뉴가 열렸을 때 값 */
       /* width: 1059.12px; */
 
@@ -86,6 +95,10 @@
       width: 25%;
       text-align: center;
       border: 1px solid black;
+   }
+
+   .new_input {
+      width: 100%;
    }
 
    .btn_input_add {
