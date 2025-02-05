@@ -1,47 +1,121 @@
 /* TestMM_add_park.html */
 
-.flex_child {
-    display: flex;
+/* 반응형 웹 만들기 */
+/* 모바일 */
+@media screen and (max-width: 800px) {
+   #input {
+      /* 메뉴가 열렸을 때 값 */
+      width: 1059.12px;
+
+      /* 메뉴가 닫혔을 때 값 */
+      /* width: 1272px; */
+
+      /* 해상도가 다를  때? */
+
+   }
+
+   /* 문제 처음 add페이지로 왔을때 크기가 이상함 */
+
+   .flex_child {
+      display: flex;
+
+      /* 메뉴가 열렸을 때 값 */
+      /* width: 1059.12px; */
+
+      /* 메뉴가 닫혔을 때 값 */
+      /* width: 1272px; */
+   }
+
+   .item {
+
+      width: 25%;
+      text-align: center;
+      border: 1px solid black;
+   }
+
+   .btn_input_add {
+      width: 10%;
+   }
+
+   .div_btn_input_add {
+      text-align: center;
+   }
+
+   .div_btn_add_confirm {
+      text-align: right;
+   }
+
+   .div_none {
+      height: 10px;
+   }
+
+
+   /* a 태그 밑줄 제거 */
+   a {
+      text-decoration-line: none;
+   }
 }
 
-.item {
-    width: 20%;
-    text-align: center;
+/* pc */
+@media screen and(min-width:801px) {
+   #input {
+      /* 메뉴가 열렸을 때 값 */
+      width: 1059.12px;
+
+      /* 메뉴가 닫혔을 때 값 */
+      /* width: 1272px; */
+
+      /* 해상도가 다를  때? */
+
+   }
+
+   /* 문제 처음 add페이지로 왔을때 크기가 이상함 */
+
+   .flex_child {
+      display: flex;
+
+      /* 메뉴가 열렸을 때 값 */
+      /* width: 1059.12px; */
+
+      /* 메뉴가 닫혔을 때 값 */
+      /* width: 1272px; */
+   }
+
+   .item {
+
+      width: 25%;
+      text-align: center;
+      border: 1px solid black;
+   }
+
+   .btn_input_add {
+      width: 10%;
+   }
+
+   .div_btn_input_add {
+      text-align: center;
+   }
+
+   .div_btn_add_confirm {
+      text-align: right;
+   }
+
+   .div_none {
+      height: 10px;
+   }
+
+
+   /* a 태그 밑줄 제거 */
+   a {
+      text-decoration-line: none;
+   }
 }
 
-.btn_input_add {
-   width: 10%;
-}
-
- .div_btn_input_add {
-    text-align: center;
- }
-
- .div_btn_add_confirm {
-    text-align: right;
- }
-
- .div_btn {
-    
- }
 
 
-/*  */
-.flex_page {
-   display: flex;
-   justify-self: center;
-}
 
-.item_page {
-   text-align: center;
-   width: 200px;
-}
-
-/* a 태그 밑줄 제거 */
-a {
-   text-decoration-line: none;
-}
-
-.div_button {
-   
-}
+/* 크기별 사이즈
+mobile 최대 767px 
+tablet 최소 768px
+netbook 1200px
+pc 1440 */

@@ -1,5 +1,21 @@
 // TestMM_add_park.html
 
+// 사이드 메뉴 유무에 따라 크기 조절
+// document.querySelector('#main-menu').addEventListener('click',function(){
+        
+        
+//     if(document.querySelector('.mainmenu').classList.length == 1){
+//         document.querySelector('.mainmenu').classList.add('hide')
+//         document.querySelector('#main-menu').textContent = 'MENU 열기'
+//         document.querySelector('.flex_child').style.width = "1080px";
+//     } else if (document.querySelector('.mainmenu').classList.length == 2){
+//         document.querySelector('.mainmenu').classList.remove('hide')
+//         document.querySelector('#main-menu').textContent = 'MENU 닫기'
+//         document.querySelector('.flex_child').style.width = "1272px";
+//     }
+
+// }) //메뉴 열었다 닫았다 하기<끝>
+
 
 // 입력추가 버튼을 누르면 동작하는 이벤트
 const btn_input_add = document.getElementById('btn_input_add');
@@ -39,50 +55,61 @@ const btn_add_confirm = document.getElementById('btn_add_confirm');
 
 btn_add_confirm.addEventListener('click', function () {
     console.log("동작함");
+    alert("추가되었습니다.");
+    // const add_input = document.querySelectorAll('.new_input');
+    // let input_data;
 
-    const add_input = document.querySelectorAll('#input new_input');
-    let input_data;
+    // const ad = document.querySelectorAll(".Mcode").value;
+    
 
-    for (let i = 0; i < add_input.length; i++) {
+    for(let i=0; i<ad.length; i++){
+        console.log(ad);
+    }
 
-        // 추가한 input의 값 별로 배열에 저장하기
 
-        if (add_input[i].querySelector(".Mea").value < 1000) {
-            add_input[i].querySelector(".Morder").value = "Y";
-        } else {
-            add_input[i].querySelector(".Morder").value = "N";
-        }
+    // for (let i = 0; i < add_input.length; i++) {
 
-        input_data = [
-            {
-                Mcode: add_input[i].querySelector('.Mcode').value,
-                Mname: add_input[i].querySelector(".Mname").value,
-                Mea: add_input[i].querySelector(".Mea").value,
-                Morder: add_input[i].querySelector(".Morder").value,
-                Mloc: add_input[i].querySelector(".Mloc").value
-            }
-        ];
-        //console.log(input_data[i].Mcode + " " + input_data[i].Mname + " " + input_data[i].Mea + " " + input_data[i].Morder + " " + input_data[i].Mloc + "가 추가되었습니다.");
-        console.log(add_input[i].textContent);
+    //     // 추가한 input의 값 별로 배열에 저장하기
+
+    //     if (add_input[i].querySelector(".Mea").value < 1000) {
+    //         add_input[i].querySelector(".Morder").value = "Y";
+    //     } else {
+    //         add_input[i].querySelector(".Morder").value = "N";
+    //     }
+
+    //     input_data = [
+    //         {
+    //             Mcode: add_input[i].querySelector('.Mcode').value,
+    //             Mname: add_input[i].querySelector(".Mname").value,
+    //             Mea: add_input[i].querySelector(".Mea").value,
+    //             Morder: add_input[i].querySelector(".Morder").value,
+    //             Mloc: add_input[i].querySelector(".Mloc").value
+    //         }
+    //     ];
+    //     //console.log(input_data[i].Mcode + " " + input_data[i].Mname + " " + input_data[i].Mea + " " + input_data[i].Morder + " " + input_data[i].Mloc + "가 추가되었습니다.");
+    //     console.log(add_input[i].textContent);
         
 
 
-        // input_data = [
-        //     {
-        //         Mcode: document.querySelector(".Mcode").value,
-        //         Mname: document.querySelector(".Mname").value,
-        //         Mea: document.querySelector(".Mea").value,
-        //         Morder: document.querySelector(".Morder").value,
-        //         Mloc: document.querySelector(".Mloc").value
-        //     }
-        // ];
 
-        // if (document.querySelector(".Mea").value < 1000) {
-        //     document.querySelector(".Morder").value = "Y";
-        // } else {
-        //     document.querySelector(".Morder").value = "N";
-        // }
-    }
+    //     // if (document.querySelector(".Mea").value < 1000) {
+    //     //     document.querySelector(".Morder").value = "Y";
+    //     // } else {
+    //     //     document.querySelector(".Morder").value = "N";
+    //     // }
+
+    //     // input_data = [
+    //     //     {
+    //     //         Mcode: document.querySelector(".Mcode").value,
+    //     //         Mname: document.querySelector(".Mname").value,
+    //     //         Mea: document.querySelector(".Mea").value,
+    //     //         Morder: document.querySelector(".Morder").value,
+    //     //         Mloc: document.querySelector(".Mloc").value
+    //     //     }
+    //     // ];
+
+    
+    // }
 
 
 

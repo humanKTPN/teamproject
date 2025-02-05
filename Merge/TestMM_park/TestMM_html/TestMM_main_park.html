@@ -9,10 +9,15 @@
     <link rel="stylesheet" href="../TestMM_css/layOut_kwak.css" type="text/css">
     <link rel="stylesheet" href="../TestMM_css/TestMM_main_park.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="../TestMM_js/TestMM_main_park.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="../TestMM_js/layOut_kwak.js"></script>
-    <script src="../TestMM_js/TestMM_main_park.js" defer></script>
+
     <style>
+    
         /******************
         모바일 버전 구현(불량쪽 차트는 ....)
         *******************/
@@ -75,15 +80,20 @@
                                             </td>
                                         </tr>
 
-                                        
+
                                     </tbody>
 
                                 </table>
                             </div>
 
+                            <div class="div_none">
+                                <!-- 빈 공간 -->
+                            </div>
+
                             <div class="div_button">
                                 <button type="button" id="btn_main_add"><a href="TestMM_add_park.html">추가</a></button>
-                                <button type="button" id="btn_main_delete"><a href="TestMM_delete_park.html">삭제</a></button>
+                                <button type="button" id="btn_main_delete"><a
+                                        href="TestMM_delete_park.html">삭제</a></button>
                             </div>
 
                             <!-- 자재코드 입력하면 자재명이 자동으로 입력
@@ -93,9 +103,11 @@
 
                             <!-- 페이지 번호 -->
                             <div class="flex_page">
-                                <div class="item_page"><a href="">
-                                        < 이전</a>
+                                <div class="item_page">
+                                    <a id="a_before" href="">
+                                        < 이전 </a>
                                 </div>
+
                                 <div class="item_page">
                                     <a href="">1</a>
                                     <a href="">2</a>
@@ -103,7 +115,12 @@
                                     <a href="">4</a>
                                     <a href="">5</a>
                                 </div>
-                                <div class="item_page"><a href="">다음 ></a></div>
+
+                                <div class="item_page">
+                                    <a id="a_after" href="">
+                                        다음 >
+                                    </a>
+                                </div>
                             </div>
 
                         </div>

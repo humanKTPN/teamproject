@@ -23,22 +23,6 @@
 
     <body>
         <div class="menu-con work">
-            <div>
-                <div id ="title-name">
-                    <div class="titleName">
-                        <i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution
-                    </div>
-                    <div class="icon-sub">
-                        관리자님 환영합니다.
-                        <!-- <i class="fas fa-solid fa-gear fa-lg" style="display: flex; width: 60px; justify-content: space-between;" > -->
-                        <i class="fas fa-regular fa-arrow-right-from-bracket fa-md">
-                            <span class="subBut">로그아웃</span>
-                        </i>
-                        <!-- </i> -->
-                    </div>  
-                </div>
-            </div>
-        <div class="main-menu-con">
             <div class="main-menu" id="main-menu">MENU 닫기</div>
             <div class="menu">작업관리</div>
             <div class="menu">생산관리</div>
@@ -53,6 +37,9 @@
                 <div class="menuBut">게시판</div>
                 <div class="menuBut">공지사항</div>
                 <div class="menuBut">기준관리</div>
+                <div class="sub-menu">
+                    <div class="subBut"><i class="fas fa-regular fa-arrow-right-from-bracket fa-lg"></i>&nbsp;로그아웃</div>
+                </div>
             </div>
             <div class="bome-con">
 
@@ -61,25 +48,53 @@
                         <!-- html 들어갈 곳 -->
                         <!-- TestQA_main -->
                         <div>
-                            <table>
+                            <table class="QA-table">
                                 <thead>
                                     <tr>
-                                        <th>배치번호</th>
-                                        <th>품목코드</th>
-                                        <th>품목명</th>
-                                        <th>최종결과</th>
+                                        <th scope="col" class="QA-th">배치번호</th>
+                                        <th scope="col" class="QA-th">품목코드</th>
+                                        <th scope="col" class="QA-th">품목명</th>
+                                        <th scope="col" class="QA-th">최종결과</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
                                     <tr>
-                                        <td><a class="enter_reportPage" href="./TestQA_report_park.html">aaa111</a></td>
-                                        <td>aa-dd-cc</td>
-                                        <td>지우개 A</td>
-                                        <td></td>
+                                        <td class="QA-td"><a class="enter_reportPage"
+                                                href="./TestQA_report_park.html">aaa111</a></td>
+                                        <td class="QA-td">aa-dd-cc</td>
+                                        <td class="QA-td">지우개 A</td>
+                                        <td class="QA-td"></td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+
+                        <div class="div_none">
+                            <!-- 빈 공간 -->
+                        </div>
+
+                        <!-- 페이지 번호 -->
+                        <div class="flex_page">
+
+                            <div class="item_page">
+                                <a id="a_before_page" href="">
+                                    < 이전 </a>
+                            </div>
+
+                            <div class="item_page">
+                                <a href="">1</a>
+                                <a href="">2</a>
+                                <a href="">3</a>
+                                <a href="">4</a>
+                                <a href="">5</a>
+                            </div>
+
+                            <div class="item_page">
+                                <a id="a_after_page" href="">
+                                    다음 >
+                                </a>
+                            </div>
                         </div>
 
                     </div>

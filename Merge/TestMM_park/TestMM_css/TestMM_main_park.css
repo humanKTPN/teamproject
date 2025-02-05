@@ -2,22 +2,45 @@
 
 .material-table {
     background: white;
-    width: 100%;
+    
+    /* width: 1000px; */
+    border: 1px solid black;
+    border-collapse: collapse;
 }
-
-
 
 .material-th {
     width: 1000px;
+    border: 1px solid black;
 }
 
 .material-td {
-    width: 1000px;
+    /* width: 1000px; */
     text-align: center;
+    border: 1px solid black;
 }
 
 /* a 태그 밑줄 제거 */
 a {
     text-decoration-line: none;
     color: black;
+}
+
+.div_none {
+    height: 10px;
+}
+
+.div_button {
+    text-align: right;
+    height: 100px;
+}
+
+.flex_page {
+    display: flex;
+    justify-self: center;
+}
+
+.item_page {
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
 }

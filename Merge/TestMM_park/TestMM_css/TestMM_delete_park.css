@@ -5,3 +5,29 @@ a {
     text-decoration-line: none;
     color: black;
 }
+
+.material-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    /* width: 1000px; */
+}
+
+.material-th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 1000px;
+}
+
+.material-td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.div_none {
+    height: 10px;
+}
+
+.div_button {
+    text-align: right;
+}

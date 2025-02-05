@@ -1,19 +1,138 @@
 /* TestQA_report_park.html */
 
-.div_report {
-    text-align: center;
+/* 반응형 웹 */
+/* 모바일 */
+@media screen and (max-width : 800px) {
+    .div_report_name {
+        text-align: center;
+        border: 1px solid black;
+        /* width: 1059.12px; */
+    }
+
+    .div_report_QA {
+        display: flex;
+        border: 1px solid black;
+
+    }
+
+    .div_report_content {
+        display: flex;
+        border: 1px solid black;
+        height: 500px;
+    }
+
+    .div_report_item {
+        text-align: center;
+        width: 25%;
+        border: 1px solid black;
+
+    }
+
+    /* a 태그 밑줄 제거 */
+    a {
+        text-decoration-line: none;
+        color: black;
+    }
+
+    .div_report_item_QA {
+        text-align: left;
+        width: 70%;
+        height: 50px;
+        border: 1px solid blue;
+        position: relative;
+        left: 100px;
+    }
+
+    .div_button {
+        text-align: right;
+    }
+
+    .div_none {
+        height: 10px;
+    }
+
 }
 
-.div_report_content {
-    display: flex;
-}
+/* pc */
+@media screen and (min-width : 801px) {
 
-.div_report_item {
-    text-align: center;
-}
+    .div_report_parent {
+        width: calc(100vw - 19.8%);
+    }
 
-/* a 태그 밑줄 제거 */
-a {
-    text-decoration-line: none;
-    color: black;
+    .div_report_name {
+        text-align: center;
+        border: 1px solid black;
+        /* width: calc(100vw - 19.8%); */
+        /* width: 1059.12px; */
+    }
+
+    .div_report_QA {
+        display: flex;
+        border: 1px solid black;
+
+    }
+
+   
+    .div_flex_1, .div_flex_2 {
+        display: flex;
+        width: 50%;
+    }
+
+    
+    
+    .div_report_menu {
+        width: 50%;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    .div_report_content {
+        display: flex;
+        border: 1px solid black;
+        height: 500px;
+    }
+
+    .div_report_item {
+        text-align: center;
+        width: 25%;
+        border: 1px solid black;
+
+    }
+
+    /* a 태그 밑줄 제거 */
+    a {
+        text-decoration-line: none;
+        color: black;
+    }
+
+    .div_report_item_QA {
+        text-align: left;
+        width: 70%;
+        height: 50px;
+        border: 1px solid blue;
+        position: relative;
+        left: 100px;
+    }
+
+    .div_button {
+        text-align: right;
+    }
+
+    .div_none {
+        height: 10px;
+    }
 }
+/* pc는 그대로 */
+
+/* 모바일로 했을 때 나오는 레이아웃
+    품질보고서
+    항목 내용
+    1. ~ 생산
+    2. ~ 생산
+    ...
+    항목 내용
+    10.  입력
+    11.  입력
+    ...
+*/

@@ -49,24 +49,24 @@
                         <!-- TestMM_update -->
 
                         <div>
-                            <table class="Mtable">
+                            <table class="material-table">
                                 <thead>
                                     <tr>
-                                        <th class="item_th">자재코드</th>
-                                        <th class="item_th">자재명</th>
-                                        <th class="item_th">수량(EA)</th>
-                                        <th class="item_th">주문필요</th>
-                                        <th class="item_th">재고위치</th>
+                                        <th scope="col" class="material-th">자재코드</th>
+                                        <th scope="col" class="material-th">자재명</th>
+                                        <th scope="col" class="material-th">수량(EA)</th>
+                                        <th scope="col" class="material-th">주문필요</th>
+                                        <th scope="col" class="material-th">재고위치</th>
                                         
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td id="Mcode" class="item_td Mcode">AA-dd-01</td>
-                                        <td id="Mname" class="item_td">염화비닐</td>
-                                        <td id="Mea" class="item_td">1000</td>
-                                        <td id="Morder" class="item_td">N</td>
-                                        <td id="Mloc" class="item_td">서울</td>
+                                        <td id="Mcode" class="material-td Mcode"><input type="text" value="AA-dd-01"></td>
+                                        <td id="Mname" class="material-td"><input type="text" value="염화비닐"></td>
+                                        <td id="Mea" class="material-td"><input type="text" value="1000"></td>
+                                        <td id="Morder" class="material-td"><input type="text" value="" placeholder="N" readonly="readonly"></td>
+                                        <td id="Mloc" class="material-td"><input type="text" value="서울"></td>
                                         
                                     </tr>
 
@@ -76,7 +76,11 @@
                             </table>
                         </div>
 
-                        <div>
+                        <div class="div_none">
+                            <!-- 빈 공간 -->
+                        </div>
+
+                        <div class="div_button">
                             <button type="button" id="btn_update_confirm"><a href="./TestMM_main_park.html">확인</a></button>
                         </div>
 
