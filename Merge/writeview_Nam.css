@@ -674,3 +674,8 @@ body{
     display: flex;
     justify-content: flex-end;
 }
+
+#edit, #list{
+    margin-left : 3px;
+    margin-right : 3px;
+}
