@@ -340,8 +340,16 @@
     /* border: 1px solid red; */
     background-color: white;
     padding: 10px;
-    margin: 2%;
+    margin: 0 2%;
     border-radius: 10px;
+}
+#work3{
+    width: 100%;
+    height: 100%;
+    /* border: 5px solid darkred; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 
