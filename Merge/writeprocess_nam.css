@@ -582,9 +582,9 @@ body{
     min-width: 268px;
 }
 
-/* ************************************************************************ */
-/* ******************************글쓰기창********************************** */
-/* ************************************************************************ */
+/* ******************************************************** */
+/* ************************글쓰기창************************ */
+/* ******************************************************** */
 
 .dom{
     display: flex;
@@ -594,6 +594,30 @@ body{
     /* width: 100%; */
     /* min-width: 100px; */
     /* width: ; */
+}
+
+.viewdom{
+    display: flex;
+    flex-direction: column;
+}
+
+.title-con, .content-con{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top : 2px solid black;
+    border-bottom : 2px solid black;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+.content-con{
+    border-left : 2px solid black;
+    border-right : 2px solid black;
+    
 }
 
 .pagecon {
@@ -610,7 +634,7 @@ body{
 .writeprocess{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
 }
 
 #summit{
@@ -620,13 +644,20 @@ body{
 
 #title{
     text-align: left;
-    width: 50%;
+    width: 98%;
+    margin-bottom: 5px;
 }
 
 #content{
     /* width: 50%; */
     height: 150px;
+    margin-bottom: 5px;
     /* min-width: 400px; */
+}
+
+.writebutton{
+    display: flex;
+    justify-content: flex-end;
 }
 
 #button{
@@ -635,6 +666,19 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
     width : 70px;
+    all: unset;
+    border: 1px solid #2f373a;
+    background-color: #2f373a;
+    color: white;
+    margin: 0.5%;
+    padding: 0.5% 1%;
+    cursor: pointer;
+}
+
+.text {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
 }
 
 @media (max-width:800px){
