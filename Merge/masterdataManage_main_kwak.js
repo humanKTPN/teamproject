@@ -64,11 +64,7 @@ function init(){
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
 
-    let del_btn = document.querySelector('.del')
-
-    del_btn.addEventListener('click',function(){
-        alert("삭제되었습니다.")
-    })
+    
     document.querySelector('.add').addEventListener('click',function(){
         // alert("추가되었습니다.")
         window.location.href="masterdataManage_edit_kwak.html"
