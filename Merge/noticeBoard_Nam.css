@@ -582,35 +582,108 @@ body{
     min-width: 268px;
 }
 
-/* ****************************************************** */
-/* ************************공지사항********************** */
-/* ****************************************************** */
+/* *********************** */
+/* *********************** */
+/* ******자유게시판판******** */
+/* *********************** */
+/* *********************** */
 
 .pagecon {
     display: flex;
     flex-direction: column;
     width: 800px;
+    margin-left: 1%;
+    
+}
+.th{
+    background-color: #2f373a;
+    color: white;
+}
+.page-num-con{
+    /* border: 1px solid darkblue; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.page-num{
+    /* border: 5px solid purple; */
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    height: 50px;
+    align-items: center;
+    min-width: 300px;
+}
+.page{
+    border: 1px solid darkgrey;
+    height: 60%;
+    width: 58%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.add-con{
+    /* border: 5px solid black; */
+    margin-right: 5px;
+    display: flex;
+    justify-content: right;
+    width: 89%;
+    /* min-width: 700px; */
+}
+.add{
+    border: 1px solid darkgray;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #2f373a;
+    color: white;
 }
 
 #pageinfo {
     display: flex;
     border: 1px solid black;
     width: 150px;
-    height: 30px;
+    height: 28px;
     align-items: center;
     justify-content: center;
+    background-color: #2f373a;
+    color: white;
+}
+button,#viewfilter{
+    background-color: #2f373a;
+    color: white;
+    
+}
+
+.pageAll{
+    display: flex;
+    background-color: darkgray;
+    border : 1px solid black;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .boardarea {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 97%;
+    height: 97%;
+    border-radius: 10px;
+    background-color: white;
 }
 
 .middle_board {
     display: flex;
     width: 100%;
     flex-direction: column;
+    margin-left: 1%;
 }
 
 .searcharea {
@@ -618,32 +691,32 @@ body{
     height: 40px;
     justify-content: center;
     align-items: center;
-    background-color: gray;
-    min-width: 700px;
+    width: 100%;
 }
 
 .boardtable,
 .boardcontents {
-    border: 1px solid black;
+    border: 1px solid darkgrey;
     margin-left: auto;
     margin-right: auto;
     width: 90%;
     border-collapse: collapse;
+    
+    
 }
-
 .boardtable{
-    min-width: 700px;
+    min-width: 800px;
 }
 
-.boardlist>tr {
+.boardlist>tr{
+    border: 1px solid darkgrey;
     align-items: center;
-    border: 1px solid black;
     border-collapse: collapse;
 }
 
 .boardlist>td {
+    border: 1px solid darkgrey;
     align-items: center;
-    border: 1px solid black;
     border-collapse: collapse;
 }
 
@@ -682,28 +755,6 @@ body{
 .pnum-con {
     margin: 0px 10px;
 }
-.main-menu-con{
-    display: flex;
-    flex-direction: row;
-}
-#title-name{
-    color: white;
-    text-align: left;
-    /* border: 1px solid red; */
-    width:100%;
-    height: 46px;
-    font-family: 'Pretendard-Regular';
-    font-weight: bold;
-    font-size: large;
-    align-items: center;
-    /* padding-left: 1%; */
-    /* padding: 0 1%; */
-    background-color: #2f373a;
-    border: 1px solid #2f373a;
-    display: flex;
-    justify-content: space-between;
-}
-
 .titleName{
     /* border: 1px solid rebeccapurple; */
     width: 13%;
@@ -718,6 +769,7 @@ body{
     justify-content: space-around;
     min-width: 268px;
 }
+
 .num{
     font-weight: normal;
 }
