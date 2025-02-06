@@ -8,11 +8,18 @@ body{
  }
 .background{
     /* border: 5px solid red; */
-    width: 100%;
-    height:  100%;
+    width: 98%;
+    height:  95%;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .tab-name{
-    border: 1px solid darkgray;
+    border: 1px solid #2f373a;
+    background-color: #2f373a;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +42,8 @@ body{
      vertical-align: middle;   /* 가운데 */
    }
    th{
-    background-color: darkgrey;
+    background-color: #2f373a;
+    color: white;
    }
    .command-div{
     /* border: 1px solid red; */
@@ -44,6 +52,9 @@ body{
     justify-content: center;
     min-width: 500px;
     
+}
+.command-th,.command-td{
+    height: 33px;
 }
 .tab-name-div{
     /* border: 5px solid purple; */
@@ -63,6 +74,7 @@ body{
     align-items:center;
     flex-wrap: wrap;
     /* min-width: 1000px; */
+    align-content: space-between
     
 }
 .dropBox{
@@ -89,11 +101,14 @@ form{
 .page{
     border: 1px solid darkgrey;
     height: 60%;
-    width: 58%;
+    width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+}
+.page-number{
+    width: 30%;
+
 }
 .page-num-con{
     /* border: 1px solid darkblue; */
@@ -108,7 +123,7 @@ form{
     /* border: 5px solid black; */
     margin-right: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     width: 100%;
     /* min-width: 700px; */
 }
@@ -117,6 +132,8 @@ form{
     width: 50px;
     text-align: center;
     margin: 5px;
+    background-color: #2f373a;
+    color: white;
 
 }
 .command-table{
@@ -259,7 +276,10 @@ form{
     /* border: 1px solid red; */
     width: 100%;
     height: 100%;
-    /* background-color: rgba(87, 59, 27, 0.329);; */
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .detail-con{
     /* border: 1px solid orange; */
@@ -904,7 +924,6 @@ body{
     min-width: 268px;
 }
 .icon-sub{
-    /* border: 10px solid red; */
     display: flex;
     width: 15%;
     display: flex;
@@ -915,4 +934,21 @@ body{
     background-color: #2f373a;
     color: white;
     height: 28px;
+    width: 60px;
+}
+.margin{
+    
+    /* border: 10px solid red; */
+    height: 90%;
+    width: 97%;
+}
+.sel{
+    height: 25px;
+    width: 175px;
+}
+.search{
+    height: 29px;
+    width: 55px;
+    background-color: #2f373a;
+    color: white;
 }
