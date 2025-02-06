@@ -1,12 +1,28 @@
-.dayWork-T {
-    padding: 0 20px;
+.menuPage-con {
+    background-color: darkgrey;
+}
+
+.boxTit {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
 }
 
 .dayWork-T td {
-    border-bottom: 1px solid darkblue;
-    /* border-top: 1px solid darkblue; */
+    border: 2px solid darkgrey;
     text-align: center;
     height: 30px;
+}
+
+.ssLine {
+    position: relative;
+    top: 0px;
+    right: 2px;
+}
+
+.tableTop {
+    background-color: #2f373a;
+    color: white;
 }
 
 .ssLine td {
@@ -17,16 +33,16 @@
     margin: 0;
 }
 
-.lineManu td {
+/* .lineManu td {
     width: 140px;
     border: 1px solid black;
-}
+} */
 
 .ssTable table,
 .ssTable tr,
 .ssTable th,
 .ssTable td {
-    border: 1px solid black;
+    border: 1px solid darkgrey;
     border-collapse: collapse;
     height: 35px;
 }
@@ -37,7 +53,9 @@
 }
 
 .ssTable {
-    border: 1px solid black;
+    border-bottom: 1px solid darkgrey;
+    height: 195px;
+    overflow-y: auto
 }
 
 .ssTable table {
@@ -48,36 +66,53 @@
 .schedule tr,
 .schedule th,
 .schedule td {
-    border: 1px solid black;
+    border: 1px solid darkgrey;
     border-collapse: collapse;
     height: 35px;
 }
 
 .schedule table {
     width: 100%;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 
 }
 
 .schedule {
-    /* margin: 20px 0; */
-    width: 60%;
+    border-bottom: 1px solid darkgrey;
 }
-.schedule_con{
-    height: 300px;
-    border: 1px solid black;
-    overflow-y: auto
-}
-.pm_ssmanu {
-    border: 1px solid black;
-    width: 100%;
-    height: 300px;
-    /* text-align: left; */
 
+.line_manu {
     display: flex;
-    flex-direction: column;
-    align-items: center
+    justify-content: space-between
+}
 
+.date_manu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pm_mm_but {
+    height: 30px;
+    width: 60px;
+    margin-right: 20px;
+    background-color: #2f373a;
+    color: white;
+}
+.pr_mm_but {
+    height: 30px;
+    width: 60px;
+    margin-right: 20px;
+    background-color: #2f373a;
+    color: white;
+}
+
+.date_but {
+    height: 25px;
+    width: 50px;
+    margin-right: 20px;
+    background-color: #2f373a;
+    color: white;
 }
 
 .ssTitle {
@@ -87,14 +122,36 @@
     height: 20px;
 }
 
-.pm_ssmanu div {
-    margin: 10px 20px 0;
+.schedule {
+    /* border: 1px solid blue; */
+    background-color: white;
+    width: 96%;
+    margin: 0 2%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 10px;
+    /* margin: 20px 0; */
 }
 
-.ss {
+.ssDate_box {
+    /* border: 1px solid red; */
+    width: 98%;
+    margin: 1% 1%;
+
+}
+
+.ssretouch_box {
+    background-color: #2f373a;
+    color: white;
+    border: 1px solid #2f373a;
+    width: 380px;
+}
+
+.schedule_con {
+    height: 250px;
     width: 100%;
-    display: flex;
-    justify-content: flex-start
+    border-bottom: 1px solid darkgrey;
+    overflow-y: auto
 }
 
 .ssInventory {
@@ -106,15 +163,28 @@
     color: white;
 }
 
-.pm_correction {
-    margin: 0 0 0 10px;
-    width: 40%;
+.pm_ssmanu {
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 290px;
+    /* text-align: left; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
 
-.pr_correction {
-    margin: 0 0 0 10px;
-    width: 40%;
+
+.pm_ssmanu div {
+    margin: 10px 20px 0;
 }
+
+.pm_correction {
+    height: 300px;
+    /* margin: 0 0 0 10px; */
+}
+
 
 .pm_correction_con {
     /* border: 1px solid blue; */
@@ -136,27 +206,28 @@
 
 .pm_correction_but {
     /* border: 1px solid red; */
-    height: 60px;
+    height: 23px;
     width: 350px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
-.pm_correction_but div {
-    background-color: rgb(104, 104, 104);
+.pm_correction_but_con{
+    
+    height: 23px;
+    width: 50px;
+    margin: 10px;
+    background-color: #2f373a;
     color: white;
     border: 1px solid black;
-    font-size: 15px;
-    width: 40px;
-    height: 20px;
     text-align: center;
-    margin: 20px 0px;
 }
 
 .pr_ssmanu {
-    border: 1px solid black;
+    background-color: white;
+    color: black;
     width: 100%;
-    height: 300px;
+    height: 270px;
     /* text-align: left; */
 
     display: flex;
@@ -166,6 +237,13 @@
 
 .pr_ssmanu div {
     margin: 7px 20px 0;
+}
+
+
+
+.pr_correction {
+    margin: 0 0 0 10px;
+    width: 40%;
 }
 
 .pr_correction_con {
@@ -190,11 +268,11 @@
     margin: auto;
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-end
+    align-items: flex-end;
 }
 
 .pr_correction_but div {
-    background-color: rgb(104, 104, 104);
+    background-color: #2f373a;
     color: white;
     border: 1px solid black;
     font-size: 15px;
@@ -226,19 +304,19 @@
 }
 
 .cs5 {
-    width: 22%;
+    width: 20%;
 }
 
 .cs6 {
-    width: 22%;
+    width: 20%;
 }
 
 .cs7 {
-    width: 6%;
+    width: 8%;
 }
 
 .cs8 {
-    width: 6%;
+    width: 8%;
 }
 
 .schedule1 {
@@ -256,6 +334,16 @@
 .schedule4 {
     width: 12%
 }
+
+.line_ssbox {
+    /* width: 95%; */
+    /* border: 1px solid red; */
+    background-color: white;
+    padding: 10px;
+    margin: 2%;
+    border-radius: 10px;
+}
+
 
 @media screen and (max-width: 800px) {
     .mainManu {
@@ -320,24 +408,26 @@
     .ss {
         display: inline;
     }
-    .schedule_con{
-        height: 250px;
+
+    .schedule_con {
+        height: 240px;
         border: 1px solid black;
         overflow-y: auto
     }
-    .ssTitle{
+
+    .ssTitle {
         font-size: 15px;
     }
+
     .pr_ssmanu {
-        border: 1px solid black;
         width: 100%;
         height: 300px;
         /* text-align: left; */
-    
+
         display: flex;
         flex-direction: column;
         justify-content: center;
-    
+
     }
 
 }

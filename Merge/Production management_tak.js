@@ -44,10 +44,11 @@ function init() {
                 }
             }
 
-            //생산 관리 관련 수정창 클릭시 표시
-            document.querySelector('.pr_correction').classList.add('hide')
-            document.querySelector('.pm_correction').classList.remove('hide')
-            // 라인별 목록에 줄클릭시 point 클래스 add하는 js 
+            // //생산 관리 관련 수정창 클릭시 표시
+            // document.querySelector('.pr_correction').classList.add('hide')
+            // document.querySelector('.pm_correction').classList.remove('hide')
+            
+            // // 라인별 목록에 줄클릭시 point 클래스 add하는 js 
             let pm_tables = evt.target.parentNode.parentNode.children
             console.log(pm_tables)
             for (let j = 0; j < pm_tables.length; j++) {
@@ -77,8 +78,8 @@ function init() {
         // }
 
         //생산 관리 관련 수정창 클릭시 표시
-        document.querySelector('.pm_correction').classList.add('hide')
-        document.querySelector('.pr_correction').classList.remove('hide')
+        // document.querySelector('.pm_correction').classList.add('hide')
+        // document.querySelector('.pr_correction').classList.remove('hide')
         // 라인별 목록에 줄클릭시 point 클래스 add하는 js 
         let pr_tables = evt.target.parentNode.parentNode.children
         console.log(pr_tables)
@@ -88,30 +89,39 @@ function init() {
         evt.target.parentNode.classList.add('point')
     })
 
-    let complete = document.querySelectorAll('.complete')
-    for (let i = 0; i < complete.length; i++) {
-        complete[i].addEventListener('click', function () {
-            alert("완료되었습니다.")
-        })
-    }
-    let add = document.querySelectorAll('.add')
-    for (let i = 0; i < add.length; i++) {
-        add[i].addEventListener('click', function () {
-            alert("추가되었습니다.")
-        })
-    }
-    let retouch = document.querySelectorAll('.retouch')
-    for (let i = 0; i < retouch.length; i++) {
-        retouch[i].addEventListener('click', function () {
-            alert("수정되었습니다.")
-        })
-    }
-    let deletes = document.querySelectorAll('.delete')
-    for (let i = 0; i < deletes.length; i++) {
-        deletes[i].addEventListener('click', function () {
-            alert("삭제되었습니다.")
-        })
-    }
+    // let complete = document.querySelectorAll('.complete')
+    // for (let i = 0; i < complete.length; i++) {
+    //     complete[i].addEventListener('click', function () {
+    //         alert("완료되었습니다.")
+    //     })
+    // }
+    // let add = document.querySelectorAll('.add')
+    // for (let i = 0; i < add.length; i++) {
+    //     add[i].addEventListener('click', function () {
+    //         alert("추가되었습니다.")
+    //     })
+    // }
+    // let retouch = document.querySelectorAll('.retouch')
+    // for (let i = 0; i < retouch.length; i++) {
+    //     retouch[i].addEventListener('click', function () {
+    //         alert("수정되었습니다.")
+    //     })
+    // }
+    // let deletes = document.querySelectorAll('.delete')
+    // for (let i = 0; i < deletes.length; i++) {
+    //     deletes[i].addEventListener('click', function () {
+    //         alert("삭제되었습니다.")
+    //     })
+    // }
     
+    // 생산관리버튼 팝업창 기능
+    document.querySelector('.pm_mm_but').addEventListener('click', function (){
+        window.open("pm_popup_tak.html", "a", "width=400, height=360, left=100, top=50");
+    })
+    
+    // 생산일정버튼 팝업창 기능
+    document.querySelector('.pr_mm_but').addEventListener('click', function (){
+        window.open("pr_popup_tak.html", "a", "width=400, height=370, left=100, top=50");
+    })
 
 }

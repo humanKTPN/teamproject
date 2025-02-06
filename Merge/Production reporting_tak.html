@@ -21,410 +21,579 @@
 
 <body>
 
-        <div class="menu-con work">
-            <div>
-                <div id="title-name">
-                    <div class="titleName">
-                        <i id="ham" class=" main-menu fas fa-solid fa-bars fa-lg"></i>&nbsp;&nbsp;<i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution
-                    </div>
-                    <div class="icon-sub">
-                        관리자님 환영합니다.
-                        <!-- <i class="fas fa-solid fa-gear fa-lg" style="display: flex; width: 60px; justify-content: space-between;" > -->
-                        <i class="fas fa-regular fa-arrow-right-from-bracket fa-md">
-                            <span class="subBut">로그아웃</span>
-                        </i>
-                        <!-- </i> -->
-                    </div>
+    <div class="menu-con work">
+        <div>
+            <div id="title-name">
+                <div class="titleName">
+                    <i id="ham" class=" main-menu fas fa-solid fa-bars fa-lg"></i>&nbsp;&nbsp;<i
+                        class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution
                 </div>
-            </div>
-            <div class="main-menu-con">
-                <!-- <div class="main-menu" id="main-menu">MENU 닫기</div> -->
-                <div class="menu">기준관리</div>
-                <div class="menu">작업관리</div>
-                <div class="menu">생산관리</div>
-                <div class="menu">생산리포팅</div>
-                <div class="menu">자재관리</div>
-                <div class="menu">품질관리</div>
+                <div class="icon-sub">
+                    관리자님 환영합니다.
+                    <!-- <i class="fas fa-solid fa-gear fa-lg" style="display: flex; width: 60px; justify-content: space-between;" > -->
+                    <i class="fas fa-regular fa-arrow-right-from-bracket fa-md">
+                        <span class="subBut">로그아웃</span>
+                    </i>
+                    <!-- </i> -->
+                </div>
             </div>
         </div>
-            <div class="board">
+        <div class="main-menu-con">
+            <!-- <div class="main-menu" id="main-menu">MENU 닫기</div> -->
+            <div class="menu">기준관리</div>
+            <div class="menu">작업관리</div>
+            <div class="menu">생산관리</div>
+            <div class="menu">생산리포팅</div>
+            <div class="menu">자재관리</div>
+            <div class="menu">품질관리</div>
+        </div>
+    </div>
+    <div class="board">
 
-                <div class="mainmenu" id="work1">
-                    <div class="menuBut">대시보드</div>
-                    <div class="menuBut">게시판</div>
-                    <div class="menuBut">공지사항</div>
-                    <!-- <div class="menuBut">기준관리</div> -->
-                </div>
+        <div class="mainmenu" id="work1">
+            <div class="menuBut">대시보드</div>
+            <div class="menuBut">게시판</div>
+            <div class="menuBut">공지사항</div>
+            <!-- <div class="menuBut">기준관리</div> -->
+        </div>
 
-                <div class="bome-con">
-                    <!-- 배경색 -->
-                    <!-- style="background-color: rgba(87, 59, 27, 0.329);" -->
-                    <div class="menuPage-con">
-                        <!-- html 들어갈 곳 -->
-                        <div id="work4">
-                            <div style="display: flex;">
-                                <div style="width: 58%; margin: 0 6px 0;">
-                                    <table
-                                        style="width: 100%; text-align: center; border: 1px solid black; margin-top: 10px;">
+        <div class="bome-con">
+            <!-- 배경색 -->
+            <!-- style="background-color: rgba(87, 59, 27, 0.329);" -->
+            <div class="menuPage-con">
+                <!-- html 들어갈 곳 -->
+                <div id="work4">
+                    <div style="display: flex;">
+                        <div class="date_box">
+                            <table class="date_box_manu">
+                                <tr>
+                                    <td class="date_point date_ssManu1 date_ssList1 point2">일별 생산량</td>
+                                    <td class="date_point date_ssManu2 date_ssList2">주간별 생산량</td>
+                                    <td class="date_point date_ssManu3 date_ssList3">월별생산량</td>
+                                    <td class="date_point date_ssManu4 date_ssList4">월별주문/판매량</td>
+                                </tr>
+                            </table>
+                            <div class="ssgraph" id="date_ssManu1">
+                                <div class="graph_wrap">
+                                    <div class="tit">라인 일별 생산량</div>
+                                    <div class="graph">
+                                        <!-- 기준 -->
+                                        <ul class="y-axis">
+                                            <li><span>100</span></li>
+                                            <li><span>90</span></li>
+                                            <li><span>80</span></li>
+                                            <li><span>70</span></li>
+                                            <li><span>60</span></li>
+                                            <li><span>50</span></li>
+                                            <li><span>40</span></li>
+                                            <li><span>30</span></li>
+                                            <li><span>20</span></li>
+                                            <li><span>10</span></li>
+                                            <li><span>0</span></li>
+                                        </ul>
+                                        <!-- 목록 -->
+                                        <ul class="x-axis">
+                                            <li><span>A. 투입량</span></li>
+                                            <li><span>A. 생산량</span></li>
+                                            <li><span>A. 불량률</span></li>
+                                            <li><span>B. 투입량</span></li>
+                                            <li><span>B. 생산량</span></li>
+                                            <li><span>B. 불량률</span></li>
+                                            <li><span>C. 투입량</span></li>
+                                            <li><span>C. 생산량</span></li>
+                                            <li><span>C. 불량률</span></li>
+                                        </ul>
+                                        <!-- 바 그래프 (백분율 만큼 height값) -->
+                                        <ul class="bar" style="bottom: -118px;">
+                                            <li style="height:34%;"><span></span></li>
+                                            <li style="height:33%;"><span></span></li>
+                                            <li style="height:1%;"><span></span></li>
+                                            <li style="height:39%;"><span></span></li>
+                                            <li style="height:39%;"><span></span></li>
+                                            <li style="height:0%;"><span></span></li>
+                                            <li style="height:51%;"><span></span></li>
+                                            <li style="height:49%;"><span></span></li>
+                                            <li style="height:2%;"><span></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ssgraph hide" id="date_ssManu2">
+                                <div class="graph_wrap">
+                                    <div class="tit">라인 주간별 생산량</div>
+                                    <div class="graph">
+                                        <!-- 기준 -->
+                                        <ul class="y-axis">
+                                            <li><span>1000</span></li>
+                                            <li><span>900</span></li>
+                                            <li><span>800</span></li>
+                                            <li><span>700</span></li>
+                                            <li><span>600</span></li>
+                                            <li><span>500</span></li>
+                                            <li><span>400</span></li>
+                                            <li><span>300</span></li>
+                                            <li><span>200</span></li>
+                                            <li><span>100</span></li>
+                                            <li><span>0</span></li>
+                                        </ul>
+                                        <!-- 목록 -->
+                                        <ul class="x-axis">
+                                            <li><span>A. 투입량</span></li>
+                                            <li><span>A. 생산량</span></li>
+                                            <li><span>A. 불량률</span></li>
+                                            <li><span>B. 투입량</span></li>
+                                            <li><span>B. 생산량</span></li>
+                                            <li><span>B. 불량률</span></li>
+                                            <li><span>C. 투입량</span></li>
+                                            <li><span>C. 생산량</span></li>
+                                            <li><span>C. 불량률</span></li>
+                                        </ul>
+                                        <!-- 바 그래프 (백분율 만큼 height값) -->
+                                        <ul class="bar" style="bottom: -118px;">
+                                            <li style="height:43%;"><span></span></li>
+                                            <li style="height:41%;"><span></span></li>
+                                            <li style="height:2%;"><span></span></li>
+                                            <li style="height:51%;"><span></span></li>
+                                            <li style="height:50%;"><span></span></li>
+                                            <li style="height:1%;"><span></span></li>
+                                            <li style="height:46%;"><span></span></li>
+                                            <li style="height:44%;"><span></span></li>
+                                            <li style="height:2%;"><span></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ssgraph hide" id="date_ssManu3">
+                                <div class="graph_wrap">
+                                    <div class="tit">라인 월별 생산량</div>
+                                    <div class="graph">
+                                        <!-- 기준 -->
+                                        <ul class="y-axis">
+                                            <li><span>10000</span></li>
+                                            <li><span>9000</span></li>
+                                            <li><span>8000</span></li>
+                                            <li><span>7000</span></li>
+                                            <li><span>6000</span></li>
+                                            <li><span>5000</span></li>
+                                            <li><span>4000</span></li>
+                                            <li><span>3000</span></li>
+                                            <li><span>2000</span></li>
+                                            <li><span>1000</span></li>
+                                            <li><span>0</span></li>
+                                        </ul>
+                                        <!-- 목록 -->
+                                        <ul class="x-axis">
+                                            <li><span>A. 투입량</span></li>
+                                            <li><span>A. 생산량</span></li>
+                                            <li><span>A. 불량률</span></li>
+                                            <li><span>B. 투입량</span></li>
+                                            <li><span>B. 생산량</span></li>
+                                            <li><span>B. 불량률</span></li>
+                                            <li><span>C. 투입량</span></li>
+                                            <li><span>C. 생산량</span></li>
+                                            <li><span>C. 불량률</span></li>
+                                        </ul>
+                                        <!-- 바 그래프 (백분율 만큼 height값) -->
+                                        <ul class="bar" style="bottom: -90px;">
+                                            <li style="height:54%;"><span></span></li>
+                                            <li style="height:51%;"><span></span></li>
+                                            <li style="height:3%;"><span></span></li>
+                                            <li style="height:61%;"><span></span></li>
+                                            <li style="height:59%;"><span></span></li>
+                                            <li style="height:2%;"><span></span></li>
+                                            <li style="height:66%;"><span></span></li>
+                                            <li style="height:65%;"><span></span></li>
+                                            <li style="height:1%;"><span></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ssgraph hide" id="date_ssManu4">
+                                <div class="graph_wrap">
+                                    <div class="tit">월별 주문/판매량</div>
+                                    <div class="graph">
+                                        <!-- 기준 -->
+                                        <ul class="y-axis">
+                                            <li><span>100</span></li>
+                                            <li><span>90</span></li>
+                                            <li><span>80</span></li>
+                                            <li><span>70</span></li>
+                                            <li><span>60</span></li>
+                                            <li><span>50</span></li>
+                                            <li><span>40</span></li>
+                                            <li><span>30</span></li>
+                                            <li><span>20</span></li>
+                                            <li><span>10</span></li>
+                                            <li><span>0</span></li>
+                                        </ul>
+                                        <!-- 목록 -->
+                                        <ul class="x-axis">
+                                            <li><span>싹싹지우개</span></li>
+                                            <li><span>처음처럼지우개</span></li>
+                                            <li><span>우유빛지우개</span></li>
+                                            <li><span>뭐든지우개</span></li>
+                                            <li><span>리셋지우개</span></li>
+                                        </ul>
+                                        <!-- 바 그래프 (백분율 만큼 height값) -->
+                                        <ul class="bar" style="bottom: -44px;">
+                                            <li style="height:85%;"><span></span></li>
+                                            <li style="height:2%;"><span></span></li>
+                                            <li style="height:88%;"><span></span></li>
+                                            <li style="height:5%;"><span></span></li>
+                                            <li style="height:90%;"><span></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="numberBox">
+                            <div style="margin: 10px 5%;">호기별 생산량 조회</div>
+                            <hr>
+                            <div style="display: flex; justify-content: space-evenly; margin-bottom: 15px;">
+                                <div>라인 :</div>
+                                <select>
+                                    <option>A라인</option>
+                                    <option>B라인</option>
+                                    <option>C라인</option>
+                                </select>
+                                <div>호기:</div>
+                                <select>
+                                    <option>1호기</option>
+                                    <option>2호기</option>
+                                    <option>3호기</option>
+                                    <option>4호기</option>
+                                    <option>5호기</option>
+                                </select>
+                            </div>
+                            <div class="ssTable">
+                                <table>
+                                    <tr>
+                                        <th class="es1">기간별</th>
+                                        <th class="es2">생산량</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">금일 생산량</td>
+                                        <td class="es2">34 ea</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">금주 생산량</td>
+                                        <td class="es2">125 ea</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">금월 생산량</td>
+                                        <td class="es2">521 ea</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">금월 불량률</td>
+                                        <td class="es2">2%</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="date_list">
+                            <!-- 일별,품목별 총생산량 박스 -->
+                            <div class="date_ssBox" id="date_ssList1">
+                                <div class="date_ssBox_tit">일별 생산량</div>
+                                <div class="date_ssTable">
+                                    <table>
                                         <tr>
-                                            <td class="date_ssManu point" style="border: 1px solid black;">일별 생산량</td>
-                                            <td class="date_ssManu" style="border: 1px solid black;">주간별 생산량</td>
-                                            <td class="date_ssManu" style="border: 1px solid black;">월별 생산량</td>
-                                            <td class="date_ssManu" style="border: 1px solid black;">월별 주문량</td>
+                                            <th class="es3">설비명</th>
+                                            <th class="es4">생산량</th>
+                                            <th class="es5">설비명</th>
+                                            <th class="es6">생산량</th>
+                                            <th class="es7">설비명</th>
+                                            <th class="es8">생산량</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 1호기</td>
+                                            <td class="es4">15 ea</td>
+                                            <td class="es5">B라인 1호기</td>
+                                            <td class="es6">19 ea</td>
+                                            <td class="es7">C라인 1호기</td>
+                                            <td class="es8">17 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 2호기</td>
+                                            <td class="es4">12 ea</td>
+                                            <td class="es5">B라인 2호기</td>
+                                            <td class="es6">13 ea</td>
+                                            <td class="es7">C라인 2호기</td>
+                                            <td class="es8">11 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 3호기</td>
+                                            <td class="es4">15 ea</td>
+                                            <td class="es5">B라인 3호기</td>
+                                            <td class="es6">13 ea</td>
+                                            <td class="es7">C라인 3호기</td>
+                                            <td class="es8">11 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 4호기</td>
+                                            <td class="es4">13 ea</td>
+                                            <td class="es5">B라인 4호기</td>
+                                            <td class="es6">15 ea</td>
+                                            <td class="es7">C라인 4호기</td>
+                                            <td class="es8">10 ea</td>
                                         </tr>
                                     </table>
-                                    <div class="ssgraph" style="height: 300px; border: 1px solid black;">
-                                        <div class="graph_wrap">
-                                            <div class="tit">라인 별 생산량</div>
-                                            <div class="graph">
-                                                <!-- 기준 -->
-                                                <ul class="y-axis">
-                                                    <li><span>100</span></li>
-                                                    <li><span>90</span></li>
-                                                    <li><span>80</span></li>
-                                                    <li><span>70</span></li>
-                                                    <li><span>60</span></li>
-                                                    <li><span>50</span></li>
-                                                    <li><span>40</span></li>
-                                                    <li><span>30</span></li>
-                                                    <li><span>20</span></li>
-                                                    <li><span>10</span></li>
-                                                    <li><span>0</span></li>
-                                                </ul>
-                                                <!-- 목록 -->
-                                                <ul class="x-axis">
-                                                    <li><span>A라인 생산량</span></li>
-                                                    <li><span>A라인 불량률</span></li>
-                                                    <li><span>B라인 생산량</span></li>
-                                                    <li><span>B라인 불량률</span></li>
-                                                    <li><span>C라인 생산량</span></li>
-                                                    <li><span>C라인 불량률</span></li>
-                                                </ul>
-                                                <!-- 바 그래프 (백분율 만큼 height값) -->
-                                                <ul class="bar" style="bottom: -43px;">
-                                                    <li style="height:85%;"><span></span></li>
-                                                    <li style="height:3%;"><span></span></li>
-                                                    <li style="height:90%;"><span></span></li>
-                                                    <li style="height:4%;"><span></span></li>
-                                                    <li style="height:80%;"><span></span></li>
-                                                    <li style="height:2%;"><span></span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ssgraph hide" style="height: 300px; border: 1px solid black;">
-                                        <div class="graph_wrap">
-                                            <div class="tit">라인 별 생산량</div>
-                                            <div class="graph">
-                                                <!-- 기준 -->
-                                                <ul class="y-axis">
-                                                    <li><span>100</span></li>
-                                                    <li><span>90</span></li>
-                                                    <li><span>80</span></li>
-                                                    <li><span>70</span></li>
-                                                    <li><span>60</span></li>
-                                                    <li><span>50</span></li>
-                                                    <li><span>40</span></li>
-                                                    <li><span>30</span></li>
-                                                    <li><span>20</span></li>
-                                                    <li><span>10</span></li>
-                                                    <li><span>0</span></li>
-                                                </ul>
-                                                <!-- 목록 -->
-                                                <ul class="x-axis">
-                                                    <li><span>A라인 생산량</span></li>
-                                                    <li><span>A라인 불량률</span></li>
-                                                    <li><span>B라인 생산량</span></li>
-                                                    <li><span>B라인 불량률</span></li>
-                                                    <li><span>C라인 생산량</span></li>
-                                                    <li><span>C라인 불량률</span></li>
-                                                </ul>
-                                                <!-- 바 그래프 (백분율 만큼 height값) -->
-                                                <ul class="bar" style="bottom: -63px;">
-                                                    <li style="height:65%;"><span></span></li>
-                                                    <li style="height:2%;"><span></span></li>
-                                                    <li style="height:80%;"><span></span></li>
-                                                    <li style="height:5%;"><span></span></li>
-                                                    <li style="height:75%;"><span></span></li>
-                                                    <li style="height:3%;"><span></span></li>
-                                                    <li class="hide" style="height:100%;"><span></span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ssgraph hide" style="height: 300px; border: 1px solid black;">
-                                        <div class="graph_wrap">
-                                            <div class="tit">라인 별 생산량</div>
-                                            <div class="graph">
-                                                <!-- 기준 -->
-                                                <ul class="y-axis">
-                                                    <li><span>100</span></li>
-                                                    <li><span>90</span></li>
-                                                    <li><span>80</span></li>
-                                                    <li><span>70</span></li>
-                                                    <li><span>60</span></li>
-                                                    <li><span>50</span></li>
-                                                    <li><span>40</span></li>
-                                                    <li><span>30</span></li>
-                                                    <li><span>20</span></li>
-                                                    <li><span>10</span></li>
-                                                    <li><span>0</span></li>
-                                                </ul>
-                                                <!-- 목록 -->
-                                                <ul class="x-axis">
-                                                    <li><span>A라인 생산량</span></li>
-                                                    <li><span>A라인 불량률</span></li>
-                                                    <li><span>B라인 생산량</span></li>
-                                                    <li><span>B라인 불량률</span></li>
-                                                    <li><span>C라인 생산량</span></li>
-                                                    <li><span>C라인 불량률</span></li>
-                                                </ul>
-                                                <!-- 바 그래프 (백분율 만큼 height값) -->
-                                                <ul class="bar">
-                                                    <li style="height:65%;"><span></span></li>
-                                                    <li style="height:2%;"><span></span></li>
-                                                    <li style="height:70%;"><span></span></li>
-                                                    <li style="height:5%;"><span></span></li>
-                                                    <li style="height:75%;"><span></span></li>
-                                                    <li style="height:3%;"><span></span></li>
-                                                    <li class="hide" style="height:100%;"><span></span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ssgraph hide" style="height: 300px; border: 1px solid black;">
-                                        <div class="graph_wrap">
-                                            <div class="tit">라인 별 생산량</div>
-                                            <div class="graph">
-                                                <!-- 기준 -->
-                                                <ul class="y-axis">
-                                                    <li><span>100</span></li>
-                                                    <li><span>90</span></li>
-                                                    <li><span>80</span></li>
-                                                    <li><span>70</span></li>
-                                                    <li><span>60</span></li>
-                                                    <li><span>50</span></li>
-                                                    <li><span>40</span></li>
-                                                    <li><span>30</span></li>
-                                                    <li><span>20</span></li>
-                                                    <li><span>10</span></li>
-                                                    <li><span>0</span></li>
-                                                </ul>
-                                                <!-- 목록 -->
-                                                <ul class="x-axis">
-                                                    <li><span>A라인 생산량</span></li>
-                                                    <li><span>A라인 불량률</span></li>
-                                                    <li><span>B라인 생산량</span></li>
-                                                    <li><span>B라인 불량률</span></li>
-                                                    <li><span>C라인 생산량</span></li>
-                                                    <li><span>C라인 불량률</span></li>
-                                                </ul>
-                                                <!-- 바 그래프 (백분율 만큼 height값) -->
-                                                <ul class="bar" style="bottom: -44px;">
-                                                    <li style="height:85%;"><span></span></li>
-                                                    <li style="height:2%;"><span></span></li>
-                                                    <li style="height:88%;"><span></span></li>
-                                                    <li style="height:5%;"><span></span></li>
-                                                    <li style="height:90%;"><span></span></li>
-                                                    <li style="height:3%;"><span></span></li>
-                                                    <li class="hide" style="height:100%;"><span></span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-                                <div style="border: 1px solid black; width: 38%; margin: 0 6px 0; margin-top: 10px;">
-                                    <div style="margin: 10px 5%;">호기별 생산량 조회</div>
-                                    <input type="search" placeholder="호기명을 입력하시오." style="margin: 0 5% 0 ;">
-                                    <input type="button" value="검색">
-                                    <div class="number_ssbox">
-                                        <div class="number_ss">금일 생산량 : 38ea </div>
-                                        <div class="number_ss">금주 생산량 : 268ea</div>
-                                        <div class="number_ss">금월 생산량 : 1325ea</div>
-                                        <div class="number_ss">금월 불량률 : 24ea</div>
-                                        <!-- <div style="margin: 0 10px;">현 가동 설비 :</div> -->
-                                    </div>
+                                <div class="date_ssBox_tit">품목별 금일 총 생산량
                                 </div>
+                                <select style="margin-left: 20px;">
+                                    <option value="1">싹싹지우개</option>
+                                    <option value="1">처음처럼지우개</option>
+                                    <option value="1">우유빛지우개</option>
+                                    <option value="1">뭐든지우개</option>
+                                    <option value="1">리셋지우개</option>
+                                </select>
+                                <div class="ssTotal">169ea</div>
                             </div>
-                            <div style="display: flex;">
-                                <div class="ssTable" style="width: 58%; height: 350px; margin: 0 6px;">
-                                    <!-- 일별,품목별 총생산량 박스 -->
-                                    <div class="date_ssBox">
-                                        <div class="date_ssBox_tit">*일별 생산량*</div>
-                                        <div class="ssLine_number">
-                                            <div class="line_number">
-                                                <div>A라인 1호기 : 8 ea</div>
-                                                <div>A라인 2호기 : 6 ea</div>
-                                                <div>A라인 3호기 : 10 ea</div>
-                                                <div>A라인 4호기 : 9 ea</div>
-                                            </div>
-                                            <div class="line_number">
-                                                <div>B라인 1호기 : 7 ea</div>
-                                                <div>B라인 2호기 : 13 ea</div>
-                                                <div>B라인 3호기 : 8 ea</div>
-                                                <div>B라인 4호기 : 11 ea</div>
-                                            </div>
-                                            <div class="line_number">
-                                                <div>C라인 1호기 : 12 ea</div>
-                                                <div>C라인 2호기 : 13 ea</div>
-                                                <div>C라인 3호기 : 15 ea</div>
-                                                <div>C라인 4호기 : 9 ea</div>
-                                            </div>
-                                        </div>
-                                        <div class="date_ssBox_tit">*품목별 금일 총 생산량*
-                                        </div>
-                                        <select style="margin-left: 20px;">
-                                            <option value="1">싹싹지우개</option>
-                                            <option value="1">처음처럼지우개</option>
-                                            <option value="1">우유빛지우개</option>
-                                            <option value="1">뭐든지우개</option>
-                                            <option value="1">리셋지우개</option>
-                                        </select>
-                                        <div class="ssTotal">169ea</div>
-                                    </div>
-                                    <!-- 주간별,품목별 총생산량 박스 -->
-                                    <div class="date_ssBox hide">
-                                        <div class="date_ssBox_tit">*주간별 생산량*</div>
-                                        <div class="ssLine_number">
-                                            <div class="line_number">
-                                                <div>A라인 1호기 : 8 ea</div>
-                                                <div>A라인 2호기 : 6 ea</div>
-                                                <div>A라인 3호기 : 10 ea</div>
-                                                <div>A라인 4호기 : 9 ea</div>
-                                            </div>
-                                            <div class="line_number">
-                                                <div>B라인 1호기 : 7 ea</div>
-                                                <div>B라인 2호기 : 13 ea</div>
-                                                <div>B라인 3호기 : 8 ea</div>
-                                                <div>B라인 4호기 : 11 ea</div>
-                                            </div>
-                                            <div class="line_number">
-                                                <div>C라인 1호기 : 12 ea</div>
-                                                <div>C라인 2호기 : 13 ea</div>
-                                                <div>C라인 3호기 : 15 ea</div>
-                                                <div>C라인 4호기 : 9 ea</div>
-                                            </div>
-                                        </div>
-                                        <div class="date_ssBox_tit">*품목별 주간 총 생산량*
-                                        </div>
-                                        <select style="margin-left: 20px;">
-                                            <option value="1">싹싹지우개</option>
-                                            <option value="1">처음처럼지우개</option>
-                                            <option value="1">우유빛지우개</option>
-                                            <option value="1">뭐든지우개</option>
-                                            <option value="1">리셋지우개</option>
-                                        </select>
-                                        <div class="ssTotal">169ea</div>
-                                    </div>
-                                    <!-- 월별,품목별 총생산량 박스 -->
-                                    <div class="date_ssBox hide">
-                                        <div class="date_ssBox_tit">*월별 생산량*</div>
-                                        <div class="ssLine_number">
-                                            <div class="line_number">
-                                                <div>A라인 1호기 : 8 ea</div>
-                                                <div>A라인 2호기 : 6 ea</div>
-                                                <div>A라인 3호기 : 10 ea</div>
-                                                <div>A라인 4호기 : 9 ea</div>
-                                            </div>
-                                            <div class="line_number">
-                                                <div>B라인 1호기 : 7 ea</div>
-                                                <div>B라인 2호기 : 13 ea</div>
-                                                <div>B라인 3호기 : 8 ea</div>
-                                                <div>B라인 4호기 : 11 ea</div>
-                                            </div>
-                                            <div class="line_number">
-                                                <div>C라인 1호기 : 12 ea</div>
-                                                <div>C라인 2호기 : 13 ea</div>
-                                                <div>C라인 3호기 : 15 ea</div>
-                                                <div>C라인 4호기 : 9 ea</div>
-                                            </div>
-                                        </div>
-                                        <div class="date_ssBox_tit">*품목별 월 총 생산량*
-                                        </div>
-                                        <select style="margin-left: 20px;">
-                                            <option value="1">싹싹지우개</option>
-                                            <option value="1">처음처럼지우개</option>
-                                            <option value="1">우유빛지우개</option>
-                                            <option value="1">뭐든지우개</option>
-                                            <option value="1">리셋지우개</option>
-                                        </select>
-                                        <div class="ssTotal">169ea</div>
-                                    </div>
-                                    <!-- 월별 총주문량 박스 -->
-                                    <div class="date_ssBox hide">
-                                        <div class="date_ssBox_tit">*월별 주문량*</div>
-                                        <div class="ssLine_number">
-                                            <div class="line_number">
-                                                <div>A라인 1호기 : 8 ea</div>
-                                                <div>A라인 2호기 : 6 ea</div>
-                                                <div>A라인 3호기 : 10 ea</div>
-                                                <div>A라인 4호기 : 9 ea</div>
-                                            </div>
-                                            <div class="line_number">
-                                                <div>B라인 1호기 : 7 ea</div>
-                                                <div>B라인 2호기 : 13 ea</div>
-                                                <div>B라인 3호기 : 8 ea</div>
-                                                <div>B라인 4호기 : 11 ea</div>
-                                            </div>
-                                            <div class="line_number">
-                                                <div>C라인 1호기 : 12 ea</div>
-                                                <div>C라인 2호기 : 13 ea</div>
-                                                <div>C라인 3호기 : 15 ea</div>
-                                                <div>C라인 4호기 : 9 ea</div>
-                                            </div>
-                                        </div>
-                                        <div class="date_ssBox_tit">*품목별 금일 총 생산량*
-                                        </div>
-                                        <select style="margin-left: 20px;">
-                                            <option value="1">싹싹지우개</option>
-                                            <option value="1">처음처럼지우개</option>
-                                            <option value="1">우유빛지우개</option>
-                                            <option value="1">뭐든지우개</option>
-                                            <option value="1">리셋지우개</option>
-                                        </select>
-                                        <div class="ssTotal">169ea</div>
-                                    </div>
-
+                            <!-- 주간별,품목별 총생산량 박스 -->
+                            <div class="date_ssBox hide" id="date_ssList2">
+                                <div class="date_ssBox_tit">주간별 생산량</div>
+                                <div class="date_ssTable">
+                                    <table>
+                                        <tr>
+                                            <th class="es3">설비명</th>
+                                            <th class="es4">생산량</th>
+                                            <th class="es5">설비명</th>
+                                            <th class="es6">생산량</th>
+                                            <th class="es7">설비명</th>
+                                            <th class="es8">생산량</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 1호기</td>
+                                            <td class="es4">56 ea</td>
+                                            <td class="es5">B라인 1호기</td>
+                                            <td class="es6">67 ea</td>
+                                            <td class="es7">C라인 1호기</td>
+                                            <td class="es8">65 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 2호기</td>
+                                            <td class="es4">58 ea</td>
+                                            <td class="es5">B라인 2호기</td>
+                                            <td class="es6">64 ea</td>
+                                            <td class="es7">C라인 2호기</td>
+                                            <td class="es8">59 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 3호기</td>
+                                            <td class="es4">71 ea</td>
+                                            <td class="es5">B라인 3호기</td>
+                                            <td class="es6">68 ea</td>
+                                            <td class="es7">C라인 3호기</td>
+                                            <td class="es8">61 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 4호기</td>
+                                            <td class="es4">59 ea</td>
+                                            <td class="es5">B라인 4호기</td>
+                                            <td class="es6">67 ea</td>
+                                            <td class="es7">C라인 4호기</td>
+                                            <td class="es8">81 ea</td>
+                                        </tr>
+                                    </table>
                                 </div>
-                                <!-- 가동설비현황 박스 -->
-                                <div style="border: 1px solid black; width: 38%; margin: 0 6px;">
-                                    <div style="margin: 10px 5% 20px; font-size: 20px; font-weight: 600;">가동 설비 현황</div>
-                                    <div style="display: flex; height: 250px; width: 90%; overflow-y: scroll;">
-                                        <div style="margin: 10px 8%; line-height: 30px;">
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                        </div>
-                                        <div style="margin: 10px 8%; line-height: 30px;">
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                            <div>A라인 1호기 :</div>
-                                        </div>
-                                    </div>
+                                
+                                <div class="date_ssBox_tit">품목별 주간 총 생산량
                                 </div>
+                                <select style="margin-left: 20px;">
+                                    <option value="1">싹싹지우개</option>
+                                    <option value="1">처음처럼지우개</option>
+                                    <option value="1">우유빛지우개</option>
+                                    <option value="1">뭐든지우개</option>
+                                    <option value="1">리셋지우개</option>
+                                </select>
+                                <div class="ssTotal">1284ea</div>
+                            </div>
+                            <!-- 월별,품목별 총생산량 박스 -->
+                            <div class="date_ssBox hide" id="date_ssList3">
+                                <div class="date_ssBox_tit">월별 생산량</div>
+                                <div class="date_ssTable">
+                                    <table>
+                                        <tr>
+                                            <th class="es3">설비명</th>
+                                            <th class="es4">생산량</th>
+                                            <th class="es5">설비명</th>
+                                            <th class="es6">생산량</th>
+                                            <th class="es7">설비명</th>
+                                            <th class="es8">생산량</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 1호기</td>
+                                            <td class="es4">246 ea</td>
+                                            <td class="es5">B라인 1호기</td>
+                                            <td class="es6">278 ea</td>
+                                            <td class="es7">C라인 1호기</td>
+                                            <td class="es8">263 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 2호기</td>
+                                            <td class="es4">269 ea</td>
+                                            <td class="es5">B라인 2호기</td>
+                                            <td class="es6">283 ea</td>
+                                            <td class="es7">C라인 2호기</td>
+                                            <td class="es8">258 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 3호기</td>
+                                            <td class="es4">304 ea</td>
+                                            <td class="es5">B라인 3호기</td>
+                                            <td class="es6">285 ea</td>
+                                            <td class="es7">C라인 3호기</td>
+                                            <td class="es8">294 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es3">A라인 4호기</td>
+                                            <td class="es4">279 ea</td>
+                                            <td class="es5">B라인 4호기</td>
+                                            <td class="es6">286 ea</td>
+                                            <td class="es7">C라인 4호기</td>
+                                            <td class="es8">283 ea</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="date_ssBox_tit">품목별 월 총 생산량
+                                </div>
+                                <select style="margin-left: 20px;">
+                                    <option value="1">싹싹지우개</option>
+                                    <option value="1">처음처럼지우개</option>
+                                    <option value="1">우유빛지우개</option>
+                                    <option value="1">뭐든지우개</option>
+                                    <option value="1">리셋지우개</option>
+                                </select>
+                                <div class="ssTotal">5334ea</div>
+                            </div>
+                            <!-- 월별 총주문량 박스 -->
+                            <div class="date_ssBox hide" id="date_ssList4">
+                                <div class="date_ssBox_tit">품목 별 월 판매량</div>
+                                <div class="sale_ssTable">
+                                    <table>
+                                        <tr>
+                                            <th class="es1">품목명</th>
+                                            <th class="es2">판매량</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="es1">싹싹지우개</td>
+                                            <td class="es2">1250 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es1">처음처럼지우개</td>
+                                            <td class="es2">1500 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es1">우유빛지우개</td>
+                                            <td class="es2">2000 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es1">뭐든지우개</td>
+                                            <td class="es2">1000 ea</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="es1">리셋지우개</td>
+                                            <td class="es2">700 ea</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="date_ssBox_tit">품목별 월 총 주문량
+                                </div>
+                                <select style="margin-left: 20px;">
+                                    <option value="1">싹싹지우개</option>
+                                    <option value="1">처음처럼지우개</option>
+                                    <option value="1">우유빛지우개</option>
+                                    <option value="1">뭐든지우개</option>
+                                    <option value="1">리셋지우개</option>
+                                </select>
+                                <div class="ssTotal">1500ea</div>
                             </div>
 
+                        </div>
+                        <!-- 가동설비현황 박스 -->
+                        <div class="ingBox">
+                            <div style="margin: 10px 5% 10px; font-size: 20px; font-weight: 600;">가동 설비 현황</div>
+                            <hr>
+                            <div class="ssTable">
+                                <table>
+                                    <tr>
+                                        <th class="es1">설비명</th>
+                                        <th class="es2">가동상태</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">A라인 1호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">A라인 2호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">A라인 3호기</td>
+                                        <td class="es2 stop">정지(유휴시간)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">A라인 4호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">A라인 5호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">A라인 6호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">B라인 1호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">B라인 2호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">B라인 3호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">B라인 4호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">C라인 1호기</td>
+                                        <td class="es2 stop">정지(유휴시간)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">C라인 2호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">C라인 3호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">C라인 4호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="es1">A라인 1호기</td>
+                                        <td class="es2">가동중</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </div>
 
-    </body>
+        </div>
+    </div>
+
+</body>
 
 </body>
 
