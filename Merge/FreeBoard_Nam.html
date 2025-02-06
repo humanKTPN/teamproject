@@ -60,82 +60,84 @@
 
                 <div class="menuPage-con">
                     <!-- html 들어갈 곳 -->
-                    <div class='boardarea'>
-                        <div class='pagecon'>
-                            <p id='pageinfo'>
-                                자유게시판
-                            </p>
-                        </div>
-                        <div class='middle_board'>
-                            <div class='searcharea'>
-                                <div class='selectbox'>
-                                    <form>
-                                        <select name='viewfilter' id='viewfilter'>
-                                            <option value='allview'>모두</option>
-                                            <option value='tilteview'>제목</option>
-                                            <option value='contentview'>내용</option>
-                                            <option value='writeuserview'>작성자</option>
-                                        </select>
-                                    </form>
-                                </div>
-                                <div class='fillvalue'>
-                                    <input type='text' id='fillvalue' placeholder="검색어를 입력해주세요">
-                                </div>
-                                <div class='searchB'>
-                                    <button type="button" id='search'>검색</button>
-                                </div>
+                    <div class='pageAll'>
+                        <div class='boardarea'>
+                            <div class='pagecon'>
+                                <p id='pageinfo'>
+                                    자유게시판
+                                </p>
                             </div>
-                            <hr>
-                            <div>
-                                <table class='boardtable'>
-                                    <tr class='boardlist th' style="height: 30px;">
-                                        <td class='num'> 번호 </td>
-                                        <td class='writetitle'> 제목 </td>
-                                        <td class='writeuser'> 작성자 </td>
-                                        <td class='writedate'> 작성일 </td>
-                                        <td class='viewcount'> 조회수 </td>
-                                    </tr>
-                                    <tr class='boardlist' style="height: 30px;">
-                                        <td class='num'> 3 </td>
-                                        <td class='writetitle'> 오늘 저녁 어떤걸로 주문할까요? </td>
-                                        <td class='writeuser'> 직원1 </td>
-                                        <td class='writedate'> 2025-02-03 </td>
-                                        <td class='viewcount'> 5 </td>
-                                    </tr>
-                                    <tr class='boardlist' style="height: 30px;">
-                                        <td class='num'> 2 </td>
-                                        <td class='writetitle'> 저희 오티 언제하나요? </td>
-                                        <td class='writeuser'> 직원1 </td>
-                                        <td class='writedate'> 2025-02-03 </td>
-                                        <td class='viewcount'> 10 </td>
-                                    </tr>
-                                    <tr class='boardlist' style="height: 30px;">
-                                        <td class='num'> 1 </td>
-                                        <td class='writetitle'> 오늘 점심 어떤걸로 주문할까요? </td>
-                                        <td class='writeuser'> 직원1 </td>
-                                        <td class='writedate'> 2025-02-03 </td>
-                                        <td class='viewcount'> 2 </td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="page-num-con">
-                                <div class="page-num">
-                                    <div class="page pre-page">
-                                        < 이전 </div>
-                                            <div class="page">
-                                                <span class="num bold">1</span>
-                                                <span class="num">2</span>
-                                                <span class="num">3</span>
-                                                <span class="num">4</span>
-                                                <span class="num">5</span>
-                                            </div>
-                                            <div class="page next-page">
-                                                다음 >
-                                            </div>
+                            <div class='middle_board'>
+                                <div class='searcharea'>
+                                    <div class='selectbox'>
+                                        <form>
+                                            <select name='viewfilter' id='viewfilter'>
+                                                <option value='allview'>모두</option>
+                                                <option value='tilteview'>제목</option>
+                                                <option value='contentview'>내용</option>
+                                                <option value='writeuserview'>작성자</option>
+                                            </select>
+                                        </form>
                                     </div>
-                                    <div class="add-con">
-                                        <div class="add">
-                                            추가
+                                    <div class='fillvalue'>
+                                        <input type='text' id='fillvalue' placeholder="검색어를 입력해주세요">
+                                    </div>
+                                    <div class='searchB'>
+                                        <button type="button" id='search'>검색</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div>
+                                    <table class='boardtable'>
+                                        <tr class='boardlist th' style="height: 30px;">
+                                            <td class='num'> 번호 </td>
+                                            <td class='writetitle'> 제목 </td>
+                                            <td class='writeuser'> 작성자 </td>
+                                            <td class='writedate'> 작성일 </td>
+                                            <td class='viewcount'> 조회수 </td>
+                                        </tr>
+                                        <tr class='boardlist' style="height: 30px;">
+                                            <td class='num'> 3 </td>
+                                            <td class='writetitle'> 오늘 저녁 어떤걸로 주문할까요? </td>
+                                            <td class='writeuser'> 직원1 </td>
+                                            <td class='writedate'> 2025-02-03 </td>
+                                            <td class='viewcount'> 5 </td>
+                                        </tr>
+                                        <tr class='boardlist' style="height: 30px;">
+                                            <td class='num'> 2 </td>
+                                            <td class='writetitle'> 저희 오티 언제하나요? </td>
+                                            <td class='writeuser'> 직원1 </td>
+                                            <td class='writedate'> 2025-02-03 </td>
+                                            <td class='viewcount'> 10 </td>
+                                        </tr>
+                                        <tr class='boardlist' style="height: 30px;">
+                                            <td class='num'> 1 </td>
+                                            <td class='writetitle'> 오늘 점심 어떤걸로 주문할까요? </td>
+                                            <td class='writeuser'> 직원1 </td>
+                                            <td class='writedate'> 2025-02-03 </td>
+                                            <td class='viewcount'> 2 </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="page-num-con">
+                                    <div class="page-num">
+                                        <div class="page pre-page">
+                                            < 이전 </div>
+                                                <div class="page">
+                                                    <span class="num bold">1</span>
+                                                    <span class="num">2</span>
+                                                    <span class="num">3</span>
+                                                    <span class="num">4</span>
+                                                    <span class="num">5</span>
+                                                </div>
+                                                <div class="page next-page">
+                                                    다음 >
+                                                </div>
+                                        </div>
+                                        <div class="add-con">
+                                            <div class="add">
+                                                추가
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
