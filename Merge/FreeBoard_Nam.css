@@ -674,7 +674,7 @@ button,#viewfilter{
     display: flex;
     flex-direction: column;
     width: 97%;
-    height: 97%;
+    height: 93%;
     border-radius: 10px;
     background-color: white;
 }
