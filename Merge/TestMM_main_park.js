@@ -54,6 +54,19 @@ a_after.addEventListener('click', function () {
     alert("다음 페이지로 넘어갑니다");
 });
 
+//페이지 표시
+const nums = document.querySelectorAll('.num')
+
+for(let i =0; i< nums.length; i++){
+    nums[i].addEventListener('click',function(e){
+        for(let j=0; j<nums.length; j++){
+            nums[j].classList.remove('bold')
+            e.target.classList.add('bold')
+        }
+    })
+}
+
+
 // jquery
 $(document).ready(function () {
     $('a_before').click(function () {
