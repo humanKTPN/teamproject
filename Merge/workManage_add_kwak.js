@@ -70,8 +70,8 @@ function init(){
     })
     document.querySelector('#item').addEventListener('change',function(e){
         console.log(e.target.value)
-        document.querySelector('#bom').value += 'A-NY-80'
-        document.querySelector('#prc').value += 'NY-80'
+        // document.querySelector('#bom').value += 'A-NY-80'
+        // document.querySelector('#prc').value += 'NY-80'
         document.querySelector('#pcd').value += 'A80'
 
         document.querySelector(".bomTitle").innerHTML = 'A-NY-80'
