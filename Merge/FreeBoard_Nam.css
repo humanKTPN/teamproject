@@ -664,12 +664,15 @@ button,#viewfilter{
     display: flex;
     flex-direction: column;
     width: 100%;
+    border-radius: 1%;
+    border : 1px solid black;
 }
 
 .middle_board {
     display: flex;
     width: 100%;
     flex-direction: column;
+    margin-left: 1%;
 }
 
 .searcharea {
@@ -677,7 +680,6 @@ button,#viewfilter{
     height: 40px;
     justify-content: center;
     align-items: center;
-    background-color: gray;
     width: 100%;
 }
 
