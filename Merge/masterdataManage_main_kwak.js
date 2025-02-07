@@ -84,6 +84,19 @@ function init(){
             }
         })
     }
+    tbnms = document.querySelectorAll('.tab-name')
+
+    for(tbnm of tbnms){
+        tbnm.addEventListener('click',function(){
+            if(tbnm == '기준관리'){
+                window.location.href = 'masterdataManage_main_kwak.html'
+            } else if(tbnm == 'BOM'){
+                window.location.href = 'bom_main_kwak.html'
+            } else if(tbnm == '공정'){
+                window.location.href = '#'
+            }
+        })
+    }
 
 
 }
