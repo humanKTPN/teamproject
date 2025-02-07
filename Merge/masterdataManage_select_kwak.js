@@ -65,10 +65,15 @@ function init(){
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
 
-    // 로그아웃 버튼 
-    document.querySelector('.subBut').addEventListener('click',function(){
+      // 로그아웃 버튼 
+      document.querySelector('.subBut').addEventListener('click',function(){
         window.location.href = "loginpage_Nam.html"
-        })
+      })
+  
+      // 로고버튼
+      document.querySelector('.logo').addEventListener('click',function(){
+        window.location.href = 'dashBoard_kwak.html'
+      })
     document.querySelector('.del').addEventListener('click',function(){
         alert('삭제되었습니다.')
     })

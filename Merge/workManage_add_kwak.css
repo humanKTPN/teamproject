@@ -825,9 +825,13 @@ form{
 
 .titleName{
     /* border: 1px solid rebeccapurple; */
-    width: 13%;
-    text-align: center;
+    width: 10%;
+    /* text-align: center; */
     min-width: 268px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 .icon-sub{
     /* border: 10px solid red; */

@@ -92,4 +92,13 @@ function init(){
         alert('삭제되었습니다.')
         // 목록화면으로 넘어가게 하기(공지사항, 자유게시판)
     }
+       // 로그아웃 버튼 
+       document.querySelector('.subBut').addEventListener('click',function(){
+        window.location.href = "loginpage_Nam.html"
+      })
+  
+      // 로고버튼
+      document.querySelector('.logo').addEventListener('click',function(){
+        window.location.href = 'dashBoard_kwak.html'
+      })
 }

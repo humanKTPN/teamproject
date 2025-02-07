@@ -92,4 +92,13 @@ function init() {
             window.location.href = "writeview_Nam.html"
         }
     }
+       // 로그아웃 버튼 
+       document.querySelector('.subBut').addEventListener('click',function(){
+        window.location.href = "loginpage_Nam.html"
+      })
+  
+      // 로고버튼
+      document.querySelector('.logo').addEventListener('click',function(){
+        window.location.href = 'dashBoard_kwak.html'
+      })
 }
