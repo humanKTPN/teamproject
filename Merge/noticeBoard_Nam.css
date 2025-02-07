@@ -632,7 +632,7 @@ body{
     margin-right: 5px;
     display: flex;
     justify-content: right;
-    width: 97%
+    width: 97%;
     /* min-width: 700px; */
 }
 .add{
@@ -697,8 +697,8 @@ button,#viewfilter{
 .boardtable,
 .boardcontents {
     border: 1px solid darkgrey;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
+    /* margin-left: auto;
+    margin-right: auto; */
     width: 98%;
     border-collapse: collapse;
     
@@ -782,12 +782,16 @@ button,#viewfilter{
         overflow: scroll;
     }
 }
+
 .margin-con{
-    margin: 2%;
+    margin:2%;
+
 }
+
 #fillvalue{
-    height: 21px;
+    height : 21px;
 }
+
 #viewfilter{
     height: 24px;
 }
