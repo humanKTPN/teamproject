@@ -270,7 +270,7 @@ body{
     /* height: 400px; */
     /* border: 1px solid purple; */
     display: inline-flex;
-    width: 35%;
+    width: 47%;
     height: 100%;
     min-width: 400px;
     flex-direction: column;
@@ -554,7 +554,7 @@ body{
     margin: 0;
 }
 #badChart,#badChart2{
-    width: 90%;
+    width: 80%;
 }
 #title-name{
     color: white;
