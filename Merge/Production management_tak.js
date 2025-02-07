@@ -47,7 +47,7 @@ function init() {
             // //생산 관리 관련 수정창 클릭시 표시
             // document.querySelector('.pr_correction').classList.add('hide')
             // document.querySelector('.pm_correction').classList.remove('hide')
-            
+
             // // 라인별 목록에 줄클릭시 point 클래스 add하는 js 
             let pm_tables = evt.target.parentNode.parentNode.children
             console.log(pm_tables)
@@ -113,14 +113,14 @@ function init() {
     //         alert("삭제되었습니다.")
     //     })
     // }
-    
+
     // 생산관리버튼 팝업창 기능
-    document.querySelector('.pm_mm_but').addEventListener('click', function (){
+    document.querySelector('.pm_mm_but').addEventListener('click', function () {
         window.open("pm_popup_tak.html", "a", "width=400, height=360, left=100, top=50");
     })
-    
+
     // 생산일정버튼 팝업창 기능
-    document.querySelector('.pr_mm_but').addEventListener('click', function (){
+    document.querySelector('.pr_mm_but').addEventListener('click', function () {
         window.open("pr_popup_tak.html", "a", "width=400, height=370, left=100, top=50");
     })
 

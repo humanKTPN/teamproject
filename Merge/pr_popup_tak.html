@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="Production management_tak.css">
-    <script src="Production management_tak.js"></script>
+    <!-- <script src="Production management_tak.js"></script> -->
 </head>
 
 <body>
@@ -16,18 +16,18 @@
             <div class="pr_ssmanu">
                 <div class="ssTitle">생산 일정 관리</div>
                 <div class="pr_correction_con">
-                    <div style="width:100px;">품목코드:</div>
-                    <select>
-                        <option>SSJ-02</option>
-                        <option>FTJ-05</option>
-                        <option>UBJ-01</option>
-                        <option>MDJ-04</option>
-                        <option>RSJ-07</option>
+                    <div style="width:100px;">품명:</div>
+                    <select class="pv">
+                        <option value="1">싹싹지우개</option>
+                        <option value="2">처음처럼지우개</option>
+                        <option value="3">우유빛지우개</option>
+                        <option value="4">뭐든지우개</option>
+                        <option value="5">리셋지우개</option>
                     </select>
                 </div>
                 <div class="pr_correction_con">
-                    <div style="width:100px;">품명:</div>
-                    <input type="text" style="height: 18px;">
+                    <div style="width:100px;">품번 코드:</div>
+                    <input id="pName" type="text" style="height: 18px;" value=" ">
                 </div>
                 <div class="pr_correction_con">
                     <div style="width:100px;">목표 수량:</div>
@@ -49,5 +49,30 @@
     </div>
     </div>
 </body>
+<script>
+    let pv = document.querySelector('.pv')
+
+    pv.addEventListener('click', function (evt) {
+        let pvs = evt.target.value
+        console.log("pvs : ", pvs)
+        let pName = document.querySelector('#pName')
+        console.log("bbbbb", pName)
+        if (pvs == "1") {
+            console.log("ccccc", pName.value)
+            pName.value = 'SSJ-02';
+        } else if (pvs == "2") {
+            pName.value = 'FTJ-05';
+        } else if (pvs == "3") {
+            pName.value = 'UBJ-01';
+        } else if (pvs == "4") {
+            pName.value = 'MDJ-04';
+        } else if (pvs == "5") {
+            pName.value = 'RSJ-07';
+        }
+    })
+    console.log(document.querySelector('.pvv').value)
+
+
+</script>
 
 </html>

@@ -75,7 +75,7 @@
                             </table>
                             <div class="ssgraph" id="date_ssManu1">
                                 <div class="graph_wrap">
-                                    <div class="tit">라인 일별 생산량</div>
+                                        <div class="tit">라인 일별 생산량</div>
                                     <div class="graph">
                                         <!-- 기준 -->
                                         <ul class="y-axis">
@@ -105,15 +105,21 @@
                                         </ul>
                                         <!-- 바 그래프 (백분율 만큼 height값) -->
                                         <ul class="bar" style="bottom: -118px;">
-                                            <li style="height:34%;"><span></span></li>
-                                            <li style="height:33%;"><span></span></li>
-                                            <li style="height:1%;"><span></span></li>
-                                            <li style="height:39%;"><span></span></li>
-                                            <li style="height:39%;"><span></span></li>
-                                            <li style="height:0%;"><span></span></li>
-                                            <li style="height:51%;"><span></span></li>
-                                            <li style="height:49%;"><span></span></li>
-                                            <li style="height:2%;"><span></span></li>
+                                            <li class="hovertext" data-hover="34ea" style="height:34%;"><span></span>
+                                            </li>
+                                            <li class="hovertext" data-hover="33ea" style="height:33%;"><span></span>
+                                            </li>
+                                            <li class="hovertext" data-hover="1ea" style="height:1%;"><span></span></li>
+                                            <li class="hovertext" data-hover="39ea" style="height:39%;"><span></span>
+                                            </li>
+                                            <li class="hovertext" data-hover="39ea" style="height:39%;"><span></span>
+                                            </li>
+                                            <li class="hovertext" data-hover="0ea" style="height:0%;"><span></span></li>
+                                            <li class="hovertext" data-hover="51ea" style="height:51%;"><span></span>
+                                            </li>
+                                            <li class="hovertext" data-hover="49ea" style="height:49%;"><span></span>
+                                            </li>
+                                            <li class="hovertext" data-hover="2ea" style="height:2%;"><span></span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -247,7 +253,7 @@
                             </div>
                         </div>
                         <div class="numberBox">
-                            <div class="pr_boxTit">호기별 생산량 조회</div>
+                                <div class="pr_boxTit">호기별 생산량 조회</div>
                             <hr>
                             <div style="display: flex; justify-content: space-evenly; margin-bottom: 15px;">
                                 <div>라인 :</div>
@@ -342,14 +348,14 @@
                                 </div>
                                 <div class="date_ssBox_tit">품목별 금일 총 생산량
                                 </div>
-                                <select style="margin-left: 20px;">
+                                <select class="pr_bay" style="margin-left: 20px;">
                                     <option value="1">싹싹지우개</option>
-                                    <option value="1">처음처럼지우개</option>
-                                    <option value="1">우유빛지우개</option>
-                                    <option value="1">뭐든지우개</option>
-                                    <option value="1">리셋지우개</option>
+                                    <option value="2">처음처럼지우개</option>
+                                    <option value="3">우유빛지우개</option>
+                                    <option value="4">뭐든지우개</option>
+                                    <option value="5">리셋지우개</option>
                                 </select>
-                                <div class="ssTotal">169ea</div>
+                                <div class="ssTotal" id="ssTotal1">24ea</div>
                             </div>
                             <!-- 주간별,품목별 총생산량 박스 -->
                             <div class="date_ssBox hide" id="date_ssList2">
@@ -398,16 +404,16 @@
                                         </tr>
                                     </table>
                                 </div>
-                                
+
                                 <div class="date_ssBox_tit">품목별 주간 총 생산량</div>
-                                <select style="margin-left: 20px;">
+                                <select class="pm_week" style="margin-left: 20px;">
                                     <option value="1">싹싹지우개</option>
-                                    <option value="1">처음처럼지우개</option>
-                                    <option value="1">우유빛지우개</option>
-                                    <option value="1">뭐든지우개</option>
-                                    <option value="1">리셋지우개</option>
+                                    <option value="2">처음처럼지우개</option>
+                                    <option value="3">우유빛지우개</option>
+                                    <option value="4">뭐든지우개</option>
+                                    <option value="5">리셋지우개</option>
                                 </select>
-                                <div class="ssTotal">1284ea</div>
+                                <div class="ssTotal" id="ssTotal2">213ea</div>
                             </div>
                             <!-- 월별,품목별 총생산량 박스 -->
                             <div class="date_ssBox hide" id="date_ssList3">
@@ -457,14 +463,14 @@
                                     </table>
                                 </div>
                                 <div class="date_ssBox_tit">품목별 월 총 생산량</div>
-                                <select style="margin-left: 20px;">
+                                <select class="pm_month" style="margin-left: 20px;">
                                     <option value="1">싹싹지우개</option>
-                                    <option value="1">처음처럼지우개</option>
-                                    <option value="1">우유빛지우개</option>
-                                    <option value="1">뭐든지우개</option>
-                                    <option value="1">리셋지우개</option>
+                                    <option value="2">처음처럼지우개</option>
+                                    <option value="3">우유빛지우개</option>
+                                    <option value="4">뭐든지우개</option>
+                                    <option value="5">리셋지우개</option>
                                 </select>
-                                <div class="ssTotal">5334ea</div>
+                                <div class="ssTotal" id="ssTotal3">935ea</div>
                             </div>
                             <!-- 월별 총주문량 박스 -->
                             <div class="date_ssBox hide" id="date_ssList4">
@@ -498,14 +504,14 @@
                                     </table>
                                 </div>
                                 <div class="date_ssBox_tit">품목별 월 총 주문량</div>
-                                <select class="item_sl">
+                                <select class="item_sl pm_month_sel">
                                     <option value="1">싹싹지우개</option>
-                                    <option value="1">처음처럼지우개</option>
-                                    <option value="1">우유빛지우개</option>
-                                    <option value="1">뭐든지우개</option>
-                                    <option value="1">리셋지우개</option>
+                                    <option value="2">처음처럼지우개</option>
+                                    <option value="3">우유빛지우개</option>
+                                    <option value="4">뭐든지우개</option>
+                                    <option value="5">리셋지우개</option>
                                 </select>
-                                <div class="ssTotal">1500ea</div>
+                                <div class="ssTotal" id="ssTotal4">1500ea</div>
                             </div>
 
                         </div>
