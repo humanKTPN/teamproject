@@ -88,11 +88,11 @@ function init(){
 
     for(tbnm of tbnms){
         tbnm.addEventListener('click',function(){
-            if(tbnm == '기준관리'){
+            if(tbnm.textContent == '기준관리'){
                 window.location.href = 'masterdataManage_main_kwak.html'
-            } else if(tbnm == 'BOM'){
+            } else if(tbnm.textContent == 'BOM'){
                 window.location.href = 'bom_main_kwak.html'
-            } else if(tbnm == '공정'){
+            } else if(tbnm.textContent == '공정'){
                 window.location.href = '#'
             }
         })
