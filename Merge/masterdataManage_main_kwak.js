@@ -88,7 +88,7 @@ function init(){
 
     for(tbnm of tbnms){
         tbnm.addEventListener('click',function(e){
-            // console.log(tbnm.textContent)
+            console.log(e.target.textContent)
             if(e.target.textContent == '기준관리'){
                 window.location.href = 'masterdataManage_main_kwak.html'
             } else if(e.target.textContent == 'BOM'){
