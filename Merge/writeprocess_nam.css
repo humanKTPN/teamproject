@@ -626,9 +626,19 @@ body{
     margin-top: 10px;
     width: 15%;
     justify-content: center;
-    border : 1px solid black;
     align-items: center;
     margin-left: 1%;
+}
+
+#pageinfo {
+    display: flex;
+    border: 1px solid black;
+    width: 150px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    background-color: #2f373a;
+    color: white;
 }
 
 .writeprocess{
