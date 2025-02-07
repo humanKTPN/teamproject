@@ -94,7 +94,7 @@ function init(){
             } else if(e.target.textContent == 'BOM'){
                 window.location.href = 'bom_main_kwak.html'
             } else if(e.target.textContent == '공정'){
-                window.location.href = '#'
+                window.location.href = 'processDesc_main.html'
             }
         })
     }

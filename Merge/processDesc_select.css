@@ -816,6 +816,9 @@ form{
     .mod-td{
         width: 50%;
     }
+	.hide{
+		display: none;
+	}
 }
 .confirm-con{
     /* border: 1px solid red; */

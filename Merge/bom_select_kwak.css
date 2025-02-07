@@ -114,12 +114,6 @@ body{
     justify-content: center;
     border-radius: 10px 10px 0px 0px;
 }
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
 .slideMenu-off{
     height: auto;
     width: 400px;
@@ -672,13 +666,6 @@ form{
     min-width: 300px;
 }
 
-
-@media (max-width: 800px){
-
-
-
-
-}
 .th2-con{
     width: 96%;
     display: flex;
@@ -816,6 +803,9 @@ form{
     .mod-td{
         width: 50%;
     }
+	.hide{
+		display: none;
+	}
 }
 .confirm-con{
     /* border: 1px solid red; */
