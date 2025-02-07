@@ -591,25 +591,60 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    /* width: 100%; */
+    /* min-width: 100px; */
+    /* width: ; */
+}
+
+.viewdom{
+    display: flex;
+    flex-direction: column;
+}
+
+.title-con, .content-con{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top : 2px solid black;
+    border-bottom : 2px solid black;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+.content-con{
+    border-left : 2px solid black;
+    border-right : 2px solid black;
+    
 }
 
 .pagecon {
     display :flex;
-    height: 28px;
+    height: 40px;
     margin-top: 10px;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+}
+
+#pageinfo {
+    display: flex;
+    border: 1px solid black;
     width: 150px;
+    height: 28px;
+    align-items: center;
     justify-content: center;
     background-color: #2f373a;
     color: white;
-    /* border : 1px solid black; */
-    align-items: center;
-    margin-left: 1%;
 }
 
 .editprocess{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
 }
 
 #summit{
@@ -619,21 +654,20 @@ body{
 
 #title{
     text-align: left;
-    width: 50%;
+    width: 98%;
+    margin-bottom: 5px;
 }
 
 #content{
     /* width: 50%; */
     height: 150px;
+    margin-bottom: 5px;
     /* min-width: 400px; */
 }
 
 .buttons{
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width : 70%;
 }
 
 .button{
@@ -641,12 +675,20 @@ body{
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 50px;
+    width : 70px;
+    all: unset;
+    border: 1px solid #2f373a;
     background-color: #2f373a;
     color: white;
+    margin: 0.5%;
+    padding: 0.5% 1%;
     cursor: pointer;
+}
+
+.text {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
 }
 
 @media (max-width:800px){
