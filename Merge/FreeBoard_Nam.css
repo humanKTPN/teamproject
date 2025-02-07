@@ -592,7 +592,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 800px;
-    margin-left: 1%;
+    /* margin-left: 1%; */
     
 }
 .th{
@@ -627,13 +627,12 @@ body{
     cursor: pointer;
     
 }
-.add-con{
+.add-con {
     /* border: 5px solid black; */
     margin-right: 5px;
     display: flex;
     justify-content: right;
-    width: 89%;
-    /* min-width: 700px; */
+    width: 97% /* min-width: 700px; */;
 }
 .add{
     border: 1px solid darkgray;
@@ -674,7 +673,7 @@ button,#viewfilter{
     display: flex;
     flex-direction: column;
     width: 97%;
-    height: 97%;
+    height: 93%;
     border-radius: 10px;
     background-color: white;
 }
@@ -683,23 +682,23 @@ button,#viewfilter{
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin-left: 1%;
+    /* margin-left: 1%; */
 }
 
 .searcharea {
     display: flex;
     height: 40px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 20%;
 }
 
 .boardtable,
 .boardcontents {
     border: 1px solid darkgrey;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 98%;
     border-collapse: collapse;
     
     
@@ -781,4 +780,16 @@ button,#viewfilter{
     .middle_board{
         overflow: scroll;
     }
+}
+.margin-con{
+    display : flex;
+    justify-content : left;
+    margin : 2%;
+    flex-direction: column;
+}
+#viewfilter {
+    height: 24px;
+}
+#fillvalue {
+    height: 21px;
 }
