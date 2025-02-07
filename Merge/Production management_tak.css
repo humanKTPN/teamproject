@@ -376,6 +376,9 @@
         right: 15px;
         font-size: 10px;
     }
+    .line_ssbox{
+        width: 96.5%;
+    }
 
     .cs1 {
         width: 10%;

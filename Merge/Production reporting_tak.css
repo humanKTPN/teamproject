@@ -142,13 +142,13 @@
     font-size: 70px;
     font-weight: 600;
     position: relative;
-    top: -20px;
+    top: -2px;
 }
 .date_ssBox{
     height: 96%;
 }
 .date_ssBox_tit{
-    margin: 0px 20px 10px ;
+    margin: 0px 20px 5px ;
     font-size: 20px;
     font-weight: 600;
 }
@@ -239,6 +239,10 @@
     background-color: #2f373a;
     color: white ;
 }
+.item_sl{
+    margin-left: 20px;
+
+}
 .es1{
     width: 50%;
 }
@@ -320,4 +324,48 @@
     width: 38%;
     height: 330px;
     border-radius: 10px;
+}
+.pr_box1{
+    display: flex;
+}
+.pr_box2{
+    display: flex;
+}
+.pr_boxTit{
+    margin: 10px 5% 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+@media screen and (max-width: 800px) {
+    .pr_box1{
+        display: block;
+    }
+    .pr_box2{
+        display: block;
+    }
+    .date_box{
+        width: 96%;
+        position: absolute;
+    }
+    .date_list{
+        width: 96%;
+        position: relative;
+        top: -0px;
+    }
+    .numberBox{
+        position: relative;
+        bottom: -655px;
+        height: 310px;
+        left: 2%;
+        width: 47%;
+
+    }
+    .ingBox{
+        position: relative;
+        left: 51%;
+        top: 0px;
+        height: 310px;
+        width: 47%;
+        margin-bottom: 2% ;
+    }
 }
