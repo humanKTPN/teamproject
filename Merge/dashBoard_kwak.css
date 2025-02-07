@@ -88,6 +88,9 @@ body{
     /* border: 1px solid red; */
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: darkgrey;
 }
 
 .container{
@@ -95,10 +98,11 @@ body{
     flex-direction: column;
     align-items: center;
     /* background-color: rgba(87, 59, 27, 0.329); */
-    background-color: darkgrey;
+    /* background-color: darkgrey; */
     height:100%;
     box-sizing: border-box;
-    /* width: 80%; */
+    width: 90%;
+
 }
 #head{
     box-sizing: border-box;
@@ -111,12 +115,7 @@ body{
     justify-content: center;
     border-radius: 10px 10px 0px 0px;
 }
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
+
 .slideMenu-off{
     height: auto;
     width: 400px;
@@ -250,9 +249,9 @@ body{
     /* border: 5px solid pink; */
     box-sizing: border-box;
     height: 50%; 
-    width: 92%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     /* margin: 3% 3%; */
 }
@@ -287,11 +286,11 @@ body{
     height:90%;
     /* border: 1px solid purple; */
     display: inline-flex;
-    width: 85%;
+    width: 100%;
     min-width: 400px;
     flex-direction: column;
     justify-content: center;
-    margin: 1%;
+    /* margin: 1%; */
 }
 .title{
     /* border-bottom: 1px solid darkgrey; */
@@ -476,7 +475,7 @@ body{
 .th{
     position: sticky;
     top:0;
-    /* border-top: none; */
+    /* border: 2px solid darkgrey; */
 }
 
 
@@ -489,9 +488,6 @@ body{
         align-items: center;
         height: auto;
         width: 100%;
-    }
-    .dayWork{
-        height: 550px;
     }
     .mainmenu{
         width: 100%;
@@ -517,6 +513,11 @@ body{
     }
     .hide{
         display: none;
+    }
+    .command-table-con{
+        display: inline-block;
+        height: auto;
+        overflow: scroll;
     }
 
 
@@ -590,10 +591,12 @@ body{
 .main-menu-con{
     display: flex;
     flex-direction: row;
+    /* width: 100%; */
 }
 .command-table-con{
     overflow: auto;
     height: 70%;
+    min-width: 400px;
 }
 /* .list-con{
     overflow: auto;
