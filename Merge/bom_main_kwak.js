@@ -85,6 +85,14 @@ function init(){
         })
     }
 
+    const ctds = document.querySelectorAll('.command-td')
+
+    for(ctd of ctds){
+        ctd.addEventListener('click',function(){
+            window.location.href = 'bom_select_kwak.html'
+        })
+    }
+
 
 }
 

@@ -957,7 +957,7 @@ body{
     width: 30%;
 }
 .command-table th:nth-child(1){
-    width: 7%;
+    width: 3%;
 }
 .command-table th:nth-child(2){
     width: 10%;
@@ -971,12 +971,7 @@ body{
 .command-table th:nth-child(5){
     width: 7%;
 }
-.command-table th:nth-child(7){
-    width: 13%;
-}
-.command-table th:nth-child(8){
-    width: 13%;
-}
+
 
 .tab-con{
     /* border: 5px solid red; */
