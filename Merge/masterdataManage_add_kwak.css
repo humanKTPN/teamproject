@@ -344,9 +344,6 @@ form{
     .eraser-img{
         margin-top: 5px;
     }
-	.hide{
-		display: none;
-	}
 }
 /* html에서 옮김 (끝)*/
 
@@ -991,4 +988,18 @@ body{
     background-color: #2f373a;
     color: white;
 
+}
+.desc-con{
+    /* border: 5px solid red; */
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.desc{
+    height: 50%;
+    margin-left: 5px;
+    border: 1px solid #2f373a;
 }

@@ -8,7 +8,7 @@ function init(){
     document.querySelector('#ham').addEventListener('click',function(){
         
         
-        if(document.querySelector('.mainmenu').classList.length == 1){
+        if(document.querySelector('.mainmenu').classList.length ==1){
             document.querySelector('.mainmenu').classList.add('hide')
             // document.querySelector('#main-menu').textContent = 'MENU 닫기'
         } else if (document.querySelector('.mainmenu').classList.length == 2){
@@ -23,8 +23,8 @@ function init(){
     for (menu of menus){//탑 메뉴탭에 클릭이벤트 주기
         menu.addEventListener('click',function(e){
 
+            // console.log(e.target.textContent) // 어떤 메뉴를 눌렀는지 확인
             if(e.target.textContent=='작업관리'){
-                // document.querySelector('.menuPage-con').innerHTML = `작업관리내용`
                 window.location.href="workManage_main_kwak.html"
             } else if (e.target.textContent == '생산관리') {
                 // 생산관리 메인 
@@ -34,10 +34,10 @@ function init(){
                 window.location.href = "Production reporting_tak.html"
             } else if (e.target.textContent == '자재관리') {
                 // 자재관리 메인 
-                window.location.href = "TestMM_main_park.html"
-            } else if (e.target.textContent == '품질관리') {
-                // 품질관리 메인 
-                window.location.href = "TestQA_main_park.html"
+                window.location.href = "TestMM_main_park.html" 
+            } else if (e.target.textContent=='품질관리'){
+                window.location.href="TestQA_main_park.html"
+
             } else if (e.target.textContent=='기준관리'){
                 window.location.href="masterdataManage_main_kwak.html"
             }
@@ -64,11 +64,48 @@ function init(){
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
 
-    document.querySelector('.store').addEventListener('click',function(){
-        alert("저장되었습니다.")
+    
+    document.querySelector('.add').addEventListener('click',function(){
+        // alert("추가되었습니다.")
+        window.location.href="masterdataManage_edit_kwak.html"
     })
     // 로그아웃 버튼 
     document.querySelector('.subBut').addEventListener('click',function(){
-    window.location.href = "loginpage_Nam.html"
-    })
+        window.location.href = "loginpage_Nam.html"
+        })
+         //페이지 표시
+    const nums = document.querySelectorAll('.num')
+
+    for(let i =0; i< nums.length; i++){
+        nums[i].addEventListener('click',function(e){
+            for(let j=0; j<nums.length; j++){
+                nums[j].classList.remove('bold')
+                e.target.classList.add('bold')
+            }
+        })
+    }
+    tbnms = document.querySelectorAll('.tab-name')
+
+    for(tbnm of tbnms){
+        tbnm.addEventListener('click',function(e){
+            console.log(e.target.textContent)
+            if(e.target.textContent == '기준관리'){
+                window.location.href = 'masterdataManage_main_kwak.html'
+            } else if(e.target.textContent == 'BOM'){
+                window.location.href = 'bom_main_kwak.html'
+            } else if(e.target.textContent == '공정'){
+                window.location.href = '#'
+            }
+        })
+    }
+
+
 }
+
+
+    
+    
+
+
+
+// }

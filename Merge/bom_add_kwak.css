@@ -1,3 +1,4 @@
+
 body{
     min-width: 500px;
     max-height: 5000px;
@@ -5,20 +6,27 @@ body{
     /* width: 99%; */
     padding-right: 0.5%;
  }
-
 .background{
     /* border: 5px solid red; */
-    width: 100%;
-    height:  100%;
-}
-.tab-name{
-    border: 1px solid darkgray;
+    width: 97%;
+    height:  93%;
+    border-radius: 10px;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40%;
-    width: 75%;
+}
+.tab-name{
+    border: 1px solid #2f373a;
+    background-color: white;
+    color: #2f373a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    /* width: 75%; */
     min-width: 150px;
+    cursor: pointer;
     
 }
 
@@ -35,7 +43,8 @@ body{
      vertical-align: middle;   /* 가운데 */
    }
    th{
-    background-color: darkgrey;
+    background-color: #2f373a;
+    color: white;
    }
    .command-div{
     /* border: 1px solid red; */
@@ -45,14 +54,18 @@ body{
     min-width: 500px;
     
 }
+.command-th,.command-td{
+    height: 30px;
+}
 .tab-name-div{
     /* border: 5px solid purple; */
     display: flex;
-    height: 10%;
-    width: 15%;
+    height: 30px;
+    width: 152px;
     justify-content: left;
     align-items: center;
     margin-left: 5px;
+
 
 }
 .command-loc{
@@ -60,19 +73,19 @@ body{
     width: 100%;
     display: flex;
     justify-content: left;
-    align-items:left;
+    align-items:center;
     flex-wrap: wrap;
-    flex-direction: column;
-    margin-left: 10px;
     /* min-width: 1000px; */
+    align-content: space-between
     
 }
 .dropBox{
-    margin-left: 10px;
-    height: 4%;
+    /* border: 5px solid black; */
+    /* padding-left: 3%; */
+    margin-left: 5px;
     width: 90%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
 }
 form{
@@ -82,7 +95,7 @@ form{
     /* border: 5px solid purple; */
     display: flex;
     justify-content: space-around;
-    width: 40%;
+    width: 20%;
     height: 50px;
     align-items: center;
     min-width: 300px;
@@ -92,9 +105,13 @@ form{
     height: 60%;
     width: 58%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    
+    cursor: pointer;
+}
+.page-number{
+    width: 30%;
+
 }
 .page-num-con{
     /* border: 1px solid darkblue; */
@@ -109,15 +126,17 @@ form{
     /* border: 5px solid black; */
     margin-right: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     width: 100%;
     /* min-width: 700px; */
 }
-.add,.del,.store{
+.add,.del{
     border: 1px solid darkgray;
     width: 50px;
     text-align: center;
     margin: 5px;
+    background-color: #2f373a;
+    color: white;
 
 }
 .command-table{
@@ -180,10 +199,7 @@ form{
 
 
 /* html에서 옮김 (시작)*/
-.main-menu-con{
-    display: flex;
-    flex-direction: row;
-}
+
 .menu-con {
     display: flex;
     flex-direction: column;
@@ -263,7 +279,10 @@ form{
     /* border: 1px solid red; */
     width: 100%;
     height: 100%;
-    /* background-color: rgba(87, 59, 27, 0.329);; */
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .detail-con{
     /* border: 1px solid orange; */
@@ -444,12 +463,7 @@ body{
     justify-content: center;
     border-radius: 10px 10px 0px 0px;
 }
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
+
 .slideMenu-off{
     height: auto;
     width: 400px;
@@ -879,6 +893,10 @@ body{
 #badChart,#badChart2{
     width: 90%;
 }
+.main-menu-con{
+    display: flex;
+    flex-direction: row;
+}
 #title-name{
     color: white;
     text-align: left;
@@ -904,10 +922,84 @@ body{
     min-width: 268px;
 }
 .icon-sub{
-    /* border: 10px solid red; */
     display: flex;
     width: 15%;
     display: flex;
     justify-content: space-around;
     min-width: 268px;
+}
+#cate{
+    background-color: #2f373a;
+    color: white;
+    height: 28px;
+    width: 60px;
+}
+.margin{
+    
+    /* border: 10px solid red; */
+    height: 90%;
+    width: 97%;
+}
+.sel{
+    height: 25px;
+    width: 175px;
+}
+.search{
+    height: 29px;
+    width: 55px;
+    background-color: #2f373a;
+    color: white;
+}
+.bold{
+    font-weight: bold;
+}
+.pre-page,.next-page{
+    width: 30%;
+}
+.command-table th:nth-child(1){
+    width: 3%;
+}
+.command-table th:nth-child(2){
+    width: 7%;
+}
+.command-table th:nth-child(3){
+    width: 7%;
+}
+.command-table th:nth-child(4){
+    width: 3%;
+}
+.command-table th:nth-child(5){
+    width: 5%;
+}
+.command-table th:nth-child(6){
+    width: 10%;
+}
+
+
+.tab-con{
+    /* border: 5px solid red; */
+    display: flex;
+    flex-direction: row;
+    /* height: 100px; */
+    margin: 2% 0;
+}
+.switch-color{
+    border: 1px solid #2f373a;
+    background-color: #2f373a;
+    color: white;
+
+}
+.desc-con{
+    /* border: 5px solid red; */
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.desc{
+    height: 50%;
+    margin-left: 5px;
+    border: 1px solid #2f373a;
 }
