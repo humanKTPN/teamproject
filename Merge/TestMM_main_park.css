@@ -1,5 +1,12 @@
 /* TestMM_main_park.html */
 
+@media screen and (max-width : 800px) {
+    .flex_page {
+        position: relative;
+        bottom: 20px;
+    }
+}
+
 .containerMM {
     background-color: darkgrey;
     width: 100%;
@@ -10,11 +17,50 @@
 }
 
 .content {
-    height: 92%;
+    height: 93%;
     background-color: white;
     width: 97%;
     border-radius: 10px;
     /* min-width: ; */
+    /* margin: 2%; */
+}
+
+.margin {
+    height: 100%;
+    margin: 2%;
+}
+
+form {
+    margin-bottom: 1%;
+}
+
+.select_input_search-btn {
+    display: flex;
+    /* margin: 1%; */
+}
+
+#select_MM {
+    background-color: #2f373a;
+    color: white;
+    height: 25px;
+}
+
+.select {
+    /* background-color: #2f373a;
+    color: white; */
+    height: 21px;
+}
+
+.submit {
+    background-color: #2f373a;
+    color: white;
+    height: 25px;
+}
+
+.select_day {
+    height: 25px;
+    /* background-color: #2f373a;
+    color: white; */
 }
 
 .material-table {
@@ -23,7 +69,7 @@
     /* width: 1000px; */
     border: 1px solid darkgrey;
     border-collapse: collapse;
-    margin: 0 1%;
+    /* margin: 0 1%; */
 }
 
 .material-th {
@@ -52,7 +98,7 @@ a {
 .div_button {
     text-align: right;
     height: 100px;
-    margin: 0 1%;
+    /* margin: 0 1%; */
 }
 
 .btn_main_order, .btn_main_update, #btn_main_add, #btn_main_delete {
@@ -108,5 +154,5 @@ a {
     height: 28px;
     line-height: 28px;
     text-align: center;
-    margin: 1%;
+    /* margin: 1%; */
 }

@@ -66,63 +66,90 @@
                         <div class="containerQA">
                             <!-- background : darkgrey -->
                             <div class="content">
-                                <!-- 테이블과 이전,다음 페이지 부모 div -->
-                                <!-- 검색 기능추가 -->
-                                
-                                <div class="tab-name-con">
-                                    <div class="tab-name">제품 검사 목록</div>
-                                </div>
 
-                                <!-- <div class="div_none0"></div> -->
-                                <div>
-                                    <table class="QA-table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" class="QA-th">생산코드</th>
-                                                <th scope="col" class="QA-th">품목코드</th>
-                                                <th scope="col" class="QA-th">품목명</th>
-                                                <th scope="col" class="QA-th">최종결과</th>
-                                            </tr>
-                                        </thead>
+                                <div class="margin">
 
-                                        <tbody>
-                                            <tr>
-                                                <td class="QA-td"><a class="enter_reportPage"
-                                                        href="./TestQA_report_park.html">aaa111</a></td>
-                                                <td class="QA-td">aa-dd-cc</td>
-                                                <td class="QA-td">지우개 A</td>
-                                                <td class="QA-td"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <div class="div_none">
-                                    <!-- 빈 공간 -->
-                                </div>
-
-                                <!-- 페이지 번호 -->
-                                <div class="flex_page">
-
-                                    <div class="item_page pre_page">
-                                        <a id="a_before_page" href="">
-                                            < 이전 </a>
+                                    <div class="tab-name-con">
+                                        <div class="tab-name">제품 검사 목록</div>
                                     </div>
 
-                                    <div class="item_page">
-                                        <a class="num bold" href="">1</a>
-                                        <a class="num" href="">2</a>
-                                        <a class="num" href="">3</a>
-                                        <a class="num" href="">4</a>
-                                        <a class="num" href="">5</a>
+                                    <div class="select_input_search-btn">
+
+                                        <form action="#">
+
+                                            <select name="select_QA" id="select_QA">
+                                                <option value="all" selected="selected">전체</option>
+                                                <option value="QA_code1">생산코드</option>
+                                                <option value="QA_code2">품목코드</option>
+                                                <option value="QA_code3">품목명</option>
+                                                <option value="QA_code4">최종결과</option>
+                                            </select>
+
+                                            <input type="select" class="select">
+                                            <!-- <input class="select_day" id="select_QA_eve" type="date" value=""
+                                                max="2999-12-31" , min="1970-01-01"> -->
+                                            <input class="select_day" id="select_QA_today" type="date" value=""
+                                                max="2999-12-31" , min="1970-01-01">
+                                            <input type="submit" class="submit" value="검색">
+                                            
+
+                                        </form>
+
                                     </div>
 
-                                    <div class="item_page next_page">
-                                        <a id="a_after_page" href="">
-                                            다음 >
-                                        </a>
+                                    <!-- <div class="div_none0"></div> -->
+                                    <div>
+                                        <table class="QA-table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="QA-th">생산코드</th>
+                                                    <th scope="col" class="QA-th">품목코드</th>
+                                                    <th scope="col" class="QA-th">품목명</th>
+                                                    <th scope="col" class="QA-th">최종결과</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td class="QA-td"><a class="enter_reportPage"
+                                                            href="./TestQA_report_park.html">aaa111</a></td>
+                                                    <td class="QA-td">aa-dd-cc</td>
+                                                    <td class="QA-td">싹싹지우개</td>
+                                                    <td class="QA-td"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="div_none">
+                                        <!-- 빈 공간 -->
+                                    </div>
+
+                                    <!-- 페이지 번호 -->
+                                    <div class="flex_page">
+
+                                        <div class="item_page pre_page">
+                                            <a id="a_before_page" href="">
+                                                < 이전 </a>
+                                        </div>
+
+                                        <div class="item_page">
+                                            <a class="num bold" href="">1</a>
+                                            <a class="num" href="">2</a>
+                                            <a class="num" href="">3</a>
+                                            <a class="num" href="">4</a>
+                                            <a class="num" href="">5</a>
+                                        </div>
+
+                                        <div class="item_page next_page">
+                                            <a id="a_after_page" href="">
+                                                다음 >
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
 

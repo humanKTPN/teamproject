@@ -32,8 +32,13 @@
     width: 97%;
     border-radius: 10px;
     background-color: white;
-    height: 92%;
+    height: 93%;
     /* margin: 0 1%; */
+}
+
+.margin {
+    height: 100%;
+    margin: 2%;
 }
 
 .tab-name-con {
@@ -49,7 +54,7 @@
     height: 28px;
     line-height: 28px;
     text-align: center;
-    margin: 1%;
+    /* margin: 1%; */
 }
 
 .con_1,
@@ -58,7 +63,6 @@
     width: 100%;
 }
 
-/* pc */
 .div_report_parent {
     display: flex;
     justify-content: center;
@@ -69,7 +73,8 @@
 .t_con {
     display: flex;
     justify-content: space-between;
-    width: 98%;
+    width: 100%;
+    
 }
 
 #QA_color,
@@ -135,7 +140,7 @@ a {
 
 .div_button {
     text-align: right;
-    margin: 0 1%;
+    /* margin: 0 1%; */
 }
 
 #btn_report_confirm {
@@ -160,7 +165,7 @@ a {
         1. ~ 생산
         2. ~ 생산
         ...
-        항목 내용
+        
         10.  입력
         11.  입력
         ...

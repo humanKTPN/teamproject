@@ -46,3 +46,7 @@ for(let i =0; i<nums.length; i++){
         }
     })
 }
+
+
+// 현재 날짜가 바로 반영
+document.getElementById('select_QA_today').value = new Date().toISOString().substring(0, 10);

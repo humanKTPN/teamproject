@@ -24,7 +24,7 @@ const btn_main_order = document.getElementsByClassName('btn_main_order');
 
 btn_main_order[0].addEventListener('click', function () {
     console.log("동작함");
-    alert("주문 페이지로 넘어갑니다.");
+    alert("주문정보 페이지로 넘어갑니다.");
 });
 
 
@@ -65,6 +65,10 @@ for(let i =0; i< nums.length; i++){
         }
     })
 }
+
+
+// 현재 날짜가 바로 반영
+document.getElementById('select_MM_today').value = new Date().toISOString().substring(0, 10);
 
 
 // jquery

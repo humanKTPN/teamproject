@@ -10,10 +10,15 @@
 }
 
 .content {
-    height: 92%;
+    height: 93%;
     background-color: white;
     width: 97%;
     border-radius: 10px;
+}
+
+.margin {
+    height: 100%;
+    margin: 2%;
 }
 
 .tab-name-con {
@@ -29,7 +34,7 @@
     height: 28px;
     line-height: 28px;
     text-align: center;
-    margin: 1%;
+    /* margin: 1%; */
 }
 
 /* a 태그 밑줄 제거 */
@@ -42,7 +47,7 @@ a {
     border: 1px solid darkgrey;
     border-collapse: collapse;
     /* width: 1000px; */
-    margin: 0 1%;
+    /* margin: 0 1%; */
 }
 
 .material-th {
@@ -65,7 +70,7 @@ a {
 
 .div_button {
     text-align: right;
-    margin: 0 1%;
+    /* margin: 0 1%; */
 }
 
 #btn_delete_confirm {

@@ -16,11 +16,16 @@
 }
 
 .content {
-   height: 98%;
+   height: 93%;
    background-color: white;
-   width: 98%;
+   width: 97%;
    border-radius: 10px;
    /* margin: 0 1%; */
+}
+
+.margin {
+   height: 100%;
+   margin: 2%;
 }
 
 .tab-name-con {
@@ -36,7 +41,7 @@
    height: 28px;
    line-height: 28px;
    text-align: center;
-   margin: 1%;
+   /* margin: 1%; */
 }
 
 .div_add {
@@ -44,7 +49,7 @@
 }
 
 #input {
-   margin: 0 1%;
+   /* margin: 0 1%; */
 }
 
 .flex_child {
@@ -70,7 +75,7 @@
 
 .div_btn_add_confirm {
    text-align: right;
-   margin: 0 1%;
+   /* margin: 0 1%; */
 }
 
 #btn_input_add, #btn_add_confirm {

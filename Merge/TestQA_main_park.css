@@ -1,11 +1,9 @@
 /* TestQA_main_park_html */
 
-/* 반응형 800px - 줄였을 때 옆으로 이동바 나오게 */
 @media screen and (max-width : 800px) {
-    .QA-table {
-       
-
-        overflow: overflow-x;
+    .flex_page {
+        position: relative;
+        bottom: 20px;
     }
 }
 
@@ -22,11 +20,16 @@
 
 .content {
     /* padding: 5px; */
-    height: 92%;
+    height: 93%;
     background-color: white;
     /* margin: 2%; */
     border-radius: 10px;
     width: 97%;
+}
+
+.margin {
+    height: 100%;
+    margin: 2%;
 }
 
 .tab-name-con {
@@ -42,9 +45,37 @@
     height: 28px;
     line-height: 28px;
     text-align: center;
-    margin: 1%;
+    /* margin: 1%; */
 }
 
+form {
+    margin-bottom: 1%;
+}
+
+.select_input_search-btn {
+    display: flex;
+    /* margin: 1%; */
+}
+
+#select_QA {
+    background-color: #2f373a;
+    color: white;
+    height: 25px;
+}
+
+.select {
+    height: 21px;
+}
+
+.submit {
+    background-color: #2f373a;
+    color: white;
+    height: 25px;
+}
+
+.select_day {
+    height: 25px;
+}
 
 /* a 태그 밑줄 제거 */
 a {
@@ -60,7 +91,7 @@ a {
     border: 1px solid darkgrey;
     /* width: 1000px; */
     border-collapse: collapse;
-    margin: 0 1%;
+    /* margin: 0 1%; */
 
 }
 

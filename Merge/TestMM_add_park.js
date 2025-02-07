@@ -37,7 +37,7 @@ btn_input_add.addEventListener('click', function () {
         
             <input class="item Mcode" type="text" value="" placeholder="자재코드 입력" />
             <input class="item Mname" type="text" value="" placeholder="자재명 입력" />
-            <input class="item Mea" type="text" value="" placeholder="수량(EA) 입력" />
+            <input class="item Mea" type="text" value="" placeholder="수량 입력" />
             <input class="item Mloc" type="text" value="" placeholder="재고위치 입력" />
         
     `;
