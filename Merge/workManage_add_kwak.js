@@ -72,7 +72,7 @@ function init(){
         console.log(e.target.value)
         // document.querySelector('#bom').value += 'A-NY-80'
         // document.querySelector('#prc').value += 'NY-80'
-        document.querySelector('#pcd').value += 'A80'
+        document.querySelector('#pcd').value = 'A80'
 
         document.querySelector(".bomTitle").innerHTML = 'A-NY-80'
         document.querySelector('#bomDesc').innerHTML = `고무로 접착된 식물성 기름 5g<br>
@@ -99,7 +99,9 @@ function init(){
 
         document.querySelector('img').src='https://contents.kyobobook.co.kr/sih/fit-in/400x0/gift/pdt/1720/hot1680745213388.jpg'
         console.log(document.querySelector('#ordcnt'))
-        document.querySelector('#ordcnt').innerHTML = `4000`
+        document.querySelector('#ordcnt').value = `4000`
+        document.querySelector('#hoNo').value = `1호기`
+        document.querySelector('#line').value = `A라인`
 
 
     })
