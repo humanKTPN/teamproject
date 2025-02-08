@@ -149,4 +149,12 @@ function init() {
         window.location.href = 'dashBoard_kwak.html'
       })
 
+      const list =  document.querySelectorAll('.boardlist')
+
+      for(line of list){
+        line.addEventListener('click',function(){
+            window.location.href = 'writeview_Nam.html'
+        })
+      }
+
 }

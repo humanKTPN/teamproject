@@ -78,43 +78,43 @@ function init(){
         // 필터링 후 표시(미구현)
     }
 
-    const write = document.querySelector('.write');
+    const write = document.querySelector('.add');
     write.addEventListener('click', writeprocess)
     function writeprocess() {
         window.location.href = "writeprocess_nam.html"
         console.log("글쓰기 페이지 진입")
     }
-    // 페이지표시부분 미구현
-    const page1 = document.querySelector('.pnum1')
-    page1.addEventListener('click', function () {
-        const first = document.querySelector('.pum1')
-        console.log('1페이지 진입')
-    })
+    // // 페이지표시부분 미구현
+    // const page1 = document.querySelector('.pnum1')
+    // page1.addEventListener('click', function () {
+    //     const first = document.querySelector('.pum1')
+    //     console.log('1페이지 진입')
+    // })
 
 
-    const page2 = document.querySelector('.pnum2')
-    page2.addEventListener('click', function () {
-        const second = document.querySelector('.pum2')
-        console.log('2페이지 진입')
-    })
+    // const page2 = document.querySelector('.pnum2')
+    // page2.addEventListener('click', function () {
+    //     const second = document.querySelector('.pum2')
+    //     console.log('2페이지 진입')
+    // })
 
-    const page3 = document.querySelector('.pnum3')
-    page3.addEventListener('click', function () {
-        const thrid = document.querySelector('.pum3')
-        console.log('3페이지 진입')
-    })
+    // const page3 = document.querySelector('.pnum3')
+    // page3.addEventListener('click', function () {
+    //     const thrid = document.querySelector('.pum3')
+    //     console.log('3페이지 진입')
+    // })
 
-    const page4 = document.querySelector('.pnum4')
-    page4.addEventListener('click', function () {
-        const fourth = document.querySelector('.pum4')
-        console.log('4페이지 진입')
-    })
+    // const page4 = document.querySelector('.pnum4')
+    // page4.addEventListener('click', function () {
+    //     const fourth = document.querySelector('.pum4')
+    //     console.log('4페이지 진입')
+    // })
 
-    const page5 = document.querySelector('.pnum5')
-    page5.addEventListener('click', function () {
-        const fifth = document.querySelector('.pum5')
-        console.log('5페이지 진입')
-    })
+    // const page5 = document.querySelector('.pnum5')
+    // page5.addEventListener('click', function () {
+    //     const fifth = document.querySelector('.pum5')
+    //     console.log('5페이지 진입')
+    // })
 
     const nums = document.querySelectorAll('.pnum')        
 
@@ -143,4 +143,11 @@ function init(){
       document.querySelector('.logo').addEventListener('click',function(){
         window.location.href = 'dashBoard_kwak.html'
       })
+      const list =  document.querySelectorAll('.boardlist')
+
+      for(line of list){
+        line.addEventListener('click',function(){
+            window.location.href = 'writeview_Nam.html'
+        })
+      }
 }
