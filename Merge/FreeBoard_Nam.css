@@ -758,13 +758,15 @@ button,#viewfilter{
     justify-content: space-around;
     align-items: center;
 }
-.icon-sub{
+.icon-sub {
     /* border: 10px solid red; */
     display: flex;
-    width: 15%;
+    width: 9%;
     display: flex;
     justify-content: space-around;
-    min-width: 268px;
+    min-width: 210px;
+    font-size: small;
+	align-items: center;
 }
 
 .num{
