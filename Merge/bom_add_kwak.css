@@ -46,13 +46,8 @@ body{
     background-color: #2f373a;
     color: white;
    }
-   .command-div{
-    /* border: 1px solid red; */
-    display: flex;
+   .command-div {
     width: 100%;
-    justify-content: center;
-    min-width: 500px;
-    
 }
 .command-th,.command-td{
     height: 30px;
