@@ -795,7 +795,9 @@ form{
 .confirm{
     display: inline-block;
     text-align: center;
-    border: 1px solid darkgrey;
+    border: 1px solid #2f373a;
+    background-color: #2f373a;
+    color: white;
     margin-right: 45px;
     width: 50px;
     cursor: pointer;
