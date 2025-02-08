@@ -779,6 +779,14 @@ form{
     justify-content: space-around;
     align-items: center;
 }
+.icon, .icon-sub{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0.5%;
+    padding-left: 1%;
+}
 .icon-sub {
     /* border: 10px solid red; */
     display: flex;
