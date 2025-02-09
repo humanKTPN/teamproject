@@ -74,6 +74,19 @@ function init(){
       window.location.href = 'dashBoard_kwak.html'
     })
 
+    document.querySelector('#dayWork-board').addEventListener('click',function(){
+      window.location.href = 'workManage_main_kwak.html'
+    })
+    document.querySelector('#dayWork-board2').addEventListener('click',function(){
+      window.location.href = 'Production management_tak.html'
+    })
+    document.querySelector('#bdChart').addEventListener('click',function(){
+      window.location.href = 'TestMM_main_park.html'
+    })
+    document.querySelector('.th2-con').addEventListener('click',function(){
+      window.location.href = 'Production reporting_tak.html'
+    })
+
 }
 
     
