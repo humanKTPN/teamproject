@@ -1,0 +1,444 @@
+.menuPage-con {
+    background-color: darkgrey;
+}
+
+.boxTit {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.dayWork-T td {
+    border: 2px solid darkgrey;
+    text-align: center;
+    height: 30px;
+}
+
+.ssLine {
+    position: relative;
+    top: 0px;
+    right: 2px;
+}
+
+.tableTop {
+    background-color: #2f373a;
+    color: white;
+}
+
+.ssLine td {
+    width: 70px;
+}
+
+#table-T {
+    margin: 0;
+}
+
+/* .lineManu td {
+    width: 140px;
+    border: 1px solid black;
+} */
+
+.ssTable table,
+.ssTable tr,
+.ssTable th,
+.ssTable td {
+    border: 1px solid darkgrey;
+    border-collapse: collapse;
+    height: 35px;
+}
+
+.ssTable td {
+    /* width: 25%; */
+    text-align: center;
+}
+
+.ssTable {
+    border-bottom: 1px solid darkgrey;
+    height: 195px;
+    overflow-y: auto
+}
+
+.ssTable table {
+    width: 100%;
+}
+
+.schedule table,
+.schedule tr,
+.schedule th,
+.schedule td {
+    border: 1px solid darkgrey;
+    border-collapse: collapse;
+    height: 35px;
+}
+
+.schedule table {
+    width: 100%;
+    border: 1px solid black;
+
+}
+
+.schedule {
+    border-bottom: 1px solid darkgrey;
+}
+
+.line_manu {
+    display: flex;
+    justify-content: space-between
+}
+
+.date_manu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pm_mm_but {
+    height: 30px;
+    width: 60px;
+    margin-right: 20px;
+    background-color: #2f373a;
+    color: white;
+}
+.pr_mm_but {
+    height: 30px;
+    width: 60px;
+    margin-right: 20px;
+    background-color: #2f373a;
+    color: white;
+}
+
+.date_but {
+    height: 25px;
+    width: 50px;
+    margin-right: 20px;
+    background-color: #2f373a;
+    color: white;
+}
+
+.ssTitle {
+    /* border: 1px solid blue; */
+    text-align: center;
+    font-weight: 600;
+    height: 20px;
+}
+
+.schedule {
+    /* border: 1px solid blue; */
+    background-color: white;
+    width: 96%;
+    margin: 0 2%;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 10px;
+    /* margin: 20px 0; */
+}
+
+.ssDate_box {
+    /* border: 1px solid red; */
+    width: 98%;
+    margin: 1% 1%;
+
+}
+
+.ssretouch_box {
+    background-color: #2f373a;
+    color: white;
+    border: 1px solid #2f373a;
+    width: 380px;
+}
+
+.schedule_con {
+    height: 250px;
+    width: 100%;
+    border-bottom: 1px solid darkgrey;
+    overflow-y: auto
+}
+
+.ssInventory {
+    width: 100px;
+}
+
+.point {
+    background-color: darkred;
+    color: white;
+}
+
+.pm_ssmanu {
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 290px;
+    /* text-align: left; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+
+.pm_ssmanu div {
+    margin: 10px 20px 0;
+}
+
+.pm_correction {
+    height: 300px;
+    /* margin: 0 0 0 10px; */
+}
+
+
+.pm_correction_con {
+    /* border: 1px solid blue; */
+    display: flex;
+    height: 25px;
+    align-items: flex-end
+}
+
+.pm_correction_con div {
+    width: 40px;
+    font-size: 15px;
+    height: 20px;
+
+}
+
+.pm_correction_con input {
+    height: 15px;
+}
+
+.pm_correction_but {
+    /* border: 1px solid red; */
+    height: 23px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.pm_correction_but_con{
+    
+    height: 23px;
+    width: 50px;
+    margin: 10px;
+    background-color: #2f373a;
+    color: white;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.pr_ssmanu {
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 270px;
+    /* text-align: left; */
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.pr_ssmanu div {
+    margin: 7px 20px 0;
+}
+
+
+
+.pr_correction {
+    margin: 0 0 0 10px;
+    width: 40%;
+}
+
+.pr_correction_con {
+    /* border: 1px solid blue; */
+    display: flex;
+    height: 35px;
+    align-items: flex-end;
+    justify-content: space-between
+}
+
+.pr_date {
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.pr_correction_but {
+    /* border: 1px solid red; */
+    height: 70px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.pr_correction_but div {
+    background-color: #2f373a;
+    color: white;
+    border: 1px solid black;
+    font-size: 15px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.stop {
+    color: red;
+    font-weight: 600;
+}
+
+.cs1 {
+    width: 8%;
+}
+
+.cs2 {
+    width: 13%;
+}
+
+.cs3 {
+    width: 8%;
+}
+
+.cs4 {
+    width: 15%;
+}
+
+.cs5 {
+    width: 20%;
+}
+
+.cs6 {
+    width: 20%;
+}
+
+.cs7 {
+    width: 8%;
+}
+
+.cs8 {
+    width: 8%;
+}
+
+.schedule1 {
+    width: 15%
+}
+
+.schedule2 {
+    width: 23%
+}
+
+.schedule3 {
+    width: 50%
+}
+
+.schedule4 {
+    width: 12%
+}
+
+.line_ssbox {
+    /* width: 95%; */
+    /* border: 1px solid red; */
+    background-color: white;
+    padding: 10px;
+    margin: 0 2%;
+    border-radius: 10px;
+}
+#work3{
+    width: 100%;
+    height: 100%;
+    /* border: 5px solid darkred; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+@media screen and (max-width: 800px) {
+    .mainManu {
+        width: 100%;
+        height: 18%;
+    }
+
+    .manuBut {
+
+        text-align: center;
+    }
+
+    .manuPage {
+        position: relative;
+        left: -1px;
+        width: 100%;
+        height: 455%;
+    }
+
+    .dayWork-T {
+        position: relative;
+        right: 15px;
+        font-size: 10px;
+    }
+    .line_ssbox{
+        width: 96.5%;
+    }
+
+    .cs1 {
+        width: 10%;
+    }
+
+    .cs2 {
+        width: 13%;
+    }
+
+    .cs3 {
+        width: 10%;
+    }
+
+    .cs4 {
+        width: 17%;
+    }
+
+    .cs5 {
+        width: 15%;
+    }
+
+    .cs6 {
+        width: 15%;
+    }
+
+    .cs7 {
+        width: 8%;
+    }
+
+    .cs8 {
+        width: 10%;
+    }
+
+    .schedule {
+        width: 100%;
+    }
+
+    .ss {
+        display: inline;
+    }
+
+    .schedule_con {
+        height: 240px;
+        border: 1px solid black;
+        overflow-y: auto
+    }
+
+    .ssTitle {
+        font-size: 15px;
+    }
+
+    .pr_ssmanu {
+        width: 100%;
+        height: 300px;
+        /* text-align: left; */
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+}

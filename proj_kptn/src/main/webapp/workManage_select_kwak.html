@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 여기에 대시보드 css 파일옮기기 -->
+    <link rel="stylesheet" href="workManage_select_kwak.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="workManage_select_kwak.js"></script>    
+    <style>
+        /******************
+        모바일 버전 구현(불량쪽 차트는 ....)
+        *******************/
+    </style>
+</head>
+<body>
+    <!-- <body> -->
+        <div class="menu-con work">
+            <div>
+                <div id ="title-name">
+                    <div class="titleName">
+                        <i id="ham" class=" main-menu fas fa-solid fa-bars fa-lg"></i>&nbsp;&nbsp;<div class="logo"><i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution</div>
+                    </div>
+                    <div class="icon-sub">
+                        관리자님 환영합니다.
+                        <i class="fas fa-regular fa-arrow-right-from-bracket fa-md">
+                            <span class="subBut">로그아웃</span>
+                        </i>
+                    </div>  
+                </div>
+            </div>
+            <div class="main-menu-con">
+                <!-- <div class="main-menu" id="main-menu">MENU 열기</div> -->
+                <div class="menu">기준관리</div>
+                <div class="menu">작업관리</div>
+                <div class="menu">생산관리</div>
+                <div class="menu">생산리포팅</div>
+                <div class="menu">자재관리</div>
+                <div class="menu">품질관리</div>
+            </div>
+        </div>
+        <div class="board">
+            
+            <div class="mainmenu" id="work1">
+                <div class="menuBut">대시보드</div>
+                <div class="menuBut">게시판</div>
+                <div class="menuBut">공지사항</div>
+                <!-- <div class="menuBut">기준관리</div> -->
+            </div>
+            <div class="bome-con">
+
+
+                    <div class="menuPage-con">    
+                       <!-- html 들어갈 곳 -->
+                        <div class="border_line">
+                       <div class="pop">
+                        <div class="add-table">
+                         <img class="eraser-img" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
+                         <!-- <div class="detail-con"> -->
+                            <table class="detail-table">
+                                <tr>
+                                    <th class="detail-th" scope = "col">호기번호</th>
+                                    <th class="detail-th" scope = "col">납품처명</th>
+                                    <th class="detail-th" scope = "col">납기일자</th>
+                                    <th class="detail-th" scope = "col">품목명</th>
+                                    <th class="detail-th" scope = "col">담당자</th>
+                                    <th class="detail-th" scope = "col">지시수량</th>
+                                    <!-- <th class="detail-th" scope = "col">생산수량</th> -->
+                                    <th class="detail-th" scope = "col">종결여부</th>
+                                    <!-- <th class="detail-th" scope = "col">BOM</th>
+                                    <th class="detail-th" scope = "col">공정</th> -->
+                                </tr>
+                                <tr>
+                                    <td class="detail-td">1호기</td>
+                                    <td class="detail-td">다이소</td>
+                                    <td class="detail-td">2025/01/22</td>
+                                    <td class="detail-td">싹싹지우개</td>
+                                    <td class="detail-td">김길동</td>
+                                    <td class="detail-td">4000</td>
+                                    <!-- <td class="detail-td">500</td> -->
+                                    <td class="detail-td">진행중</td>
+                                    <!-- <td class="detail-td">SS-01</td>
+                                    <td class="detail-td">A07</td> -->
+                                </tr>
+                                
+                            </table>
+                         <!-- </div> -->
+                        </div>
+                        </div>
+                        <div class="bompro-con">
+                            <div class="bom-con">
+                                <h4>BOM : SS-01</h4>
+                                고무로 접착된 식물성 기름 5%<br>
+                                고운 속돌가루 59%<br>
+                                황 5%<br>
+                                염화비닐 30%<br>
+                                프탈레이트계 가소제1%<br>
+                                color-red 1%<br>
+                                탄산칼슘 10%
+                            </div>
+                            <div class="process">
+                                <h4>공정 : A07</h4>
+                                <p>
+                                    1. 재료의 배합<br>
+                                    플라스틱 원료와 가소제(可塑剤)등을 계량하여 교반기(혼합 기계)에 넣는다.<br>
+                                    <br>
+                                    2. 섞는다<br>
+                                    교반기에 넣은 재료를 잘 혼합한다.<br>
+                                    여기서의 열의 강도와 시간조절에 의해 지우개의 단단함을 조정할 수 있다.<br>
+                                    색이나 향기를 추가하는 것도 보통 이 과정에서 시행한다.<br>
+                                    <br>
+                                    3. 지우개의 모양을 만든다 => 지우개의 모양을 만드는 방법은 3가지가 있다.<br>
+                                    *압출성형(押出成型):스크루식 압출기로 가늘고 긴 형태의 지우개를 만든다.<br>
+                                    *압축성형(壓縮成型):네모진 형태의 핫 프레스기에 섞은 재료를 흘려 넣어 굳은 후 얇은 판 모양의 지우개가 만들어진다.<br>
+                                    *사출성형(射出成型):사출성형기를 사용하여 각 크기와 형태의 모양에 흘려 넣어 굳으면 각기 다른 모양의 지우개가 만들어진다.<br>
+                                    <br>
+                                    4. 절단한다.<br>
+                                    압출이나 압축성형 된 지우개는 재단기를 사용하여 자른다.<br>
+                                    <br>
+                                    5. 완성<br>
+                                    케이스에 넣거나 세로판 포장을 해 상자에 넣으면 완성이다.<br>
+                                </p>
+        
+                                
+                            </div>
+                        </div>
+                        <div class="add-con">
+                            <div class="del">
+                                삭제
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                    
+                    </div> 
+                </div>
+            <!-- </div> -->
+    <!-- </body> -->
+    
+</body>
+</html>

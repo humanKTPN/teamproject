@@ -1,0 +1,398 @@
+.menuPage-con{
+    background-color: darkgrey;
+}
+.graph_wrap {
+    max-width: 864px;
+    margin: 0 auto;
+    /* padding: 20px; */
+}
+
+.graph_wrap .tit {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    margin-top: 15px;
+
+}
+
+.graph {
+    position: relative;
+    height: 200px;
+    margin-top: 0px;
+}
+
+.graph .y-axis {
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    z-index: 1;
+}
+
+.graph .y-axis>li {
+    position: relative;
+    width: calc(100% - 20px);
+    height: calc(100% / 11);
+    margin-left: +3px;
+    border-top: 1px solid #8c8c8c;
+    text-align: left;
+    list-style: none;
+}
+
+.graph .y-axis>li span {
+    position: absolute;
+    top: -7px;
+    left: -35px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.graph .x-axis {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -45px;
+    left: -15px;
+    width: calc(100% - 50px);
+    text-align: center;
+    z-index: 2;
+    list-style: none;
+}
+
+.graph .x-axis>li {
+    font-size: 11px;
+}
+
+.graph .bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    position: absolute;
+    bottom: -25px;
+    left: -15px;
+    width: calc(100% - 50px);
+    height: calc(100% - 8px);
+    text-align: center;
+    z-index: 3;
+}
+
+.graph .bar>li {
+    flex-grow: 1;
+    margin: 0 10px;
+    list-style: none;
+}
+
+.graph .bar>li span {
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+    max-width: 80px;
+    background: #8ab4f8;
+}
+
+/* .graph .bar:before {
+    content: '';
+    position: absolute;
+    top: -90px;
+    left: 3px;
+    width: 1px;
+    height: calc(100% + 4px);
+    background: #8c8c8c;
+} */
+
+.point {
+    background-color: darkred;
+    color: white;
+}
+.point2 {
+    background-color: darkred;
+    border-radius: 10px 10px 0 0 ;
+    color: white;
+}
+
+.number_ssbox {
+    width: 90%;
+    height: 70%;
+    border: 1px solid black;
+    margin: 10px 5%;
+    line-height: 53px;
+}
+
+.number_ssbox div {
+    display: flex;
+    justify-content: space-around
+}
+
+.number_ss {
+    font-size: 20px;
+}
+
+.ssLine_number {
+    display: flex;
+    justify-content: space-evenly
+}
+
+.line_number {
+    line-height: 30px;
+}
+
+.ssTotal {
+    text-align: center;
+    font-size: 70px;
+    font-weight: 600;
+    position: relative;
+    top: -2px;
+}
+.date_ssBox{
+    height: 96%;
+}
+.date_ssBox_tit{
+    margin: 0px 20px 5px ;
+    font-size: 20px;
+    font-weight: 600;
+}
+.ssTable table,
+.ssTable tr,
+.ssTable th,
+.ssTable td {
+    border: 1px solid darkgrey;
+    border-collapse: collapse;
+    height: 35px;
+}
+
+.ssTable td {
+    /* width: 25%; */
+    text-align: center;
+}
+
+.ssTable {
+    border-bottom: 1px solid darkgrey;
+    width: 90%;
+    margin: auto;
+    height: 250px;
+    overflow-y: auto
+}
+
+.ssTable table{
+    width: 100%;
+    
+}
+.ssTable th{
+    background-color: #2f373a;
+    color: white ;
+}
+.date_ssTable table,
+.date_ssTable tr,
+.date_ssTable th,
+.date_ssTable td {
+    border: 1px solid darkgrey;
+    border-collapse: collapse;
+    height: 20px;
+}
+
+.date_ssTable td {
+    /* width: 25%; */
+    text-align: center;
+}
+.date_ssTable{
+    border-bottom: 1px solid darkgrey;
+    width: 96%;
+    margin: 0 2% 10px;
+    height: 120px;
+    overflow-y: auto
+}
+.date_ssTable table{
+    width: 100%;
+}
+.date_ssTable th{
+    background-color: #2f373a;
+    color: white ;
+}
+.sale_ssTable table,
+.sale_ssTable tr,
+.sale_ssTable th,
+.sale_ssTable td {
+    border: 1px solid darkgrey;
+    border-collapse: collapse;
+    height: 20px;
+}
+
+.sale_ssTable td {
+    /* width: 25%; */
+    text-align: center;
+}
+
+.sale_ssTable {
+    border-bottom: 1px solid darkgrey;
+    width: 96%;
+    margin: 0 2% 20px ;
+    height: 120px;
+    overflow-y: auto
+}
+
+.sale_ssTable table{
+    width: 100%;
+    
+}
+.sale_ssTable th{
+    background-color: #2f373a;
+    color: white ;
+}
+.item_sl{
+    margin-left: 20px;
+
+}
+.es1{
+    width: 50%;
+}
+.es2{
+    font-weight: 600;
+    width: 50%;
+}
+.es3{
+    width: 17%;
+}
+.es4{
+    font-weight: 600;
+    width: 13%;
+}
+.es5{
+    width: 17%;
+}
+.es6{
+    font-weight: 600;
+    width: 13%;
+}
+.es7{
+    width: 17%;
+}
+.es8{
+    font-weight: 600;
+    width: 13%;
+}
+.stop{
+    color: red;
+    font-weight: 600;
+}
+.date_box{
+    background-color: white;
+    width: 56%;
+    margin: 2% 1% 0 2%;
+    /* border: 1px solid red; */
+    border-radius: 10px 10px 0 0;
+    
+}
+.date_box_manu{
+    width: 100%;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    border-collapse: collapse;
+    border-radius: 10px 10px 0 0;
+    background-color: #2f373a;
+    color: white;
+}
+.date_box_manu td{
+    border-left: darkgrey;
+}
+
+.ssgraph{
+    width: 96%;
+    margin: auto;
+    height: 270px;
+    /* border: 1px solid black; */
+}
+.date_list{
+    background-color: white;
+    width: 56%;
+    height: 330px;
+    margin: 0 1% 2% 2%;
+    border-radius: 0 0 10px 10px;
+}
+.numberBox{
+    background-color: white;
+    /* border: 1px solid black; */
+    width: 38%;
+    height: 310px;
+    margin-top: 2%;
+    border-radius: 10px;
+}
+.ingBox{
+    background-color: white;
+    /* border: 1px solid black; */
+    width: 38%;
+    height: 330px;
+    border-radius: 10px;
+}
+.pr_box1{
+    display: flex;
+}
+.pr_box2{
+    display: flex;
+}
+.pr_boxTit{
+    margin: 10px 5% 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.hovertext {
+    position: relative;
+    /* border-bottom: 1px dotted black; */
+}
+
+.hovertext:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 5px;
+    transition: opacity 1s ease-in-out;
+
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 110%;
+}
+
+.hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+@media screen and (max-width: 800px) {
+    .pr_box1{
+        display: block;
+    }
+    .pr_box2{
+        display: block;
+    }
+    .date_box{
+        width: 96%;
+        position: absolute;
+    }
+    .date_list{
+        width: 96%;
+        position: relative;
+        top: -0px;
+    }
+    .numberBox{
+        position: relative;
+        bottom: -655px;
+        height: 310px;
+        left: 2%;
+        width: 47%;
+
+    }
+    .ingBox{
+        position: relative;
+        left: 51%;
+        top: 0px;
+        height: 310px;
+        width: 47%;
+        margin-bottom: 2% ;
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 여기에 대시보드 css 파일옮기기 -->
+    <link rel="stylesheet" href="processDesc_select.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="processDesc_select.js"></script>    
+    <style>
+        /******************
+        모바일 버전 구현(불량쪽 차트는 ....)
+        *******************/
+    </style>
+</head>
+<body>
+    <!-- <body> -->
+        <div class="menu-con work">
+            <div>
+                <div id ="title-name">
+                    <div class="titleName">
+                        <i id="ham" class=" main-menu fas fa-solid fa-bars fa-lg"></i>&nbsp;&nbsp;<div class="logo"><i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution</div>
+                    </div>
+                    <div class="icon-sub">
+                        관리자님 환영합니다.
+                        <i class="fas fa-regular fa-arrow-right-from-bracket fa-md">
+                            <span class="subBut">로그아웃</span>
+                        </i>
+                    </div>  
+                </div>
+            </div>
+            <div class="main-menu-con">
+                <!-- <div class="main-menu" id="main-menu">MENU 열기</div> -->
+                <div class="menu">기준관리</div>
+                <div class="menu">작업관리</div>
+                <div class="menu">생산관리</div>
+                <div class="menu">생산리포팅</div>
+                <div class="menu">자재관리</div>
+                <div class="menu">품질관리</div>
+            </div>
+        </div>
+        <div class="board">
+            
+            <div class="mainmenu" id="work1">
+                <div class="menuBut">대시보드</div>
+                <div class="menuBut">게시판</div>
+                <div class="menuBut">공지사항</div>
+                <!-- <div class="menuBut">기준관리</div> -->
+            </div>
+            <div class="bome-con">
+
+
+                    <div class="menuPage-con">    
+                       <!-- html 들어갈 곳 -->
+                        <div class="border_line">
+                       <div class="pop">
+                        <div class="add-table">
+                         <img class="eraser-img" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
+                            <table class="detail-table">
+                                <tr>
+                                    <th class="detail-th" scope = "col">공정코드</th>
+                                    <th class="detail-th" scope = "col">공정명</th>
+                                    <th class="detail-th" scope = "col">공정분류</th>
+                                    <th class="detail-th" scope = "col">설비사용</th>
+                                    <th class="detail-th" scope = "col">검사여부</th>
+                                </tr>
+                                <tr>
+                                    <td class="detail-td"><span class="spn-td">RT080</span><input type='text' class="mod-td hide" value="RT080"></td>
+                                    <td class="detail-td"><span class="spn-td">싹싹지우개생산</span><input type='text' class="mod-td hide" value="싹싹지우개생산"></td>
+                                    <td class="detail-td"><span class="spn-td">생산</span><input type='text' class="mod-td hide" value="생산"></td>
+                                    <td class="detail-td"><span class="spn-td">사용</span><input type='text' class="mod-td hide" value="사용"></td>
+                                    <td class="detail-td"><span class="spn-td">검사</span><input type='text' class="mod-td hide" value="검사"></td>
+                                </tr>
+                                
+                            </table>
+                        </div>
+                        </div>
+                        <div class="bompro-con">
+                            <div class="bom-con">
+                                <h4>공정코드 :<span class="spn-td"> RT080</span><input type='text' class="mod-td hide" value="A80"></h4>
+                                <table>
+                                    <tr>
+                                       <td>
+                                        <img class="eraser-img bom-item" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
+                                       </td> 
+                                       <td>
+                                           <span class="spn-td">1. 재료의 배합 : 플라스틱 원료와 가소제(可塑剤)등을 계량하여 교반기(혼합 기계)에 넣는다.</span><input type='text' style="width: 500px;height: 100px;" class="mod-td hide" value="1. 재료의 배합 : 플라스틱 원료와 가소제(可塑剤)등을 계량하여 교반기(혼합 기계)에 넣는다.">
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                        <img class="eraser-img bom-item" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
+                                       </td> 
+                                       <td>
+                                           <span class="spn-td">2. 혼합 : 교반기에 넣은 재료를 잘 혼합한다. 여기서의 열의 강도와 시간조절에 의해 지우개의 단단함을 조정할 수 있다. 색이나 향기를 추가하는 것도 보통 이 과정에서 시행한다.</span><input type='text' style="width: 500px;height: 100px;" class="mod-td hide" value="2. 혼합 : 교반기에 넣은 재료를 잘 혼합한다. 여기서의 열의 강도와 시간조절에 의해 지우개의 단단함을 조정할 수 있다. 색이나 향기를 추가하는 것도 보통 이 과정에서 시행한다.">
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                        <img class="eraser-img bom-item" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
+                                       </td> 
+                                       <td>
+                                           <span class="spn-td">3. 지우개의 모양 성형 : 지우개의 모양을 만드는 방법은 3가지가 있다.
+                                            *압출성형(押出成型):스크루식 압출기로 가늘고 긴 형태의 지우개를 만든다.
+                                            *압축성형(壓縮成型):네모진 형태의 핫 프레스기에 섞은 재료를 흘려 넣어 굳은 후 얇은 판 모양의 지우개가 만들어진다.
+                                            *사출성형(射出成型):사출성형기를 사용하여 각 크기와 형태의 모양에 흘려 넣어 굳으면 각기 다른 모양의 지우개가 만들어진다.
+                                            </span><input type='text' style="width: 500px;height: 100px;" class="mod-td hide" value="3. 지우개의 모양 성형 : 지우개의 모양을 만드는 방법은 3가지가 있다.
+                                            *압출성형(押出成型):스크루식 압출기로 가늘고 긴 형태의 지우개를 만든다.
+                                            *압축성형(壓縮成型):네모진 형태의 핫 프레스기에 섞은 재료를 흘려 넣어 굳은 후 얇은 판 모양의 지우개가 만들어진다.
+                                            *사출성형(射出成型):사출성형기를 사용하여 각 크기와 형태의 모양에 흘려 넣어 굳으면 각기 다른 모양의 지우개가 만들어진다.">
+                                       </td>
+                                    </tr>
+                                    <tr>
+                                       <td>
+                                        <img class="eraser-img bom-item" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
+                                       </td> 
+                                       <td>
+                                           <span class="spn-td">4. 절단 : 압출이나 압축성형 된 지우개는 재단기를 사용하여 자른다.</span><input type='text' style="width: 500px;height: 100px;" class="mod-td hide" value="4. 절단 : 압출이나 압축성형 된 지우개는 재단기를 사용하여 자른다.">
+                                       </td>
+                                    </tr>
+
+                                </table>
+                                
+                            </div>
+                        </div>
+                        <div class="add-con">
+                            <div class="mode-con">
+                                <div class="mod">
+                                    수정
+                                </div>
+                                <div class="del">
+                                    삭제
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                    
+                    </div> 
+                </div>
+            <!-- </div> -->
+    <!-- </body> -->
+    
+</body>
+</html>
