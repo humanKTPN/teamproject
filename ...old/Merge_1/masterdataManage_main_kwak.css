@@ -970,19 +970,13 @@ body{
     width: 3%;
 }
 .command-table th:nth-child(2){
-    width: 7%;
-}
-.command-table th:nth-child(3){
-    width: 7%;
-}
-.command-table th:nth-child(4){
     width: 3%;
 }
-.command-table th:nth-child(5){
-    width: 5%;
+.command-table th:nth-child(3){
+    width: 3%;
 }
-.command-table th:nth-child(6){
-    width: 10%;
+.command-table th:nth-child(4){
+    width: 7%;
 }
 
 
