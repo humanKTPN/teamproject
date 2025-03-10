@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,19 +68,16 @@
                                 <table class="command-table">
                                     <tr>
                                         <th class="command-th" scope = "col">항목명</th>
-                                        <th class="command-th" scope = "col">항목코드</th>
-                                        <th class="command-th" scope = "col">품목유형</th>
-                                        <th class="command-th" scope = "col">단위값</th>
-                                        <th class="command-th" scope = "col">거래처명</th>		
+                                        <th class="command-th" scope = "col">구분</th>
+                                        <th class="command-th" scope = "col">단위</th>
+                                        <th class="command-th" scope = "col">거래처</th>
                                         <!-- <th class="command-th" scope = "col">설명</th> -->
                                     </tr>
-                           		<form method="post" action="masterDataManagement_kwak_cotroller">
                                     <tr>
-                                        <td class="command-td"><input type="text" name="MT_MNG_NM"></td>
-                                        <td class="command-td"><input type="text" name="MT_MNG_CD"></td>
-                                        <td class="command-td"><input type="text" name="ITEM_TP"></td>
-                                        <td class="command-td"><input type="text" name="MT_UNT_VAL"></td>
-                                        <td class="command-td"><input type="text" name="CSTMR_NM"></td>
+                                        <td class="command-td"><input type="text"></td>
+                                        <td class="command-td"><input type="text"></td>
+                                        <td class="command-td"><input type="text"></td>
+                                        <td class="command-td"><input type="text"></td>
                                         <!-- <td class="command-td"><input type="text"></td> -->
                                     </tr>
                                     
@@ -93,14 +88,11 @@
                                 <div class = "tab-name-div">
                                     <div class="tab-name switch-color">설명입력</div>
                                 </div>
-                                <textarea class="desc" name="MT_MNG_DESC"></textarea>
+                                <textarea class="desc"></textarea>
                                 <div class="add-con">
-                               
-<!--                                     <div class="add"> -->
-										<input type="hidden" name="command" value="insert">
-                                        <input class="add" type="submit" value="추가"/>
-<!--                                     </div>                                 -->
-                                </form>
+                                    <div class="add">
+                                        추가
+                                    </div>
                                 </div> 
                             </div>
 
