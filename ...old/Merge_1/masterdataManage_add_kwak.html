@@ -67,17 +67,25 @@
                             <div class="command-div">
                                 <table class="command-table">
                                     <tr>
-                                        <th class="command-th" scope = "col">항목명</th>
-                                        <th class="command-th" scope = "col">구분</th>
-                                        <th class="command-th" scope = "col">단위</th>
-                                        <th class="command-th" scope = "col">거래처</th>
+                                        <th class="command-th" scope = "col">이미지업로드</th>
+                                        <th class="command-th" scope = "col">기준관리코드</th>
+                                        <th class="command-th" scope = "col">기준관리명</th>
+                                        <th class="command-th" scope = "col">기준관리유형</th>
                                         <!-- <th class="command-th" scope = "col">설명</th> -->
                                     </tr>
                                     <tr>
-                                        <td class="command-td"><input type="text"></td>
-                                        <td class="command-td"><input type="text"></td>
-                                        <td class="command-td"><input type="text"></td>
-                                        <td class="command-td"><input type="text"></td>
+                                        <td class="command-td"><input type="button" value="이미지업로드"></td>
+                                        <td class="command-td"><input type="text" disabled></td>
+                                        <td class="command-td"><input type="text" placeholder="띄어쓰기 없이 입력"></td>
+                                        <td class="command-td">
+                                            <select>
+                                                <option value="원자재">원자재</option>
+                                                <option value="완제품">완제품</option>
+                                                <option value="라인호기명">라인호기</option>
+                                                <option value="BOM">BOM</option>
+                                                <option value="공정">공정</option>
+                                                <option value="거래처">거래처</option>
+                                            </select></td>
                                         <!-- <td class="command-td"><input type="text"></td> -->
                                     </tr>
                                     
