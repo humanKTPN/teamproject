@@ -27,7 +27,7 @@
                 </div>
                 <div class="pr_correction_con">
                     <div style="width:100px;">품번 코드:</div>
-                    <input id="pName" type="text" style="height: 18px;" value=" ">
+                    <div id="pName" style="height: 18px;">SSJ-02</div>
                 </div>
                 <div class="pr_correction_con">
                     <div style="width:100px;">목표 수량:</div>
@@ -50,28 +50,30 @@
     </div>
 </body>
 <script>
-    let pv = document.querySelector('.pv')
+    window.onload = function () {
 
-    pv.addEventListener('click', function (evt) {
-        let pvs = evt.target.value
-        console.log("pvs : ", pvs)
-        let pName = document.querySelector('#pName')
-        console.log("bbbbb", pName)
-        if (pvs == "1") {
-            console.log("ccccc", pName.value)
-            pName.value = 'SSJ-02';
-        } else if (pvs == "2") {
-            pName.value = 'FTJ-05';
-        } else if (pvs == "3") {
-            pName.value = 'UBJ-01';
-        } else if (pvs == "4") {
-            pName.value = 'MDJ-04';
-        } else if (pvs == "5") {
-            pName.value = 'RSJ-07';
-        }
-    })
-    console.log(document.querySelector('.pvv').value)
+        let pv = document.querySelector('.pv')
+        pv.addEventListener('click', function (evt) {
+            let pvs = evt.target.value
+            console.log("pvs : ", pvs)
+            let pName = document.getElementById('pName')
+            console.log("bbbbb", pName)
+            if (pvs == "1") {
+                console.log("ccccc", pName)
+                pName.innerText = "SSJ-02";
+            } else if (pvs == "2") {
+                pName.innerText = "FTJ-05";
+            } else if (pvs == "3") {
+                pName.innerText = "UBJ-01";
+            } else if (pvs == "4") {
+                pName.innerText = "MDJ-04";
+            } else if (pvs == "5") {
+                pName.innerText = "RSJ-07";
+            }
+        })
+        console.log(document.querySelector('.pvv'))
 
+    }
 
 </script>
 
