@@ -39,7 +39,7 @@ function init(){
                 window.location.href="TestQA_main_park.html"
 
             } else if (e.target.textContent=='기준관리'){
-                window.location.href="masterdataManage_main_kwak.html"
+                window.location.href="masterdataManage_main_kwak.jsp"
             }
         })
     }// 탑 버튼 내용나오게 하기  <끝>
@@ -66,8 +66,8 @@ function init(){
 
     
     document.querySelector('.add').addEventListener('click',function(){
-        // alert("추가되었습니다.")
-        window.location.href="masterdataManage_edit_kwak.html"
+        alert("추가되었습니다.")
+        // window.location.href="masterdataManage_edit_kwak.html"
     })
       // 로그아웃 버튼 
       document.querySelector('.subBut').addEventListener('click',function(){

@@ -63,11 +63,11 @@ function init(){
             }  
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
-
+ 
     
     document.querySelector('.add').addEventListener('click',function(){
         // alert("추가되었습니다.")
-        window.location.href="bom_add_kwak.html"
+        window.location.href="bom_add_kwak.jsp"
     })
       // 로그아웃 버튼 
       document.querySelector('.subBut').addEventListener('click',function(){

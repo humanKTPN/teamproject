@@ -82,6 +82,7 @@ function init(){
 
         if(document.querySelector('.mod').textContent == '완료'){
             document.querySelector('.mod').textContent = '수정'
+            window.location.href='bom_mod_kwak.jsp'
         } else {
             document.querySelector('.mod').textContent = '완료'
         }

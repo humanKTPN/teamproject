@@ -66,8 +66,7 @@ function init(){
 
     
     document.querySelector('.add').addEventListener('click',function(){
-        // alert("추가되었습니다.")
-        window.location.href="processDesc_add_kwak.html"
+        window.location.href="processDesc_add_kwak.jsp"
     })
       // 로그아웃 버튼 
       document.querySelector('.subBut').addEventListener('click',function(){

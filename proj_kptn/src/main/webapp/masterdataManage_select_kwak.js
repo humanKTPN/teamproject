@@ -42,7 +42,7 @@ function init(){
                 window.location.href = "TestQA_main_park.html"
             } else if (e.target.textContent == '기준관리') {
                 // 기준관리 메인
-                window.location.href = "masterdataManage_main_kwak.html"
+                window.location.href = "masterdataManage_main_kwak.jsp"
             }
         })
     }// 탑 버튼 내용나오게 하기  <끝>

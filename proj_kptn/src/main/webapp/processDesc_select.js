@@ -74,35 +74,8 @@ function init(){
       document.querySelector('.logo').addEventListener('click',function(){
         window.location.href = 'dashBoard_kwak.html'
       })
-    document.querySelector('.del').addEventListener('click',function(){
-        alert('삭제되었습니다.')
-    })
 
-    document.querySelector('.mod').addEventListener('click',function(){
-
-        if(document.querySelector('.mod').textContent == '완료'){
-            document.querySelector('.mod').textContent = '수정'
-        } else {
-            document.querySelector('.mod').textContent = '완료'
-        }
-
-        const cnms =  document.querySelectorAll('.spn-td')
-        const mnms =  document.querySelectorAll('.mod-td')
-        for(cnm of cnms){
-            if(cnm.classList.length == 1){
-                cnm.classList.add('hide')
-            } else {
-                cnm.classList.remove('hide')
-            }
-        }
-        for(mnm of mnms){
-            if(mnm.classList.length == 1){
-                mnm.classList.add('hide')
-            } else {
-                mnm.classList.remove('hide')
-            }
-        }
-    })
+  
 	const tbnms = document.querySelectorAll('.tab-name')
     
 	for(tbnm of tbnms){
