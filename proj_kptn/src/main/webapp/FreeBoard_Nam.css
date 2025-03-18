@@ -75,9 +75,9 @@ body{
 .menu:hover, #main-menu:hover {
     background-color: #9395969f;
 }
-.hide{
+/* .hide{
     display: none;
-}
+} */
 .menuPage {
     width: 100%;
     height: 100%;
@@ -501,9 +501,9 @@ body{
     .list-con{
         width: 400px;
     }
-    .hide{
-        display: none;
-    }
+    /* .hide{
+        display: none; */
+    /* } */
 
 
 

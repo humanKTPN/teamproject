@@ -57,7 +57,7 @@ function init(){
             if(e.target.textContent=='대시보드'){
                 window.location.href="dashBoard_kwak.html"
             } else if (e.target.textContent=='게시판'){
-                window.location.href = "FreeBoard_Nam.html"
+                window.location.href = "FreeBoard_Nam.jsp"
             } else if (e.target.textContent=='공지사항'){
                 window.location.href = "noticeBoard_Nam.html"
             }  
