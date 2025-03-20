@@ -49,6 +49,8 @@ btn_input_add.addEventListener('click', function () {
 });
 
 
+// 현재 일자를 기본값으로 하기
+document.getElementById('date').value = new Date().toISOString().substring(0, 10);
 
 // 확인 버튼을 누르면 입력한 값을 출력하는 이벤트
 const btn_add_confirm = document.getElementById('btn_add_confirm');

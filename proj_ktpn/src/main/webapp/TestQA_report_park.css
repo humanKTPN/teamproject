@@ -146,6 +146,7 @@ a {
 #btn_report_confirm {
     background-color: #2f373a;
     border-radius: 3px;
+    color: white;
 }
 
 .btn_text_color {
@@ -155,6 +156,36 @@ a {
 .div_none {
     height: 10px;
 }
+
+.qctable {
+	border: 1px solid darkgrey;
+    width : 100%;
+    border-collapse: collapse;
+    /* margin: 0 1%; */
+}
+
+.qc-th {
+	border: 1px solid darkgrey;
+    width: 20%;
+    background-color: #2f373a;
+    color: white;
+}
+
+.qctable td {
+	border: 1px solid darkgrey;
+    width: 1000px;
+    text-align: center;
+}
+
+.right {
+	display: flex;
+}
+
+.right_chi {
+	margin-left: auto;
+}
+
+
 
 
 /* pc는 그대로 */

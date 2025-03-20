@@ -92,7 +92,6 @@ a {
     /* width: 1000px; */
     border-collapse: collapse;
     /* margin: 0 1%; */
-
 }
 
 .QA-th {
@@ -144,4 +143,22 @@ a {
 
 .bold {
     font-weight: bold;
+}
+
+.right {
+	display : flex;
+}
+
+.right_chi {
+	margin-left : auto;
+}
+
+.btn {
+	background-color: #2f373a;
+    color: white;
+    height: 25px;
+}
+
+.btn a {
+	color: white;
 }
