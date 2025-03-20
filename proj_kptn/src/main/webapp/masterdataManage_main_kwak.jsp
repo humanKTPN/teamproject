@@ -112,8 +112,6 @@
                                     }
                                     %>
                                 </table>
-                            </div>
-                        </div>
                         <div class="page-num-con">
                             <div class="page-num">
                                 <div class="page pre-page">
@@ -136,6 +134,8 @@
                                 </div>
                             </div> 
                         </div>   
+                            </div>
+                        </div>
                     </div>
                 </div>
                 </div>

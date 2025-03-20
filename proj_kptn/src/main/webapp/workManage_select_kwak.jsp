@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="tb_bm_1000mt.DAO_BM_Kwak" %>
-<%@ page import="tb_bm_1000mt.DTO_BM_Kwak" %>
-<%@ page import="java.util.*" %>
+ <%@ page import="java.util.*" %>
+ <%@page import= "tb_pr_1000mt.DAO_PR_Kwak" %>
+ <%@page import= "tb_pr_1000mt.DTO_PR_Kwak_main" %>     
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 여기에 대시보드 css 파일옮기기 -->
-    <link rel="stylesheet" href="bom_select_kwak.css">
+    <link rel="stylesheet" href="workManage_select_kwak.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="bom_select_kwak.js"></script>    
+    <script src="workManage_select_kwak.js"></script>    
     <style>
         /******************
         모바일 버전 구현(불량쪽 차트는 ....)
@@ -62,49 +62,63 @@
                         <div class="border_line">
                        <div class="pop">
                         <div class="add-table">
-<!--                          <img class="eraser-img"> -->
+<!--                          <img class="eraser-img" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000"> -->
+                         <!-- <div class="detail-con"> -->
                             <table class="detail-table">
                                 <tr>
-                                    <th class="detail-th" scope = "col">BOM코드</th>
-                                    <th class="detail-th" scope = "col">BOM명</th>
+                                    <th class="detail-th" scope = "col">생산코드</th>
+                                    <th class="detail-th" scope = "col">생산일정코드</th>
+                                    <th class="detail-th" scope = "col">라인호기코드</th>
+                                    <th class="detail-th" scope = "col">라인호기명</th>
                                     <th class="detail-th" scope = "col">품목코드</th>
+                                    <th class="detail-th" scope = "col">담당자명</th>
+                                    <th class="detail-th" scope = "col">작업일자</th>
+                                    <th class="detail-th" scope = "col">지시수량</th>
                                 </tr>
+                                
                                 <%
-                                	
-                                	DAO_BM_Kwak dao = new DAO_BM_Kwak();
-                                	List<DTO_BM_Kwak> dto = dao.getDataInfo(request.getParameter("bom_cd"));
-                                	DTO_BM_Kwak dt = dto.get(0);
+                                
+                                DAO_PR_Kwak dao = new DAO_PR_Kwak();
+                                List<DTO_PR_Kwak_main> dto = dao.getDataInfo(request.getParameter("prod_cd"));
+                                
+                                DTO_PR_Kwak_main dt = dto.get(0);
                                 
                                 %>
+                                <form method=post action="CNTRL_PR_Kwak">
                                 <tr>
-                                <form method="post" action="CNTRL_BM_Kwak">
-                                    <td class="detail-td"><span class="spn-td"><input type="text" value ="<%=dt.getBom_cd()%>" name="bom_cd" disabled></span></td>
-                                    <td class="detail-td"><span class="spn-td"><input type="text" value ="<%=dt.getBom_nm()%>" name="bom_nm"></span></td>
-                                    <td class="detail-td"><span class="spn-td"><input type="text" value ="<%=dt.getItem_cd()%>" name="item_cd"></span></td>
+                                    <td class="detail-td"><%=dt.getPROD_CD() %></td>
+                                    <td class="detail-td"><%=dt.getPROD_PLN_CD() %></td>
+                                    <td class="detail-td"><%=dt.getLIUN_CD() %></td>
+                                    <td class="detail-td"><%=dt.getLIUN_NM() %></td>
+                                    <td class="detail-td"><%=dt.getITEM_CD() %></td>
+                                    <td class="detail-td"><%=dt.getMNGR_NM() %></td>
+                                    <td class="detail-td"><%=dt.getPROD_DT() %></td>
+                                    <td class="detail-td"><%=dt.getINDC_QNTT() %></td>
                                 </tr>
                                 
                             </table>
+                         <!-- </div> -->
                         </div>
                         </div>
                         <div class="bompro-con">
                             <div class="bom-con">
-                                <h4>품목코드 :<span class="spn-td"><input type="text" value="<%=dt.getItem_cd()%>" disabled></span></h4>
-                                <div class="bom-item-con">
-<!--                                     <img class="eraser-img bom-item" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000"> -->
-<%--                                     <span class="spn-td"><input type="text" value="<%=dt.getBom_desc()%>" name="bom_desc"></span> --%>
-                                    <span class="spn-td"><textarea  value="<%=dt.getBom_desc().replace("\r\n","<br>")%>" name="bom_desc" style="width:300px; height:300px;"><%=dt.getBom_desc()%></textarea></span>
+                                <h4>BOM : <%= dt.getBOM_CD() %></h4>
+                                <div>
+                                	<%=dt.getBOM_DESC() %>
+                                </div>
+                            </div>
+                            <div class="process">
+                                <h4>공정 : <%=dt.getRT_CD() %></h4>
+                                <div>
+                                	<%=dt.getRT_DESC() %>
                                 </div>
                             </div>
                         </div>
-                          <div class="add-con">
-                            <div class="mode-con">
-                                <input type="submit" class="mod" value="완료">
-                                <input type="hidden" value="완료" name="command">
-                                <input type="hidden" value="<%=dt.getBom_cd() %>" name="bom_cd">
-
-                             </form>
-                            </div>
+                        <div class="add-con">
+                            <input type=submit class="del" value="삭제" name="command">
+                            <input type="hidden" name="prod_cd" value="<%=dt.getPROD_CD() %>" >
                         </div> 
+                        </form>
                     </div>
                 </div>
                     

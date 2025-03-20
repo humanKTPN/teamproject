@@ -62,7 +62,7 @@
                         <div class="border_line">
                        <div class="pop">
                         <div class="add-table">
-                         <img class="eraser-img" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
+<!--                          <div class="eraser-img" > -->
                             <table class="detail-table">
                                 <tr>
                                     <th class="detail-th" scope = "col">공정코드</th>
@@ -92,7 +92,7 @@
                                 <table>
                                 	<tr>
                                 		<td>
-                                			<%=dt.getRT_DESC() %>
+                                			<%=dt.getRT_DESC().replace("\r\n", "<br>") %>
                                 		</td>
                                 	</tr>
                                 </table>

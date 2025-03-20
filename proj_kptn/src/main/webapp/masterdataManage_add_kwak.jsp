@@ -76,8 +76,8 @@
                                         <!-- <th class="command-th" scope = "col">설명</th> -->
                                     </tr>
                                     <tr>
-                                    <form method="post" action="masterDataManagement_kwak_cotroller">
-                                        <td class="command-td"><input type="file" name="file1" value="이미지업로드"></td>
+                                    <form method="post" action="masterDataManagement_kwak_cotroller" enctype="multipart/form-data">
+                                        <td class="command-td"><input type="file" name="file1" value="img"></td>
                                         <td class="command-td"><input type="text" name="MT_MNG_CD" disabled></td>
                                         <td class="command-td"><input type="text" name="MT_MNG_NM"></td>
                                         <td class="command-td" >

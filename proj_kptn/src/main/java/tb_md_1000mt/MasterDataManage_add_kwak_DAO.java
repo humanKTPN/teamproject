@@ -1,4 +1,4 @@
-package proj_mes_ktpn;
+package tb_md_1000mt;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -12,12 +12,11 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import proj_mes_ktpn.MasterDataManage_add_kwak_DTO;
-
 public class MasterDataManage_add_kwak_DAO {
 
-	 public void addTask(MasterDataManage_add_kwak_DTO mdDTO) throws SQLException,IOException {
+	 public void addTask(DTO_MD_add_Kwak addDTO) throws SQLException,IOException {
 	    	System.out.println("dao");
+	    	String query ="";
 	    	try {
 				
 				// db 접속 시작
@@ -30,20 +29,42 @@ public class MasterDataManage_add_kwak_DAO {
 				//접속안되면 null 출력
 				Connection conn = ds.getConnection();
 				//db접속 완료
+				System.out.println("getIMG_PATH_ADR : "+addDTO.getIMG_PATH_ADR());
+				System.out.println("getMT_MNG_CD : "+addDTO.getMT_MNG_CD());
+				
+				
 				
 				//SQL 준비
-				String query = "INSERT INTO TB_MD_1000MT (MT_MNG_NM, MT_MNG_CD, ITEM_TP,MT_UNT_VAL, CSTMR_NM,MT_MNG_DESC,    PRS_CLS_VAL,TP_CLS_CD,USE_YN,REG_DT, MOD_DT ) VALUES (?,?,?,?,?,?,'','M','Y',TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'))";
+//				String query = "INSERT INTO TB_MD_1000MT (MT_MNG_NM, MT_MNG_CD, CSTMR_NM,MT_MNG_DESC,    TP_CLS_CD,USE_YN,REG_DT, MOD_DT ) VALUES (?,?,'','M','Y',TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'))";
 				
 				
+				
+					 
+					if("원자재".equals(addDTO.getTP_CLS_VAL())){
+						query = "INSERT INTO TB_MD_1000MT (MT_MNG_NM, MT_MNG_CD , MT_MNG_DESC, TP_CLS_VAL, USE_YN, REG_DT, MOD_DT,IMG_PATH_ADR) VALUES (?,'M'||LPAD(SQ_MD_1000MT_M.NEXTVAL, 4, '0'),?,?,'Y',TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'),?)";					
+					} else if ("완제품".equals(addDTO.getTP_CLS_VAL())){
+						query = "INSERT INTO TB_MD_1000MT (MT_MNG_NM, MT_MNG_CD , MT_MNG_DESC, TP_CLS_VAL, USE_YN, REG_DT, MOD_DT,IMG_PATH_ADR) VALUES (?,'P'||LPAD(SQ_MD_1000MT_M.NEXTVAL, 4, '0'),?,?,'Y',TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'),?)";
+					} else if ("BOM".equals(addDTO.getTP_CLS_VAL())){
+						query = "INSERT INTO TB_MD_1000MT (MT_MNG_NM, MT_MNG_CD , MT_MNG_DESC, TP_CLS_VAL, USE_YN, REG_DT, MOD_DT,IMG_PATH_ADR) VALUES (?,'B'||LPAD(SQ_MD_1000MT_M.NEXTVAL, 4, '0'),?,?,'Y',TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'),?)";
+					} else if ("라인호기".equals(addDTO.getTP_CLS_VAL())){
+						query = "INSERT INTO TB_MD_1000MT (MT_MNG_NM, MT_MNG_CD , MT_MNG_DESC, TP_CLS_VAL, USE_YN, REG_DT, MOD_DT,IMG_PATH_ADR) VALUES (?,'L'||LPAD(SQ_MD_1000MT_M.NEXTVAL, 4, '0'),?,?,'Y',TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'),?)";	
+					} else if ("공정".equals(addDTO.getTP_CLS_VAL())){
+						query = "INSERT INTO TB_MD_1000MT (MT_MNG_NM, MT_MNG_CD , MT_MNG_DESC, TP_CLS_VAL, USE_YN, REG_DT, MOD_DT,IMG_PATH_ADR) VALUES (?,'R'||LPAD(SQ_MD_1000MT_M.NEXTVAL, 4, '0'),?,?,'Y',TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'),?)";
+					} else if ("거래처".equals(addDTO.getTP_CLS_VAL())){
+						query = "INSERT INTO TB_MD_1000MT (MT_MNG_NM, MT_MNG_CD , MT_MNG_DESC, TP_CLS_VAL, USE_YN, REG_DT, MOD_DT,IMG_PATH_ADR) VALUES (?,'T'||LPAD(SQ_MD_1000MT_M.NEXTVAL, 4, '0'),?,?,'Y',TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'),?)";
+					}
+					
+					PreparedStatement ps = conn.prepareStatement(query);
+					ps.setString(1,addDTO.getMT_MNG_NM());
+					ps.setString(2,addDTO.getMT_MNG_DESC());
+					ps.setString(3,addDTO.getTP_CLS_VAL());
+					ps.setString(4,addDTO.getIMG_PATH_ADR());
+					ps.executeUpdate();
+			
+									
+			
+							
 				// 컴파일 된 sql을 받음
-				PreparedStatement ps = conn.prepareStatement(query);
-				ps.setString(1,mdDTO.getMT_MNG_NM());
-				ps.setString(2,mdDTO.getMT_MNG_CD());
-				ps.setString(3,mdDTO.getITEM_TP());
-				ps.setString(4,mdDTO.getMT_UNT_VAL());
-				ps.setString(5,mdDTO.getCSTMR_NM());
-				ps.setString(6,mdDTO.getMT_MNG_DESC());
-				ps.executeUpdate();
 				
 				conn.close();
 

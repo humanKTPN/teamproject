@@ -62,7 +62,7 @@
                         <div class="border_line">
                        <div class="pop">
                         <div class="add-table">
-                         <img class="eraser-img" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
+<!--                          <img class="eraser-img" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000"> -->
                             <table class="detail-table">
                                 <tr>
                                     <th class="detail-th" scope = "col">공정코드</th>
@@ -92,7 +92,7 @@
                                 <table>
                                 	<tr>
                                 		<td>
-                                			<input type="text" value="<%=dt.getRT_DESC() %>" name="rt_desc" >
+                                			<textarea value="<%=dt.getRT_DESC() %>" name="rt_desc" style="width:300px; height:300px;" ><%=dt.getRT_DESC()%></textarea>
                                 		</td>
                                 	</tr>
                                 </table>

@@ -62,7 +62,7 @@
                         <div class="border_line">
                        <div class="pop">
                         <div class="add-table">
-                         <img class="eraser-img" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
+<!--                          <img class="eraser-img" > -->
                             <table class="detail-table">
                                 <tr>
                                     <th class="detail-th" scope = "col">BOM코드</th>
@@ -89,8 +89,8 @@
                             <div class="bom-con">
                                 <h4>품목코드 :<span class="spn-td"><%=dt.getItem_cd()%></span><input type='text' class="mod-td hide" value="A80"></h4>
                                 <div class="bom-item-con">
-                                    <img class="eraser-img bom-item" src="https://cdn.011st.com/11dims/resize/1000x1000/quality/75/11src/product/6297562089/B.jpg?506000000">
-                                    <span class="spn-td"><%=dt.getBom_desc()%></span><input type='text' class="mod-td hide" value="고무로 접착된 식물성 기름 5g">
+<!--                                     <img class="eraser-img bom-item"> -->
+                                    <span class="spn-td"><%=dt.getBom_desc().replace("\r\n","<br>")%></span><input type='text' class="mod-td hide" value="고무로 접착된 식물성 기름 5g">
                                 </div>
                             </div>
                         </div>

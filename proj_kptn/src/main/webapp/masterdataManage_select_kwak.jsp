@@ -62,7 +62,24 @@
                         <div class="border_line">
                        <div class="pop">
                         <div class="add-table">
-                         <img class="eraser-img" src="https://image.made-in-china.com/202f0j00bkIWOGfPbNqz/White-Colour-Chloride-PVC-Raw-Material-Virgin-and-Recycle-PVC-Resin.webp">
+                         <%
+                                DAO_MD_main_Kwak dao = new DAO_MD_main_Kwak();
+                                List<DTO_MD_main_Kwak> dto = dao.getDataInfo(request.getParameter("MT_MNG_CD"));
+                                DTO_MD_main_Kwak dt = dto.get(0); 
+//                                 System.out.println();
+//                                  for(DTO_MD_main_Kwak dt : dto){
+	
+								if(dt.getIMG_PATH_ADR() == null){
+                         %>
+                         
+<!--                          <img class="eraser-img"> -->
+                         <%
+								} else {
+                         %>
+                        	<img border="0" class="eraser-img" src="download.do?filename=<%= java.net.URLEncoder.encode(dt.getIMG_PATH_ADR(), "UTF-8")  %>">
+                         <%
+								}
+                         %>
                             <table class="detail-table">
                                 <tr>
 <!--                                     <th class="detail-th" scope = "col">번호</th> -->
@@ -70,13 +87,7 @@
                                     <th class="detail-th" scope = "col">기준관리명</th>
                                     <!-- <th class="detail-th" scope = "col">설명</th> -->
                                 </tr>
-                                <%
-                                DAO_MD_main_Kwak dao = new DAO_MD_main_Kwak();
-                                List<DTO_MD_main_Kwak> dto = dao.getDataInfo(request.getParameter("MT_MNG_CD"));
-                                DTO_MD_main_Kwak dt = dto.get(0); 
-//                                 System.out.println();
-//                                  for(DTO_MD_main_Kwak dt : dto){
-                                %>
+                               
                                 <tr>
 <!--                                     <td class="detail-td"><span >1</span></td> -->
                                     <td class="detail-td"><span class="spn-td"><%=dt.getMT_MNG_CD() %></span><input type='text' class="mod-td hide" value="M0001"></td>
@@ -93,7 +104,6 @@
                                 <table>
                                     <tr>
                                        <td>
-                                        <img class="eraser-img bom-item" src="https://image.made-in-china.com/202f0j00bkIWOGfPbNqz/White-Colour-Chloride-PVC-Raw-Material-Virgin-and-Recycle-PVC-Resin.webp">
                                        </td> 
                                        <td>
                                            <span class="spn-td"><%=dt.getMT_MNG_DESC() %></span><input type='text' style="width: 500px;height: 100px;" class="mod-td hide" value="지우개원료">

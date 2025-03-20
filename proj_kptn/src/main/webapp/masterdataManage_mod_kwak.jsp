@@ -62,7 +62,25 @@
                         <div class="border_line">
                        <div class="pop">
                         <div class="add-table">
-                         <img class="eraser-img" src="https://image.made-in-china.com/202f0j00bkIWOGfPbNqz/White-Colour-Chloride-PVC-Raw-Material-Virgin-and-Recycle-PVC-Resin.webp">
+ 								<%
+                                    DAO_MD_main_Kwak dao = new DAO_MD_main_Kwak();
+                                    List<DTO_MD_main_Kwak> dto = dao.getDataInfo(request.getParameter("cd"));
+                                    DTO_MD_main_Kwak dt = dto.get(0);
+                                    	
+
+                                       if(dt.getIMG_PATH_ADR() == null){
+				                        
+                                    %>
+                                        
+			                         <div class="eraser-img"></div>
+			                         <%
+											} else {
+			                         %>
+			                        	<img border="0" class="eraser-img" src="download.do?filename=<%= dt.getIMG_PATH_ADR()  %>">
+			                         <%
+											}
+			                         %>
+<!--                          <img class="eraser-img" src="https://image.made-in-china.com/202f0j00bkIWOGfPbNqz/White-Colour-Chloride-PVC-Raw-Material-Virgin-and-Recycle-PVC-Resin.webp"> -->
                             <table class="detail-table">
                                 <tr>
 <!--                                     <th class="detail-th" scope = "col">번호</th> -->
@@ -70,13 +88,6 @@
                                     <th class="detail-th" scope = "col">기준관리명</th>
                                     <!-- <th class="detail-th" scope = "col">설명</th> -->
                                 </tr>
- 								<%
-                                    DAO_MD_main_Kwak dao = new DAO_MD_main_Kwak();
-                                    List<DTO_MD_main_Kwak> dto = dao.getDataInfo(request.getParameter("cd"));
-                                    DTO_MD_main_Kwak dt = dto.get(0);
-                                    	
-//                                     List<DTO_MD_main_Kwak> imgList = dao.getData();
-                                    %>
                                 <tr>
                             <form method="post" action="masterDataManagement_kwak_cotroller">
 <!--                                     <td class="detail-td"><span >1</span></td> -->
@@ -94,7 +105,8 @@
                                 <table>
                                     <tr>
                                        <td>
-                                        <img class="eraser-img bom-item" src="https://image.made-in-china.com/202f0j00bkIWOGfPbNqz/White-Colour-Chloride-PVC-Raw-Material-Virgin-and-Recycle-PVC-Resin.webp">
+                                       
+<!--                                         <img class="eraser-img bom-item" src="https://image.made-in-china.com/202f0j00bkIWOGfPbNqz/White-Colour-Chloride-PVC-Raw-Material-Virgin-and-Recycle-PVC-Resin.webp"> -->
                                        </td> 
                                        <td>
                                            <span class="spn-td"><input type='text' class="mod-td" value="<%=dt.getMT_MNG_DESC() %>" name="MT_MNG_DESC"></span>

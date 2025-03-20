@@ -586,16 +586,19 @@ body{
     width: 7%;
   }
    .command-table th:nth-child(4){ /*품목명*/
-    width: 20%;
+    width: 7%;
   }
    .command-table th:nth-child(5){ /*담당자*/
-    width: 8%;
+    width: 7%;
   }
    .command-table th:nth-child(6){ /*지시수량*/
-    width: 5%;
+    width: 7%;
   }
    .command-table th:nth-child(7){ /*지시수량*/
-    width: 5%;
+    width: 7%;
+  }
+   .command-table th:nth-child(8){ /*지시수량*/
+    width: 7%;
   }
    .command-td{
     cursor: pointer;

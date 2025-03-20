@@ -619,6 +619,8 @@ form{
     flex-direction: row;
     align-items: center;
     width: 90%;
+    justify-content: center;
+    margin:2% 0;
     
 }
 .pop{
@@ -627,6 +629,8 @@ form{
     justify-content: center;
     width: 100%;
     /* overflow: scroll; */
+    align-items: center;
+    height: 24%;
 }
 .bompro-con{
     /* border: 1px solid purple; */
