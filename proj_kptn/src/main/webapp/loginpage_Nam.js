@@ -38,13 +38,13 @@ window.addEventListener('load', function () {
     function idfindprocess() {
         let idfinder = document.querySelector('#idfind')
         console.log('아이디 찾기 버튼 클릭')
-        location.href = "idfindpage_Nam.html"
+        location.href = "idfindpage_Nam.jsp"
     }
 
     document.querySelector('#pwfind').addEventListener('click', pwfindprocess)
     function pwfindprocess() {
         let pwfinder = document.querySelector('#pwfind')
         console.log('비밀번호 찾기 버튼 클릭')
-        location.href = "pwfindpage_Nam.html"
+        location.href = "pwfindpage_Nam.jsp"
     }
 })

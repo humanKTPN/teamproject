@@ -38,7 +38,7 @@ function message() {
     function pwprocess() {
         let pwfinder = document.querySelector('#pwfindC')
         console.log('비밀번호 찾기로 이동')
-        location.href = "pwfindpage_Nam.html"
+        location.href = "pwfindpage_Nam.jsp"
     }
     
 }

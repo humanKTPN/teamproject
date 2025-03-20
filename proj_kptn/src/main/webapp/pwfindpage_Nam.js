@@ -39,6 +39,6 @@ function message() {
     function pwprocess() {
         let pwfinder = document.querySelector('#idfindC')
         console.log('아이디 찾기로 이동')
-        location.href = "idfindpage_Nam.html"
+        location.href = "idfindpage_Nam.jsp"
     }
 }
