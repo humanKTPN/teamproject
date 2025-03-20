@@ -702,9 +702,8 @@ button,#viewfilter{
 
 #looler{
     display : flex;
-    justify-content: space-around;
+    width: 98%;
 }
-
 
 .boardlist>tr{
     border: 1px solid darkgrey;
@@ -722,6 +721,7 @@ button,#viewfilter{
     border: 1px solid darkgrey;
     align-items: center;
     border-collapse: collapse;
+    justify-content: center;
 }
 
 .boardlist1>td {
@@ -729,6 +729,7 @@ button,#viewfilter{
     border: 1px solid darkgrey;
     align-items: center;
     border-collapse: collapse;
+    justify-content: center;
 }
 
 .boardlist1{
@@ -741,7 +742,7 @@ button,#viewfilter{
     width: 98%;
 }
 
-.num {
+.num, .wnum {
     text-align: center;
     width: 100px;
 }

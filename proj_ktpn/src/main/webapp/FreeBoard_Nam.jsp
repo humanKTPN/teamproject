@@ -101,16 +101,16 @@
 
 									<table class='boardtable' border=1>
 										<tr class='boardlist th' style="height: 30px;">
-											<td class='num'>번호</td>
-											<td class='writetitle'>제목</td>
-											<td class='writeuser'>작성자</td>
-											<td class='writedate'>작성일</td>
-											<td class='viewcount'>조회수</td>
+											<th class='num'>번호</td>
+											<th class='writetitle'>제목</td>
+											<th class='writeuser'>작성자</td>
+											<th class='writedate'>작성일</td>
+											<th class='viewcount'>조회수</td>
 										</tr>
-										<table id="looler" name="fblist"">
+<!-- 										<table id="looler" name="fblist""> -->
 											<c:forEach var="dto" items="${resultList}">
-												<tr class='boardlist1'>
-													<td class="num">${dto.BRD_NO}</td>
+												<tr class='boardlist'>
+													<td class="wnum">${dto.BRD_NO}</td>
 													<td class="writetitle">${dto.TTL_NM}</td>
 													<td class="writeuser">${dto.ID}</td>
 													<td class='writedate'>${dto.REG_DTTM}</td>
