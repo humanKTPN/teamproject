@@ -27,22 +27,22 @@ function init(){
             // 클릭했을때 해당 페이지로 넘어가는 Java Script
             if(e.target.textContent=='작업관리'){
                 // 작업관리 메인
-                window.location.href="workManage_main_kwak.html"
+                window.location.href="workManage_main_kwak.jsp"
             } else if (e.target.textContent=='생산관리'){
                 // 생산관리 메인 
-                window.location.href="Production management_tak.html"
+                window.location.href="Production management_tak.jsp"
             } else if (e.target.textContent=='생산리포팅'){
                 // 생산리포팅 메인 
-                window.location.href="Production reporting_tak.html"
+                window.location.href="Production reporting_tak.jsp"
             } else if (e.target.textContent=='자재관리'){
                 // 자재관리 메인 
-                window.location.href="TestMM_main_park.html"
+                window.location.href="TestMM_main_park.jsp"
             } else if (e.target.textContent=='품질관리'){
                 // 품질관리 메인 
-                window.location.href="TestQA_main_park.html"
+                window.location.href="TestQA_main_park.jsp"
             } else if (e.target.textContent=='기준관리'){
                 // 기준관리 메인
-               window.location.href="masterdataManage_main_kwak.html"
+               window.location.href="masterdataManage_main_kwak.jsp"
            }
         })
     }// 탑 버튼 내용나오게 하기  <끝>

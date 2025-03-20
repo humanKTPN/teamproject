@@ -116,12 +116,12 @@ function init() {
 
     // 생산관리버튼 팝업창 기능
     document.querySelector('.pm_mm_but').addEventListener('click', function () {
-        window.open("pm_popup_tak.html", "a", "width=400, height=360, left=100, top=50");
+        window.open("tb_pr_mt?type=1100", "a", "width=400, height=365, left=100, top=50");
     })
 
     // 생산일정버튼 팝업창 기능
     document.querySelector('.pr_mm_but').addEventListener('click', function () {
-        window.open("pr_popup_tak.html", "a", "width=400, height=370, left=100, top=50");
+        window.open("tb_pr_mt?type=1110", "a", "width=400, height=370, left=100, top=50");
     })
 
 }
