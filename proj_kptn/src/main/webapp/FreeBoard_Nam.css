@@ -694,12 +694,17 @@ button,#viewfilter{
     margin-right: auto; */
     width: 98%;
     border-collapse: collapse;
-    
-    
 }
+
 .boardtable{
     min-width: 800px;
 }
+
+#looler{
+    display : flex;
+    justify-content: space-around;
+}
+
 
 .boardlist>tr{
     border: 1px solid darkgrey;
@@ -711,6 +716,29 @@ button,#viewfilter{
     border: 1px solid darkgrey;
     align-items: center;
     border-collapse: collapse;
+}
+
+.boardlist1>tr{
+    border: 1px solid darkgrey;
+    align-items: center;
+    border-collapse: collapse;
+}
+
+.boardlist1>td {
+	display : flex;
+    border: 1px solid darkgrey;
+    align-items: center;
+    border-collapse: collapse;
+}
+
+.boardlist1{
+	display : flex;
+    border: 1px solid darkgrey;
+    align-items: center;
+    border-collapse: collapse;
+    min-width: 800px;
+    justify-content: space-between;
+    width: 98%;
 }
 
 .num {

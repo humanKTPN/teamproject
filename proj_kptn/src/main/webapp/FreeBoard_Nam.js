@@ -82,7 +82,7 @@ function init() {
     const write = document.querySelector('.add');
     write.addEventListener('click', writeprocess)
     function writeprocess() {
-        window.location.href = "writeprocess_nam.html"
+        window.location.href = "writeprocess_nam.jsp"
         console.log("글쓰기 페이지 진입")
 
 

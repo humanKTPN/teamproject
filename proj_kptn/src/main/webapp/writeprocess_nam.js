@@ -5,18 +5,18 @@ window.addEventListener('load', init)
 function init() {
 
     //메뉴 열었다 닫았다 하기<시작>
-    document.querySelector('#ham').addEventListener('click', function () {
+    // document.querySelector('#ham').addEventListener('click', function () {
 
 
-        if (document.querySelector('.mainmenu').classList.length == 1) {
-            document.querySelector('.mainmenu').classList.add('hide')
-            // document.querySelector('#main-menu').textContent = 'MENU 열기'
-        } else if (document.querySelector('.mainmenu').classList.length == 2) {
-            document.querySelector('.mainmenu').classList.remove('hide')
-            // document.querySelector('#main-menu').textContent = 'MENU 닫기'
-        }
+    //     if (document.querySelector('.mainmenu').classList.length == 1) {
+    //         document.querySelector('.mainmenu').classList.add('hide')
+    //         // document.querySelector('#main-menu').textContent = 'MENU 열기'
+    //     } else if (document.querySelector('.mainmenu').classList.length == 2) {
+    //         document.querySelector('.mainmenu').classList.remove('hide')
+    //         // document.querySelector('#main-menu').textContent = 'MENU 닫기'
+    //     }
 
-    }) ///메뉴 열었다 닫았다 하기<끝>
+    // }) ///메뉴 열었다 닫았다 하기<끝>
     // 탑 버튼 내용나오게 하기 <시작>
     console.log(document.querySelector('.mainmenu').classList.length)// 클래스 개수
     let menus = document.querySelectorAll('.menu')
@@ -54,7 +54,7 @@ function init() {
                 window.location.href = "dashBoard_kwak.html"
             } else if (e.target.textContent == '게시판') {
                 // 게시판 메인
-                window.location.href = "FreeBoard_Nam.html"
+                window.location.href = "FreeBoard_Nam.jsp"
             } else if (e.target.textContent == '공지사항') {
                 // 공지사항 메인
                 window.location.href = "noticeBoard_Nam.html"
@@ -93,12 +93,12 @@ function init() {
         }
     }
        // 로그아웃 버튼 
-       document.querySelector('.subBut').addEventListener('click',function(){
+        document.querySelector('.subBut').addEventListener('click',function(){
         window.location.href = "loginpage_Nam.html"
-      })
-  
+        })
+
       // 로고버튼
-      document.querySelector('.logo').addEventListener('click',function(){
+        document.querySelector('.logo').addEventListener('click',function(){
         window.location.href = 'dashBoard_kwak.html'
-      })
+        })
 }

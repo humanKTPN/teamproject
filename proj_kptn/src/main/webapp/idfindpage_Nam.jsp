@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +11,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="pwfindpage_Nam.css">
+    <link rel="stylesheet" href="idfindpage_Nam.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="pwfindpage_Nam.js"></script>
+    <script src="idfindpage_Nam.js"></script>
 </head>
 
 <body>
-    <div class='pwfindp'>
+    <div class='idfindp'>
         <div class='findarea'>
             <div class='area-con'>
                 <div class='input-form'>
@@ -24,10 +30,10 @@
                         </div>
                     </div>
                     <span id='text'><i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution</span>
-                    <div class='pwfindInfo'>
+                    <div class='idfindInfo'>
                         <div class='nameInfo'>
-                            <span id='conid'> 아이디디 </span>
-                            <input type='text' id='name' placeholder="아이디">
+                            <span id='conid'> 이름 </span>
+                            <input type='text' id='name' placeholder="이름">
                         </div>
                         <div class='telInfo'>
                             <span id='connum'> 휴대폰번호 </span>
@@ -35,11 +41,11 @@
                         </div>
                     </div>
                     <div class = 'processarea'>
-                        <div id='pwfindprocess'>
-                            <button type='button' id='result'> 비밀번호호찾기 </button>
+                        <div id='idfindprocess'>
+                            <button type='button' id='result'> 아이디찾기 </button>
                         </div>
                         <div class='findres'>
-                            <!-- 비밀번호 찾기 결과 표시하는 곳 -->
+                            <!-- 아이디 찾기 결과 표시하는 곳 -->
                         </div>
                     </div>
                 </div>
