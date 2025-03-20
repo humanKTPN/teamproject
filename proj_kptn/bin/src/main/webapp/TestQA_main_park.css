@@ -1,0 +1,147 @@
+/* TestQA_main_park_html */
+
+@media screen and (max-width : 800px) {
+    .flex_page {
+        position: relative;
+        bottom: 20px;
+    }
+}
+
+/* 반응형 pc */
+.containerQA {
+    background-color: darkgrey;
+    width: 100%;
+    height: 100%;
+    /* margin: 2%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    /* padding: 5px; */
+    height: 93%;
+    background-color: white;
+    /* margin: 2%; */
+    border-radius: 10px;
+    width: 97%;
+}
+
+.margin {
+    height: 100%;
+    margin: 2%;
+}
+
+.tab-name-con {
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.tab-name {
+    background-color: #2f373a;
+    color: white;
+    width: 150px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    /* margin: 1%; */
+}
+
+form {
+    margin-bottom: 1%;
+}
+
+.select_input_search-btn {
+    display: flex;
+    /* margin: 1%; */
+}
+
+#select_QA {
+    background-color: #2f373a;
+    color: white;
+    height: 25px;
+}
+
+.select {
+    height: 21px;
+}
+
+.submit {
+    background-color: #2f373a;
+    color: white;
+    height: 25px;
+}
+
+.select_day {
+    height: 25px;
+}
+
+/* a 태그 밑줄 제거 */
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.enter_reportPage {
+    text-decoration-line: underline;
+}
+
+.QA-table {
+    border: 1px solid darkgrey;
+    /* width: 1000px; */
+    border-collapse: collapse;
+    /* margin: 0 1%; */
+
+}
+
+.QA-th {
+    border: 1px solid darkgrey;
+    width: 1000px;
+    background-color: #2f373a;
+    color: white;
+}
+
+.QA-td {
+    border: 1px solid darkgrey;
+    width: 1000px;
+    text-align: center;
+}
+
+.flex_page {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    height: 50px;
+    align-items: center;
+    min-width: 300px;
+    justify-self: center;
+
+}
+
+.div_none {
+    height: 100px;
+}
+
+/* .div_none0 {
+    height: 10px;
+} */
+
+.item_page {
+    border: 1px solid darkgrey;
+    height: 60%;
+    width: 58%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pre_page,
+.next_page {
+    width: 30%;
+}
+
+.bold {
+    font-weight: bold;
+}
