@@ -54,25 +54,25 @@ function init(){
         button.addEventListener('click',function(e){
             if(e.target.textContent=='대시보드'){
                  // 대시보드 메인
-                window.location.href="dashBoard_kwak.html"
+                window.location.href="dashBoard_kwak.jsp"
             } else if (e.target.textContent=='게시판'){
                  // 게시판 메인
-                window.location.href="FreeBoard_Nam.html"
+                window.location.href="FreeBoard_Nam.jsp"
             } else if (e.target.textContent=='공지사항'){
                  // 공지사항 메인
-                window.location.href="noticeBoard_Nam.html"
+                window.location.href="noticeBoard_Nam.jsp"
             }  
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
 
        // 로그아웃 버튼 
        document.querySelector('.subBut').addEventListener('click',function(){
-        window.location.href = "loginpage_Nam.html"
+        window.location.href = "loginpage_Nam.jsp"
       })
   
       // 로고버튼
       document.querySelector('.logo').addEventListener('click',function(){
-        window.location.href = 'dashBoard_kwak.html'
+        window.location.href = 'dashBoard_kwak.jsp'
       })
 
 }
