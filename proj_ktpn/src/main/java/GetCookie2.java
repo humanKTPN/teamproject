@@ -40,12 +40,12 @@ public class GetCookie2 extends HttpServlet {
 				
 				if("oac1".equals(name) && "true".equals(value)) {
 					isShow = false; // 메뉴 접었다폈다 기능.
-					RequestDispatcher dispatcher = request.getRequestDispatcher("dashBoard_kwak.html");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("dashBoard_kwak.jsp");
 					dispatcher.forward(request, response);
 					System.out.println(isShow);
 				} else if("oac2".equals(name) && "false".equals(value)) {
 					isShow = true; // 메뉴 접었다폈다 기능.
-					RequestDispatcher dispatcher = request.getRequestDispatcher("dashBoard_kwak.html");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("dashBoard_kwak.jsp");
 					dispatcher.forward(request, response);
 					System.out.println(isShow);
 				}

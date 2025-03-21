@@ -36,7 +36,7 @@ function init(){
             } else if (e.target.textContent=='생산리포팅'){
                 // 생산리포팅 메인 
                 window.location.href="Production reporting_tak.jsp"
-            } else if (e.target.textContent=='자재관리'){
+            } else if (e.target.textContent=='재고관리'){
                 // 자재관리 메인 
                 window.location.href="TestMM_main_park.jsp"
             } else if (e.target.textContent=='품질관리'){

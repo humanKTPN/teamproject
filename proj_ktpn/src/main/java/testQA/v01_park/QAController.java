@@ -37,7 +37,7 @@ public class QAController extends HttpServlet {
 		
 		
 		list = QCtable_dao.selectQCreport();
-		String url = "/TestQA_main_park.jsp";
+		String url = "TestQA_main_park.jsp";
 
 		request.getRequestDispatcher(url).forward(request, response);
 		
@@ -49,7 +49,7 @@ public class QAController extends HttpServlet {
 		list = QCtable_dao.joinQCnPR(code);	// 조인한 결과 리스트
 		request.setAttribute("joinList", list);
 		
-		url = "/TestQA_report_park_table_show.jsp";
+		url = "TestQA_report_park_table_show.jsp";
 		
 		request.getRequestDispatcher(url).forward(request, response);
 		

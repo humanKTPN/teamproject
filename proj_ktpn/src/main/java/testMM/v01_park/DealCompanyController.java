@@ -105,7 +105,7 @@ public class DealCompanyController extends HttpServlet {
 			
 			request.setAttribute("companyList", companyList);
 			
-			String url = "/TestMM_order_park.jsp";
+			String url = "TestMM_order_park.jsp";
 
 			request.getRequestDispatcher(url).forward(request, response);
 		}

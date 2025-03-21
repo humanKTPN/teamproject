@@ -122,6 +122,7 @@ a {
 
 .btn_main_order, .btn_main_update, #btn_main_add, #btn_main_delete {
     background-color: #2f373a;
+    color: white;
     
 }
 

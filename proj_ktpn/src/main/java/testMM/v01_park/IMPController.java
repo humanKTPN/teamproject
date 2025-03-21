@@ -40,7 +40,7 @@ public class IMPController extends HttpServlet {
 		request.setAttribute("MtableSelect", MtableSelect);
 		request.setAttribute("PtableSelect", PtableSelect);
 
-		String url = "/TestMM_main_park.jsp";
+		String url = "TestMM_main_park.jsp";
 
 		request.getRequestDispatcher(url).forward(request, response);
 	}
@@ -283,14 +283,14 @@ public class IMPController extends HttpServlet {
 			
 			request.setAttribute("pLogList", list);
 			
-			String url = "/TestMM_main_park_pLog.jsp";
+			String url = "TestMM_main_park_pLog.jsp";
 
 			request.getRequestDispatcher(url).forward(request, response);
 		} else if("move_updateP_Page".equals(command)) {
 			
 			//
 			
-			String url = "/TestMM_updateP_park.jsp";
+			String url = "TestMM_updateP_park.jsp";
 
 			request.getRequestDispatcher(url).forward(request, response);
 			
@@ -302,7 +302,7 @@ public class IMPController extends HttpServlet {
 			// 작업자 list = 작업자dao.select
 			// request.setAttribute("작업자 list", 작업자 list)
 		
-			String url = "/TestMM_addP_park.jsp";
+			String url = "TestMM_addP_park.jsp";
 
 			request.getRequestDispatcher(url).forward(request, response);
 		}
