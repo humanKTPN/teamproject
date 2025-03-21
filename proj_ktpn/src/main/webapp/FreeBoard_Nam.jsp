@@ -19,6 +19,9 @@
 	src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script src="FreeBoard_Nam.js"></script>
 <script src="oac(ktpn).js"></script>
+<script>
+// window.location.replace("boardcon");
+</script>
 <style>
 /******************
         모바일 버전 구현(불량쪽 차트는 ....)
