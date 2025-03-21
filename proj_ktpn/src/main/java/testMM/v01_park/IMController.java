@@ -10,6 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import tb_md_1000mt.DAO_MD_add_Kwak;
+import tb_md_1000mt.DAO_MD_main_Kwak;
+import tb_md_1000mt.DTO_MD_add_Kwak;
+import tb_md_1000mt.DTO_MD_main_Kwak;
+import tb_pr_1100mt.TB_PR_1100MTDAO;
+import tb_pr_1100mt.TB_PR_1100MTDTO;
+
 /**
  * Servlet implementation class IMController
  */
@@ -374,11 +381,42 @@ public class IMController extends HttpServlet {
 			request.getRequestDispatcher(url).forward(request, response);
 		} else if("move_add_Page".equals(command)) {
 			
-			// 작업자 list = 작업자dao.select;
-			// request.setAttribute("작업자 list", 작업자 list);
-			
 			// 기준관리 list = 기준관리dao.select(원자재); >> 원자재코드와 원자재명이 있다
 			// request.setAttribute("기준관리 list", 기준관리 list);
+			DTO_MD_add_Kwak md_table_dto = new DTO_MD_add_Kwak();
+			DAO_MD_add_Kwak md_table_dao = new DAO_MD_add_Kwak();
+			String findname = "원자재";
+			//md_table_dao.select(findname);		// 원자재라는 설명이 있는 코드와 이름 찾기
+			
+			List McodeList = new ArrayList();
+			McodeList = md_table_dao.selectAllMCode();		// 원자재코드 찾기
+			
+			for(int i=0; i<McodeList.size(); i++) {
+				md_table_dto = (DTO_MD_add_Kwak) McodeList.get(i);
+				
+				System.out.println("Mcode : " + md_table_dao.toString());
+				System.out.println();
+			}
+			
+			request.setAttribute("mcList", McodeList);
+			
+			// 작업자 list = 작업자dao.select;
+			// request.setAttribute("작업자 list", 작업자 list);
+			testMember_DTO m_table_dto = new testMember_DTO();
+			testMember_DAO m_table_dao = new testMember_DAO();
+			
+			List memberList = new ArrayList();
+			memberList = m_table_dao.selectWorker();
+			
+			for(int i=0; i<memberList.size(); i++) {
+				m_table_dto = (testMember_DTO) memberList.get(i);
+				
+				System.out.println("member : " + m_table_dto.toString());
+				System.out.println();
+			}
+			
+			request.setAttribute("mList", memberList);
+		
 			
 			String url = "TestMM_add_park.jsp";
 

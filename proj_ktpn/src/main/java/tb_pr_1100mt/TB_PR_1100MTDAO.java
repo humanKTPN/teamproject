@@ -47,7 +47,7 @@ public class TB_PR_1100MTDAO {
     }
 
     // 데이터 조회 (Select)
-    List selectTBPRList(){
+    public List selectTBPRList(){
 		System.out.println("selectTBPRList 실행");
 		List list = new ArrayList();
 

@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import tb_md_1000mt.DAO_MD_main_Kwak;
+import tb_pr_1100mt.TB_PR_1100MTDAO;
+import tb_pr_1100mt.TB_PR_1100MTDTO;
+
 /**
  * Servlet implementation class IMPController
  */
@@ -297,10 +301,40 @@ public class IMPController extends HttpServlet {
 		} else if("move_addP_Page".equals(command)) {
 			
 			// 생산코드list = 생산dao.select(생산이 완료된)
-			// request.setAttribute("생산코드 list", 생산코드 list)
+			// request.setAttribute("생산코드 list", 생산코드 list)	
+			TB_PR_1100MTDTO p_table_dto = new TB_PR_1100MTDTO();
+			TB_PR_1100MTDAO p_table_dao = new TB_PR_1100MTDAO();
+			
+			List PcodeList = new ArrayList();
+			PcodeList = p_table_dao.selectTBPRList();
+			
+			for(int i=0; i<PcodeList.size(); i++) {
+				p_table_dto = (TB_PR_1100MTDTO) PcodeList.get(i);
+				
+				System.out.println("Mcode : " + p_table_dto.toString());
+				System.out.println();
+			}
+			
+			request.setAttribute("pList", PcodeList);
 			
 			// 작업자 list = 작업자dao.select
 			// request.setAttribute("작업자 list", 작업자 list)
+			testMember_DTO m_table_dto = new testMember_DTO();
+			testMember_DAO m_table_dao = new testMember_DAO();
+			
+			List memberList = new ArrayList();
+			memberList = m_table_dao.selectWorker();
+			
+			for(int i=0; i<memberList.size(); i++) {
+				m_table_dto = (testMember_DTO) memberList.get(i);
+				
+				System.out.println("member : " + m_table_dto.toString());
+				System.out.println();
+			}
+			
+			request.setAttribute("mList", memberList);
+			
+			
 		
 			String url = "TestMM_addP_park.jsp";
 

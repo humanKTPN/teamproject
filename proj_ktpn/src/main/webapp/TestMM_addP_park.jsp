@@ -105,7 +105,7 @@
                                     	
                                     		<select id="select1" name="Pcode">
                                     			<option value="default" selected="selected">선택</option>
-                                    			<c:forEach var = "pcode" items = "${pcodeList }">
+                                    			<c:forEach var = "pcode" items = "${pList }">
                                     				<option value="${pcode.PROD_CD }"
                                     						auto_icode="${pcode.ITEM_CD }"
                                     						auto_iname="${pcode.ITEM_NM }">
@@ -153,7 +153,7 @@
                                     		</select>
                                     		
                                     		<select name="worker">
-                                    			<c:forEach var = "member" items = "${memberList }">
+                                    			<c:forEach var = "member" items = "${mList }">
                                     				<option value="${member.MBR_NM }">${member.MBR_NM }</option>
                                     			</c:forEach>
                                     		</select>

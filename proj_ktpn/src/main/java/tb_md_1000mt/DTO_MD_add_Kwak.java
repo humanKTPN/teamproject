@@ -49,5 +49,13 @@ public class DTO_MD_add_Kwak {
 		MT_MNG_DESC = mT_MNG_DESC;
 	}
 	
-
+	
+	@Override
+	public String toString() {
+		return "DTO_MD_add_Kwak [MT_MNG_CD=" + MT_MNG_CD + ", MT_MNG_NM=" + MT_MNG_NM + ", IMG_PATH_ADR=" + IMG_PATH_ADR
+				+ ", MT_MNG_DESC=" + MT_MNG_DESC + ", TP_CLS_VAL=" + TP_CLS_VAL + "]";
+	}
+	
+	
+	
 }
