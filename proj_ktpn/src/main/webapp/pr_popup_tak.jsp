@@ -16,20 +16,23 @@
 </head>
 
 <body>
-	<div class="ssretouch_box">
+	<div class="ssretouch_box2">
 		<dlv class="pm_correction">
 		<div class="boxTit">생산 관리</div>
 		<div class="pr_ssmanu">
 			<div class="ssTitle" style="margin: 15px 0 0;">생산 일정 관리</div>
 			<form method="post" action="tb_pr_mt">
-				<!--<div class="pr_correction_con">
-				 <div style="width: 100px;">생산일정코드:</div>
-					<select name="PROD_PLN_CD">
-						<c:forEach var="dto" items="${resultList }">
-							<option value="${dto.prod_pln_cd }">${dto.prod_pln_cd }</option>
-						</c:forEach>
-					</select>
-				</div> -->
+
+				<div class="hide">
+					<div class="pr_correction_con">
+						<div style="width: 100px;">생산일정코드:</div>
+						<select class="itemNm" name="prodPlnCd">
+							<c:forEach var="dto" items="${resultList }">
+								<option value="${dto.prod_pln_cd }">${dto.prod_pln_cd }</option>
+							</c:forEach>
+						</select>
+					</div>
+				</div>
 				<div class="pr_correction_con">
 					<div style="width: 100px;">품명:</div>
 					<select class="itemNm" name="itemNm">

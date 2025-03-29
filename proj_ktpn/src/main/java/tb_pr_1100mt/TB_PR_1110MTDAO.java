@@ -1,4 +1,4 @@
-package tb_pr_1100mt;
+package proj_kptn_tak;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class TB_PR_1110MTDAO {
 			Connection con = ds.getConnection();
 
 			// [SQL 준비]
-			String query = "INSERT INTO TB_PR_1110MT (PROD_PLN_CD, ITEM_NM, TRG_PROD_CNT, Prod_strt_dt, PROD_END_DT, ITEM_CD) "
+			String query = "INSERT INTO TB_PR_1110MT (PROD_PLN_CD, ITEM_NM, TRG_PROD_CNT, PROD_STRT_DT, PROD_END_DT, ITEM_CD) "
 					+ "VALUES ('PR_'||to_char(sysdate,'yymm')||'_'||LPAD(SQ_PR_1110MT.nextval,4,0), ?, ?, ?, ?, ?)";
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, dto.getItem_nm());
@@ -63,11 +63,11 @@ public class TB_PR_1110MTDAO {
 				TB_PR_1110MTDTO dto = new TB_PR_1110MTDTO();
 				dto = new TB_PR_1110MTDTO();
 				dto.setProd_pln_cd(rs.getString("Prod_pln_cd"));
-				dto.setItem_nm(rs.getString("ITEM_NM"));
-				dto.setTrg_prod_cnt(rs.getInt("TRG_PROD_CNT"));
+				dto.setItem_nm(rs.getString("Item_nm"));
+				dto.setTrg_prod_cnt(rs.getInt("Trg_prod_cnt"));
 				dto.setProd_strt_dt(rs.getString("Prod_strt_dt"));
-				dto.setProd_end_dt(rs.getString("PROD_END_DT"));
-				dto.setItem_cd(rs.getString("ITEM_CD"));
+				dto.setProd_end_dt(rs.getString("Prod_end_dt"));
+				dto.setItem_cd(rs.getString("Item_cd"));
 
 				list.add(dto);
 			}

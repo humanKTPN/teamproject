@@ -1,4 +1,4 @@
-package tb_pr_1100mt;
+package proj_kptn_tak;
 
 public class TB_PR_1100MTDTO {
 
@@ -14,7 +14,7 @@ public class TB_PR_1100MTDTO {
 	private String work_nm;						//작업자명
 	private String eqpm_oprt_stts_val;			//장비가동상태값
 	private String prod_end_yn;					//생산완료여부
-	private String dfc_rt;						//불량률
+	private int dfc_rt;						//불량률
 	public String getProd_cd() {
 		return prod_cd;
 	}
@@ -87,13 +87,12 @@ public class TB_PR_1100MTDTO {
 	public void setProd_end_yn(String prod_end_yn) {
 		this.prod_end_yn = prod_end_yn;
 	}
-	public String getDfc_rt() {
+	public int getDfc_rt() {
 		return dfc_rt;
 	}
-	public void setDfc_rt(String dfc_rt) {
+	public void setDfc_rt(int dfc_rt) {
 		this.dfc_rt = dfc_rt;
 	}
-	
 	
 	
 	@Override
@@ -104,6 +103,11 @@ public class TB_PR_1100MTDTO {
 				+ ", work_nm=" + work_nm + ", eqpm_oprt_stts_val=" + eqpm_oprt_stts_val + ", prod_end_yn=" + prod_end_yn
 				+ ", dfc_rt=" + dfc_rt + "]";
 	}
+	
+	
+	
+	
+	
 	
 	
 

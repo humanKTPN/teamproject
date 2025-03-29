@@ -109,91 +109,94 @@
 									<div class="flex_child new_input">
 										<div>
 											<form action="imcon" method="post">
-												<div class="item">
-													<!--                                     		원자재코드 선택하면 원자재명도 자동으로입력 
+												<div style="display: flex;">
+													<div class="item">
+														<!--                                     		원자재코드 선택하면 원자재명도 자동으로입력 
 												이미 추가된 원자재코드가 있으면 그 코드로는 새로운 추가 불가능하게 하기-->
-													<select id="select1" name="code" onchange="changeM()">
-														<c:forEach var="code" items="${mcList }">
-															<option value="${code.MT_MNG_CD }"
-																	auto_Mname ="${code.MT_MNG_NM }">
-																	${code.MT_MNG_CD }
-															</option>
-														</c:forEach>
-													</select>
-												</div>
+														<select id="select1" name="code" onchange="changeM()">
+															<c:forEach var="code" items="${mcList }">
+																<option value="${code.MT_MNG_CD }"
+																	auto_Mname="${code.MT_MNG_NM }">
+																	${code.MT_MNG_CD }</option>
+															</c:forEach>
+														</select>
+													</div>
 
-												<script>
-													function changeM(){
-														var select1 = document.getElementById('select1');
-														var select1_option = select1.options[select1.selectedIndex];
-														
-														var auto_Mname = select1_option.getAttribute('auto_Mname');
-														document.getElementById('Mname').value = auto_Mname;
-													}
-													
-													
-												</script>
-												
-												<div class="item">
-													<input type="text" id="Mname" name="name" value="" readonly="readonly">
-													
-<!-- 													<select name="name"> -->
-<%-- 														<c:forEach var="code" items="${codeList }"> --%>
-<%-- 															<option value="${code.MT_MNG_NM }">${code.MT_MNG_NM }</option> --%>
-<%-- 														</c:forEach> --%>
-<!-- 													</select> -->
-												</div>
+													<script>
+														function changeM() {
+															var select1 = document
+																	.getElementById('select1');
+															var select1_option = select1.options[select1.selectedIndex];
 
-												<div class="item">
-													<input class="item Mea" type="text" name="ea" value=""
-														placeholder="수량(EA) 입력" />
+															var auto_Mname = select1_option
+																	.getAttribute('auto_Mname');
+															document
+																	.getElementById('Mname').value = auto_Mname;
+														}
+													</script>
 
-												</div>
+													<div class="item">
+														<input type="text" id="Mname" name="name" value=""
+															readonly="readonly">
 
-												<div class="item">
-													<select name="inNout">
-														<option value="i">입고</option>
-														<option value="o">출고</option>
-													</select>
-												</div>
+														<!-- 													<select name="name"> -->
+														<%-- 														<c:forEach var="code" items="${codeList }"> --%>
+														<%-- 															<option value="${code.MT_MNG_NM }">${code.MT_MNG_NM }</option> --%>
+														<%-- 														</c:forEach> --%>
+														<!-- 													</select> -->
+													</div>
+
+													<div class="item">
+														<input class="item Mea" type="text" name="ea" value=""
+															placeholder="수량(EA) 입력" />
+
+													</div>
+
+													<div class="item">
+														<select name="inNout">
+															<option value="i">입고</option>
+															<option value="o">출고</option>
+														</select>
+													</div>
 
 
-												<div class="item">
-													<select name="worker">
-														<c:forEach var="member" items="${mList }">
-															<option value="${member.MBR_NM }">${member.MBR_NM }</option>
-														</c:forEach>
-													</select>
-												</div>
+													<div class="item">
+														<select name="worker">
+															<c:forEach var="member" items="${mList }">
+																<option value="${member.MBR_NM }">${member.MBR_NM }</option>
+															</c:forEach>
+														</select>
+													</div>
 
-												<div class="item">
-													<select name="warehouse">
-														<option value="warehouse1">M창고1</option>
-														<option value="warehouse2">M창고2</option>
-														<option value="warehouse3">M창고3</option>
+													<div class="item">
+														<select name="warehouse">
+															<option value="warehouse1">M창고1</option>
+															<option value="warehouse2">M창고2</option>
+															<option value="warehouse3">M창고3</option>
 
-													</select>
-												</div class="item">
+														</select>
+													</div class="item">
 
-												<div class="item">
-													<input class="item" id="date" name="date" type="date" />
-												</div>
+													<div class="item">
+														<input class="item" id="date" name="date" type="date" />
+													</div>
 
-												<div class="item">
-													<input class="item note" type="text" name="note" value=""
-														placeholder="입력하세요" />
-												</div>
+													<div class="item">
+														<input class="item note" type="text" name="note" value=""
+															placeholder="입력하세요" />
+													</div>
 
-												<div class="item">
-													<input type="hidden" name="command" value="insert">
-													<input type="submit" value="추가">
+													<div class="item">
+														<input type="hidden" name="command" value="insert">
+														<input type="submit" value="추가">
+													</div>
+
 												</div>
 											</form>
+
+
+
 										</div>
-
-
-
-
 									</div>
 
 

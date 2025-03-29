@@ -25,9 +25,9 @@ function init() {
 
         // itemCd 값을 업데이트
         if (itemNms == "싹싹지우개") {
-            itemCd.value = "SS-01";  // itemCd의 값을 'SS-01'로 변경
+            itemCd.value = "P0006";  // itemCd의 값을 'SS-01'로 변경
         } else if (itemNms == "하츄핑지우개") {
-            itemCd.value = "HH-01";  // itemCd의 값을 'HH-01'로 변경
+            itemCd.value = "P0033";  // itemCd의 값을 'HH-01'로 변경
         }
         console.log("Updated itemCd : ", itemCd.value);  // 변경된 itemCd 값 출력
     });
@@ -44,9 +44,9 @@ function init() {
         console.log("bbbbb", itemCd.value);  // 기존 itemCd 값 출력
 
         // itemCd 값을 업데이트
-        if (itemCds == "SS-01") {
+        if (itemCds == "P0006") {
             itemNm.value = "싹싹지우개";  // itemCd의 값을 'SS-01'로 변경
-        } else if (itemCds == "HH-01") {
+        } else if (itemCds == "P0033") {
             itemNm.value = "하츄핑지우개";  // itemCd의 값을 'HH-01'로 변경
         }
         console.log("Updated itemNm : ", itemNm.value);  // 변경된 itemCd 값 출력
@@ -58,20 +58,28 @@ function init() {
         if (pmBut.value == 'insert') {
             let ttssText1 = document.querySelector('.ttssText1');
             let ttssText2 = document.querySelector('.ttssText2');
+            let timeSet = document.querySelector('.timeSet')
+            timeSet.innerHTML="생산시작시간";
             ttssText1.classList.remove('hide');
             ttssText2.classList.add('hide');
         }else if (pmBut.value == 'update'){
             let ttssText1 = document.querySelector('.ttssText1');
             let ttssText2 = document.querySelector('.ttssText2');
+            let timeSet = document.querySelector('.timeSet')
+            timeSet.innerHTML="생산수정시간";
             ttssText1.classList.remove('hide');
             ttssText2.classList.add('hide');
         }else if (pmBut.value == 'complete'){
             let ttssText1 = document.querySelector('.ttssText1');
             let ttssText2 = document.querySelector('.ttssText2');
+            let timeSet = document.querySelector('.timeSet')
+            timeSet.innerHTML="생산종료시간";
             ttssText1.classList.add('hide');
             ttssText2.classList.remove('hide');
         }
-    });
+    })
+    
+    
     
     document.querySelector('.end').addEventListener('click', function () {
     	settimeout(function(){
@@ -79,6 +87,8 @@ function init() {
 	        opener.parent.location.reload();
     	}, 300)
     });
+    
+    
     
 
 }

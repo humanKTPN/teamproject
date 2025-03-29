@@ -2,94 +2,145 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- 여기에 css,js 파일옮기기 -->
-    <link rel="stylesheet" href="Production management_tak.css">
-    <!-- <script src="Production management_tak.js"></script> -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<!-- 여기에 css,js 파일옮기기 -->
+<link rel="stylesheet" href="Production management_tak.css">
+<script src="pm_popup_tak.js"></script>
+<!-- <script src="Production management_tak.js"></script> -->
 
 </head>
 
 <body>
-    <!-- 생산라인수정창 -->
-    <div class="ssretouch_box">
-        <dlv class="pm_correction">
-            <div class="boxTit">생산 관리</div>
-            <div class="pm_ssmanu">
-                <div class="ssTitle">생산 설비 관리</div>
-                <div style="display: flex;">
-                    <div class="pm_correction_con">
-                        <div>라인 :</div>
-                        <select>
-                            <option>A라인</option>
-                            <option>B라인</option>
-                            <option>C라인</option>
-                        </select>
-                    </div>
-                    <div class="pm_correction_con">
-                        <div>호기:</div>
-                        <select>
-                            <option>1호기</option>
-                            <option>2호기</option>
-                            <option>3호기</option>
-                            <option>4호기</option>
-                            <option>5호기</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="pm_correction_con">
-                    <div style="width:100px;">제품코드:</div>
-                    <input type="text" placeholder="B25-0204-015">
-                </div>
-                <div class="pm_correction_con">
-                    <div style="width:100px;">생산시작시간:</div>
-                    <input id="newDate" type="text" style="color: gray;" value="현재 시간">
-                </div>
-                <div class="pm_correction_con">
-                    <div style="width:100px;">생산자:</div>
-                    <select>
-                        <option>김잔업</option>
-                        <option>박퇴근</option>
-                        <option>이출근</option>
-                        <option>신조퇴</option>
-                        <option>차반차</option>
-                    </select>
-                </div>
-                <div class="pm_correction_con">
-                    <div style="width:100px;">품명:</div>
-                    <select>
-                        <option>싹싹지우개</option>
-                        <option>처음처럼지우개</option>
-                        <option>우유빛지우개</option>
-                        <option>뭐든지우개</option>
-                        <option>리셋지우개</option>
-                    </select>
-                </div>
-                <div class="pm_correction_but">
-                    <select class="pm_correction_but_con">
-                        <option>완료</option>
-                        <option>수정</option>
-                        <option>삭제</option>
-                        <option>초기화</option>
-                    </select>
-                    <input class="pm_correction_but_con" type="button" value="등록">
-                </div>
-            </div>
-        </dlv>
-    </div>
+	<!-- 생산라인수정창 -->
+	<div class="ssretouch_box">
+		<dlv class="pm_correction">
+		<div class="boxTit">생산 관리</div>
+		<div class="pm_ssmanu">
+			<form method="post" action="tb_pr_mt">
+				<div>
+					<div class="pm_correction_con" style="margin: 10px 20px 5px 0;">
+						<div style="margin-right: 60px;">라인 :</div>
+						<div>
+							<select id="select1" name="liunNm" onchange="change1()">
+									<option value="선택">선택</option>
+								<c:forEach var="dto" items="${LineList }">
+									<option value="${dto.mt_mng_nm }" mt_mng_cd="${dto.mt_mng_cd }">
+										${dto.mt_mng_nm }</option>
+								</c:forEach>
+							</select>
+						</div>
+
+					</div>
+
+					<script>
+						//데이터 가져올때 연관된 데이터 한번에 가져오는 코드
+						function change1() {
+
+							var select = document.getElementById('select1');
+							var select_option = select.options[select.selectedIndex];
+
+							var mt_mng_cd = select_option
+									.getAttribute("mt_mng_cd");
+							console.log("mt_mng_cd : ", mt_mng_cd);
+							document.getElementById('mtMngCd').value = mt_mng_cd;
+						}
+					</script>
+
+					<input type="hidden" id="mtMngCd" name="mtMngCd" value="${dto.mt_mng_cd }">
+
+					<div class="pm_correction_con" style="margin: 10px 20px 5px 0;">
+						<div style="width: 80px;">생산 코드 :</div>
+						<div>
+							<!-- 같이 받을 데이터 변수에 넣어서 출력 -->
+							<select id="select2" name="prodcd" onchange="change2()">
+									<option value="선택">선택</option>
+								<c:forEach var="dto" items="${workList }">
+									<option value="${dto.prod_cd }" indc_qntt1="${dto.indc_qntt }">
+										${dto.prod_cd }</option>
+								</c:forEach>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<script>
+					//데이터 가져올때 연관된 데이터 한번에 가져오는 코드
+
+					function change2() {
+
+						var select = document.getElementById('select2');
+						var select_option = select.options[select.selectedIndex];
+
+						var indc_qntt = select_option
+								.getAttribute("indc_qntt1");
+						console.log("indc_qntt : ", indc_qntt);
+						document.getElementById('indc_qntt').value = indc_qntt;
+					}
+				</script>
+
+				<input type="hidden" id="indc_qntt" name="indcQntt" value="${dto.indc_qntt }">
+
+				<div class="pm_correction_con">
+					<div style="width: 100px;">품목코드:</div>
+					<select class="itemCd" name="itemCd">
+						<c:forEach var="dto" items="${StandardList }">
+							<option value="${dto.mt_mng_cd }">${dto.mt_mng_cd }</option>
+						</c:forEach>
+					</select>
+					<!-- <div class="itemCd" type="text" style="width: 50px;">SS-01</div> -->
+				</div>
+				<div class="pm_correction_con">
+					<div class="timeSet" style="width: 100px;">생산시작시간:</div>
+					<input id="newDate" type="text" style="color: gray;"
+						name="PROD_STRT_TIME" value="현재 시간">
+				</div>
+				<div class="pm_correction_con">
+					<div style="width: 100px;">생산자:</div>
+					<select name=workNm>
+						<c:forEach var="dto" items="${wemberList }">
+							<option value="${dto.mbr_nm }">${dto.mbr_nm }</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="pm_correction_con">
+					<div style="width: 100px;">품명:</div>
+					<select class="itemNm" name="itemNm">
+						<c:forEach var="dto" items="${StandardList }">
+							<option value="${dto.mt_mng_nm }">${dto.mt_mng_nm }</option>
+						</c:forEach>
+					</select>
+				</div>
+
+				<div class="ttssText1">
+					<div class="pm_correction_con" style="margin: 10px 20px 5px 0;">
+						<div class="sstext" style="width: 100px;">생산량 :</div>
+						<input name="prodQntt" value="">
+					</div>
+				</div>
+				<div class="ttssText2 hide">
+					<div class="pm_correction_con" style="margin: 10px 20px 5px 0;">
+						<div class="sstext" style="width: 100px;">불량률 :</div>
+						<input name="DFC_RT" value="">
+					</div>
+				</div>
+				<div class="pm_correction_but">
+					<select class="pm_correction_but_con" name="command">
+						<option value="insert">시작</option>
+						<option value="update">수정</option>
+						<option value="complete">완료</option>
+					</select> <input type="hidden" name="type" value="${type}">
+					<div class="end" style="margin: 0;">
+						<input class="pm_correction_but_con" type="submit" value="등록">
+
+						<!--<button type="submit" name="command", value="update">등록</button> -->
+					</div>
+				</div>
+			</form>
+		</div>
+		</dlv>
+	</div>
 </body>
-<script>
-    setInterval(function () {
-        let currentDate = new Date();
-        const formattedDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
-        let newDate = document.querySelector('#newDate').value = formattedDate;
-        $("#count").text(time_text);
-        time--;
-    }, 1000);
-    // let currentDate = new Date();
-    // const formattedDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
-    // let newDate = document.querySelector('#newDate').value = formattedDate
-</script>
 
 </html>

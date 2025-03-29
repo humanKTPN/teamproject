@@ -121,7 +121,7 @@ function init() {
 
     // 생산일정버튼 팝업창 기능
     document.querySelector('.pr_mm_but').addEventListener('click', function () {
-        window.open("tb_pr_mt?type=1110", "a", "width=400, height=370, left=100, top=50");
+        window.open("tb_pr_mt?type=1110", "a", "width=402, height=410, left=100, top=50");
     })
 
 }
