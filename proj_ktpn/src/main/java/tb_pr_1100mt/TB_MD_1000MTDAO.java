@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 public class TB_MD_1000MTDAO {
 
 	// 조회
-		List selectTestStandardList(){
+	public List selectTestStandardList(){
 			System.out.println("selectTestStandardList 실행");
 			List list = new ArrayList();
 
@@ -47,7 +47,7 @@ public class TB_MD_1000MTDAO {
 	        return list;
 	    }
 		// 조회
-		List selectTestLineList(){
+	public List selectTestLineList(){
 			System.out.println("selectTestStandardList 실행");
 			List list = new ArrayList();
 			

@@ -1,4 +1,4 @@
-package proj_kptn_tak;
+package tb_pr_1100mt;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -102,7 +102,7 @@ public class TB_PR_1100MTDAO {
     		 
     		 // [SQL 준비]
     		 String query = "SELECT * FROM TB_PR_1100MT"
-    		 		      + "WHERE LIUN_NM LIKE 'A%';";
+    		 		      + "WHERE LIUN_NM LIKE 'A%'";
     		 PreparedStatement ps = con.prepareStatement(query);
     		 
     		 // [SQL 실행] 및 [결과 확보]
@@ -147,7 +147,7 @@ public class TB_PR_1100MTDAO {
     		 
     		 // [SQL 준비]
     		 String query = "SELECT * FROM TB_PR_1100MT"
-     		 		      + "WHERE LIUN_NM LIKE 'B%';";
+     		 		      + "WHERE LIUN_NM LIKE 'B%'";
     		 PreparedStatement ps = con.prepareStatement(query);
     		 
     		 // [SQL 실행] 및 [결과 확보]
@@ -192,7 +192,7 @@ public class TB_PR_1100MTDAO {
     		 
     		 // [SQL 준비]
     		 String query = "SELECT * FROM TB_PR_1100MT"
-     		 		      + "WHERE LIUN_NM LIKE 'C%';";
+     		 		      + "WHERE LIUN_NM LIKE 'C%'";
     		 PreparedStatement ps = con.prepareStatement(query);
     		 
     		 // [SQL 실행] 및 [결과 확보]

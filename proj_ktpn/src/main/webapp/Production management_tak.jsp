@@ -185,7 +185,7 @@
 								<table>
 									<tr class="tableTop">
 										<th class="cs1">설비</th>
-										<th class="cs2">제품코드</th>
+										<th class="cs2">생산코드</th>
 										<th class="cs3">품번코드</th>
 										<th class="cs4">품명</th>
 										<th class="cs5">생산시작시간</th>

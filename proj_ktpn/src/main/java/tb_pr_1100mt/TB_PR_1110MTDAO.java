@@ -1,4 +1,4 @@
-package proj_kptn_tak;
+package tb_pr_1100mt;
 
 import java.sql.*;
 import java.util.ArrayList;

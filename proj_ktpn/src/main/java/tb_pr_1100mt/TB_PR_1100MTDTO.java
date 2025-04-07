@@ -1,4 +1,4 @@
-package proj_kptn_tak;
+package tb_pr_1100mt;
 
 public class TB_PR_1100MTDTO {
 
