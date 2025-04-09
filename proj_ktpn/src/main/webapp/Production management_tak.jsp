@@ -39,7 +39,7 @@
 					</div>
 				</div>
 				<div class="icon-sub">
-					관리자님 환영합니다.
+					관리자님 환영합니다. 
 					<!-- <i class="fas fa-solid fa-gear fa-lg" style="display: flex; width: 60px; justify-content: space-between;" > -->
 					<i class="fas fa-regular fa-arrow-right-from-bracket fa-md"> <span
 						class="subBut">로그아웃</span>

@@ -575,7 +575,7 @@ body{
 .icon-sub {
     /* border: 10px solid red; */
     display: flex;
-    width: 9%;
+/*     width: 9%; */
     display: flex;
     justify-content: space-around;
     min-width: 210px;
