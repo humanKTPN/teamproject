@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MD Detail</title>
     <!-- CSS 및 JS 파일 -->
-    <link rel="stylesheet" href="resources/processDesc_select.css">
+    <link rel="stylesheet" href="resources/css/processDesc_select.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="resources/processDesc_select.js"></script>
+    <script src="resources/js/processDesc_select.js"></script>
     <style>
         /* 모바일 버전 구현 등 추가 스타일 */
     </style>

@@ -27,10 +27,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="resources/masterdataManage_main_kwak.css">
+    <link rel="stylesheet" href="resources/css/masterdataManage_main_kwak.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="resources/masterdataManage_main_kwak.js"></script>
+    <script src="resources/js/masterdataManage_main_kwak.js"></script>
     <style>
         /******************
         모바일 버전 구현(불량쪽 차트는 ....)

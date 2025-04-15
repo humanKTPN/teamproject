@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 여기에 대시보드 css 파일옮기기 -->
-    <link rel="stylesheet" href="resources/dashBoard_kwak.css">
+    <link rel="stylesheet" href="resources/css/dashBoard_kwak.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <!--     <script src="resources/dashBoard_kwak.js"></script>     -->

@@ -8,11 +8,11 @@
     <title>기준관리 등록</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS 파일 -->
-    <link rel="stylesheet" href="resources/masterdataManage_add_kwak.css">
+    <link rel="stylesheet" href="resources/css/masterdataManage_add_kwak.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- JavaScript 파일 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="resources/masterdataManage_add_kwak.js"></script>
+    <script src="resources/js/masterdataManage_add_kwak.js"></script>
     <style>
         /* 모바일 버전 및 추가 스타일을 여기에 작성하세요 */
     </style>

@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="resources/layOut_kwak.css">
+<link rel="stylesheet" href="resources/css/layOut_kwak.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="resources/layOut_kwak.js"></script>   
+    <script src="resources/js/layOut_kwak.js"></script>   
 
 </head>
 <body>
