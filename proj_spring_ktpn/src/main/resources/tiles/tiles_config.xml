@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/WEB-INF/views/layout/layout.jsp">
+<!-- 		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"></put-attribute> -->
+<!-- 		<put-attribute name="side" value="/WEB-INF/views/common/side.jsp"></put-attribute> -->
+<!-- 		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"></put-attribute> -->
+	</definition>
+	
+<!-- 	<definition name="toon" extends="baseLayout"> -->
+<!-- 		<put-attribute name="content" value="/WEB-INF/views/main/webtoon.jsp"></put-attribute> -->
+<!-- 	</definition> -->
+	
+<!-- 	<definition name="chzizi" extends="baseLayout"> -->
+<!-- 		<put-attribute name="content" value="/WEB-INF/views/main/chzizicc.jsp"></put-attribute> -->
+<!-- 	</definition> -->
+
+	<definition name="*.tiles" extends="baseLayout">
+		<put-attribute name="content" value="/WEB-INF/views/main/{1}.jsp"></put-attribute>
+		<put-attribute name="title" value="MES"></put-attribute>
+	</definition>
+	
+<!-- 	<definition name="*/*.tiles" extends="baseLayout"> -->
+<!-- 		<put-attribute name="content" value="/WEB-INF/views/main/{1}/{2}.jsp"></put-attribute> -->
+<!-- 	</definition> -->
+	
+</tiles-definitions>

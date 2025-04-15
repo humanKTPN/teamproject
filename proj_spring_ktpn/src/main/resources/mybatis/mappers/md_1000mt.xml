@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.md_1000mt">
+
+<select id="selectMd" resultType="kr.or.ktpn.dto.DTO_md_1000mt" parameterType="kr.or.ktpn.dto.DTO_md_1000mt">
+    SELECT *  
+    FROM tb_md_1000mt
+    <where>
+        <if test="MT_MNG_CD != null and MT_MNG_CD != ''">
+            MT_MNG_CD = #{MT_MNG_CD}
+        </if>
+        <!-- 필요한 조건 추가 가능 -->
+        <if test="MT_MNG_NM != null and MT_MNG_NM != ''">
+            AND MT_MNG_NM LIKE CONCAT('%', #{MT_MNG_NM}, '%')
+        </if>
+    </where>
+</select>
+
+<!-- 추가(insert) SQL 구문 -->
+    <insert id="insertMd" parameterType="kr.or.ktpn.dto.DTO_md_1000mt">
+        INSERT INTO tb_md_1000mt (MT_MNG_CD, MT_MNG_NM, MT_MNG_DESC, IMG_PATH_ADR, TP_CLS_VAL)
+        VALUES (SQ_MD_1000MT_M.NEXTVAL, #{MT_MNG_NM}, #{MT_MNG_DESC}, #{IMG_PATH_ADR}, #{TP_CLS_VAL})
+    </insert>
+
+
+	
+</mapper>
+
+
+
+
