@@ -8,6 +8,9 @@ import kr.or.ktpn.dto.DTO_md_1000mt;
 public interface Svc_md_1000mt {
 	
 	public List<DTO_md_1000mt> getMdList(DTO_md_1000mt dto);
+	public int addMd(DTO_md_1000mt dto);
+	public int modMd(DTO_md_1000mt dto);
+	public int delMd(DTO_md_1000mt dto);
 
 	
 }

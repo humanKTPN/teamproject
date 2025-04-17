@@ -28,12 +28,11 @@
                             </div>
                         </div>
                         <div class="dropBox">
-                            <!-- 필요시 추가 콘텐츠 삽입 -->
                         </div>
                         
                         <!-- 추가(등록) 폼 영역 -->
                         <div class="command-loc">
-                            <form method="post" action="${pageContext.request.contextPath}/mdadd" enctype="multipart/form-data">
+                            <form method="post" action="${pageContext.request.contextPath}/mdAdd">
                                 <div class="command-div">
                                     <table class="command-table">
                                         <tr>
@@ -47,7 +46,6 @@
                                                 <input type="file" name="file1" value="img">
                                             </td>
                                             <td class="command-td">
-                                                <!-- 코드 자동 생성 시 디폴트 값을 전달받거나 사용자 입력 없이 disabled 처리 -->
                                                 <input type="text" name="MT_MNG_CD" disabled>
                                             </td>
                                             <td class="command-td">

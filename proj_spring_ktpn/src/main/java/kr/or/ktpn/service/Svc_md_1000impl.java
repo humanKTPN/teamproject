@@ -22,5 +22,21 @@ public class Svc_md_1000impl implements Svc_md_1000mt {
 	        List<DTO_md_1000mt> list = mdDAO.selectMdList(dto);
 	        return list;
 	    }
+	    @Override
+	    public int addMd(DTO_md_1000mt dto) {
+    		int countUpdate = mdDAO.insertEmp(dto);
+    		return countUpdate;
+    	}
+	    @Override
+	    public int modMd(DTO_md_1000mt dto) {
+	    	int countUpdate = mdDAO.updateMd(dto);
+	    	return countUpdate;
+	    }
+	    
+	    @Override
+	    public int delMd(DTO_md_1000mt dto) {
+	    	int countUpdate = mdDAO.delMd(dto);
+	    	return countUpdate;
+	    }
 	    
 }

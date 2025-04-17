@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.rt_1000mt">
+
+<select id="selectRt" resultType="kr.or.ktpn.dto.DTO_rt_1000mt" parameterType="kr.or.ktpn.dto.DTO_rt_1000mt">
+    SELECT *  
+      FROM tb_rt_1000mt
+    <where>
+        AND USE_YN = 'Y'
+        <if test="RT_CD != null and RT_CD != ''">
+           AND RT_CD= #{RT_CD}
+        </if>
+        <!-- 필요한 조건 추가 가능 -->
+        ORDER BY REG_DT DESC
+    </where>
+</select>
+
+<select id="addBm" 
+        resultType="kr.or.ktpn.dto.DTO_md_1000mt" 
+        parameterType="kr.or.ktpn.dto.DTO_md_1000mt">
+    SELECT A.*
+      FROM TB_MD_1000MT A,
+           TB_BM_1000MT B
+     WHERE A.USE_YN = 'Y'
+       AND A.MT_MNG_CD = B.BOM_CD(+)
+       AND B.BOM_CD IS NULL
+       AND A.MT_MNG_CD LIKE 'B%'
+</select>
+
+<insert id="insertBm"  parameterType="kr.or.ktpn.dto.DTO_bm_1000mt">
+
+INSERT INTO TB_BM_1000MT (BOM_CD,BOM_NM,ITEM_CD,BOM_DESC,REG_DT,MOD_DT, USE_YN)
+VALUES (#{bom_cd},#{bom_nm},#{item_cd},#{bom_desc},TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'), 'Y')
+
+</insert>
+
+<update id="updateBm" parameterType="kr.or.ktpn.dto.DTO_bm_1000mt">
+       UPDATE tb_bm_1000mt
+       	  SET BOM_DESC = #{bom_desc}
+        WHERE bom_cd = #{bom_cd}
+   </update>
+
+	
+</mapper>
+
+
+
+
