@@ -2,13 +2,9 @@ package kr.or.ktpn.dto;
 
 import java.sql.Date;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@ToString
-@Getter
-@Setter
+@Data
 public class KW_DTO_Writedb_1000mt {
 
 	String TTL_NM;
