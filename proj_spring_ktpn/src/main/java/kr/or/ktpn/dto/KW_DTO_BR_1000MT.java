@@ -3,9 +3,6 @@ import java.sql.Date;
 
 import lombok.Data;
 
-//@ToString
-//@Getter
-//@Setter
 @Data
 public class KW_DTO_BR_1000MT {
 
