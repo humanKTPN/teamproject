@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.pr_1000mt">
+
+<select id="selectPr" resultType="kr.or.ktpn.dto.DTO_pr_1000mt" parameterType="kr.or.ktpn.dto.DTO_pr_1000mt">
+    SELECT *  
+      FROM tb_pr_1000mt
+    <where>
+        AND USE_YN = 'Y'
+        ORDER BY REG_DT DESC
+    </where>
+</select>
+
+<select id="dePrList" resultType="java.util.Map" parameterType="kr.or.ktpn.dto.DTO_pr_1000mt">
+	SELECT A.PROD_CD,
+	       A.PROD_PLN_CD,
+	       A.LIUN_CD,
+	       A.LIUN_NM,
+	       A.ITEM_CD,
+	       A.MNGR_NM,
+	       A.PROD_DT,
+	       A.INDC_QNTT,
+	       B.BOM_CD,
+	       B.BOM_DESC,
+	       C.RT_CD,
+	       C.RT_DESC
+	  FROM TB_PR_1000MT A,
+	       TB_BM_1000MT  B,
+	       TB_RT_1000MT  C
+	 WHERE A.PROD_CD    = #{prod_cd}
+	   AND A.ITEM_CD    = B.ITEM_CD
+	   AND B.ITEM_CD    = C.ITEM_CD
+ </select>
+
+
+ <select id="addList" 
+          parameterType="kr.or.ktpn.dto.DTO_pr_1000mt"
+          resultType="java.util.Map">
+	SELECT A.PROD_PLN_CD,
+	       A.ITEM_NM,
+	       A.TRG_PROD_CNT,
+	       A.ITEM_CD,
+	       C.BOM_CD,
+	       C.BOM_DESC,
+	       D.RT_CD,
+	       D.RT_DESC
+	  FROM TB_PR_1110MT A,
+	       TB_PR_1000MT B,
+	       TB_BM_1000MT C,
+	       TB_RT_1000MT D
+	 WHERE A.ITEM_CD = B.ITEM_CD(+)
+	   AND A.ITEM_CD = C.ITEM_CD
+	   AND A.ITEM_CD = D.ITEM_CD
+	   AND B.ITEM_CD IS NULL
+	   AND A.ITEM_CD IS NOT NULL
+  </select>
+  
+ <select id="LineList" 
+          parameterType="kr.or.ktpn.dto.DTO_pr_1000mt"
+          resultType="java.util.Map">
+	SELECT *
+	  FROM TB_MD_1000MT
+	 WHERE MT_MNG_CD LIKE 'L%'
+	   AND USE_YN = 'Y'
+ </select>
+ <select id="mbList" 
+          parameterType="kr.or.ktpn.dto.DTO_pr_1000mt"
+          resultType="java.util.Map">
+	SELECT *
+	  FROM TB_MB_1000MT
+	 WHERE DLT_YN = 'N'
+ </select>
+
+
+<insert id="insertPr"  parameterType="kr.or.ktpn.dto.DTO_pr_insert">
+
+INSERT INTO TB_PR_1000MT (
+    PROD_CD,
+    PROD_PLN_CD,
+    LIUN_CD,
+    MNGR_NM,
+    ITEM_CD,
+    PROD_DT,
+    LIUN_NM,
+    INDC_QNTT,
+    BOM_CD,
+    RT_CD,
+    USE_YN,
+    REG_DT,
+    MOD_DT
+)
+VALUES (
+    'D' || LPAD(sq_od_1000mt.NEXTVAL, 4, '0'),
+    #{h_pln_cd},  -- PROD_PLN_CD
+    #{h_ln_cd},  -- LIUN_CD
+    #{mb_nm},  -- MNGR_NM
+    #{h_item_cd},  -- ITEM_CD
+	TO_CHAR(#{prod_dt},'YYYYMMDD'),
+    #{ln_nm},  -- LIUN_NM
+    #{indc_qntt},  -- INDC_QNTT
+    #{bom_cd},  -- BOM_CD
+    #{rt_cd},  -- RT_CD
+    'Y',
+    TO_CHAR(SYSDATE, 'YYYYMMDD'),
+    TO_CHAR(SYSDATE, 'YYYYMMDD')
+)
+
+</insert>
+
+
+
+
+
+
+<select id="addRt" 
+        resultType="kr.or.ktpn.dto.DTO_md_1000mt" 
+        parameterType="kr.or.ktpn.dto.DTO_md_1000mt">
+    SELECT A.*
+      FROM TB_MD_1000MT A,
+           TB_RT_1000MT B
+     WHERE A.USE_YN = 'Y'
+       AND A.MT_MNG_CD = B.RT_CD(+)
+       AND B.RT_CD IS NULL
+       AND A.MT_MNG_CD LIKE 'R%'
+</select>
+
+
+
+<update id="updateRt" parameterType="kr.or.ktpn.dto.DTO_rt_1000mt">
+       UPDATE tb_rt_1000mt
+       	  SET RT_DESC = #{rt_desc}
+        WHERE RT_CD = #{rt_cd}
+   </update>
+
+	
+</mapper>
+
+
+
+
