@@ -32,17 +32,17 @@
                 <tr>
                   <td class="detail-td">
                     <span class="spn-td">
-                      <c:out value="${dto.RT_CD}" />
+                      <c:out value="${dto.rt_cd}" />
                     </span>
                   </td>
                   <td class="detail-td">
                     <span class="spn-td">
-                      <c:out value="${dto.RT_NM}" />
+                      <c:out value="${dto.rt_nm}" />
                     </span>
                   </td>
                   <td class="detail-td"> 
                     <span class="spn-td">
-                      <c:out value="${dto.ITEM_CD}" />
+                      <c:out value="${dto.item_cd}" />
                     </span>
                   </td>
                 </tr>
@@ -55,13 +55,13 @@
               <h4>
                 공정코드 :
                 <span class="spn-td">
-                  <c:out value="${dto.RT_CD}" />
+                  <c:out value="${dto.rt_cd}" />
                 </span>
               </h4>
               <table>
                 <tr>
                   <td>
-                      ${dto.RT_DESC} 
+                      ${dto.rt_desc} 
                 </tr>
               </table>
             </div>
@@ -69,15 +69,10 @@
 
           <div class="add-con">
             <div class="mode-con">
-              <form method="post" action="CNTRL_RT_Kwak">
-                <input type="hidden" name="command" value="수정" />
-                <input type="hidden" name="rt_cd" value="${dto.RT_CD}" />
+              <form method="get" action="rtMod">
+<!--                 <input type="hidden" name="command" value="수정" /> -->
+                <input type="hidden" name="rt_cd" value="${dto.rt_cd}" />
                 <input type="submit" class="mod" value="수정" />
-              </form>
-              <form method="post" action="CNTRL_RT_Kwak">
-                <input type="hidden" name="command" value="삭제" />
-                <input type="hidden" name="rt_cd" value="${dto.RT_CD}" />
-                <input type="submit" class="del" value="삭제" />
               </form>
             </div>
           </div>

@@ -24,20 +24,20 @@ public class Svc_rt_1000impl implements Svc_rt_1000mt {
         return list;
     }
     @Override
-    public List<DTO_md_1000mt> addBm(DTO_md_1000mt dto) {
-    	List<DTO_md_1000mt> list = mdDAO.insertBm(dto);
+    public List<DTO_md_1000mt> addRt(DTO_md_1000mt dto) {
+    	List<DTO_md_1000mt> list = mdDAO.insertRt(dto);
 		return list;
 	}
     
     @Override
-    public int insertBm(DTO_bm_1000mt dto) {
-		int countUpdate = mdDAO.addBm(dto);
+    public int insertRt(DTO_rt_1000mt dto) {
+		int countUpdate = mdDAO.addRt(dto);
 		return countUpdate;
 	}
     
     @Override
-    public int modBm(DTO_bm_1000mt dto) {
-    	int countUpdate = mdDAO.updateBm(dto);
+    public int modRt(DTO_rt_1000mt dto) {
+    	int countUpdate = mdDAO.updateRt(dto);
     	return countUpdate;
     }
 	    

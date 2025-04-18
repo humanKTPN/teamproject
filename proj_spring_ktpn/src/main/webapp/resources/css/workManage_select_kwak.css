@@ -505,7 +505,7 @@ body{
     color: white;
    }
    .detail-td{
-       border: 1px solid darkgrey;
+       border: 1px solid darkgrey
    }
    .command-div{
     /* border: 1px solid red; */
@@ -546,6 +546,9 @@ body{
 }
 form{
     margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .page-num{
     /* border: 5px solid purple; */
@@ -579,16 +582,16 @@ form{
     margin-right: 5px;
     display: flex;
     justify-content: right;
-    width: 95%;
+    width: 97.7%;
     /* min-width: 700px; */
 }
-.del,.mod{
+.del,.prev{
     border: 1px solid #2f373a;
+    color: white;
+    background-color: #2f373a;
     width: 50px;
     text-align: center;
     cursor: pointer;
-    color: white;
-    background-color: #2f373a;
 }
 .prev{
     width: 80px;
@@ -597,7 +600,7 @@ form{
 .command-table{
     /* border: 5px solid red; */
     width: 100%;
-    /* margin: 0 5px; */
+    margin: 0 5px;
     min-width: 400px;
 }
 
@@ -606,31 +609,20 @@ form{
     height: 150px;
 }
 .detail-table{
-    /* border: 5px solid brown; */
     width: 85%;
-    height: 30%;
-    /* min-width: 500px; */
-    /* overflow: scroll; */
+    height: 18%;
+    min-width: 500px;
+    overflow: scroll;
 }
 .add-table{
     /* border: 1px solid red; */
-    /* display: inline-block; */
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 90%;
-    justify-content: center;
-    margin:2% 0;
-    
-}
-.pop{
-    /* border-bottom: 1px solid darkgrey; */
-    display: flex;
-    justify-content: center;
+    height: 170px;
     width: 100%;
-    /* overflow: scroll; */
-    align-items: center;
-    height: 24%;
+    justify-content: center;
+    
 }
 .bompro-con{
     /* border: 1px solid purple; */
@@ -645,14 +637,10 @@ form{
 .bom-con,.process{
     padding: 3px;
     border: 1px solid darkgrey;
-    width: 90%;
+    width: 45%;
     height: 80%;
-    /* max-height: 0px; */
     overflow: scroll;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    
+    margin: 13% 0;
 }
 .select-1{
     display: flex;
@@ -674,47 +662,6 @@ form{
 
 @media (max-width: 800px){
 
-
-
-
-}
-.th2-con{
-    width: 96%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-.th2-table{
-    width: 45%;
-    min-width: 90px;
-}
-.sub-menu{
-    /* border: 5px solid red; */
-    height: 58%;
-    /* width: 100%; */
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    margin: 0.5%;
-    padding-right: 1%;
-    padding-bottom: 0.5%;
-    min-width: 127.92px;
-
-}
-.fas{
-    /* color: black; */
-    margin: 0;
-}
-#badChart,#badChart2{
-    width: 90%;
-}
-.detail-con{
-    border: 7px solid orange;
-    /* width: 100%; */
-    /* min-width: 300px; */
-}
-@media (max-width: 800px) {
     .board,.border-2,.dayWork{
         display: flex;
         flex-direction: column;
@@ -752,12 +699,53 @@ form{
         display: none;
     }
 
+
+
+}
+.th2-con{
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.th2-table{
+    width: 45%;
+    min-width: 90px;
+}
+.sub-menu{
+    /* border: 5px solid red; */
+    height: 58%;
+    /* width: 100%; */
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    margin: 0.5%;
+    padding-right: 1%;
+    padding-bottom: 0.5%;
+    min-width: 127.92px;
+
+}
+.fas{
+    /* color: black; */
+    margin: 0;
+}
+#badChart,#badChart2{
+    width: 90%;
+}
+.detail-con{
+    /* border: 1px solid orange; */
+    width: 82%;
+    min-width: 300px;
+}
+@media (max-width: 800px) {
+    .board{
+        height: auto;
+    }
     .add-table{
         display: flex;
         flex-direction: column;
-        height: 283px;
-        /* width: 100px; */
-        overflow: scroll;
+        height: 583px;
     }
     .detail-con{
         overflow: scroll;
@@ -806,18 +794,9 @@ form{
     .eraser-img{
         margin-top: 5px;
     }
-    .pop{
-        overflow: scroll;
+    .hide{
+        display: none;
     }
-    .detail-table{
-        overflow: auto;
-    }
-    .mod-td{
-        width: 50%;
-    }
-	.hide{
-		display: none;
-	}
 }
 .confirm-con{
     /* border: 1px solid red; */
@@ -879,19 +858,15 @@ form{
     border-radius: 10px;
     background-color: white;
     /* border: 4px solid red; */
-    height: 93%;
-    width: 97%;
-}
-.bom-item-con{
+    height: 97%;
+    width: 98%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-bottom: 1px solid #2f373a;
-    width: 70%;
+    flex-direction: column;
+    justify-content: center;
 }
-.mode-con{
-    /* border: 1px solid red; */
-    width: 112px;
+.pop{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
+    /* border: 5px solid red; */
 }

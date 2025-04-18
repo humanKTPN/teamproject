@@ -5,10 +5,10 @@ import lombok.Data;
 @Data
 public class DTO_rt_1000mt {
 
-	private String RT_CD;
-	private String ITEM_CD;
-	private String RT_NM;
-	private String IMG_PATH_ADR;
-	private String RT_DESC;
+	private String rt_cd;
+	private String item_cd;
+	private String rt_nm;
+	private String img_path_adr;
+	private String rt_desc;
 	
 }

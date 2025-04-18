@@ -75,13 +75,13 @@
                                 <c:forEach var="dt" items="${list}" varStatus="status">
                                     <tr>
                                         <td class="command-td">${status.count}</td>
-                                        <td class="command-td">${dt.RT_CD}</td>
+                                        <td class="command-td">${dt.rt_cd}</td>
                                         <td class="command-td">
-                                            <a href="rtDetail?rt_cd=${dt.RT_CD}">
-                                                ${dt.RT_NM}
+                                            <a href="rtDetail?rt_cd=${dt.rt_cd}">
+                                                ${dt.rt_nm}
                                             </a>
                                         </td>
-                                        <td class="command-td">${dt.ITEM_CD}</td>
+                                        <td class="command-td">${dt.item_cd}</td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <!-- 페이징 & 추가 버튼 -->
- <div class="page-num-con">
+ 			<div class="page-num-con">
 			   <div class="page-num">
 			       <!-- 이전 버튼 -->
 			       <c:choose>
@@ -117,6 +117,11 @@
 			       </c:choose>
 			    </div>
             </div>
+            <div class="add-con">
+                <div class="add">
+                    추가
+                </div>
+            </div> 
         </div>
     </div>
 </body>

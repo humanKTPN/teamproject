@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- 여기에 대시보드 css 파일옮기기 -->
-    <link rel="stylesheet" href="processDesc_add_kwak.css">
+    <link rel="stylesheet" href="resources/css/processDesc_add_kwak.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-    <script src="processDesc_add_kwak.js"></script>    
+    <script src="resources/js/processDesc_add_kwak.js"></script>    
     <style>
         /******************
         모바일 버전 구현(불량쪽 차트는 ....)
@@ -40,31 +40,36 @@
                                         <th class="command-th" scope = "col">품목코드</th>
                                         <!-- <th class="command-th" scope = "col">설명</th> -->
                                     </tr>
-                                    <form method="post" action="CNTRL_RT_Kwak">
+                                    <form method="post" action="rtAdd">
                                     <tr>
                                         <td class="command-td">
-										    <input type="text" id="rt_cd" disabled>	
-										    <input type="hidden" id="h_rt_cd" name="rt_cd">								    
+										    <input type="text" id="rt_cd" disabled />
+										    <input type="hidden" id="h_rt_cd" name="rt_cd" />
 										</td>
 										
-                                        <td class="command-td">
-									    <select name="rt_nm" id="rt_nm" onclick="updateRtNm()">
-									        <c:forEach var="dt" items="${dtoList}">
-									            <option value="${dt.RT_NM}" data-rt-cd="${dt.RT_CD}">${dt.RT_NM}</option>
-									        </c:forEach>
-									    </select>
-									   
-									</td>
-									<script>
-									function updateRtNm() {
-									    var select = document.getElementById("rt_nm");
-									    var selectedOption = select.options[select.selectedIndex];
-									    var rtNm = selectedOption.getAttribute("data-rt-cd");
-									    document.getElementById("rt_cd").value = rtNm;
-									    document.getElementById("h_rt_cd").value = rtNm;
-									}
-									</script>
-                                        <td class="command-td"><input type="text"></td>
+										<td class="command-td">
+										    <select name="rt_nm" id="rt_nm" onchange="updateRtNm()">
+										        <c:forEach var="dt" items="${list}">
+										            <option value="${dt.MT_MNG_NM}" data-rt-cd="${dt.MT_MNG_CD}">${dt.MT_MNG_NM}</option>
+										        </c:forEach>
+										    </select>
+										</td>
+										
+										<td class="command-td">
+										    <input type="text" name="item_cd" />
+										</td>
+										
+										<script>
+										function updateRtNm() {
+										    var select = document.getElementById("rt_nm");
+										    var selectedOption = select.options[select.selectedIndex];
+										    var rtNm = selectedOption.getAttribute("data-rt-cd");
+										    document.getElementById("rt_cd").value = rtNm;
+										    document.getElementById("h_rt_cd").value = rtNm;
+										}
+										window.onload = updateRtNm;
+										</script>
+
                                     </tr>
                                   
                                     

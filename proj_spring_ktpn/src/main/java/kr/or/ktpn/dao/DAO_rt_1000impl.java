@@ -24,21 +24,21 @@ public class DAO_rt_1000impl implements DAO_rt_1000mt{
      }
      
      @Override
- 	public List<DTO_md_1000mt> insertBm(DTO_md_1000mt dto) {
+ 	public List<DTO_md_1000mt> insertRt(DTO_md_1000mt dto) {
  		
- 			List<DTO_md_1000mt> result = sqlSession.selectList("mapper.bm_1000mt.addBm", dto);
- 			System.out.println("result : " + result);
+ 			List<DTO_md_1000mt> result = sqlSession.selectList("mapper.rt_1000mt.addRt", dto);
+ 			System.out.println("쿼리에서 꺼내온것 : " + result);
  		
  		return result;
  	}
  	
  	  @Override
- 	 	public int addBm(DTO_bm_1000mt dto) { 
+ 	 	public int addRt(DTO_rt_1000mt dto) { 
  	 		int count = -1;
  	 		
  	 		try {
 // 	 			count = sqlSession.insert("mapper.emp.insertEmp", empDTO);
- 	 			count = sqlSession.insert("mapper.bm_1000mt.insertBm", dto);
+ 	 			count = sqlSession.insert("mapper.rt_1000mt.insertRt", dto);
  	 			System.out.println(dto); // empno가 채워져 있음
  	 			// 그러면 아래 같은데에서 재사용 가능
 // 	 			count = sqlSession.insert("mapper.emp.insertEmp4", empDTO);
@@ -50,12 +50,12 @@ public class DAO_rt_1000impl implements DAO_rt_1000mt{
  	 	}
 
      @Override
-     public int updateBm(DTO_bm_1000mt dto) {
+     public int updateRt(DTO_rt_1000mt dto) {
     	 int count = -1;
     	 
     	 try {
 // 			count = sqlSession.insert("mapper.emp.insertEmp", empDTO);
-    		 count = sqlSession.update("mapper.bm_1000mt.updateBm", dto);
+    		 count = sqlSession.update("mapper.rt_1000mt.updateRt", dto);
     		 System.out.println(dto); // empno가 채워져 있음
     		 // 그러면 아래 같은데에서 재사용 가능
 // 			count = sqlSession.insert("mapper.emp.insertEmp4", empDTO);

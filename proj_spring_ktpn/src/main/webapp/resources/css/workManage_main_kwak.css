@@ -11,6 +11,7 @@ body{
     width: 100%;
     border: 5px solid #2f373a;
 }
+
 #main-menu {
     border: 1px solid rgba(255, 255, 255, 0.267);
     background-color: #2f373a;
@@ -85,13 +86,14 @@ body{
     left: 211px;
 }
 .menuPage-con{
-    /* border: 1px solid red; */
-    width: 100%;
-    height: 100%;
+    /* border: 5px solid purple; */
     display: flex;
     justify-content: center;
-    background-color: darkgrey;
     align-items: center;
+    background-color: darkgrey;
+    /* ba */
+    width: 100%;
+    height: 100%;
 }
 
 .container{
@@ -180,30 +182,13 @@ body{
 .fas{
     color:white;
 }
-.icon, .icon-sub{
+.icon{
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-right: 0.5%;
     padding-left: 1%;
-}
-#title-name{
-    color: white;
-    text-align: left;
-    /* border: 1px solid red; */
-    width:100%;
-    height: 46px;
-    font-family: 'Pretendard-Regular';
-    font-weight: bold;
-    font-size: large;
-    align-items: center;
-    /* padding-left: 1%; */
-    /* padding: 0 1%; */
-    background-color: #2f373a;
-    border: 1px solid #2f373a;
-    display: flex;
-    justify-content: space-between;
 }
 #ham{
     cursor: pointer;
@@ -469,15 +454,101 @@ body{
     width: 500px;
 
 }
-/* workManage.css */
-/* workManage.css */
-/* workManage.css */
-/* workManage.css */
-/* workManage.css */
-/* workManage.css */
 
+
+@media (max-width: 800px){
+
+    .board,.border-2,.dayWork{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        height: auto;
+        width: 100%;
+    }
+    .dayWork{
+        height: 550px;
+    }
+    .mainmenu{
+        width: 100%;
+        height: 18%;
+        display: inline-block;
+    }
+    .border,.border2{
+        width: 450px;
+        margin-bottom: 1%;
+    }
+    #day-list{
+        width: 450px;
+    }
+
+    .th2-con{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: ; */
+    }
+    .list-con{
+        width: 400px;
+    }
+    .hide{
+        display: none;
+    }
+    .command-loc{
+        overflow: scroll;
+    }
+
+
+
+}
+.th2-con{
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.th2-table{
+    width: 45%;
+    min-width: 90px;
+}
+
+.fas{
+    /* color: black; */
+    margin: 0;
+}
+#badChart,#badChart2{
+    width: 90%;
+}
+
+/* workManage.css */
+/* workManage.css */
+/* workManage.css */
+/* workManage.css */
+/* workManage.css */
+/* workManage.css */
+/* workManage.css */
+/* workManage.css */
+/* workManage.css */
+.content-con{
+    /* border: 10px solid red; */
+    height: 100%;
+    margin: 2%;
+}
+
+.background{
+    /* border: 1px solid darkgrey; */
+    border-radius: 10px;
+    width: 97%;
+    height: 93%;
+    background-color: white;
+    /* background-color: ; */
+    /* padding: 2%; */
+}
 .tab-name{
-    border: 1px solid darkgray;
+    /* border: 1px solid darkgray; */
+    background-color: #2f373a;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -488,31 +559,56 @@ body{
 }
 
 .command-table
-,.detail-table{ border-collapse : collapse; 
-;} 
+,.detail-table{ border-collapse : collapse; } 
 .command-th
 ,.command-td
 ,.detail-th
 ,.detail-td{
+    /* padding; */
      width: 100px;
      height: 30px;
      text-align: center;
-     border: 1px solid #000;
+     border: 1px solid darkgrey;
      vertical-align: middle;   /* 가운데 */
+    }
+    th{
+        /* background-color: darkgrey; */
+        background-color: #2f373a;
+        color: white;
    }
-   .detail-th{
-    background-color: #2f373a;
-    color: white;
-   }
-   .detail-td{
-       border: 1px solid darkgrey;
+   .command-table th:nth-child(1){ /*작업지시번호*/
+    width: 7%;
+  }
+   .command-table th:nth-child(2){ /*납품처명*/
+    width: 7%;
+  }
+   .command-table th:nth-child(3){ /*납기일자*/
+    width: 7%;
+  }
+   .command-table th:nth-child(4){ /*품목명*/
+    width: 7%;
+  }
+   .command-table th:nth-child(5){ /*담당자*/
+    width: 7%;
+  }
+   .command-table th:nth-child(6){ /*지시수량*/
+    width: 7%;
+  }
+   .command-table th:nth-child(7){ /*지시수량*/
+    width: 7%;
+  }
+   .command-table th:nth-child(8){ /*지시수량*/
+    width: 7%;
+  }
+   .command-td{
+    cursor: pointer;
    }
    .command-div{
     /* border: 1px solid red; */
     display: flex;
     width: 100%;
     justify-content: center;
-    min-width: 500px;
+    min-width: 400px;
     
 }
 .tab-name-div{
@@ -551,7 +647,7 @@ form{
     /* border: 5px solid purple; */
     display: flex;
     justify-content: space-around;
-    width: 40%;
+    width: 20%;
     height: 50px;
     align-items: center;
     min-width: 300px;
@@ -561,8 +657,9 @@ form{
     height: 60%;
     width: 58%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    cursor: pointer;
     
 }
 .page-num-con{
@@ -579,16 +676,16 @@ form{
     margin-right: 5px;
     display: flex;
     justify-content: right;
-    width: 95%;
+    width: 100%;
     /* min-width: 700px; */
 }
-.del,.mod{
-    border: 1px solid #2f373a;
+.add{
+    border: 1px solid darkgray;
     width: 50px;
     text-align: center;
     cursor: pointer;
-    color: white;
     background-color: #2f373a;
+    color: white;
 }
 .prev{
     width: 80px;
@@ -597,40 +694,27 @@ form{
 .command-table{
     /* border: 5px solid red; */
     width: 100%;
-    /* margin: 0 5px; */
+    margin: 0 5px;
     min-width: 400px;
 }
+
 
 .eraser-img{
     width: 150px;
     height: 150px;
 }
 .detail-table{
-    /* border: 5px solid brown; */
     width: 85%;
     height: 30%;
-    /* min-width: 500px; */
-    /* overflow: scroll; */
+    min-width: 500px;
+    overflow: scroll;
 }
 .add-table{
     /* border: 1px solid red; */
-    /* display: inline-block; */
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 90%;
-    justify-content: center;
-    margin:2% 0;
     
-}
-.pop{
-    /* border-bottom: 1px solid darkgrey; */
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    /* overflow: scroll; */
-    align-items: center;
-    height: 24%;
 }
 .bompro-con{
     /* border: 1px solid purple; */
@@ -645,14 +729,9 @@ form{
 .bom-con,.process{
     padding: 3px;
     border: 1px solid darkgrey;
-    width: 90%;
+    width: 45%;
     height: 80%;
-    /* max-height: 0px; */
     overflow: scroll;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    
 }
 .select-1{
     display: flex;
@@ -669,168 +748,6 @@ form{
     width: 50%;
     justify-content: space-around;
     min-width: 300px;
-}
-
-
-@media (max-width: 800px){
-
-
-
-
-}
-.th2-con{
-    width: 96%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-.th2-table{
-    width: 45%;
-    min-width: 90px;
-}
-.sub-menu{
-    /* border: 5px solid red; */
-    height: 58%;
-    /* width: 100%; */
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    margin: 0.5%;
-    padding-right: 1%;
-    padding-bottom: 0.5%;
-    min-width: 127.92px;
-
-}
-.fas{
-    /* color: black; */
-    margin: 0;
-}
-#badChart,#badChart2{
-    width: 90%;
-}
-.detail-con{
-    border: 7px solid orange;
-    /* width: 100%; */
-    /* min-width: 300px; */
-}
-@media (max-width: 800px) {
-    .board,.border-2,.dayWork{
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
-        height: auto;
-        width: 100%;
-    }
-    .dayWork{
-        height: 550px;
-    }
-    .mainmenu{
-        width: 100%;
-        height: 18%;
-        display: inline-block;
-    }
-    .border,.border2{
-        width: 450px;
-        margin-bottom: 1%;
-    }
-    #day-list{
-        width: 450px;
-    }
-
-    .th2-con{
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        /* justify-content: ; */
-    }
-    .list-con{
-        width: 400px;
-    }
-    .hide{
-        display: none;
-    }
-
-    .add-table{
-        display: flex;
-        flex-direction: column;
-        height: 283px;
-        /* width: 100px; */
-        overflow: scroll;
-    }
-    .detail-con{
-        overflow: scroll;
-    }
-    .mainmenu{
-        width: 100%;
-        height: 18%;
-        display: inline-block;
-    }
-    #menuPage1{
-        width: 100%;
-        display: inline-block;
-    } 
-    .bome-con{
-        display: flex;
-        flex-direction: column;
-    }
-    .bom-con,.process{
-        height: 400px;
-    }
-    .menuBut {
-        /* border: 1px solid red; */
-        text-align: center;
-        height: 32%;
-        line-height: 238%;
-    }
-    .menuPage {
-        /* position: relative; */
-        left: -1px;
-        width: 100%;
-        height: 455%;
-    }
-    .command-div,.command-loc{
-    overflow: scroll;
-    }
-    .page-num-con{
-        justify-content: center;
-    }
-    .add-con{
-        justify-content: right;
-    }
-    .select-body{
-        flex-direction: column;
-        margin-bottom: 5px;
-    }
-    .eraser-img{
-        margin-top: 5px;
-    }
-    .pop{
-        overflow: scroll;
-    }
-    .detail-table{
-        overflow: auto;
-    }
-    .mod-td{
-        width: 50%;
-    }
-	.hide{
-		display: none;
-	}
-}
-.confirm-con{
-    /* border: 1px solid red; */
-    text-align: right;
-    width: 100%;
-}
-.confirm{
-    display: inline-block;
-    text-align: center;
-    border: 1px solid darkgrey;
-    margin-right: 45px;
-    width: 50px;
-    cursor: pointer;
 }
 /* html에서 옮김 (끝)*/
 .main-menu-con{
@@ -865,6 +782,14 @@ form{
     justify-content: space-around;
     align-items: center;
 }
+.icon, .icon-sub{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0.5%;
+    padding-left: 1%;
+}
 .icon-sub {
     /* border: 10px solid red; */
     display: flex;
@@ -875,23 +800,17 @@ form{
     font-size: small;
 	align-items: center;
 }
-.border_line{
-    border-radius: 10px;
-    background-color: white;
-    /* border: 4px solid red; */
-    height: 93%;
-    width: 97%;
+.pre-page,.next-page{
+        width: 30%;
 }
-.bom-item-con{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-bottom: 1px solid #2f373a;
-    width: 70%;
+.bold{
+    font-weight: bold;
 }
-.mode-con{
-    /* border: 1px solid red; */
-    width: 112px;
-    display: flex;
-    justify-content: space-between;
+#cate,.submit{
+    background-color: #2f373a;
+    height: 25px;
+    color: white;
+}
+.select{
+    height: 21px;
 }
