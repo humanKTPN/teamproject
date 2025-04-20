@@ -20,7 +20,7 @@
         <div class="border_line">
 <!--           <div class="pop"> -->
 <!--             <div class="add-table"> -->
-              <form method="post" action="CNTRL_PR_Kwak">
+              <form method="post" action="prDel">
                 <table class="detail-table">
                   <tr>
                     <th class="detail-th">생산코드</th>

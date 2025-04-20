@@ -59,14 +59,14 @@ function init(){
             // 클릭했을때 해당 페이지로 넘어가는 Java Script
             if(e.target.textContent=='작업관리'){
                 // 작업관리 메인
-                window.location.href="/ktpn/"
+                window.location.href="/ktpn/pr"
             } else if (e.target.textContent=='생산관리'){
                 // 생산관리 메인 
                 window.location.href="#"
             } else if (e.target.textContent=='생산리포팅'){
                 // 생산리포팅 메인 
                 window.location.href="#"
-            } else if (e.target.textContent=='자재관리'){
+            } else if (e.target.textContent=='재고관리'){
                 // 자재관리 메인 
                 window.location.href="#"
             } else if (e.target.textContent=='품질관리'){

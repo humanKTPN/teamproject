@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.rt_1000mt">
+
+<select id="selectRt" resultType="kr.or.ktpn.dto.DTO_rt_1000mt" parameterType="kr.or.ktpn.dto.DTO_rt_1000mt">
+    SELECT *  
+      FROM tb_rt_1000mt
+    <where>
+        AND USE_YN = 'Y'
+        <if test="rt_cd != null and rt_cd != ''">
+           AND RT_CD= #{rt_cd}
+        </if>
+        <!-- 필요한 조건 추가 가능 -->
+        ORDER BY REG_DT DESC
+    </where>
+</select>
+
+<select id="addRt" 
+        resultType="kr.or.ktpn.dto.DTO_md_1000mt" 
+        parameterType="kr.or.ktpn.dto.DTO_md_1000mt">
+    SELECT A.*
+      FROM TB_MD_1000MT A,
+           TB_RT_1000MT B
+     WHERE A.USE_YN = 'Y'
+       AND A.MT_MNG_CD = B.RT_CD(+)
+       AND B.RT_CD IS NULL
+       AND A.MT_MNG_CD LIKE 'R%'
+</select>
+
+<insert id="insertRt"  parameterType="kr.or.ktpn.dto.DTO_rt_1000mt">
+
+INSERT INTO TB_RT_1000MT (RT_CD,RT_NM,ITEM_CD,RT_DESC,REG_DT,MOD_DT, USE_YN)
+VALUES (#{rt_cd},#{rt_nm},#{item_cd},#{rt_desc},TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'), 'Y')
+
+</insert>
+
+<update id="updateRt" parameterType="kr.or.ktpn.dto.DTO_rt_1000mt">
+       UPDATE tb_rt_1000mt
+       	  SET RT_DESC = #{rt_desc}
+        WHERE RT_CD = #{rt_cd}
+   </update>
+
+	
+</mapper>
+
+
+
+

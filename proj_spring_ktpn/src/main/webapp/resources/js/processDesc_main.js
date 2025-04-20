@@ -10,11 +10,11 @@ function init(){
         tbnm.addEventListener('click',function(e){
             console.log(e.target.textContent)
             if(e.target.textContent == '기준관리'){
-                window.location.href = 'masterdataManage_main_kwak.jsp'
+                window.location.href = '/ktpn/md'
             } else if(e.target.textContent == 'BOM'){
-                window.location.href = 'bom_main_kwak.jsp'
+                window.location.href = '/ktpn/bm'
             } else if(e.target.textContent == '공정'){
-                window.location.href = 'processDesc_main.jsp'
+                window.location.href = '/ktpn/rt'
             }
         })
     }
