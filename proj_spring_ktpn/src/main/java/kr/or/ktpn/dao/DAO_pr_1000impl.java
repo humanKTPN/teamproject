@@ -120,5 +120,14 @@ public class DAO_pr_1000impl implements DAO_pr_1000mt{
     	 return count;
      }
 
+   //생산관리관련 데이터
+     @Override
+ 	public List<DTO_pr_1000mt> selectDTO() {
+ 		
+ 		List<DTO_pr_1000mt> PR_1000MTDAO = sqlSession.selectList("mapper.TAK_PR_1100MTDTO.PR_1000MT");
+ 		System.out.println("PR_1000MTDAO : " + PR_1000MTDAO);
+ 		
+ 		return PR_1000MTDAO;
+ 	}
 
 }

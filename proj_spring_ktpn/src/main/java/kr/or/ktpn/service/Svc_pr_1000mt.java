@@ -17,6 +17,8 @@ public interface Svc_pr_1000mt {
 	public List<Map<String,Object>> selectMbList();
 	public int insertPr(@RequestParam DTO_pr_insert dto);
 	
+	//생산관리관련 데이터
+		public List<DTO_pr_1000mt> selectDAO();
 	
 }
  

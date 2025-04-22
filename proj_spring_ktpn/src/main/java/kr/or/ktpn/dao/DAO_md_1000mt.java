@@ -12,5 +12,9 @@ public interface DAO_md_1000mt {
 	public int insertEmp(DTO_md_1000mt dto);
 	public int updateMd(DTO_md_1000mt dto) ;
 	public int delMd(DTO_md_1000mt dto);
+
 	
+	//생산관리관련 데이터
+		public List<DTO_md_1000mt> selectDTO_P();
+		public List<DTO_md_1000mt> selectDTO_L();
 }

@@ -71,5 +71,18 @@ public class DAO_md_1000impl implements DAO_md_1000mt{
     	 return count;
      }
 
+   //생산관리관련 데이터
+     @Override
+     public List<DTO_md_1000mt> selectDTO_P() {
+    	 List<DTO_md_1000mt> result = sqlSession.selectList("mapper.TAK_PR_1100MTDTO.MD_1000MT_P");
+    	 System.out.println("result : " + result);
+    	 return result;
+     }
+     @Override
+     public List<DTO_md_1000mt> selectDTO_L() {
+    	 List<DTO_md_1000mt> result = sqlSession.selectList("mapper.TAK_PR_1100MTDTO.MD_1000MT_L");
+    	 System.out.println("result : " + result);
+    	 return result;
+     }
 
 }
