@@ -23,28 +23,52 @@ public class TAK_PR_1100MTDAOImpl implements TAK_PR_1100MTDAO {
 		return PR_1100MTDAO;
 	}
 
-//	@Override
-//	public List<TAK_PR_1100MTDTO> selectDTO_A() {
-//		List<TAK_PR_1100MTDTO> PR_1100MTDAO_A = sqlSession.selectList("mapper.TAK_PR_1100MTDTO.PR_1100MT_A");
-//		System.out.println("PR_1100MTDAO_A : " + PR_1100MTDAO_A);
-//		
-//		return PR_1100MTDAO_A;
-//	}
-//
-//	@Override
-//	public List<TAK_PR_1100MTDTO> selectDTO_B() {
-//		List<TAK_PR_1100MTDTO> PR_1100MTDAO_B = sqlSession.selectList("mapper.TAK_PR_1100MTDTO.PR_1100MT_B");
-//		System.out.println("PR_1100MTDAO_B : " + PR_1100MTDAO_B);
-//		
-//		return PR_1100MTDAO_B;
-//	}
-//
-//	@Override
-//	public List<TAK_PR_1100MTDTO> selectDTO_C() {
-//		List<TAK_PR_1100MTDTO> PR_1100MTDAO_C = sqlSession.selectList("mapper.TAK_PR_1100MTDTO.PR_1100MT_C");
-//		System.out.println("PR_1100MTDAO_C : " + PR_1100MTDAO_C);
-//		
-//		return PR_1100MTDAO_C;
-//	}
+	@Override
+	public List<TAK_PR_1100MTDTO> selectDTO_A() {
+		List<TAK_PR_1100MTDTO> PR_1100MTDAO_A = sqlSession.selectList("mapper.TAK_PR_1100MTDTO.PR_1100MT_A");
+		System.out.println("PR_1100MTDAO_A : " + PR_1100MTDAO_A);
+		
+		return PR_1100MTDAO_A;
+	}
+
+	@Override
+	public List<TAK_PR_1100MTDTO> selectDTO_B() {
+		List<TAK_PR_1100MTDTO> PR_1100MTDAO_B = sqlSession.selectList("mapper.TAK_PR_1100MTDTO.PR_1100MT_B");
+		System.out.println("PR_1100MTDAO_B : " + PR_1100MTDAO_B);
+		
+		return PR_1100MTDAO_B;
+	}
+
+	@Override
+	public List<TAK_PR_1100MTDTO> selectDTO_C() {
+		List<TAK_PR_1100MTDTO> PR_1100MTDAO_C = sqlSession.selectList("mapper.TAK_PR_1100MTDTO.PR_1100MT_C");
+		System.out.println("PR_1100MTDAO_C : " + PR_1100MTDAO_C);
+		
+		return PR_1100MTDAO_C;
+	}
+//insert
+	@Override
+	public int insertDTO(TAK_PR_1100MTDTO dto) {
+		int inserCount = sqlSession.insert("mapper.TAK_PR_1100MTDTO.PM_1100MT_insert", dto);
+		System.out.println("insertPR_1100MTDAO : " + inserCount);
+		
+		return inserCount;
+	}
+//	pm_popup 수정
+	@Override
+	public int updateDTO(TAK_PR_1100MTDTO dto) {
+		int updateCount  = sqlSession.update("mapper.TAK_PR_1100MTDTO.PM_1100MT_update", dto);
+		System.out.println("updateCount  : " + updateCount );
+		
+		return updateCount;
+	}
+//	pm_popup 완료
+	@Override
+	public int completeDTO(TAK_PR_1100MTDTO dto) {
+		int updateCount  = sqlSession.update("mapper.TAK_PR_1100MTDTO.PM_1100MT_complete", dto);
+		System.out.println("updateCount  : " + updateCount );
+		
+		return updateCount;
+	}
 
 }

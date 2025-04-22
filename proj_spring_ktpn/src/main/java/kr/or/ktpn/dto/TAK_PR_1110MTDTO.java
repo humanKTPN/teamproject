@@ -11,4 +11,5 @@ public class TAK_PR_1110MTDTO {
 	String prod_strt_dt;			//생산시작일자
 	String prod_end_dt;				//생산완료일자
 	String item_cd;
+	String prod_end_cob;
 }

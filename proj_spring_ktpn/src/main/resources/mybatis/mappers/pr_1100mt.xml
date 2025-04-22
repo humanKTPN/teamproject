@@ -4,36 +4,179 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.TAK_PR_1100MTDTO">
 
-<!-- 회원정보 테이블 -->
-<select id="MB_1000MT" resultType="TAK_MB_1000MTDTO" parameterType="TAK_MB_1000MTDTO">
-	select * from TB_MB_1000MT
-</select>
-<!-- 기준관리 테이블 -->
-<select id="MD_1000MT" resultType="TAK_MD_1000MTDTO" parameterType="TAK_MD_1000MTDTO">
-	select * from TB_MD_1000MT WHERE MT_MNG_CD LIKE 'P%'
-</select>
-<!-- 작업지시서 테이블 -->
-<select id="PR_1000MT" resultType="TAK_PR_1000MTDTO" parameterType="TAK_PR_1000MTDTO">
-	select * from TB_PR_1000MT
-</select>
-<!-- 생산 테이블 -->
-<select id="PR_1100MT" resultType="TAK_PR_1100MTDTO" parameterType="TAK_PR_1100MTDTO">
-	select * from TB_PR_1100MT
-</select>
-<!-- 생산일정 테이블 -->
-<select id="PR_1110MT" resultType="TAK_PR_1110MTDTO" parameterType="TAK_PR_1110MTDTO">
-	select * from TB_PR_1110MT
-</select>
-<!-- 생산 리포팅 테이블 -->
-<select id="PR_1200MT" resultType="TAK_PR_1200MTDTO" parameterType="TAK_PR_1200MTDTO">
-	select * from TB_PR_1200MT
-</select>
+	<!-- 회원정보 테이블 -->
+	<!-- <select id="MB_1000MT" resultType="TAK_MB_1000MTDTO" parameterType="TAK_MB_1000MTDTO"> -->
+	<!-- select * from TB_MB_1000MT -->
+	<!-- </select> -->
+	<!-- 기준관리 테이블 -->
+	<select id="MD_1000MT_P" resultType="DTO_md_1000mt"
+		parameterType="DTO_md_1000mt">
+		select * from TB_MD_1000MT WHERE MT_MNG_CD LIKE 'P%'
+	</select>
+	<select id="MD_1000MT_L" resultType="DTO_md_1000mt"
+		parameterType="DTO_md_1000mt">
+		SELECT * FROM TB_MD_1000MT WHERE MT_MNG_CD LIKE 'L%'
+	</select>
+	<!-- 작업지시서 테이블 -->
+	<select id="PR_1000MT" resultType="DTO_pr_1000mt"
+		parameterType="DTO_pr_1000mt">
+		select a.*
+		from tb_pr_1000mt a
+		, tb_pr_1100mt b
+		where 1=1
+		and a.PROD_CD = b.PROD_CD (+)
+		and b.PROD_CD is null
+	</select>
 
-<!-- <insert id=""> -->
-<!-- 		INSERT INTO TB_PR_1100MT (PROD_CD, MT_MNG_CD, LIUN_NM, ITEM_NM, ITEM_CD, PROD_STRT_TIME, PROD_END_TIME, INDC_QNTT, PROD_QNTT, WORK_NM, EQPM_OPRT_STTS_VAL, PROD_END_YN, DFC_RT) -->
-<!--     	values(?, ?, ?, ?, ?, to_char(sysdate, 'yyyy/mm/dd hh:mm:ss'), '00:00:00', ?, ?, ?,'Y', 'N', null ) -->
-<!-- </insert> -->
+
+	<!-- 생산 테이블 -->
+	<select id="PR_1100MT" resultType="TAK_PR_1100MTDTO"
+		parameterType="TAK_PR_1100MTDTO">
+		select * from TB_PR_1100MT
+	</select>
+	<!-- 생산 테이블 A라인 -->
+	<select id="PR_1100MT_A" resultType="TAK_PR_1100MTDTO"
+		parameterType="TAK_PR_1100MTDTO">
+		select * from TB_PR_1100MT WHERE liun_nm LIKE 'A%'
+	</select>
+	<!-- 생산 테이블 B라인 -->
+	<select id="PR_1100MT_B" resultType="TAK_PR_1100MTDTO"
+		parameterType="TAK_PR_1100MTDTO">
+		select * from TB_PR_1100MT WHERE liun_nm LIKE 'B%'
+	</select>
+	<!-- 생산 테이블 C라인 -->
+	<select id="PR_1100MT_C" resultType="TAK_PR_1100MTDTO"
+		parameterType="TAK_PR_1100MTDTO">
+		select * from TB_PR_1100MT WHERE liun_nm LIKE 'C%'
+	</select>
+	<!-- 생산일정 테이블 -->
+	<select id="PR_1110MT" resultType="TAK_PR_1110MTDTO"
+		parameterType="TAK_PR_1110MTDTO">
+		select * from TB_PR_1110MT WHERE PROD_END_COB LIKE 'N'
+	</select>
+	<!-- 생산 리포팅 테이블 -->
+	<select id="PR_1200MT" resultType="TAK_PR_1200MTDTO"
+		parameterType="TAK_PR_1200MTDTO">
+		select * from TB_PR_1200MT
+	</select>
+
+	<!-- <insert id=""> -->
+	<!-- INSERT INTO TB_PR_1100MT (PROD_CD, MT_MNG_CD, LIUN_NM, ITEM_NM, ITEM_CD, 
+		PROD_STRT_TIME, PROD_END_TIME, INDC_QNTT, PROD_QNTT, WORK_NM, EQPM_OPRT_STTS_VAL, 
+		PROD_END_YN, DFC_RT) -->
+	<!-- values(?, ?, ?, ?, ?, to_char(sysdate, 'yyyy/mm/dd hh:mm:ss'), '00:00:00', 
+		?, ?, ?,'Y', 'N', null ) -->
+	<!-- </insert> -->
 	
+<!-- 	pm_popup insert -->
+	<insert id="PM_1100MT_insert" parameterType="TAK_PR_1100MTDTO">
+		INSERT INTO TB_PR_1100MT (
+		PROD_CD,
+		MT_MNG_CD,
+		LIUN_NM,
+		ITEM_NM,
+		ITEM_CD,
+		PROD_STRT_TIME,
+		PROD_END_TIME,
+		INDC_QNTT,
+		PROD_QNTT,
+		WORK_NM,
+		EQPM_OPRT_STTS_VAL,
+		PROD_END_YN,
+		DFC_RT
+		)
+		VALUES (
+		#{prod_cd},
+		#{mt_mng_cd},
+		#{liun_nm},
+		#{item_nm},
+		#{item_cd},
+		TO_CHAR(SYSDATE, 'yyyy/mm/dd hh24:mi:ss'),
+		'00:00:00',
+		#{indc_qntt},
+		#{prod_qntt},
+		#{work_nm},
+		'Y',
+		'N',
+		NULL)
+
+	</insert>
+	<!-- pm_popup 수정 -->
+	<update id="PM_1100MT_update" parameterType="TAK_PR_1100MTDTO">
+		UPDATE TB_PR_1100MT
+		SET
+		MT_MNG_CD = #{mt_mng_cd},
+		LIUN_NM = #{liun_nm},
+		ITEM_NM = #{item_nm},
+		ITEM_CD = #{item_cd},
+		PROD_STRT_TIME = TO_CHAR(SYSDATE, 'yyyy/mm/dd
+		hh24:mi:ss'),
+		PROD_END_TIME = '00:00:00',
+		INDC_QNTT = #{indc_qntt},
+		PROD_QNTT = #{prod_qntt},
+		WORK_NM = #{work_nm},
+		EQPM_OPRT_STTS_VAL =
+		'Y',
+		PROD_END_YN = 'N',
+		DFC_RT = #{dfc_rt}
+		WHERE PROD_CD = #{prod_cd}
+	</update>
+
+	<!-- pm_popup 완료 -->
+	<update id="PM_1100MT_complete" parameterType="TAK_PR_1100MTDTO">
+		UPDATE
+		TB_PR_1100MT SET
+		PROD_END_TIME = TO_CHAR(SYSDATE, 'yyyy/mm/dd
+		hh24:mi:ss'),
+		EQPM_OPRT_STTS_VAL = 'N',
+		PROD_END_YN = 'Y',
+		DFC_RT =
+		#{dfc_rt}
+		WHERE PROD_CD = #{prod_cd}
+	</update>
+	
+	<!-- 	pr_popup insert -->
+	<insert id="PR_1110MT_insert" parameterType="TAK_PR_1110MTDTO">
+	  INSERT INTO TB_PR_1110MT (
+    PROD_PLN_CD,
+    ITEM_NM,
+    TRG_PROD_CNT,
+    PROD_STRT_DT,
+    PROD_END_DT,
+    ITEM_CD,
+    PROD_END_COB
+  ) VALUES (
+    'PR_' || TO_CHAR(SYSDATE, 'yymm') || '_' || LPAD(SQ_PR_1110MT.NEXTVAL, 4, '0'),
+    #{item_nm},
+    #{trg_prod_cnt},
+    #{prod_strt_dt},
+    #{prod_end_dt},
+    #{item_cd},
+    'N'
+  )
+	</insert>
+	<!-- pr_popup 수정 -->
+	<update id="PR_1110MT_update" parameterType="TAK_PR_1110MTDTO">
+		UPDATE TB_PR_1110MT
+		SET
+		ITEM_NM = #{item_nm},
+		TRG_PROD_CNT = #{trg_prod_cnt},
+		PROD_STRT_DT =
+		#{prod_strt_dt},
+		PROD_END_DT = #{prod_end_dt},
+		ITEM_CD = #{item_cd}
+		WHERE
+		PROD_PLN_CD = #{prod_pln_cd}
+	</update>
+	<!-- pr_popup 완료 -->
+	<update id="PR_1110MT_complete" parameterType="TAK_PR_1110MTDTO">
+		UPDATE
+		TB_PR_1110MT
+		SET
+		PROD_END_COB = 'Y'
+		WHERE
+		PROD_PLN_CD = #{prod_pln_cd}
+	</update>
 </mapper>
 
 
