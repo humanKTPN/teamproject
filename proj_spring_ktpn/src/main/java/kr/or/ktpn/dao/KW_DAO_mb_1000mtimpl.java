@@ -20,5 +20,12 @@ public class KW_DAO_mb_1000mtimpl implements KW_DAO_mb_1000mt {
 		System.out.println("mb list : "+ list);
 		return list;
 	}
+	
+	@Override
+	public KW_DTO_MB_1000MT selectMemberId(String id) {
+		KW_DTO_MB_1000MT result = sqls.selectOne("mapper.TB_MB_1000MT.selectMbOne", id);
+		System.out.println("mbone result : "+ result);
+		return result;
+	}
 
 }
