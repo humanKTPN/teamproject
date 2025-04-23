@@ -26,7 +26,6 @@
 </head>
 
 <body>
-
 	<div class="menuPage-con">
 		<!-- html 들어갈 곳 -->
 		<div class='pageAll'>
@@ -58,44 +57,47 @@
 						<div>
 							<table class='boardtable'>
 								<tr class='boardlist th' style="height: 30px;">
-									<td class='num'>번호</td>
-									<td class='writetitle'>제목</td>
-									<td class='writeuser'>작성자</td>
-									<td class='writedate'>작성일</td>
-									<td class='viewcount'>조회수</td>
+									<th class='num'>번호</th>
+									<th class='writetitle'>제목</th>
+									<th class='writeuser'>작성자</th>
+									<th class='writedate'>작성일</th>
+									<th class='viewcount'>조회수</th>
 								</tr>
-								<tr class='boardlist' style="height: 30px;">
-									<td class='num'>3</td>
-									<td class='writetitle'>오늘 식단표</td>
-									<td class='writeuser'>직원1</td>
-									<td class='writedate'>2025-02-03</td>
-									<td class='viewcount'>47</td>
-								</tr>
-								<tr class='boardlist' style="height: 30px;">
-									<td class='num'>2</td>
-									<td class='writetitle'>신규직원 오리엔테이션 안내</td>
-									<td class='writeuser'>직원1</td>
-									<td class='writedate'>2025-02-03</td>
-									<td class='viewcount'>65</td>
-								</tr>
-								<tr class='boardlist' style="height: 30px;">
-									<td class='num'>1</td>
-									<td class='writetitle'>사내규정</td>
-									<td class='writeuser'>직원1</td>
-									<td class='writedate'>2025-02-03</td>
-									<td class='viewcount'>59</td>
-								</tr>
+								<c:forEach var="dto" items="${list}">
+									<tr class='boardlist' style="height: 30px;">
+										<td class="wnum">${dto.BRD_NO}</td>
+										<td class="writetitle"><a href="writeview_Nam?BRD_NO=${dto.BRD_NO}">${dto.TTL_NM}</a></td>
+										<td class="writeuser">${dto.ID}</td>
+										<td class='writedate'>${dto.REG_DTTM}</td>
+										<td class='viewcount'>${dto.VW_CNT}</td>
+									</tr>
+								</c:forEach>
+								<c:if test="${empty list}">
+									<p> (테스트용)list가 null이거나 비어 있습니다</p>
+									<p> 조회된 결과가 없습니다.</p>
+								</c:if>
+			
 							</table>
 						</div>
 						<div class="page-num-con">
 							<div class="page-num">
-								<div class="page pre-page">< 이전</div>
-								<div class="page">
-									<span class="num bold">1</span> <span class="num">2</span> <span
-										class="num">3</span> <span class="num">4</span> <span
-										class="num">5</span>
-								</div>
-								<div class="page next-page">다음 ></div>
+							
+								<c:if test="${currentPage > 1}">
+								    <a href="notice?page=${currentPage - 1}" class="page pre-page">< 이전</a>
+								</c:if>
+									<c:forEach var="i" begin="1" end="${totalPages}">
+								        <c:choose>
+									        <c:when test="${i == currentPage}">
+									            <a href="notice?page=${i}" style="font-weight:bold;">${i}</a>
+									        </c:when>
+									        <c:otherwise>
+									            <a href="notice?page=${i}">${i}</a>
+									        </c:otherwise>
+									    </c:choose>
+								    </c:forEach>
+								<c:if test="${currentPage < totalPages}">
+								    <a href="notice?page=${currentPage + 1}" class="page next-page">다음 ></a>
+								</c:if>
 							</div>
 							<div class="add-con">
 								<div class="add">추가</div>

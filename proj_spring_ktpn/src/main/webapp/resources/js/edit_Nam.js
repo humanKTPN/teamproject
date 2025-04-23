@@ -1,7 +1,5 @@
 window.addEventListener('load',init)
 
-                
-                
 function init(){
 
     //메뉴 열었다 닫았다 하기<시작>
@@ -63,92 +61,62 @@ function init(){
                 window.location.href = "noticeBoard_Nam.jsp"
             } 
         })
-    }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝
+    }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
 
-    console.log('게시판에 들어옴')
-
-    const search = document.querySelector("#search");
-    search.addEventListener('click', filter)
-    function filter() {
-        const optionS = document.querySelector('#viewfilter')
-        const optionT = document.querySelector('#fillvalue')
-        console.log(optionS.value)
-        console.log(optionT.value)
-
-        // 필터링 후 표시(미구현)
+    console.log('수정화면 진입')
+    trim()
+    // document.querySelector('#content').addEventListener('change', trim)
+    function trim(){
+        let content_T = document.querySelector('#content')
+        if (content_T.value) {
+            content_T.value = content_T.value.trim().replace(/\s*\n\s*/g, "\n");
+            console.log('공백제거')
+        }
     }
 
-    const write = document.querySelector('.add');
-    write.addEventListener('click', writeprocess)
-    function writeprocess() {
-        console.log("글쓰기 페이지 진입")
-        window.location.href = "writeprocess_nam"
-    }
-    
-    // // 페이지표시부분 미구현
-    // const page1 = document.querySelector('.pnum1')
-    // page1.addEventListener('click', function () {
-    //     const first = document.querySelector('.pum1')
-    //     console.log('1페이지 진입')
-    // })
-
-
-    // const page2 = document.querySelector('.pnum2')
-    // page2.addEventListener('click', function () {
-    //     const second = document.querySelector('.pum2')
-    //     console.log('2페이지 진입')
-    // })
-
-    // const page3 = document.querySelector('.pnum3')
-    // page3.addEventListener('click', function () {
-    //     const thrid = document.querySelector('.pum3')
-    //     console.log('3페이지 진입')
-    // })
-
-    // const page4 = document.querySelector('.pnum4')
-    // page4.addEventListener('click', function () {
-    //     const fourth = document.querySelector('.pum4')
-    //     console.log('4페이지 진입')
-    // })
-
-    // const page5 = document.querySelector('.pnum5')
-    // page5.addEventListener('click', function () {
-    //     const fifth = document.querySelector('.pum5')
-    //     console.log('5페이지 진입')
-    // })
-
-    const nums = document.querySelectorAll('.pnum')        
-
-    // for(let i =0; i< nums.length; i++){
-    //     nums.forEach(num => { num.addEventListener('click',function(e){
-    //         nums.forEach(nm => nm.classList.remove('bold'));
-    //         e.target.classList.add('bold')
-    //     })
-    // });
+    // document.querySelector('.edit').addEventListener('click', edit)
+    // function edit(e){
+    //     // e.preventDefault();
+    //     let edit = document.querySelector('.edit')
+    //     // let param = {
+    //         const req = document.querySelector('input[name="BRD_NO"]').value;
+    //     //     TTL_NM : document.querySelector('input[name="title"]').value,
+    //     //     BRD_DESC : document.querySelector('textarea[name="contents"]').value,
+    //     //     BLND_YN : document.querySelector('input[name="screat"]').value,
+    //     //     REG_DTTM : document.querySelector('input[name="wt"]').value,
+    //     //     MOD_DTTM : document.querySelector('input[name="mt"]').value,
+    //     //     ID : document.querySelector('input[name="wid"]').value
+    //     // }
+    //     console.log(req)
+    //     // const xhr = new XMLHttpRequest()
+    //     // console.log(xhr)
+    //     // xhr.open('post', 'edit_Nam')
+    //     // xhr.setRequestHeader('Content-Type', 'application/json')
+    //     // console.log(param)
+    //     // xhr.send( JSON.stringify(param) )
+    //     // xhr.onload = function(){
+    //         // if(req == '1'){
+    //         //     alert('수정완료')
+    //             window.location.href = "writeview_Nam?BRD_NO=" + req;
+    //         // } else {
+    //         //     alert('수정실패')
+    //         // }
+    //     // }
     // }
 
-    for(let i =0; i< nums.length; i++){
-        nums[i].addEventListener('click',function(e){
-            for(let j=0; j<nums.length; j++){
-                nums[j].classList.remove('bold')
-                e.target.classList.add('bold')
-            }
-        })
+    document.querySelector('.cancel').addEventListener('click', cancel)
+    function cancel(){
+        let cancel = document.querySelector('.cancel')
+        console.log('수정취소')
+        window.location.href = "writeview_Nam.jsp"
     }
        // 로그아웃 버튼 
-       document.querySelector('.subBut').addEventListener('click',function(){
+    document.querySelector('.subBut').addEventListener('click',function(){
         window.location.href = "loginpage_Nam.jsp"
-      })
-  
-      // 로고버튼
-      document.querySelector('.logo').addEventListener('click',function(){
-        window.location.href = 'dashBoard_kwak.jsp'
-      })
-      const list =  document.querySelectorAll('.boardlist')
+    })
 
-      for(line of list){
-        line.addEventListener('click',function(){
-            window.location.href = 'dashBoard_kwak.jsp'
-        })
-      }
+      // 로고버튼
+    document.querySelector('.logo').addEventListener('click',function(){
+        window.location.href = 'dashBoard_kwak.jsp'
+    })
 }
