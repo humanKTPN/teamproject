@@ -19,9 +19,11 @@
 	
 <!-- 	</insert> -->
 
-<!-- 	<update id = ""> -->
-	
-<!-- 	</update> -->
+	<update id = "updatemb" parameterType = "nboardDTO">
+		update tb_mb_1000mt
+		set pw = #{PW}
+		where id = #{ID}
+	</update>
 	
 <!-- 	<delete id = ""> -->
 	
