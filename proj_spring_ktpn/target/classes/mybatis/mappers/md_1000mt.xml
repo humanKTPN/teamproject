@@ -8,7 +8,7 @@
     SELECT *  
       FROM tb_md_1000mt
     <where>
-        AND USE_YN = 'Y'
+        USE_YN = 'Y'
         <if test="MT_MNG_CD != null and MT_MNG_CD != ''">
            AND MT_MNG_CD = #{MT_MNG_CD}
         </if>
@@ -16,8 +16,9 @@
         <if test="MT_MNG_NM != null and MT_MNG_NM != ''">
             AND MT_MNG_NM LIKE CONCAT('%', #{MT_MNG_NM}, '%')
         </if>
-        ORDER BY REG_DT DESC
+        
     </where>
+   ORDER BY REG_DT DESC
 </select>
 
 	<!-- 추가(insert) SQL 구문 -->
@@ -63,7 +64,8 @@
         UPDATE tb_md_1000mt
         SET MT_MNG_NM = #{MT_MNG_NM},
             MT_MNG_DESC = #{MT_MNG_DESC},
-            TP_CLS_VAL = #{TP_CLS_VAL}
+            TP_CLS_VAL = #{TP_CLS_VAL},
+            IMG_PATH_ADR = #{IMG_PATH_ADR}
         WHERE MT_MNG_CD = #{MT_MNG_CD}
     </update>
     
@@ -72,6 +74,9 @@
            SET USE_YN = 'N'
         WHERE MT_MNG_CD = #{MT_MNG_CD}
     </update>
+    
+    
+
 	
 </mapper>
 

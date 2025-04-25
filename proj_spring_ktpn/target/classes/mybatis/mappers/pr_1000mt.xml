@@ -9,8 +9,29 @@
       FROM tb_pr_1000mt
     <where>
         AND USE_YN = 'Y'
-        ORDER BY REG_DT DESC
+
+    <if test="categories != null and categories != '전체' and key != null and key != ''">
+    	<if test= "categories == '품목코드'">
+    		AND UPPER(ITEM_CD) LIKE '%'||UPPER(#{key})||'%'
+    	</if>
+    	<if test= "categories == '담당자명'">
+    		AND MNGR_NM LIKE '%'||#{key}||'%'
+    	</if>
+    	<if test= "categories == '호기코드'">
+    		AND UPPER(LIUN_CD) LIKE '%'||UPPER(#{key})||'%'
+    	</if>
+    </if>
+    
+    <if test="str_dt != null and str_dt != ''">
+    		AND PROD_DT BETWEEN replace(#{str_dt},'-','') and replace(#{end_dt},'-','')     
+    </if>
+    
+
     </where>
+        ORDER BY REG_DT DESC
+    
+    
+    
 </select>
 
 <select id="dePrList" resultType="java.util.Map" parameterType="kr.or.ktpn.dto.DTO_pr_1000mt">
@@ -30,8 +51,8 @@
 	       TB_BM_1000MT  B,
 	       TB_RT_1000MT  C
 	 WHERE A.PROD_CD    = #{prod_cd}
-	   AND A.ITEM_CD    = B.ITEM_CD
-	   AND B.ITEM_CD    = C.ITEM_CD
+	   AND A.ITEM_CD    = B.ITEM_CD(+)
+	   AND B.ITEM_CD    = C.ITEM_CD(+)
  </select>
 
 
@@ -50,11 +71,11 @@
 	       TB_PR_1000MT B,
 	       TB_BM_1000MT C,
 	       TB_RT_1000MT D
-	 WHERE A.ITEM_CD = B.ITEM_CD(+)
-	   AND A.ITEM_CD = C.ITEM_CD
-	   AND A.ITEM_CD = D.ITEM_CD
-	   AND B.ITEM_CD IS NULL
-	   AND A.ITEM_CD IS NOT NULL
+	 WHERE A.PROD_PLN_CD = B.PROD_PLN_CD(+)
+	   AND A.ITEM_CD = C.ITEM_CD (+)
+	   AND A.ITEM_CD = D.ITEM_CD (+)
+	   AND B.PROD_PLN_CD IS NULL
+	   AND A.PROD_PLN_CD IS NOT NULL
   </select>
   
  <select id="LineList" 
@@ -108,6 +129,11 @@ VALUES (
 )
 
 </insert>
+
+<delete id="delPr" parameterType="String">
+    DELETE FROM TB_PR_1000MT
+    WHERE PROD_CD = #{prod_cd}
+</delete>
 
 
 

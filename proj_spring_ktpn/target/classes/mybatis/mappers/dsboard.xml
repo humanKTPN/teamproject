@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.dsboard">
+
+<select id="selectMr" resultType="kr.or.ktpn.dto.MrInventoryDto" parameterType="kr.or.ktpn.dto.MrInventoryDto">
+
+	 SELECT MTRL_NM        AS itemName,
+           CRNT_AFTR_CNT  AS quantity
+      FROM tb_mr_1000mt
+
+</select>
+
+	<!-- 추가(insert) SQL 구문 -->
+	
+	 <!-- 생산량 조회 -->
+  <select id="selectProductionList"
+          resultType="kr.or.ktpn.dto.ProductionDto"
+          parameterType="map">
+		   SELECT
+		     a.PROD_END_TIME AS period,
+		     a.INDC_QNTT  AS targetQty,
+		     a.PROD_QNTT  AS actualQty
+		   FROM (
+		   			select a.* 
+                         , REGEXP_REPLACE( PROD_STRT_TIME,
+							               '^(\d{4})/(\d{2})/(\d{2}).*',
+							               '\1\2\3'
+							             ) AS yyyymmdd
+          			  from TB_PR_1100MT a
+		        )a
+		   
+		   <where>
+		      and to_number(a.yyyymmdd) = to_number(to_char(sysdate, 'yyyymmdd'))
+		      
+		     <if test="productName != null and productName != ''">
+		       AND ITEM_NM = #{productName}
+		     </if>
+		   </where>
+		   ORDER BY PROD_END_TIME
+  </select>
+  
+  
+  
+  <select id="selectTodayWorkOrders"
+          parameterType="string"
+          resultType="kr.or.ktpn.dto.ProductionDto">
+    SELECT PROD_CD,
+           ITEM_CD,
+           INDC_QNTT
+      FROM TB_PR_1000MT
+     WHERE PROD_DT = #{today}
+     ORDER BY PROD_CD
+  </select>
+    
+
+	
+</mapper>
+
+
+
+

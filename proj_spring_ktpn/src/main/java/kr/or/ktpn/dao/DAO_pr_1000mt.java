@@ -22,7 +22,8 @@ public interface DAO_pr_1000mt {
 	public int addPr(DTO_pr_insert dto);
 	public int delPr(DTO_pr_insert dto);
 
-	
+//	생산관리 데이터 작업전
+	public List<DTO_pr_1000mt> selectDTO_N();	
 	
 	
 }
