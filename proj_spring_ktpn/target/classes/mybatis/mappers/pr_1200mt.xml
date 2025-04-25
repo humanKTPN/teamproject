@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TAK_PR_1200MTDTO">
+
+	<!-- 일별 생산량 -->
+	<select id="pr_1100MT_day" resultType="TAK_PR_1100MTDTO"
+		parameterType="TAK_PR_1100MTDTO">
+		SELECT
+		TRUNC(TO_DATE(PROD_END_TIME, 'YYYY-MM-DD HH24:MI:SS')) AS production_date,
+		SUM(PROD_QNTT) AS total_quantity
+		FROM
+		TB_PR_1100MT
+		WHERE
+		PROD_END_YN LIKE 'Y%'
+		AND TO_DATE(PROD_END_TIME, 'YYYY-MM-DD HH24:MI:SS') &gt;= TRUNC(SYSDATE) - 7
+		AND TO_DATE(PROD_END_TIME, 'YYYY-MM-DD HH24:MI:SS') &lt; TRUNC(SYSDATE)
+		GROUP BY
+		TRUNC(TO_DATE(PROD_END_TIME, 'YYYY-MM-DD HH24:MI:SS'))
+		ORDER BY
+		production_date
+	</select>
+
+</mapper>

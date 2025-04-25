@@ -23,7 +23,7 @@ import kr.or.ktpn.service.Svc_pr_1000mt;
 import kr.or.ktpn.service.TAK_Svc_pr_1100mt;
 import kr.or.ktpn.service.TAK_Svc_pr_1110mt;
 
-@Controller
+@Controller 
 public class TAK_Ctrl_pr_1100mt {
 
 	@Autowired

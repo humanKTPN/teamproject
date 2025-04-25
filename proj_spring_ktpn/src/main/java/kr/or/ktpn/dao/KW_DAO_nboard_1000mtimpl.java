@@ -14,7 +14,7 @@ import kr.or.ktpn.dto.KW_DTO_BR_1000MT;
 public class KW_DAO_nboard_1000mtimpl implements KW_DAO_nboard_1000mt {
 
 	@Autowired
-	SqlSession sqls;
+	SqlSession sqls; 
 	
 	@Override
 	public List<KW_DTO_BR_1000MT> selectnBoard(){
