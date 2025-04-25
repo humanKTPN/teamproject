@@ -27,7 +27,7 @@
                         <div class="container">
                         <div class="border-1">
                             <div class="border-top">
-                                <div class="title">작업관리</div>
+                                <div class="title">작업관리<button type="button" class="mView" id="pr">더보기</button></div>
                                 <div class="dayWork" media="screen">
                                     <div id = "dayWork-board" >
                                         <div id = "day-list">
@@ -63,7 +63,7 @@
                     </div>
                         <div class="border-2">
                             <div class="border">
-                                <div class="title">재고현황</div>
+                                <div class="title">재고현황<button type="button" class="mView" id="mr">더보기</button></div>
                                 <div id="bad">
                                     <div id = "badChart">
                                         <canvas id = "bdChart"></canvas>
@@ -71,17 +71,17 @@
                                 </div>
                             </div>
                             <div class="border2">
-                                <div class="title">생산량 현황</div>
+                                <div class="title">생산량 현황<button type="button" class="mView" id="prd">더보기</button></div>
                                 <div id="tempHu">
                                     <div class="th2-con">
                                         <select value="제품명" id="productSelect">
                                             <option>싹싹지우개</option>
                                             <option>처음처럼지우개</option>
                                             <option>다지우개</option>
-                                            <option>하츄핑지우개</option>
+                                            <option selected>하츄핑지우개</option>
                                         </select>
                                         <div id = "thchart-con">
-                                            <canvas id="thchart" style="width: 30vw; height: 20vw; "></canvas>
+                                            <canvas id="thchart" style="width: 30vw; height: 230px; "></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -185,12 +185,24 @@
 //                 x: { title: { display: true, text: '기간' } },
 //                 y: { title: { display: true, text: '수량' } }
               },
-              responsive: false
+              responsive: false,
+              devicePixelRatio: 2
             }
           });
         })
         .catch(err => console.error("생산 데이터 로드 실패:", err));
     }
+    
+    document.querySelector('#pr').addEventListener('click',function(){
+        window.location.href = '/ktpn/pr'
+      })
+
+      document.querySelector('#mr').addEventListener('click',function(){
+        window.location.href = '/ktpn/mainmp'
+      })
+      document.querySelector('#prd').addEventListener('click',function(){
+        window.location.href = '/ktpn/tb_pr_mt2'
+      })
   </script>
 </body>
 </html>

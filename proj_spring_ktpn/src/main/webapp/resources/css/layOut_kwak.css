@@ -573,6 +573,7 @@ body{
     width: 13%;
     text-align: center;
     min-width: 268px;
+    cursor : pointer;
 }
 .icon-sub{
     /* border: 10px solid red; */
@@ -581,4 +582,7 @@ body{
     display: flex;
     justify-content: space-around;
     min-width: 268px;
+}
+.subBut{
+	cursor : pointer;
 }

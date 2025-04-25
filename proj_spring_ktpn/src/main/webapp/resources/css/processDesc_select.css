@@ -11,17 +11,17 @@ body{
     width: 100%;
     border: 5px solid #2f373a;
 }
-#main-menu {
-    border: 1px solid rgba(255, 255, 255, 0.267);
-    background-color: #2f373a;
-    width: 19.8%;
-    height: 80px;
-    text-align: center;
-    cursor: pointer;
-    line-height: 80px;
-    color: white;
-    font-size: 100%;
-}
+/* #main-menu { */
+/*     border: 1px solid rgba(255, 255, 255, 0.267); */
+/*     background-color: #2f373a; */
+/*     width: 19.8%; */
+/*     height: 80px; */
+/*     text-align: center; */
+/*     cursor: pointer; */
+/*     line-height: 80px; */
+/*     color: white; */
+/*     font-size: 100%; */
+/* } */
 .menu {
     border: 1px solid rgba(255, 255, 255, 0.267);
     background-color: #2f373a;
@@ -34,15 +34,15 @@ body{
     font-size: 100%;
     /* font-size: 1em; */
 }
-.mainmenu {
-    /* border: 5px solid red; */
-    width: 20.1%;
-    /* width: 300px; */
-    height: 100%;
-    background-color: #2f373a;
-    min-width: 155.92px;
-    color: white;
-}
+/* .mainmenu { */
+/*     border: 5px solid red; */
+/*     width: 20.1%; */
+/*     width: 300px; */
+/*     height: 100%; */
+/*     background-color: #2f373a; */
+/*     min-width: 155.92px; */
+/*     color: white; */
+/* } */
 .board {
     border: 5px solid #2f373a;
     /* border: 5px solid pink; */
@@ -180,14 +180,14 @@ body{
 .fas{
     color:white;
 }
-.icon, .icon-sub{
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 0.5%;
-    padding-left: 1%;
-}
+/* .icon, .icon-sub{ */
+/*     box-sizing: border-box; */
+/*     display: flex; */
+/*     justify-content: space-between; */
+/*     align-items: center; */
+/*     padding-right: 0.5%; */
+/*     padding-left: 1%; */
+/* } */
 #title-name{
     color: white;
     text-align: left;
@@ -855,26 +855,26 @@ form{
     justify-content: space-between;
 }
 
-.titleName{
-    /* border: 1px solid rebeccapurple; */
-    width: 10%;
-    /* text-align: center; */
-    min-width: 268px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-.icon-sub {
-    /* border: 10px solid red; */
-    display: flex;
-    width: 9%;
-    display: flex;
-    justify-content: space-around;
-    min-width: 210px;
-    font-size: small;
-	align-items: center;
-}
+/* .titleName{ */
+/*     border: 1px solid rebeccapurple; */
+/*     width: 10%; */
+/*     text-align: center; */
+/*     min-width: 268px; */
+/*     display: flex; */
+/*     flex-direction: row; */
+/*     justify-content: space-around; */
+/*     align-items: center; */
+/* } */
+/* .icon-sub { */
+/*     border: 10px solid red; */
+/*     display: flex; */
+/*     width: 9%; */
+/*     display: flex; */
+/*     justify-content: space-around; */
+/*     min-width: 210px; */
+/*     font-size: small; */
+/* 	align-items: center; */
+/* } */
 .border_line{
     border-radius: 10px;
     background-color: white;
