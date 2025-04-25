@@ -32,22 +32,32 @@
 	<!-- 생산 테이블 -->
 	<select id="PR_1100MT" resultType="TAK_PR_1100MTDTO"
 		parameterType="TAK_PR_1100MTDTO">
-		select * from TB_PR_1100MT
+		select * from TB_PR_1100MT WHERE PROD_END_YN LIKE 'N%'
 	</select>
 	<!-- 생산 테이블 A라인 -->
 	<select id="PR_1100MT_A" resultType="TAK_PR_1100MTDTO"
 		parameterType="TAK_PR_1100MTDTO">
-		select * from TB_PR_1100MT WHERE liun_nm LIKE 'A%'
+		SELECT *
+		FROM TB_PR_1100MT
+		WHERE PROD_END_YN LIKE 'N%'
+		AND
+		liun_nm LIKE 'A%'
 	</select>
 	<!-- 생산 테이블 B라인 -->
 	<select id="PR_1100MT_B" resultType="TAK_PR_1100MTDTO"
 		parameterType="TAK_PR_1100MTDTO">
-		select * from TB_PR_1100MT WHERE liun_nm LIKE 'B%'
+		SELECT *
+		FROM TB_PR_1100MT
+		WHERE PROD_END_YN LIKE 'N%'
+		AND liun_nm LIKE 'B%'
 	</select>
 	<!-- 생산 테이블 C라인 -->
 	<select id="PR_1100MT_C" resultType="TAK_PR_1100MTDTO"
 		parameterType="TAK_PR_1100MTDTO">
-		select * from TB_PR_1100MT WHERE liun_nm LIKE 'C%'
+		SELECT *
+		FROM TB_PR_1100MT
+		WHERE PROD_END_YN LIKE 'N%'
+		AND liun_nm LIKE 'C%'
 	</select>
 	<!-- 생산일정 테이블 -->
 	<select id="PR_1110MT" resultType="TAK_PR_1110MTDTO"
@@ -67,10 +77,11 @@
 	<!-- values(?, ?, ?, ?, ?, to_char(sysdate, 'yyyy/mm/dd hh:mm:ss'), '00:00:00', 
 		?, ?, ?,'Y', 'N', null ) -->
 	<!-- </insert> -->
-	
-<!-- 	pm_popup insert -->
+
+	<!-- pm_popup insert -->
 	<insert id="PM_1100MT_insert" parameterType="TAK_PR_1100MTDTO">
-		INSERT INTO TB_PR_1100MT (
+		INSERT INTO
+		TB_PR_1100MT (
 		PROD_CD,
 		MT_MNG_CD,
 		LIUN_NM,
@@ -91,7 +102,8 @@
 		#{liun_nm},
 		#{item_nm},
 		#{item_cd},
-		TO_CHAR(SYSDATE, 'yyyy/mm/dd hh24:mi:ss'),
+		TO_CHAR(SYSDATE,
+		'yyyy/mm/dd hh24:mi:ss'),
 		'00:00:00',
 		#{indc_qntt},
 		#{prod_qntt},
@@ -134,26 +146,29 @@
 		#{dfc_rt}
 		WHERE PROD_CD = #{prod_cd}
 	</update>
-	
-	<!-- 	pr_popup insert -->
+
+	<!-- pr_popup insert -->
 	<insert id="PR_1110MT_insert" parameterType="TAK_PR_1110MTDTO">
-	  INSERT INTO TB_PR_1110MT (
-    PROD_PLN_CD,
-    ITEM_NM,
-    TRG_PROD_CNT,
-    PROD_STRT_DT,
-    PROD_END_DT,
-    ITEM_CD,
-    PROD_END_COB
-  ) VALUES (
-    'PR_' || TO_CHAR(SYSDATE, 'yymm') || '_' || LPAD(SQ_PR_1110MT.NEXTVAL, 4, '0'),
-    #{item_nm},
-    #{trg_prod_cnt},
-    #{prod_strt_dt},
-    #{prod_end_dt},
-    #{item_cd},
-    'N'
-  )
+		INSERT INTO
+		TB_PR_1110MT (
+		PROD_PLN_CD,
+		ITEM_NM,
+		TRG_PROD_CNT,
+		PROD_STRT_DT,
+		PROD_END_DT,
+		ITEM_CD,
+		PROD_END_COB
+		) VALUES (
+		'PR_' || TO_CHAR(SYSDATE,
+		'yymm') || '_' || LPAD(SQ_PR_1110MT.NEXTVAL, 4,
+		'0'),
+		#{item_nm},
+		#{trg_prod_cnt},
+		#{prod_strt_dt},
+		#{prod_end_dt},
+		#{item_cd},
+		'N'
+		)
 	</insert>
 	<!-- pr_popup 수정 -->
 	<update id="PR_1110MT_update" parameterType="TAK_PR_1110MTDTO">
