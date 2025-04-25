@@ -11,4 +11,8 @@ public interface KW_Svc_mb_1000mt {
 	int updateMember(KW_DTO_MB_1000MT dto);
 	public int delete(String id);
 	
+	
+	
+	// 작업자(일반회원) 가져오는 메소드
+	public List getWorker();
 }

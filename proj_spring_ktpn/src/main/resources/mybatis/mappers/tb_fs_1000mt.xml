@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.tb_fs_1000mt">
+
+	<select id="selectProducts" resultType="tb_fs_1000mt" parameterType="tb_fs_1000mt">
+		select * from tb_fs_1000mt
+		
+		<where>
+			<if test="type == 'Fcode' and (keyword != null and keyword != '') ">
+				and upper(fnsh_code) like upper('%' || #{keyword} || '%')
+			</if>
+			<if test="type == 'Fname' and (keyword != null and keyword != '') ">
+				and upper(fnsh_nm) like upper('%' || #{keyword} || '%')
+			</if>
+			<if test="type == 'EA' and (keyword != null and keyword != '') ">
+				and crnt_aftr_cnt <![CDATA[ >= ]]> #{crnt_aftr_cnt}
+			</if>
+		</where>
+	</select>
+
+	<select id="selectCurrentP" resultType="tb_fs_1000mt" parameterType="String">
+		select * from TB_FS_1000MT where fnsh_code like #{fnsh_code}
+	</select>
+
+	<insert id="insertCurrentP" parameterType="tb_fs_1000mt">
+		insert into TB_FS_1000MT ( fnsh_code, fnsh_nm, crnt_aftr_cnt, fnsh_loc_nm ) 
+		values (#{fnsh_code}, #{fnsh_nm}, #{crnt_aftr_cnt}, #{fnsh_loc_nm})
+	</insert>
+	
+	<update id="updateCurrentP" parameterType="tb_fs_1000mt">
+		update TB_FS_1000MT 
+		set fnsh_nm =#{fnsh_nm}, crnt_aftr_cnt = #{crnt_aftr_cnt}, fnsh_loc_nm = #{fnsh_loc_nm}
+		where fnsh_code = #{fnsh_code} 
+	</update>
+	
+	<delete id="deleteCurrentP" parameterType="tb_fs_1000mt">
+		delete TB_FS_1000MT 
+		where fnsh_code = #{fnsh_code}
+	</delete>
+
+</mapper>

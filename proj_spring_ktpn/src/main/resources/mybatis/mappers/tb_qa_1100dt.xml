@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.tb_qa_1100dt">
+
+	<select id="selectQC" resultType="tb_qa_1100dt" parameterType="tb_qa_1100dt">
+		select * from tb_qa_1100dt
+		
+		<where>
+			<if test="type == 'Pcode' and (keyword != null and keyword != '') ">
+				and upper(prod_cd) like upper('%' || #{keyword} || '%')
+			</if>
+			<if test="type == 'Fcode' and (keyword != null and keyword != '') ">
+				and upper(item_cd) like upper('%' || #{keyword} || '%')
+			</if>
+			<if test="type == 'Fname' and (keyword != null and keyword != '') ">
+				and upper(item_nm) like upper('%' || #{keyword} || '%')
+			</if>
+		</where>
+		
+	</select>
+
+	<select id="selectQCone" resultType="tb_qa_1100dt" parameterType="tb_qa_1100dt">
+		select * from tb_qa_1100dt
+		where PROD_CD = #{prod_cd}
+	</select>
+
+	<insert id="insertQCreport" parameterType="tb_qa_1100dt">
+		insert into TB_QA_1100DT (PROD_CD, ITEM_CD, ITEM_NM, CHCKR_NM, CHCKR_DTTM, STRTH_VAL, SZ_VAL, CLRL_VAL, QLTY_VAL, FAIL_CAUS_DESC, RMRK)
+		values (#{prod_cd}, #{item_cd}, #{item_nm}, #{chckr_nm}, sysdate, #{strth_val}, #{sz_val}, #{clrl_val}, #{qlty_val}, #{fail_caus_desc}, #{rmrk}) 
+	</insert>
+	
+	<update id="updateQCreport" parameterType="tb_qa_1100dt">
+		update TB_QA_1100DT
+		set CHCKR_NM = #{chckr_nm}, CHCKR_DTTM = #{chckr_dttm}, STRTH_VAL = #{strth_val}, SZ_VAL = #{sz_val},
+			CLRL_VAL = #{clrl_val}, QLTY_VAL = #{qlty_val}, FAIL_CAUS_DESC = #{fail_caus_desc}, RMRK = #{rmrk}
+		where PROD_CD = #{prod_cd}
+	</update>
+	
+	<delete id="deleteQCreport" parameterType="tb_qa_1100dt">
+		delete from TB_QA_1100DT
+		where PROD_CD = #{prod_cd}
+	</delete>
+	
+	<select id="selectJoinQC" resultType="tb_qa_1000dt" parameterType="String">
+		select pr.PROD_CD, pr.ITEM_CD, pr.ITEM_NM, pr.WORK_NM, pr.PROD_END_TIME, pr.INDC_QNTT, pr.PROD_QNTT, pr.DFC_RT,
+				          qa.CHCKR_NM, qa.CHCKR_DTTM, qa.STRTH_VAL, qa.SZ_VAL, qa.CLRL_VAL, qa.QLTY_VAL, qa.FAIL_CAUS_DESC, qa.RMRK 
+		from TB_QA_1100DT qa, TB_PR_1100MT pr 
+		where qa.PROD_CD = pr.PROD_CD 
+		and qa.PROD_CD = upper(#{prod_cd})
+	</select>
+	
+	
+</mapper>

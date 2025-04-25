@@ -85,5 +85,30 @@ public class DAO_md_1000impl implements DAO_md_1000mt{
     	 return result;
      }
 
+     
+     
+     
+    // 원자재 코드, 원자재명 가져오는 메소드
+ 	@Override
+ 	public List selectMcodeList() {
+ 		// TODO Auto-generated method stub
+ 		
+ 		List result = sqlSession.selectList("mapper.tb_mr_1000mt.selectAllMCode");
+ 		System.out.println("result : " + result);
+ 		
+ 		return result;
+ 	}
+
+ 	
+ 	// 완제품 코드, 완제품명 가져오는 메소드
+ 	@Override
+ 	public List selectPcodeList() {
+ 		// TODO Auto-generated method stub
+
+ 		List result = sqlSession.selectList("mapper.tb_mr_1000mt.selectAllPCode");
+ 		System.out.println("result : " + result);
+ 		
+ 		return result;
+ 	}
 
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.tb_od_1000mt">
+
+	<select id="selectCompany" resultType="tb_od_1000mt" parameterType="tb_od_1000mt">
+		select * from tb_od_1000mt
+		
+		<where>
+			<if test="type == 'Ccode' and (keyword != null and keyword != '') ">
+				and upper(cstmr_code) like upper('%' || #{keyword} || '%')
+			</if>
+			<if test="type == 'Cname' and (keyword != null and keyword != '') ">
+				and upper(cmp_nm) like upper('%' || #{keyword} || '%')
+			</if>
+			<if test="type == 'TPname' and (keyword != null and keyword != '') ">
+				and upper(trn_itm_item_nm) like upper('%' || #{keyword} || '%')
+			</if>
+		</where>
+	</select>
+
+	<insert id="insertCompany" parameterType="tb_od_1000mt">
+		insert into TB_OD_1000MT 
+		values ( 'T'||LPAD(sq_od_1000mt.NEXTVAL, 4, '0'), #{cmp_nm}, #{mngr_nm}, #{tel_no}, #{trn_itm_item_nm}, to_char(sysdate, 'yyyymmdd'), to_char(sysdate, 'yyyymmdd'))
+	</insert>
+
+	<update id="updateCompany" parameterType="tb_od_1000mt">
+		update TB_OD_1000MT 
+		set cmp_nm = #{cmp_nm} 
+		where cstmr_code = #{cstmr_code} 
+	</update>
+		
+	<delete id="deleteCompany" parameterType="tb_od_1000mt">
+		delete from TB_OD_1000MT 
+		where cstmr_code =  #{cstmr_code}
+	</delete>
+
+</mapper>

@@ -23,6 +23,24 @@
 		<typeAlias type="kr.or.ktpn.dto.TAK_PR_1200MTDTO" alias="TAK_PR_1200MTDTO"/>
 <!-- 		기원씨 업로드후 삭제예정 -->
 		<typeAlias type="kr.or.ktpn.dto.KW_DTO_MB_1000MT" alias="DTO_mb_1000mt"/>
+		
+		
+		<!-- 		재고관리, 품질관리, 거래처 테이블 -->
+		<typeAlias type="kr.or.ktpn.dto.tb_od_1000mt_DTO" alias="tb_od_1000mt" />
+		<typeAlias type="kr.or.ktpn.dto.tb_mr_1000mt_DTO" alias="tb_mr_1000mt"/>
+		<typeAlias type="kr.or.ktpn.dto.tb_mr_1000ht_DTO" alias="tb_mr_1000ht"/>
+		<typeAlias type="kr.or.ktpn.dto.tb_fs_1000mt_DTO" alias="tb_fs_1000mt"/>
+		<typeAlias type="kr.or.ktpn.dto.tb_fs_1000ht_DTO" alias="tb_fs_1000ht"/>
+		<typeAlias type="kr.or.ktpn.dto.tb_qa_1000dt_DTO" alias="tb_qa_1000dt"/>
+		<typeAlias type="kr.or.ktpn.dto.tb_qa_1100dt_DTO" alias="tb_qa_1100dt"/>
+		
+		<!-- 		기준관리 테이블 -->
+		<typeAlias type="kr.or.ktpn.dto.DTO_md_1000mt" alias="tb_md_1000mt"/>
+		
+		<!-- 		작업자 테이블 -->
+		<typeAlias type="kr.or.ktpn.dto.KW_DTO_MB_1000MT" alias="tb_mb_1000mt"/>
+		
+		
 	</typeAliases>
 
 </configuration>

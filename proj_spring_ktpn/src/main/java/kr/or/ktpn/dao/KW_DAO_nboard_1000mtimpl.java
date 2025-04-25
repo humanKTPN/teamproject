@@ -60,7 +60,7 @@ public class KW_DAO_nboard_1000mtimpl implements KW_DAO_nboard_1000mt {
 	        int start = (page - 1) * pageSize + 1;
 	        int end = page * pageSize;
 
-	        Map<String, Integer> param = new HashMap<>();
+	        Map<String, Integer> param = new HashMap<String, Integer>();
 	        param.put("start", start);
 	        param.put("end", end);
 

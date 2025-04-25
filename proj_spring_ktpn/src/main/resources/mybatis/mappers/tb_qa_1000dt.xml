@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.tb_qa_1000dt">
+
+<!-- 	안쓰는 파일 -->
+
+	<select id="selectJoinQC" resultType="tb_qa_1000dt" parameterType="tb_qa_1000dt">
+		select * from tb_qa_1000dt
+	</select>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</mapper>

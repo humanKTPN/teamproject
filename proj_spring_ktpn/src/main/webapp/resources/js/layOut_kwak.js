@@ -67,7 +67,7 @@ function init(){
                 // 생산리포팅 메인 
                 window.location.href="#"
             } else if (e.target.textContent=='재고관리'){
-                // 자재관리 메인 
+                // 재고관리 메인 
                 window.location.href="#"
             } else if (e.target.textContent=='품질관리'){
                 // 품질관리 메인 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.tb_mr_1000mt">
+
+	<select id="selectMaterials" resultType="tb_mr_1000mt" parameterType="tb_mr_1000mt">
+		select * from tb_mr_1000mt
+		
+		<where>
+<!-- 			<if test="Mcode != null and Mcode != '' "> -->
+<!-- 				and upper(mtrl_cd) like upper('%' || #{mtrl_cd} || '%') -->
+<!-- 			</if> -->
+<!-- 			<if test="Mname != null and Mname != '' "> -->
+<!-- 				and upper(mtrl_nm) like upper('%' || #{mtrl_nm} || '%') -->
+<!-- 			</if> -->
+<!-- 			<if test="EA != -1"> -->
+<!-- 				and crnt_aftr_cnt <![CDATA[ >= ]]> #{crnt_aftr_cnt} -->
+<!-- 			</if> -->
+			<if test="type == 'Mcode' and (keyword != null and keyword != '') ">
+				and upper(mtrl_cd) like upper('%' || #{keyword} || '%')
+			</if>
+			<if test="type == 'Mname' and (keyword != null and keyword != '') ">
+				and upper(mtrl_nm) like upper('%' || #{keyword} || '%')
+			</if>
+			<if test="type == 'EA' and (keyword != null and keyword != '') ">
+				and crnt_aftr_cnt <![CDATA[ >= ]]> #{crnt_aftr_cnt}
+			</if>
+		</where>
+	</select>
+<!-- 	</select> -->
+	
+	<select id="totalMaterials" resultType="int">
+		select count(*) from tb_mr_1000mt
+	</select>
+
+	<select id="selectCurrentM" resultType="tb_mr_1000mt" parameterType="tb_mr_1000mt">
+		select * from TB_MR_1000MT where mtrl_cd like #{mtrl_cd}
+	</select>
+	
+	<insert id="insertCurrentM" parameterType="tb_mr_1000mt">
+		insert into TB_MR_1000MT (mtrl_cd, mtrl_nm, stn_cnt, ordr_rqrd_yn, 
+			 mtrl_loc_nm, crnt_aftr_cnt) 
+		values ( #{mtrl_cd}, #{mtrl_nm}, #{stn_cnt}, #{ordr_rqrd_yn}, #{mtrl_loc_nm}, #{crnt_aftr_cnt}) 
+	</insert>
+	
+	<update id="updateCurrentM" parameterType="tb_mr_1000mt">
+		update TB_MR_1000MT
+		set mtrl_nm = #{mtrl_nm}, ordr_rqrd_yn = #{ordr_rqrd_yn}, mtrl_loc_nm = #{mtrl_loc_nm}, crnt_aftr_cnt = #{crnt_aftr_cnt} 
+		where mtrl_cd = #{mtrl_cd}
+	</update>
+	
+	<delete id="deleteCurrentM" parameterType="tb_mr_1000mt">
+		delete from TB_MR_1000MT
+		where mtrl_cd = #{mtrl_cd}
+	</delete>
+	
+	
+<!-- 	아래 sql 사용하는 메소드 만들기 -> 어느 DAO, Service에 만들어야함? 
+		회원정보테이블에 더미데이터 많이 만들기-->
+	
+<!-- 	기준관리에서 유형분류코드가 원자재인 기준관리코드와 기준관리명을 가져오는 sql -->
+	<select id="selectAllMCode" resultType="tb_md_1000mt">
+		select MT_MNG_CD, MT_MNG_NM from TB_MD_1000MT where TP_CLS_VAL = '원자재'
+	</select>
+	
+<!-- 	기준관리에서 유형분류코드가 완제품인 기준관리코드와 기준관리명을 가져오는 sql -->
+	<select id="selectAllPCode" resultType="tb_md_1000mt">
+		select MT_MNG_CD, MT_MNG_NM from TB_MD_1000MT where TP_CLS_VAL = '완제품'
+	</select>
+	
+<!-- 	회원정보에서 '일반회원'(작업자) 가져오는 sql -->
+	<select id="selectAllWorker" resultType="tb_mb_1000mt">
+		select * from TB_MB_1000MT where MBR_SENM = '일반회원'
+	</select>
+	
+<!-- 	생산에서 생산완료인 생산코드 가져오는 sql -->
+	<select id="selectFinishAllPCode" resultType="TAK_PR_1100MTDTO">
+		select * from TB_PR_1100MT where PROD_END_YN = 'Y'
+	</select>
+	
+<!-- 	생산에서 완제품코드가 x이고 생산완료인 생산코드 가져오는 sql -->
+	<select id="selectFinishAllPCodeFcode" resultType="TAK_PR_1100MTDTO" parameterType="String">
+		select * from TB_PR_1100MT where PROD_END_YN = 'Y' and ITEM_CD = #{item_cd}
+	</select>
+	
+</mapper>
