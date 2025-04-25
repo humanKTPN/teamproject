@@ -1,9 +1,13 @@
 package kr.or.ktpn.dto;
 import java.sql.Date;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
+@ToString
+@Getter
+@Setter
 public class KW_DTO_MB_1000MT {
 
 	String id;

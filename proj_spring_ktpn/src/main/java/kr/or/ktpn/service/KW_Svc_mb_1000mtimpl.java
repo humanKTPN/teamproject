@@ -31,5 +31,10 @@ public class KW_Svc_mb_1000mtimpl implements KW_Svc_mb_1000mt {
 		int cn = mb.update(dto);
 		return cn;
 	}
+	
+	@Override
+	public int delete(String id) {
+        return mb.delete(id);
+    }
 
 }

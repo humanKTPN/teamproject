@@ -34,16 +34,18 @@
 			<div class="dom">
 				<div class="editprocess">
 					<div class='viewdom'>
-							<p>게시판 번호 : ${dto.BRD_NO }<input type="hidden" name="BRD_NO" value="${dto.BRD_NO }"></p>
+							<p>게시판 번호 : ${dto.BRD_NO }<input type="number" name="BRD_NO" value="${dto.BRD_NO }" disabled></p>
 						<table>
 							<tr class='title-con'>
 								<td><span class='text'>제목</span></td>
-								<td><input type="text" id='title' name = "TTL_NM" placeholder="제목을 입력하시오"
+								<td><input type="text" id='title' name = "TTL_NM"
+								placeholder="제목을 입력하시오"
 									value="${dto.TTL_NM }"></td>
 							</tr>
 							<tr class='content-con'>
 								<td><span class='text'>내용</span></td>
-								<td><textarea id="content" name = "BRD_DESC" placeholder="내용을 입력하세요">${dto.BRD_DESC }</textarea></td>
+								<td><textarea id="content" name = "BRD_DESC"
+								placeholder="내용을 입력하세요">${dto.BRD_DESC }</textarea></td>
 							</tr>
 						</table>
 <!-- 						<div id='time'> -->

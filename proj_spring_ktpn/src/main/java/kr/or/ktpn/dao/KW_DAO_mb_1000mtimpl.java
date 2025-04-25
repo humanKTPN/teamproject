@@ -35,4 +35,8 @@ public class KW_DAO_mb_1000mtimpl implements KW_DAO_mb_1000mt {
 		return cn;
 	}
 
+	public int delete(String id){
+		 System.out.println("너가 괴롭히는 "+id);
+	        return sqls.delete("mapper.TB_BR_1000MT.deletemb", id);
+	    }
 }
