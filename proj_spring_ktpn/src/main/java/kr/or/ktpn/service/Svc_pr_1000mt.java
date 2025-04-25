@@ -19,6 +19,8 @@ public interface Svc_pr_1000mt {
 	public int delMd(DTO_pr_insert dto);
 
 	
+	//생산관리 데이터
+	public List<DTO_pr_1000mt> selectDAO_N();
 	
 }
  
