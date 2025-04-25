@@ -38,7 +38,7 @@
                 <div class="menu">작업관리</div>
                 <div class="menu">생산관리</div>
                 <div class="menu">생산리포팅</div>
-                <div class="menu">자재관리</div>
+                <div class="menu">재고관리</div>
                 <div class="menu">품질관리</div>
             </div>
         </div>

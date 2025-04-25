@@ -17,7 +17,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="resources/js/noticeBoard_Nam.js"></script>
+<!-- <script src="resources/js/noticeBoard_Nam.js"></script> -->
 <style>
 /******************
         모바일 버전 구현(불량쪽 차트는 ....)

@@ -62,16 +62,16 @@ function init(){
                 window.location.href="/ktpn/pr"
             } else if (e.target.textContent=='생산관리'){
                 // 생산관리 메인 
-                window.location.href="#"
+                window.location.href="/ktpn/tb_pr_mt"
             } else if (e.target.textContent=='생산리포팅'){
                 // 생산리포팅 메인 
-                window.location.href="#"
+                window.location.href="/ktpn/tb_pr_mt2"
             } else if (e.target.textContent=='재고관리'){
                 // 재고관리 메인 
-                window.location.href="#"
+                window.location.href="/ktpn/mainmp"
             } else if (e.target.textContent=='품질관리'){
                 // 품질관리 메인 
-                window.location.href="#"
+                window.location.href="/ktpn/mainqc"
             }  else if (e.target.textContent=='기준관리'){
                 window.location.href="/ktpn/md" 
             } 
@@ -88,21 +88,21 @@ function init(){
                 window.location.href="/ktpn/"
             } else if (e.target.textContent=='게시판'){
                  // 게시판 메인
-                window.location.href="#"
+                window.location.href="/ktpn/free"
             } else if (e.target.textContent=='공지사항'){
                  // 공지사항 메인
-                window.location.href="#"
+                window.location.href="/ktpn/notice"
             } 
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
     
     // 로그아웃 버튼 
       document.querySelector('.subBut').addEventListener('click',function(){
-        window.location.href = "loginpage_Nam.jsp"
+        window.location.href = "#"
       })
   
       // 로고버튼
-      document.querySelector('.logo').addEventListener('click',function(){
+      document.querySelector('.titleName').addEventListener('click',function(){
         window.location.href = '/ktpn/'
       })
 

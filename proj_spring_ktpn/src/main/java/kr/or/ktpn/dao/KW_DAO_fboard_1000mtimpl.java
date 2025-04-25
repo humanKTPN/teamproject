@@ -16,7 +16,7 @@ public class KW_DAO_fboard_1000mtimpl implements KW_DAO_fboard_1000mt {
 	
 	@Override
 	public List<KW_DTO_BR_1000MT> selectFBoard(){
-		List<KW_DTO_BR_1000MT> list = sqls.selectList("mapper.TB_BR_1000MT.selectfbc");
+		List<KW_DTO_BR_1000MT> list = sqls.selectList("mapper.TB_BR_1000MT1.selectfbc");
 		System.out.println("fb list : " + list);
 		return list;
 	}
