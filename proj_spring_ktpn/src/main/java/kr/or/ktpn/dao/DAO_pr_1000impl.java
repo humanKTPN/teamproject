@@ -71,9 +71,7 @@ public class DAO_pr_1000impl implements DAO_pr_1000mt{
 	 		
 	 		return count;
 	 	}
-     
-     
-     
+
      
      
      @Override
@@ -85,40 +83,24 @@ public class DAO_pr_1000impl implements DAO_pr_1000mt{
  		return result;
  	}
  	
+ 	  @Override
+      public int delPr(DTO_pr_insert dto) {
+     	 int count = -1;
+     	 
+     	 try {
+//  			count = sqlSession.insert("mapper.emp.insertEmp", empDTO);
+     		 count = sqlSession.delete("mapper.pr_1000mt.delPr", dto);
+     		 System.out.println(dto); // empno가 채워져 있음
+     		 // 그러면 아래 같은데에서 재사용 가능
+//  			count = sqlSession.insert("mapper.emp.insertEmp4", empDTO);
+     	 } catch (Exception e) {
+     		 e.printStackTrace();
+     	 }
+     	 
+     	 return count;
+      }
 
 
-     @Override
-     public int updateRt(DTO_rt_1000mt dto) {
-    	 int count = -1;
-    	 
-    	 try {
-// 			count = sqlSession.insert("mapper.emp.insertEmp", empDTO);
-    		 count = sqlSession.update("mapper.rt_1000mt.updateRt", dto);
-    		 System.out.println(dto); // empno가 채워져 있음
-    		 // 그러면 아래 같은데에서 재사용 가능
-// 			count = sqlSession.insert("mapper.emp.insertEmp4", empDTO);
-    	 } catch (Exception e) {
-    		 e.printStackTrace();
-    	 }
-    	 
-    	 return count;
-     }
-     @Override
-     public int delMd(DTO_md_1000mt dto) {
-    	 int count = -1;
-    	 
-    	 try {
-// 			count = sqlSession.insert("mapper.emp.insertEmp", empDTO);
-    		 count = sqlSession.update("mapper.md_1000mt.delMd", dto);
-    		 System.out.println(dto); // empno가 채워져 있음
-    		 // 그러면 아래 같은데에서 재사용 가능
-// 			count = sqlSession.insert("mapper.emp.insertEmp4", empDTO);
-    	 } catch (Exception e) {
-    		 e.printStackTrace();
-    	 }
-    	 
-    	 return count;
-     }
-
+    
 
 }

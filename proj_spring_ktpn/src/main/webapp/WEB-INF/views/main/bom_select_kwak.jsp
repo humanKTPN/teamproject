@@ -30,8 +30,8 @@
                             <th class="detail-th" scope="col">BOM명</th>
                             <th class="detail-th" scope="col">품목코드</th>
                         </tr>
-                        <!-- list의 첫번째 데이터를 dt 변수에 저장 -->
                         <c:set var="dt" value="${list[0]}" />
+                        
                         <tr>
                             <td class="detail-td">
                                 <span class="spn-td">${dt.bom_cd}</span>
@@ -53,10 +53,29 @@
                         <input type="text" class="mod-td hide" value="A80">
                     </h4>
                     <div class="bom-item-con">
-                        <!-- BOM 설명이 필요한 경우 아래와 같이 줄바꿈 처리 가능 -->
-<%--                         <c:if test="${not empty dt.bom_desc}"> --%>
-                            <span class="spn-td">${dt.bom_desc}</span>
-<%--                         </c:if> --%>
+							<table style="width: 100%;
+										  border: 1px solid grey;
+										  text-align: center;" class="detail-table mr_table">
+							    <thead>
+							      <tr>
+							        <th class="detail-th">재료명</th>
+							        <th class="detail-th">수량</th>
+							        <th class="detail-th">단위</th>
+							      </tr>
+							    </thead>
+							    <tbody>
+							      <c:forEach var="mr" items="${mrlist}">
+							        <tr>
+							          <td class="detail-td">${mr.mr_nm}</td>       <!-- 재료명 -->
+							          <td class="detail-td">${mr.amnt_qunt}</td>   <!-- 수량 -->
+							          <td class="detail-td">${mr.unt_nm}</td>      <!-- 단위 -->
+							        </tr>
+							      </c:forEach>
+							    </tbody>
+							  </table>
+<%--                             <span class="spn-td">${dt.bom_desc}</span> --%>
+						
+						
                         <input type="text" class="mod-td hide" value="${dt.bom_desc}" />
                     </div>
                 </div>
@@ -70,11 +89,11 @@
 <!--                         <input type="hidden" name="command" value="수정"> -->
                         <input type="hidden" name="bom_cd" value="${dt.bom_cd}">
                     </form>
-                    <form method="post" action="bmDel?bom_cd=${dt.bom_cd}">
-                        <input type="submit" class="del" value="삭제">
-                        <input type="hidden" name="command" value="삭제">
-                        <input type="hidden" name="bom_cd" value="${dt.bom_cd}">
-                    </form>
+<%--                     <form method="post" action="bmDel?bom_cd=${dt.bom_cd}"> --%>
+<!--                         <input type="submit" class="del" value="삭제"> -->
+<!--                         <input type="hidden" name="command" value="삭제"> -->
+<%--                         <input type="hidden" name="bom_cd" value="${dt.bom_cd}"> --%>
+<!--                     </form> -->
                 </div>
             </div>
         </div>

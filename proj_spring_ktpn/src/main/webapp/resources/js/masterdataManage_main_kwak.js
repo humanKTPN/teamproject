@@ -15,7 +15,7 @@ function init(){
             } else if(e.target.textContent == 'BOM'){
                 window.location.href = '/ktpn/bm'
             } else if(e.target.textContent == '공정'){
-                window.location.href = '/ktpn/md'
+                window.location.href = '/ktpn/rt'
             }
         })
     }

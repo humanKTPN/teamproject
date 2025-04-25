@@ -25,8 +25,10 @@
     </script>
 </head>
 <body>
+
             <div class="menuPage-con">    
                 <div class="border_line">
+			       <form method="post" action="/ktpn/bmMod">
                     <div class="pop">
                         <div class="add-table">
                             <table class="detail-table">
@@ -39,7 +41,6 @@
                                 <c:set var="dt" value="${dt[0]}" />
                                 <tr>
                                     <!-- 폼 태그는 여기서 시작하여 전체 입력 항목을 감쌉니다 -->
-                                    <form method="post" action="/ktpn/bmMod">
                                         <td class="detail-td">
                                             <span class="spn-td">
                                                 <input type="text" value="${dt.bom_cd}" name="bom_cd" disabled>
@@ -68,22 +69,119 @@
                                 </span>
                             </h4>
                             <div class="bom-item-con">
-                                <span class="spn-td">
+<!--                                 <span class="spn-td"> -->
                                     <!-- textarea의 내부 텍스트로 bom_desc를 출력 -->
-                                    <textarea name="bom_desc" style="width:300px; height:300px;">${dt.bom_desc}</textarea>
-                                </span>
+<%--                                     <textarea name="bom_desc" style="width:300px; height:300px;">${dt.bom_desc}</textarea> --%>
+									 <table class="add-table">
+									    <tbody id="ingredients-body">
+									    <c:forEach var="mr" items="${sessionScope.mrlist}">
+<%-- 									      <c:forEach var="mr" items="${mrlist}" > --%>
+<%-- 									      <c:set var="selectedMr" value="${sessionScope.mr_nm}" /> --%>
+									        <tr>
+									          <td>
+										       <input type="hidden" name="sn" value="${mr.sn}">
+									          	<select name="alpha1">
+<%-- 										          	<c:set var="mr_nm" value="${param.mr_nm}" scope="session"/> --%>
+										          	<c:forEach var="m" items="${mrl}" >
+										          			<option value="${m.MT_MNG_NM}" <c:if test="${m.MT_MNG_NM eq mr.mr_nm}">selected</c:if>>${m.MT_MNG_NM}</option>							          	
+										          	</c:forEach>
+									          	</select>
+									          </td>       <!-- 재료명 -->
+									          <td><input type="number" value="${mr.amnt_qunt}" name="amount1"></td>   <!-- 수량 -->
+									          <td>${mr.unt_nm}</td>      <!-- 단위 -->
+									          <td> <button type="button" class="addItem">추가</button></td>
+									          <td> <button type="button" data-sn="${mr.sn}" id="snn" class="delItem">삭제</button></td>
+									        </tr>
+									      </c:forEach>
+									    </tbody>
+									  </table>
+<!--                                 </span> -->
                             </div>
                         </div>
                     </div>
                     <div class="add-con">
                         <div class="mode-con">
-                            <input type="submit" class="mod" value="완료">
+                            <input type="submit" class="mod" id="submit" value="완료">
                             <input type="hidden" name="command" value="완료">
-                            <input type="hidden" name="bom_cd" value="${dt.bom_cd}">
+                            <input type="hidden" name="bom_cd" id="bom_cd" value="${dt.bom_cd}">
+                            <input type="hidden" name="h_mr_nm" value="${mr.mr_nm}">
                         </div>
                         </form>
                     </div> 
                 </div>
             </div>
 </body>
+<script type="text/javascript">
+
+document.addEventListener('DOMContentLoaded', function() {
+	  // .desc 내부의 첫 번째 테이블을 선택
+	  const table = document.querySelector('.bom-item-con table');
+
+	  table.addEventListener('click', function(event) {
+	    const btn = event.target;
+
+	    // "+" 버튼 클릭 시: 행 복제해서 아래에 삽입
+	    if (btn.classList.contains('addItem')) {
+	      event.preventDefault();
+	      const currentRow = btn.closest('tr');
+	      const newRow = currentRow.cloneNode(true);
+
+	      // 복제된 행의 input/select 값 초기화
+	      newRow.querySelectorAll('input').forEach(input => {
+	        input.value = '';
+	      });
+	      newRow.querySelectorAll('select').forEach(select => {
+	        select.selectedIndex = 0;
+	      });
+	      
+	      const snHidden = newRow.querySelector('#sn');
+	      if (snHidden) snHidden.value = '0';
+
+	      // 현재 행 바로 아래에 삽입
+	      currentRow.parentNode.insertBefore(newRow, currentRow.nextSibling);
+	    }
+
+	    
+	    if (btn.classList.contains('delItem')) {
+	    	event.preventDefault()
+	     	const sn = btn.dataset.sn;
+	    	console.log(sn)
+	     	const bomCd  = document.getElementById('bom_cd').value
+	     	
+		 	const payload = { sn, bomCd };
+	     	
+// 	     	const values = Array.from(document.querySelectorAll('select[name="alpha1"]'))
+//             .map(s => s.value);
+// 			sessionStorage.setItem('alpha1Values', JSON.stringify(values));
+		 	
+		 	
+	    	fetch('/ktpn/bmDel', {
+			    method: 'DELETE',
+			    headers: { 'Content-Type': 'application/json' },
+			    body: JSON.stringify(payload)
+			  }).then(res => {
+			      if (!res.ok) throw new Error(res.statusText);
+			      // 성공했으면 페이지 새로고침
+// 			      location.reload();
+			      window.location.href = '/ktpn/bmMod?bom_cd='+bomCd
+			    })
+	    	
+	    	
+	    	
+	    	
+	      event.preventDefault();
+	      const row = btn.closest('tr');
+	      row.remove();
+	      
+
+
+		  
+		  
+	    }
+	  });
+	});
+
+
+
+</script>
 </html>

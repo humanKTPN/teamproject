@@ -1,3 +1,8 @@
+.pop{
+	height: 100%;
+    display: flex;
+    justify-content: center;
+}
 body{
     min-width: 500px;
     max-height: 5000px;
@@ -541,6 +546,11 @@ body{
 }
 form{
     margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    height: 100%;
+    justify-content: center;
 }
 .page-num{
     /* border: 5px solid purple; */
@@ -606,11 +616,9 @@ form{
 }
 .add-table{
     /* border: 1px solid red; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 200px;
-    justify-content: center;
+/*     display: flex; */
+    width:100%;
+
     
 }
 .bompro-con{
@@ -640,12 +648,11 @@ form{
 
 
 .select-body{
-    /* border: 5px solid pink; */
     display: flex;
-    flex-direction: row;
-    width: 50%;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     min-width: 300px;
+    width: 80%;
 }
 
 

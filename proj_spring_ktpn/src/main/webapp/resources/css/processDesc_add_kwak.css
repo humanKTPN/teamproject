@@ -12,7 +12,7 @@ body{
     height:  93%;
     border-radius: 10px;
     background-color: white;
-    display: flex;
+/*     display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -1004,4 +1004,5 @@ body{
     height: 50%;
     margin-left: 5px;
     border: 1px solid #2f373a;
+    overflow:auto;
 }

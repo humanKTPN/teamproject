@@ -12,7 +12,16 @@
         <if test="bom_cd != null and bom_cd != ''">
            AND BOM_CD= #{bom_cd}
         </if>
-        <!-- 필요한 조건 추가 가능 -->
+        
+         <if test="categories != null and categories != '전체' and key != null and key != ''">
+        	<if test= "categories == '코드'">
+        		AND UPPER(BOM_CD) LIKE '%' || UPPER(#{key}) || '%'
+        	</if>
+        	
+        	<if test= "categories == 'BOM명'">
+        		AND BOM_NM LIKE '%'||#{key}||'%'
+        	</if>
+        </if>
         ORDER BY REG_DT DESC
     </where>
 </select>
@@ -29,6 +38,33 @@
        AND A.MT_MNG_CD LIKE 'B%'
 </select>
 
+<select id="listMr" 
+        resultType="kr.or.ktpn.dto.DTO_md_1000mt" 
+        parameterType="kr.or.ktpn.dto.DTO_md_1000mt">
+    SELECT A.*
+         , B.SN
+      FROM TB_MD_1000MT A
+         , TB_AD_1000MT B
+     WHERE A.USE_YN = 'Y'
+       AND A.MT_MNG_CD LIKE 'M%'
+       AND A.MT_MNG_NM = B.MR_NM (+)
+</select>
+
+<select id="detailBm" 
+        resultType="kr.or.ktpn.dto.DTO_mr_detail" 
+        parameterType="kr.or.ktpn.dto.DTO_mr_detail">
+		 select b.mr_nm
+		      , b.amnt_qunt
+		      , b.unt_nm
+		      , b.sn
+		  from tb_bm_1000mt a
+		     , tb_ad_1000mt b
+		 where 1=1
+		   and a.bom_cd = b.bom_cd
+		   and a.bom_cd = #{bom_cd}
+		  ORDER BY B.SN 
+</select>
+
 <insert id="insertBm"  parameterType="kr.or.ktpn.dto.DTO_bm_1000mt">
 
 INSERT INTO TB_BM_1000MT (BOM_CD,BOM_NM,ITEM_CD,BOM_DESC,REG_DT,MOD_DT, USE_YN)
@@ -36,10 +72,60 @@ VALUES (#{bom_cd},#{bom_nm},#{item_cd},#{bom_desc},TO_CHAR(SYSDATE,'YYYYMMDD'),T
 
 </insert>
 
-<update id="updateBm" parameterType="kr.or.ktpn.dto.DTO_bm_1000mt">
-       UPDATE tb_bm_1000mt
-       	  SET BOM_DESC = #{bom_desc}
-        WHERE bom_cd = #{bom_cd}
+<!-- <insert id="insertMr" parameterType="map"> -->
+<!--   INSERT ALL -->
+<!--   <foreach collection="components" item="comp"> -->
+<!--     INTO TB_AD_1000MT (SN, BOM_CD, MR_NM, AMNT_QUNT, UNT_NM) -->
+<!--     VALUES ( -->
+<!--       SQ_TB_AD_1000MT_SN.NEXTVAL, -->
+<!--       #{bomCd}, -->
+<!--       #{comp.alpha}, -->
+<!--       #{comp.amount}, -->
+<!--       #{comp.gram} -->
+<!--     ) -->
+<!--   </foreach> -->
+<!--   SELECT * FROM dual -->
+<!-- </insert> -->
+
+<insert id="insertMr" parameterType="map">
+      INSERT INTO TB_AD_1000MT
+        (SN, BOM_CD, MR_NM, AMNT_QUNT, UNT_NM)
+      VALUES
+        (
+          SQ_TB_AD_1000MT_SN.NEXTVAL,
+          #{bomCd},
+          #{alpha},
+          #{amount},
+          #{gram}
+        )
+</insert>
+    
+<delete id="delMr" parameterType="kr.or.ktpn.dto.DTO_mr_insert">
+      delete from TB_AD_1000MT where sn = #{sn}
+</delete>    
+
+
+
+
+<update id="updateBm" parameterType="kr.or.ktpn.dto.DTO_mr_insert">
+       MERGE INTO TB_AD_1000MT tgt
+			USING (
+			  SELECT 
+			    #{bom_cd}   AS BOM_CD,
+			    #{amount}   AS AMNT_QUNT,
+			    #{alpha} as MR_NM,
+			    nvl(#{sn},0) as SN
+			  FROM dual
+			) src
+			  ON (tgt.BOM_CD = src.BOM_CD
+			      AND tgt.SN  = src.SN)
+			WHEN MATCHED THEN
+			  UPDATE SET
+			    tgt.AMNT_QUNT = src.AMNT_QUNT,
+			    tgt.MR_NM = src.MR_NM
+			WHEN NOT MATCHED THEN
+			  INSERT (BOM_CD, MR_NM, AMNT_QUNT, UNT_NM, SN)
+			  VALUES (src.BOM_CD, src.MR_NM, src.AMNT_QUNT,'g',SQ_TB_AD_1000MT_SN.NEXTVAL)
    </update>
 
 	

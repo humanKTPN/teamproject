@@ -1004,4 +1004,5 @@ body{
     height: 50%;
     margin-left: 5px;
     border: 1px solid #2f373a;
+    overflow: auto;
 }

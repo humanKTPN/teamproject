@@ -11,4 +11,9 @@ public class DTO_rt_1000mt {
 	private String img_path_adr;
 	private String rt_desc;
 	
+	private String categories;
+	private String key;
+	
+	
+	
 }

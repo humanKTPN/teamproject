@@ -38,20 +38,20 @@
             </div>
 
             <div class="dropBox">
-                <form method="post" action="CNTRL_PR_Kwak">
-                    <select name="cate" id="cate">
-                        <option value="전체">전체</option>
-                        <option value="품목코드">품목코드</option>
-                        <option value="담당자명">담당자명</option>
-                        <option value="호기">호기</option>
-                        <option value="작업일자">작업일자</option>
+                <form method="get" action="pr">
+                    <select name="categories" id="cate">
+                        <option value="전체" <c:if test="${param.categories == '전체'}">selected</c:if>>전체</option>
+                        <option value="품목코드" <c:if test="${param.categories == '품목코드'}">selected</c:if>>품목코드</option>
+                        <option value="담당자명" <c:if test="${param.categories == '담당자명'}">selected</c:if>>담당자명</option>
+                        <option value="호기코드" <c:if test="${param.categories == '호기코드'}">selected</c:if>>호기코드</option>
+                        <option value="작업일자" <c:if test="${param.categories == '작업일자'}">selected</c:if>>작업일자</option>
                     </select>
-                    <input type="text" class="select" name="search_desc" value="${param.search_desc != null ? param.search_desc : ''}" />
-                    <input type="hidden" name="ss" value="ss" />
-                    <input type="submit" class="submit" value="검색" name="command" />
-                    <input type="date" name="str_dt" />
+                    <input type="text" class="select" name="key" value="${param.key}" />
+<!--                     <input type="hidden" name="ss" value="ss" /> -->
+                    <input type="submit" class="submit" value="검색" />
+                    <input type="date" name="str_dt" ></input>
                     ~
-                    <input type="date" name="end_dt" />
+                    <input type="date" name="end_dt"/>
                 </form>
             </div>
 

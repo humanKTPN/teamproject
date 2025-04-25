@@ -36,6 +36,9 @@
       <beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
       <beans:property name="order" value="0" />
     </beans:bean>
+    
+    <beans:bean id="multipartResolver"
+      class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 	
 	<context:component-scan base-package="kr.or.ktpn" />
 	

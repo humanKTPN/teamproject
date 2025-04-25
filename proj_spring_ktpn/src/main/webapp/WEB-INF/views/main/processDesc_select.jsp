@@ -58,10 +58,27 @@
                   <c:out value="${dto.rt_cd}" />
                 </span>
               </h4>
-              <table>
+              <table style="width: 70%;">
                 <tr>
                   <td>
-                      ${dto.rt_desc} 
+                     <table style="width: 100%;
+										  border: 1px solid grey;
+										  text-align: center;" class="detail-table rt_table">
+<!-- 							    <thead> -->
+<!-- 							      <tr> -->
+<!-- 							        <th class="detail-th">재료명</th> -->
+<!-- 							        <th class="detail-th">수량</th> -->
+<!-- 							        <th class="detail-th">단위</th> -->
+<!-- 							      </tr> -->
+<!-- 							    </thead> -->
+							    <tbody>
+							      <c:forEach var="rt" items="${dc}">
+							        <tr>
+							          <td class="detail-td">${rt.rt_desc}</td>  <!-- 설명 -->
+							        </tr>
+							      </c:forEach>
+							    </tbody>
+							  </table>
                 </tr>
               </table>
             </div>

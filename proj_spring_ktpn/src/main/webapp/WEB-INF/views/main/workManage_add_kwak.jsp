@@ -60,7 +60,7 @@
                   </select>
 
                   라인호기명
-                  <select name="ln_nm" id="ln_nm" onchange="updateLnNm()">
+                  <select name="ln_nm" id="ln_nm" onclick="updateLnNm()">
                     <c:forEach var="dtL" items="${LineMap}">
                       <option value="${dtL.MT_MNG_NM}"
                               data-ln-cd="${dtL.MT_MNG_CD}">
@@ -117,22 +117,23 @@
 
             </div>
 
-            <div class="bompro-con">
-              <div class="bom-con">
-                <h4>BOM :
-                  <input type="text" id="bom-cd" name="bom_cd">
-                </h4>
-                <input type="text" id="bom-desc" name="bom_desc"
+<!--             <div class="bompro-con"> -->
+<!--               <div class="bom-con"> -->
+<!--                 <h4>BOM : -->
+                  <input type="hidden" id="bom-cd" name="bom_cd">
+<!--                 </h4> -->
+                <input type="hidden" id="bom-desc" name="bom_desc"
                        style="width:90%; height:90%">
-              </div>
-              <div class="process">
-                <h4>공정 :
-                  <input type="text" id="rt-cd" name="rt_cd">
-                </h4>
-                <input type="text" id="rt-desc" name="rt_desc"
+                       
+<!--               </div> -->
+<!--               <div class="process"> -->
+<!--                 <h4>공정 : -->
+                  <input type="hidden" id="rt-cd" name="rt_cd">
+<!--                 </h4> -->
+                <input type="hidden" id="rt-desc" name="rt_desc"
                        style="width:90%; height:90%">
-              </div>
-            </div>
+<!--               </div> -->
+<!--             </div> -->
 
             <div class="confirm-con">
               <input class="confirm" type="submit" value="추가" name="command">

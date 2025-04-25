@@ -52,13 +52,14 @@
                     </div>
                 </div>
             <div class="dropBox">
-            <form action="#">
+            <form action="bm" method="get">
                 <select name="categories" id="cate">
-                    <option value="전체">전체</option>
-                    <option value="구분">구분</option>
-                    <option value="설명">설명</option>
+<%--                 	<option value="" <c:if test="${empty param.categories}">selected</c:if>> --%>
+                    <option value="전체" <c:if test="${param.categories == '전체'}">selected</c:if>>전체</option>
+                    <option value="코드" <c:if test="${param.categories == '코드'}">selected</c:if>>코드</option>
+                    <option value="BOM명" <c:if test="${param.categories == 'BOM명'}">selected</c:if>>BOM명</option>
                 </select>
-                <input type="select" class="sel">
+                <input type="select" class="sel" name="key" value="<c:out value='${param.key}'/>">
                 <input type="submit" class="search" value="검색">
                 </form>
             </div>

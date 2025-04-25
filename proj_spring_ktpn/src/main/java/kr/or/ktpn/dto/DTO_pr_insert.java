@@ -19,5 +19,6 @@ public class DTO_pr_insert {
 	private String bom_desc;
 	private String rt_cd;
 	private String rt_desc;
+	private String prod_cd;
 
 }

@@ -32,7 +32,7 @@
                         
                         <!-- 추가(등록) 폼 영역 -->
                         <div class="command-loc">
-                            <form method="post" action="${pageContext.request.contextPath}/mdAdd">
+                            <form method="post" action="${pageContext.request.contextPath}/mdAdd" enctype="multipart/form-data">
                                 <div class="command-div">
                                     <table class="command-table">
                                         <tr>
@@ -43,7 +43,7 @@
                                         </tr>
                                         <tr>
                                             <td class="command-td">
-                                                <input type="file" name="file1" value="img">
+                                                <input type="file" name="file1">
                                             </td>
                                             <td class="command-td">
                                                 <input type="text" name="MT_MNG_CD" disabled>

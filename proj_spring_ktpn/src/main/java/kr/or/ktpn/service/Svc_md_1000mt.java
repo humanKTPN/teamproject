@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import kr.or.ktpn.dto.DTO_md_1000mt;
+import kr.or.ktpn.dto.DTO_pr_insert;
 
 public interface Svc_md_1000mt {
 	

@@ -5,9 +5,11 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import kr.or.ktpn.dao.DAO_pr_1000mt;
+import kr.or.ktpn.dto.DTO_md_1000mt;
 import kr.or.ktpn.dto.DTO_pr_1000mt;
 import kr.or.ktpn.dto.DTO_pr_insert;
 
@@ -49,5 +51,12 @@ public class Svc_pr_1000impl implements Svc_pr_1000mt {
 		 return countUpdate;
 	 }
 	 
-	    
+    @Override
+    public int delMd(DTO_pr_insert dto) {
+    	int countUpdate = mdDAO.delPr(dto);
+    	return countUpdate;
+    }
+ 
+	 
+		 
 }

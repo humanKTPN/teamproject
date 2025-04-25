@@ -46,23 +46,83 @@
 
                 <div class="bompro-con">
                   <div class="bom-con">
-                    <h4>BOM : <c:out value="${dt.BOM_CD}"/></h4>
-                    <div><c:out value="${dt.BOM_DESC}"/></div>
+                    <h4>BOM : <span id="bomId" data-bm="${dt.BOM_CD}">
+							    <c:out value="${dt.BOM_CD}" />
+							  </span></h4>
+                    <div class="bom_table"></div>
+<%--                     <div><c:out value="${dt.BOM_DESC}"/></div> --%>
                   </div>
                   <div class="process">
-                    <h4>공정 : <c:out value="${dt.RT_CD}"/></h4>
-                    <div><c:out value="${dt.RT_DESC}"/></div>
+                    <h4>공정 : 
+                    		<span id="rtId" data-rt="${dt.RT_CD}">
+                    			<c:out value="${dt.RT_CD}"/>
+                    		</span>
+                    </h4>
+                    <div class="rt_table">
+<%--                     <c:out value="${dt.RT_DESC}"/> --%>
+                    </div>
                   </div>
                 </div>
-
                 <div class="add-con">
                   <input type="hidden" name="prod_cd" value="${dt.PROD_CD}" />
                   <input type="submit" class="del" name="command" value="삭제" />
                 </div>
+
               </form>
 <!--             </div> -->
 <!--           </div> -->
         </div>
       </div>
 </body>
+<script>
+window.addEventListener('DOMContentLoaded', function(){
+  // ==== BOM 테이블 로드 ====
+  var bomElem = document.getElementById('bomId');
+  var bomCd   = bomElem.getAttribute('data-bm');
+  var bomUrl  = '/ktpn/bmDetail?bom_cd=' + encodeURIComponent(bomCd);
+
+  fetch(bomUrl, {
+    method: 'GET',
+    headers: { 'Accept': 'text/html' }
+  })
+  .then(function(res){
+    if (!res.ok) throw new Error(res.statusText);
+    return res.text();
+  })
+  .then(function(html){
+    var parser = new DOMParser();
+    var doc    = parser.parseFromString(html, 'text/html');
+    var table  = doc.querySelector('.mr_table');
+    var container = document.querySelector('.bom_table');
+    container.innerHTML = table
+      ? table.outerHTML
+      : '<p>테이블을 찾을 수 없습니다.</p>';
+  })
+  .catch(function(err){ console.error('BOM AJAX 오류:', err); });
+
+  // ==== RT 테이블 로드 ====
+  var rtElem = document.getElementById('rtId');
+  var rtCd   = rtElem.getAttribute('data-rt');
+  var rtUrl  = '/ktpn/rtDetail?rt_cd=' + encodeURIComponent(rtCd);
+
+  fetch(rtUrl, {
+    method: 'GET',
+    headers: { 'Accept': 'text/html' }
+  })
+  .then(function(res){
+    if (!res.ok) throw new Error(res.statusText);
+    return res.text();
+  })
+  .then(function(html){
+    var parser = new DOMParser();
+    var doc    = parser.parseFromString(html, 'text/html');
+    var rtTable   = doc.querySelector('.rt_table');
+    var rtContainer = document.querySelector('.rt_table');
+    rtContainer.innerHTML = rtTable
+      ? rtTable.outerHTML
+      : '<p>공정 테이블을 찾을 수 없습니다.</p>';
+  })
+  .catch(function(err){ console.error('RT AJAX 오류:', err); });
+});
+</script>
 </html>

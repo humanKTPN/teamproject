@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기준관리 수정</title>
     <!-- CSS 파일 -->
-    <link rel="stylesheet" href="resources/css/processDesc_select.css">
+    <link rel="stylesheet" href="resources/css/marsterManage_mod.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- JavaScript 파일 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
@@ -23,65 +23,97 @@
         <div class="border_line">
             <div class="pop">
                 <div class="add-table">
-                    <!-- 이미지 처리: modDto 객체의 IMG_PATH_ADR 값이 없으면 빈 div, 있으면 <img> 출력 -->
-                    <c:choose>
+
+                    <!-- form 시작: multipart/form-data 추가 -->
+                    <form method="post"
+                          action="${pageContext.request.contextPath}/mdMod"
+                          enctype="multipart/form-data">
+                      
+                      <!-- 이미지 영역 -->
+                      <c:choose>
                         <c:when test="${empty modDto.IMG_PATH_ADR}">
-                            <div class="eraser-img"></div>
+                          <div class="eraser-img">이미지 없음</div>
                         </c:when>
                         <c:otherwise>
-                            <img border="0" class="eraser-img" src="download.do?filename=${modDto.IMG_PATH_ADR}" />
+                          <img border="0"
+                               class="eraser-img"
+                               src="temp/upload/${modDto.IMG_PATH_ADR}"
+                               alt="${modDto.MT_MNG_NM}" />
                         </c:otherwise>
-                    </c:choose>
-                    <table class="detail-table">
+                      </c:choose>
+
+                      <!-- 기존 이미지명 히든으로 전달 -->
+                      <input type="hidden"
+                             name="oldImg"
+                             value="${modDto.IMG_PATH_ADR}" />
+
+                      <!-- 새 이미지 선택 -->
+                      <div style="margin:10px 0;">
+                        <label for="file1">새 이미지 선택:</label>
+                        <input type="file" name="file1" id="file1" />
+                      </div>
+
+                      <table class="detail-table">
                         <tr>
-                            <th class="detail-th" scope="col">기준관리코드</th>
-                            <th class="detail-th" scope="col">기준관리명</th>
+                          <th class="detail-th" scope="col">기준관리코드</th>
+                          <th class="detail-th" scope="col">기준관리명</th>
                         </tr>
                         <tr>
-                            
-                            <form method="post" action="${pageContext.request.contextPath}/mdMod">
-                                <td class="detail-td">
-                                    <span class="spn-td">
-                                        <input type="text" class="mod-td" value="${modDto.MT_MNG_CD}" name="MT_MNG_CD" disabled />
-                                    </span>
-                                </td>
-                                <td class="detail-td">
-                                    <span class="spn-td">
-                                        <input type="text" class="mod-td" value="${modDto.MT_MNG_NM}" name="MT_MNG_NM" />
-                                    </span>
-                                </td>
+                          <td class="detail-td">
+                            <input type="text"
+                                   class="mod-td"
+                                   name="MT_MNG_CD"
+                                   value="${modDto.MT_MNG_CD}"
+                                   disabled />
+                          </td>
+                          <td class="detail-td">
+                            <input type="text"
+                                   class="mod-td"
+                                   name="MT_MNG_NM"
+                                   value="${modDto.MT_MNG_NM}" />
+                          </td>
                         </tr>
-                    </table>
+                      </table>
                 </div>
             </div>
+
             <div class="bompro-con">
-                <div class="bom-con">
-                    <h4>
-                        항목명 :
-                        <span class="spn-td">
-                            <input type="text" class="mod-td" value="${modDto.MT_MNG_NM}" disabled />
-                        </span>
-                    </h4>
-                    <table>
-                        <tr>
-                            <td></td> 
-                            <td>
-                                <span class="spn-td">
-                                    <input type="text" class="mod-td" value="${modDto.MT_MNG_DESC}" name="MT_MNG_DESC" />
-                                </span>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+              <div class="bom-con">
+                <h4>
+                  항목명 :
+                  <input type="text"
+                         class="mod-td"
+                         value="${modDto.MT_MNG_NM}"
+                         disabled />
+                </h4>
+                <table>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <textarea name="MT_MNG_DESC"
+                                class="mod-td"
+                                style="width:500px; height:100px;">${modDto.MT_MNG_DESC}</textarea>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
+
             <div class="add-con">
-                <div class="mode-con">
-                    <input type="submit" class="mod" value="완료" />
-                    <input type="hidden" value="완료" name="command" />
-                    <input type="hidden" value="${modDto.MT_MNG_CD}" name="MT_MNG_CD" />
-                    </form>
-                </div>
-            </div> 
+              <div class="mode-con">
+                <input type="hidden"
+                       name="command"
+                       value="수정" />
+                <input type="submit"
+                       class="mod"
+                       value="완료" />
+                <input type="hidden" value="${modDto.MT_MNG_CD}" name="MT_MNG_CD" />
+              </div>
+            </div>
+
+			</form>
+                    <!-- form 끝 -->
+
         </div>
     </div>
 </body>

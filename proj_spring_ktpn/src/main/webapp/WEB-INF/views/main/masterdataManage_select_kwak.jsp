@@ -24,21 +24,18 @@
 		<div class="border_line">
 			<div class="pop">
 				<div class="add-table">
-					<!-- 컨트롤러에서 전달한 "list"가 비어있는지 체크 -->
+					
 					<c:if test="${not empty list}">
-						<!-- 리스트의 첫 번째 요소를 dt로 설정 -->
 						<c:set var="dt" value="${list[0]}" />
-						<!-- 이미지 처리 : IMG_PATH_ADR 값이 없는 경우 대체 -->
 						<c:choose>
 							<c:when test="${empty dt.IMG_PATH_ADR}">
-								<!-- 이미지가 없을 경우 (필요한 대체 콘텐츠 삽입 가능) -->
 							</c:when>
 							<c:otherwise>
-								<!-- c:url을 사용해 URL 파라미터 인코딩 -->
 								<c:url var="downloadUrl" value="download.do">
 									<c:param name="filename" value="${dt.IMG_PATH_ADR}" />
 								</c:url>
-								<img border="0" class="eraser-img" src="${downloadUrl}" />
+<!-- 								<img border="0" class="eraser-img" src="${dt.IMG_PATH_ADR}"/> -->
+								<img border="0" class="eraser-img" src="temp/upload/${dt.IMG_PATH_ADR}"/>
 							</c:otherwise>
 						</c:choose>
 						<table class="detail-table">

@@ -1,5 +1,11 @@
 package kr.or.ktpn.dto;
 
+
+
+
+
+import java.sql.Date;
+
 import lombok.Data;
 
 @Data
@@ -20,8 +26,8 @@ public class DTO_pr_1000mt {
 	private String rt_cd;
 	private String rt_desc;
 	
-	private String cate;
-	private String sch;
+	private String categories;
+	private String key;
 	private String str_dt;
 	private String end_dt;
 	

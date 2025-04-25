@@ -15,7 +15,9 @@ public interface Svc_pr_1000mt {
 	public List<Map<String,Object>> getAddListMap();
 	public List<Map<String,Object>> getLineMap();
 	public List<Map<String,Object>> selectMbList();
-	public int insertPr(@RequestParam DTO_pr_insert dto);
+	public int insertPr(DTO_pr_insert dto);
+	public int delMd(DTO_pr_insert dto);
+
 	
 	
 }

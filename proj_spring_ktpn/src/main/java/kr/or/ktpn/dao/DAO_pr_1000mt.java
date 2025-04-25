@@ -20,7 +20,9 @@ public interface DAO_pr_1000mt {
 	public List<Map<String,Object>> selectMbList();
 	public List<DTO_md_1000mt> insertRt(DTO_md_1000mt dto);
 	public int addPr(DTO_pr_insert dto);
-	public int updateRt(DTO_rt_1000mt dto) ;
-	public int delMd(DTO_md_1000mt dto);
+	public int delPr(DTO_pr_insert dto);
+
+	
+	
 	
 }
