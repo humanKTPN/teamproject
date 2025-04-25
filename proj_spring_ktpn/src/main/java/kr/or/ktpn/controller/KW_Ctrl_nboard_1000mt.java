@@ -45,7 +45,7 @@ public class KW_Ctrl_nboard_1000mt {
 //		
 		return "edit_Nam.tiles";
 	}
-	///////////////////////////////////////
+	
 	@RequestMapping(value = "/edit_Nam", method = RequestMethod.POST)
 	public String editprocess(Model model,
 			@ModelAttribute	KW_DTO_BR_1000MT dto

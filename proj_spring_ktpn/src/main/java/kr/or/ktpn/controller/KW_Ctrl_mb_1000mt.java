@@ -43,13 +43,18 @@ public class KW_Ctrl_mb_1000mt {
 		return "/main/memberdatail";
 	}
 	
-//	@RequestMapping(value = "/memberedit", method = RequestMethod.GET)
-//	public String detailedit(@ModelAttribute KW_DTO_MB_1000MT member, Model model) {
-//		KW_DTO_MB_1000MT dto = serv.getMemberList(member);
-//				
-//		model.addAttribute("dto", dto);
-//		return "/main/memberdatail";
-//	}
+	@RequestMapping(value = "/memberedit", method = RequestMethod.GET)
+	public String detailedit(
+			@RequestParam("ID")
+			String ID,
+			Model model) {
+		KW_DTO_MB_1000MT dto = serv.getMemberId(ID);
+		
+		System.out.println("맴버정보수정 작동테스트");
+				
+		model.addAttribute("dto", dto);
+		return "/main/memberedit";
+	}
 	
 //	@RequestMapping(value = "/membereditexcute", method = RequestMethod.PUT)
 //	public String edit(@RequestParam String id, Model model) {

@@ -27,5 +27,12 @@ public class KW_DAO_mb_1000mtimpl implements KW_DAO_mb_1000mt {
 		System.out.println("mbone result : "+ result);
 		return result;
 	}
+	
+	@Override
+	public int update(KW_DTO_MB_1000MT dto) {
+		int cn = sqls.update("mapper.TB_MB_1000MT.updatemb", dto);
+		System.out.println("nb1 cn : "+ cn);
+		return cn;
+	}
 
 }

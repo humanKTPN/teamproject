@@ -8,5 +8,6 @@ public interface KW_Svc_mb_1000mt {
 
 	public List<KW_DTO_MB_1000MT> getMemberlist();
 	public KW_DTO_MB_1000MT getMemberId(String id);
+	public int updateMember(KW_DTO_MB_1000MT dto);
 	
 }
