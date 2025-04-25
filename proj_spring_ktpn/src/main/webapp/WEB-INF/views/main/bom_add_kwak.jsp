@@ -39,8 +39,8 @@
                 </div>
                 <div class="dropBox">
                 </div>
-                
-                <form method="post" action="/ktpn/bmAdd">
+<!--                 action="/ktpn/bmAdd"  -->
+                <form method="post" onsubmit="return false;">
                     <div class="command-loc">
                         <div class="command-div">
                             <table class="command-table">
@@ -63,7 +63,7 @@
                                         </select>
                                     </td>
                                     <td class="command-td">
-                                        <input type="text" name="item_cd">
+                                        <input type="text" name="item_cd" id="item_cd">
                                     </td>
                                 </tr>
                             </table>
@@ -104,8 +104,8 @@
                         	</table>
                         </div>
                         <div class="add-con">
-                            <button type="button" id="saveBtn" class="add">설명저장</button>
-                            <input type="submit" class="add" value="추가" name="command">
+<!--                             <button type="button" id="saveBtn" class="add">설명저장</button> -->
+                            <button type="button" id="add" class="add">추가</button>
                         </div>
                     </div>
                  </form>
@@ -154,9 +154,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 	
 
-document.getElementById('saveBtn').addEventListener('click', function() {
+document.getElementById('add').addEventListener('click', function() {
 	
-	this.disabled = true;
+// 	this.disabled = true;
 	
 	
 	const tbody = document.getElementById('ingredients-body');
@@ -168,16 +168,21 @@ document.getElementById('saveBtn').addEventListener('click', function() {
     }));
 
     const bomCd  = document.getElementById('h_bom_cd').value;
-//     const bomNm  = document.getElementById('bom_nm').value;
-//     const itemCd  = document.getElementById('item_cd').value;
+    const bomNm  = document.getElementById('bom_nm').value;
+    const itemCd  = document.getElementById('item_cd').value;
     
-    const payload = { bomCd, components: items };
+    const payload = { bomCd,bomNm,itemCd, components: items };
 
     fetch('/ktpn/bmAddMr', {
     	  method: 'POST',
     	  headers: { 'Content-Type': 'application/json' },
     	  body: JSON.stringify(payload)
     	})
+    	.then(res => {
+            if (!res.ok) throw new Error(res.statusText);
+            window.location.href = '/ktpn/bm'
+          })
+          .catch(console.error);
     
     
 

@@ -41,13 +41,10 @@
 <select id="listMr" 
         resultType="kr.or.ktpn.dto.DTO_md_1000mt" 
         parameterType="kr.or.ktpn.dto.DTO_md_1000mt">
-    SELECT A.*
-         , B.SN
+  SELECT A.*
       FROM TB_MD_1000MT A
-         , TB_AD_1000MT B
      WHERE A.USE_YN = 'Y'
        AND A.MT_MNG_CD LIKE 'M%'
-       AND A.MT_MNG_NM = B.MR_NM (+)
 </select>
 
 <select id="detailBm" 
@@ -67,8 +64,8 @@
 
 <insert id="insertBm"  parameterType="kr.or.ktpn.dto.DTO_bm_1000mt">
 
-INSERT INTO TB_BM_1000MT (BOM_CD,BOM_NM,ITEM_CD,BOM_DESC,REG_DT,MOD_DT, USE_YN)
-VALUES (#{bom_cd},#{bom_nm},#{item_cd},#{bom_desc},TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'), 'Y')
+INSERT INTO TB_BM_1000MT (BOM_CD,BOM_NM,ITEM_CD,REG_DT,MOD_DT, USE_YN)
+VALUES (#{bom_cd},#{bom_nm},#{item_cd},TO_CHAR(SYSDATE,'YYYYMMDD'),TO_CHAR(SYSDATE,'YYYYMMDD'), 'Y')
 
 </insert>
 
@@ -93,7 +90,7 @@ VALUES (#{bom_cd},#{bom_nm},#{item_cd},#{bom_desc},TO_CHAR(SYSDATE,'YYYYMMDD'),T
       VALUES
         (
           SQ_TB_AD_1000MT_SN.NEXTVAL,
-          #{bomCd},
+          #{bom_cd},
           #{alpha},
           #{amount},
           #{gram}
