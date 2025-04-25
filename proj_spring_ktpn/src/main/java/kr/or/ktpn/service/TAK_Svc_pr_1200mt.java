@@ -10,3 +10,4 @@ public interface TAK_Svc_pr_1200mt {
 	public List selectDayDAO();
 
 }
+//
