@@ -2,7 +2,7 @@
 <!DOCTYPE configuration
 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>
+<configuration> 
 
 <!-- tag(또는 node)의 순서에 주의 -->
 
@@ -40,7 +40,19 @@
 		<!-- 		작업자 테이블 -->
 		<typeAlias type="kr.or.ktpn.dto.KW_DTO_MB_1000MT" alias="tb_mb_1000mt"/>
 		
-		
-	</typeAliases>
+<!-- 		<typeAlias type="kr.or.ktpn.dto.TAK_MB_1000MTDTO" alias="TAK_MB_1000MTDTO"/> -->
 
+<!-- 		<typeAlias type="kr.or.ktpn.dto.TAK_MD_1000MTDTO" alias="TAK_MD_1000MTDTO"/> -->
+<!-- 		<typeAlias type="kr.or.ktpn.dto.TAK_PR_1000MTDTO" alias="TAK_PR_1000MTDTO"/> -->
+<!-- 		<typeAlias type="kr.or.ktpn.dto.TAK_PR_1100MTDTO" alias="TAK_PR_1100MTDTO"/> -->
+<!-- 		<typeAlias type="kr.or.ktpn.dto.TAK_PR_1110MTDTO" alias="TAK_PR_1110MTDTO"/> -->
+<!-- 		<typeAlias type="kr.or.ktpn.dto.TAK_PR_1200MTDTO" alias="TAK_PR_1200MTDTO"/> -->
+
+		<typeAlias type="kr.or.ktpn.dto.KW_DTO_MB_1000MT" alias="memberDTO" />
+		<typeAlias type="kr.or.ktpn.dto.KW_DTO_BR_1000MT" alias="nboardDTO" />
+		<typeAlias type="kr.or.ktpn.dto.KW_DTO_BR_1000MT" alias="fboardDTO" />
+	</typeAliases>
+	
+	
+	
 </configuration>
