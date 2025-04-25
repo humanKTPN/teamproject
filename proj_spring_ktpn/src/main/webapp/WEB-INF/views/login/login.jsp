@@ -12,7 +12,8 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <!--     <script src="session.js"></script> -->
-<link rel="stylesheet" href="resources/css/loginpage_Nam.css" type="text/css">
+<link rel="stylesheet" href="resources/css/loginpage_Nam.css"
+	type="text/css">
 <script src="resources/js/loginpage_Nam.js"></script>
 <script src="oac(ktpn).js"></script>
 
@@ -20,6 +21,7 @@
 <body>
 	<div id='blank'>
 		<!-- 정리를 위한 공간 -->
+<!-- 		아이디 비번일치 프로세스 만들기 -->
 	</div>
 	<div class='login_area'>
 		<div class='middle_login' style='height: 400px'>
@@ -43,8 +45,9 @@
 						<!-- 비밀번호 입력창 -->
 						<input type='password' id='upw' name='pw' placeholder="비밀번호 입력"
 							style='height: 30px'>
+					</div>
 				</form>
-				<button type='submit' id='login' name = "checking">로그인</button>
+				<button type='submit' id='login' name="checking">로그인</button>
 			</div>
 			<%-- 			<c:forEach var="dto" items="${resultList }"> --%>
 			<%-- 							${dto.id } --%>
@@ -71,7 +74,6 @@
 	</div>
 	<div id="blank">
 		<!-- 정리를 위한 공간 -->
-	</div>
 	</div>
 
 	<br>

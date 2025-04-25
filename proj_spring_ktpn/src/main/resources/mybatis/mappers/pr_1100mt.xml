@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TAK_PR_1100MTDTO">
+
+<!-- 회원정보 테이블 -->
+<select id="MB_1000MT" resultType="TAK_MB_1000MTDTO" parameterType="TAK_MB_1000MTDTO">
+	select * from TB_MB_1000MT
+</select>
+<!-- 기준관리 테이블 -->
+<select id="MD_1000MT" resultType="TAK_MD_1000MTDTO" parameterType="TAK_MD_1000MTDTO">
+	select * from TB_MD_1000MT WHERE MT_MNG_CD LIKE 'P%'
+</select>
+<!-- 작업지시서 테이블 -->
+<select id="PR_1000MT" resultType="TAK_PR_1000MTDTO" parameterType="TAK_PR_1000MTDTO">
+	select * from TB_PR_1000MT
+</select>
+<!-- 생산 테이블 -->
+<select id="PR_1100MT" resultType="TAK_PR_1100MTDTO" parameterType="TAK_PR_1100MTDTO">
+	select * from TB_PR_1100MT
+</select>
+<!-- 생산일정 테이블 -->
+<select id="PR_1110MT" resultType="TAK_PR_1110MTDTO" parameterType="TAK_PR_1110MTDTO">
+	select * from TB_PR_1110MT
+</select>
+<!-- 생산 리포팅 테이블 -->
+<select id="PR_1200MT" resultType="TAK_PR_1200MTDTO" parameterType="TAK_PR_1200MTDTO">
+	select * from TB_PR_1200MT
+</select>
+
+<!-- <insert id=""> -->
+<!-- 		INSERT INTO TB_PR_1100MT (PROD_CD, MT_MNG_CD, LIUN_NM, ITEM_NM, ITEM_CD, PROD_STRT_TIME, PROD_END_TIME, INDC_QNTT, PROD_QNTT, WORK_NM, EQPM_OPRT_STTS_VAL, PROD_END_YN, DFC_RT) -->
+<!--     	values(?, ?, ?, ?, ?, to_char(sysdate, 'yyyy/mm/dd hh:mm:ss'), '00:00:00', ?, ?, ?,'Y', 'N', null ) -->
+<!-- </insert> -->
+	
+</mapper>
+
+
+
+

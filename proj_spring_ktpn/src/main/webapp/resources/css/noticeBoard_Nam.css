@@ -618,8 +618,7 @@ body{
     align-items: center;
     min-width: 300px;
 }
-.page{
-    border: 1px solid darkgrey;
+.page pre-page, next-page{
     height: 60%;
     width: 58%;
     display: flex;
@@ -715,13 +714,20 @@ button,#viewfilter{
     border-collapse: collapse;
 }
 
-.boardlist>td {
+.boardlist>th{
     border: 1px solid darkgrey;
     align-items: center;
     border-collapse: collapse;
 }
 
-.num {
+.boardlist>td {
+    border: 1px solid darkgrey;
+    align-items: center;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.wnum {
     text-align: center;
     width: 100px;
 }

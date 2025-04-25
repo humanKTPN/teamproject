@@ -81,9 +81,10 @@ function init(){
     const write = document.querySelector('.add');
     write.addEventListener('click', writeprocess)
     function writeprocess() {
-        window.location.href = "writeprocess_nam.jsp"
         console.log("글쓰기 페이지 진입")
+        window.location.href = "writeprocess_nam"
     }
+    
     // // 페이지표시부분 미구현
     // const page1 = document.querySelector('.pnum1')
     // page1.addEventListener('click', function () {
@@ -147,7 +148,7 @@ function init(){
 
       for(line of list){
         line.addEventListener('click',function(){
-            window.location.href = 'writeview_Nam.jsp'
+            window.location.href = 'dashBoard_kwak.jsp'
         })
       }
 }

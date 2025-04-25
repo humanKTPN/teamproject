@@ -12,8 +12,5 @@ public interface Svc_md_1000mt {
 	public int modMd(DTO_md_1000mt dto);
 	public int delMd(DTO_md_1000mt dto);
 
-	//생산관리관련 데이터
-		public List<DTO_md_1000mt> selectDAO_P();
-		public List<DTO_md_1000mt> selectDAO_L();
 	
 }

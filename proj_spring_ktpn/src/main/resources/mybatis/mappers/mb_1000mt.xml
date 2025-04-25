@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TB_MB_1000MT">
+	
+	<select id = "selectMb" resultType="memberDTO" >
+		select * from TB_MB_1000MT
+	</select>
+	
+<!-- 	한명만.. 값에 따라 출력 -->
+	<select id = "selectMbOne" resultType="memberDTO" parameterType="string">	
+		select * from TB_MB_1000MT
+		where id = #{id}
+	</select>
+	
+<!-- 	<insert id = ""> -->
+	
+<!-- 	</insert> -->
+
+	<update id = "updatemb" parameterType = "memberDTO">
+		update tb_mb_1000mt
+		set pw = #{pw}, mbr_nm = #{mbr_nm}, mbr_senm = #{mbr_senm}
+		where id = #{id}
+	</update>
+	
+	<delete id = "deletemb" parameterType = "int">
+		DELETE FROM tb_mb_1000mt
+  		WHERE BRD_NO = #{BRD_NO}
+	</delete>
+	
+</mapper>

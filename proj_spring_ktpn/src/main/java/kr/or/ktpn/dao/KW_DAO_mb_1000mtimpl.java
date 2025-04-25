@@ -20,5 +20,23 @@ public class KW_DAO_mb_1000mtimpl implements KW_DAO_mb_1000mt {
 		System.out.println("mb list : "+ list);
 		return list;
 	}
+	
+	@Override
+	public KW_DTO_MB_1000MT selectMemberId(String id) {
+		KW_DTO_MB_1000MT result = sqls.selectOne("mapper.TB_MB_1000MT.selectMbOne", id);
+		System.out.println("mbone result : "+ result);
+		return result;
+	}
+	
+	@Override
+	public int update(KW_DTO_MB_1000MT dto) {
+		int cn = sqls.update("mapper.TB_MB_1000MT.updatemb", dto);
+		System.out.println("nb1 cn : "+ cn);
+		return cn;
+	}
 
+	public int delete(String id){
+		 System.out.println("너가 괴롭히는 "+id);
+	        return sqls.delete("mapper.TB_BR_1000MT.deletemb", id);
+	    }
 }

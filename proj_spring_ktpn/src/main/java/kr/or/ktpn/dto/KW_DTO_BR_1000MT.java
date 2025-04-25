@@ -1,17 +1,21 @@
 package kr.or.ktpn.dto;
 import java.sql.Date;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
+@Getter
+@Setter
+@ToString
 public class KW_DTO_BR_1000MT {
 
-	int BRD_NO;
+	Integer BRD_NO;
 	String BRD_SENM;
 	String TTL_NM;
 	String BRD_DESC;
 	String BLND_YN;
-	int VW_CNT;
+	Integer VW_CNT;
 	String DLT_YN;
 	Date REG_DTTM;
 	Date MOD_DTTM;

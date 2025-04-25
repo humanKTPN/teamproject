@@ -4,30 +4,32 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.TAK_PR_1100MTDTO">
 
-	<!-- 회원정보 테이블 -->
-	<!-- <select id="MB_1000MT" resultType="TAK_MB_1000MTDTO" parameterType="TAK_MB_1000MTDTO"> -->
-	<!-- select * from TB_MB_1000MT -->
-	<!-- </select> -->
-	<!-- 기준관리 테이블 -->
-	<select id="MD_1000MT_P" resultType="DTO_md_1000mt"
-		parameterType="DTO_md_1000mt">
-		select * from TB_MD_1000MT WHERE MT_MNG_CD LIKE 'P%'
-	</select>
-	<select id="MD_1000MT_L" resultType="DTO_md_1000mt"
-		parameterType="DTO_md_1000mt">
-		SELECT * FROM TB_MD_1000MT WHERE MT_MNG_CD LIKE 'L%'
-	</select>
-	<!-- 작업지시서 테이블 -->
-	<select id="PR_1000MT" resultType="DTO_pr_1000mt"
-		parameterType="DTO_pr_1000mt">
-		select a.*
-		from tb_pr_1000mt a
-		, tb_pr_1100mt b
-		where 1=1
-		and a.PROD_CD = b.PROD_CD (+)
-		and b.PROD_CD is null
-	</select>
+<!-- 회원정보 테이블 -->
+<select id="MB_1000MT" resultType="TAK_MB_1000MTDTO" parameterType="TAK_MB_1000MTDTO">
+	select * from TB_MB_1000MT
+</select>
+<!-- 기준관리 테이블 -->
+<select id="MD_1000MT" resultType="TAK_MD_1000MTDTO" parameterType="TAK_MD_1000MTDTO">
+	select * from TB_MD_1000MT WHERE MT_MNG_CD LIKE 'P%'
+</select>
+<!-- 작업지시서 테이블 -->
+<select id="PR_1000MT" resultType="TAK_PR_1000MTDTO" parameterType="TAK_PR_1000MTDTO">
+	select * from TB_PR_1000MT
+</select>
+<!-- 생산 테이블 -->
+<select id="PR_1100MT" resultType="TAK_PR_1100MTDTO" parameterType="TAK_PR_1100MTDTO">
+	select * from TB_PR_1100MT
+</select>
+<!-- 생산일정 테이블 -->
+<select id="PR_1110MT" resultType="TAK_PR_1110MTDTO" parameterType="TAK_PR_1110MTDTO">
+	select * from TB_PR_1110MT
+</select>
+<!-- 생산 리포팅 테이블 -->
+<select id="PR_1200MT" resultType="TAK_PR_1200MTDTO" parameterType="TAK_PR_1200MTDTO">
+	select * from TB_PR_1200MT
+</select>
 
+<<<<<<< HEAD
 
 	<!-- 생산 테이블 -->
 	<select id="PR_1100MT" resultType="TAK_PR_1100MTDTO"
@@ -192,6 +194,13 @@
 		WHERE
 		PROD_PLN_CD = #{prod_pln_cd}
 	</update>
+=======
+<!-- <insert id=""> -->
+<!-- 		INSERT INTO TB_PR_1100MT (PROD_CD, MT_MNG_CD, LIUN_NM, ITEM_NM, ITEM_CD, PROD_STRT_TIME, PROD_END_TIME, INDC_QNTT, PROD_QNTT, WORK_NM, EQPM_OPRT_STTS_VAL, PROD_END_YN, DFC_RT) -->
+<!--     	values(?, ?, ?, ?, ?, to_char(sysdate, 'yyyy/mm/dd hh:mm:ss'), '00:00:00', ?, ?, ?,'Y', 'N', null ) -->
+<!-- </insert> -->
+	
+>>>>>>> bdbc25d1cf78bb105187d76be4e39d5fa3db8661
 </mapper>
 
 
