@@ -68,10 +68,19 @@
           if (!res.ok) throw new Error("HTTP 오류 " + res.status);
           return res.text();  // 빈 문자열도 OK
         })
-        .then(data => {
-	    window.location.href = '/ktpn/rt';
-	  })
-        
+        .then(text => {
+          console.log("서버 응답 본문:", text);
+          let count = 0;
+          try {
+            const obj = JSON.parse(text);
+            count = obj.count || 0;
+          } catch (ignore) {}
+//           alert("저장 완료! 총 " + count + "건 처리되었습니다.");
+        })
+        .catch(err => {
+          console.error("저장 오류:", err);
+          alert("저장 중 오류가 발생했습니다.");
+        });
       });
     });
   </script>
@@ -80,7 +89,7 @@
   <div class="menuPage-con">
     <div class="background">
       <!-- form은 레이아웃용, 실제 전송은 AJAX만 사용 -->
-      <form id="rtForm" onsubmit="return false;">
+      <form id="rtForm" onsubmit="return false;" style="display: flex; justify-content: center;">
         <div class="margin">
           <div class="tab-con">
             <div class="tab-name-div">
