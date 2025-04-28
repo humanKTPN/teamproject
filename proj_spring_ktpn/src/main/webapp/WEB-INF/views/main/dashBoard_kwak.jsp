@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +27,7 @@
                         <div class="container">
                         <div class="border-1">
                             <div class="border-top">
-                                <div class="title">작업/생산관리</div>
+                                <div class="title">작업관리<button type="button" class="mView" id="pr">더보기</button></div>
                                 <div class="dayWork" media="screen">
                                     <div id = "dayWork-board" >
                                         <div id = "day-list">
@@ -34,41 +35,35 @@
                                         </div>
                                         <div class="list-con">
                                             <table class="list-table">
-                                                <tr>
-                                                    <td class="list-td">1</td>
-                                                    <td class="list-td">싹싹지우개</td>
-                                                    <td class="list-td">4,000개 필요</td>
-                                                    <td class="list-td">생산중</td>
-                                                </tr>
+											 <tbody>
+											          <c:choose>
+											            <c:when test="${not empty dayWorkList}">
+											              <c:forEach var="work" items="${dayWorkList}" varStatus="st">
+											                <tr>
+											                  <td class="list-td">${st.count}</td>
+											                  <td class="list-td"><a href="prDetail?prod_cd=${work.prod_cd}"><c:out value="${work.prod_cd}"/></a></td>
+											                  <td class="list-td"><c:out value="${work.item_cd}"/> </td>
+											                  <td class="list-td"><c:out value="${work.indc_qntt}"/>개 필요</td>
+											                </tr>
+											              </c:forEach>
+											            </c:when>
+											            <c:otherwise>
+											              <tr>
+											                <td class="list-td" colspan="4">오늘 등록된 작업 지시가 없습니다.</td>
+											              </tr>
+											            </c:otherwise>
+											          </c:choose>
+											        </tbody>
                                             </table>
                                         </div>
                                     </div>
-                                        <div id = "dayWork-board2">
-                                            <div class="command-table-con">
-                                                <table class="command-table">
-                                                    <tr>
-                                                        <th colspan='2' class="th">A라인</th>
-                                                        <th colspan='2' class="th">B라인</th>
-                                                        <th colspan='2' class="th">C라인</th>
-                                                    </tr>
-                                                        <tr>
-                                                            <td class="td">1호기</td>
-                                                            <td class="td">가동중</td>
-                                                            <td class="td">2호기</td>
-                                                            <td class="td">가동중</td>
-                                                            <td class="td">1호기</td>
-                                                            <td class="td">가동중</td>
-                                                        </tr>
-                                                       
-                                                </table>
-                                            </div>
-                                        </div>                                  
+
                                 </div>
                             </div>
                     </div>
                         <div class="border-2">
                             <div class="border">
-                                <div class="title">재고현황</div>
+                                <div class="title">재고현황<button type="button" class="mView" id="mr">더보기</button></div>
                                 <div id="bad">
                                     <div id = "badChart">
                                         <canvas id = "bdChart"></canvas>
@@ -76,17 +71,17 @@
                                 </div>
                             </div>
                             <div class="border2">
-                                <div class="title">불량률 현황</div>
+                                <div class="title">생산량 현황<button type="button" class="mView" id="prd">더보기</button></div>
                                 <div id="tempHu">
                                     <div class="th2-con">
-                                        <select value="제품명">
+                                        <select value="제품명" id="productSelect">
                                             <option>싹싹지우개</option>
                                             <option>처음처럼지우개</option>
                                             <option>다지우개</option>
-                                            <option>하츄핑지우개</option>
+                                            <option selected>하츄핑지우개</option>
                                         </select>
                                         <div id = "thchart-con">
-                                            <canvas id="thchart" style="width: 60%; height: auto; "></canvas>
+                                            <canvas id="thchart" style="width: 30vw; height: 230px; "></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -96,144 +91,118 @@
                 </div>
 <!--             </div> -->
 <script>
+    let productionChart;
 
-    
-<%
-	int a=200;
-%>
+    window.addEventListener('load', () => {
+      drawInventoryChart();
+      drawProductionChart();
+      document
+        .getElementById('productSelect')
+        .addEventListener('change', drawProductionChart);
+    });
 
+    function drawInventoryChart() {
+      fetch(`${pageContext.request.contextPath}/inventory`)
+        .then(res => {
+          if (!res.ok) throw new Error(res.statusText);
+          return res.json();
+        })
+        .then(list => {
+          const labels = list.map(e => e.itemName);
+          const data   = list.map(e => e.quantity);
 
-window.addEventListener('load',chart)
-
-function chart(){
-  new Chart(document.getElementById("bdChart"), {
-      type: 'bar',
-      data: {
-        labels: ["지우개본품재고", "종이포장지재고", "비닐포장지재고", "완제품재고", "현주문량"],
-        datasets: [
-          {
-            backgroundColor: ["#3e95cd"],
-            data: [<%=a%>,5267,734,784,433],
-            label: "수주 및 현재고",
-          }
-        ]
-      },
-      options: {
-          plugins:{
-              legend: { display: true },
-              
-          },
-          indexAxis: 'y',
-        title: {
-          display: true,
-          text: 'Predicted world population (millions) in 2050'
-        }
-      }
-  });
-  new Chart(document.getElementById("thchart"), {
-    type: 'line',
-    data: {
-      labels: [1800,1900,2000],
-      
-      datasets: [{ 
-          data: [1402,3700,5267],
-          label: "목표량",
-          borderColor: "#8e5ea2",
-          fill: true
-        },{ 
-          data: [221,783,2478],
-          label: "생산량",
-          borderColor: "#3e95cd",
-          fill: true
-        },  { 
-          data: [547,675,734],
-          label: "불량",
-          borderColor: "#3cba9f",
-          fill: true
-        }
-      ]
-    },
-    options: {
-         plugins:{
-              legend: { display:  true},
-          },
-      // title: {
-      //   display: true,
-      //   text: 'World population per region (in millions)'
-      // }
-    }
-  });
-}
-
-function dashBoard (dashCheck){
-  if(dashCheck=='대시보드'){
-  //   if (Chart.getChart('bdChart')) { // 'bdChart' ID를 가진 차트가 존재하는 경우
-  //     console.log("?")
-  //     Chart.getChart('bdChart').destroy(); // 차트 파괴
-  //     Chart.getChart('thchart').destroy(); // 차트 파괴
-  //     console.log("again?")
-      new Chart(document.getElementById("bdChart2"), {
-          type: 'bar',
-          data: {
-            labels: ["지우개본품재고", "종이포장지재고", "비닐포장지재고", "완제품재고", "현주문량"],
-            datasets: [
-              {
-                backgroundColor: ["#3e95cd"],
-                data: [<%=a%>,5267,734,784,433],
-                label: "수주 및 현재고",
+          new Chart(
+            document.getElementById("bdChart").getContext("2d"),
+            {
+              type: 'bar',
+              data: {
+                labels: labels,
+                datasets: [{
+                  label: "현재 재고",
+                  data: data,
+                  backgroundColor: "#3e95cd"
+                }]
+              },
+              options: {
+                indexAxis: 'y',
+                plugins: {
+//                   title: { display: true, text: '재고현황' },
+                  legend: { display: false }
+                },
+                scales: {
+//                   x: { title: { display: false, text: '수량' } },
+//                   y: { title: { display: false, text: '항목명' } }
+                }
               }
-            ]
-          },
-          options: {
-              plugins:{
-                  legend: { display: true },
-                  
-              },
-              indexAxis: 'y',
-            title: {
-              display: true,
-              text: 'Predicted world population (millions) in 2050'
             }
-          }
-      });
-      new Chart(document.getElementById("thchart2"), {
-        type: 'line',
-        data: {
-          labels: [1500,1600,1700],
-          
-          datasets: [{ 
-              data: [1402,3700,5267],
-              label: "목표량",
-              borderColor: "#8e5ea2",
-              fill: true
-            },{ 
-              data: [221,783,2478],
-              label: "생산량",
-              borderColor: "#3e95cd",
-              fill: true
-            },  { 
-              data: [547,675,734],
-              label: "불량",
-              borderColor: "#3cba9f",
-              fill: true
-            }
-          ]
-        },
-        options: {
-             plugins:{
-                  legend: { display:  true},
-              },
-          // title: {
-          //   display: true,
-          //   text: 'World population per region (in millions)'
-          // }
-        }
-      });
+          );
+        })
+        .catch(err => console.error("재고 데이터 로드 실패:", err));
     }
-  }
 
-// }
+    function drawProductionChart() {
+      const productName = document.getElementById('productSelect').value;
+      const url = new URL(
+        `${pageContext.request.contextPath}/production`,
+        window.location.origin
+      );
+      if (productName) url.searchParams.append('productName', productName);
 
-</script>
+      fetch(url)
+        .then(res => {
+          if (!res.ok) throw new Error(res.statusText);
+          return res.json();
+        })
+        .then(list => {
+          const labels     = list.map(e => e.period);
+          const targetData = list.map(e => e.targetQty);
+          const actualData = list.map(e => e.actualQty);
+
+          const ctx = document.getElementById("thchart").getContext("2d");
+          if (productionChart) productionChart.destroy();
+          productionChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  label: "목표량",
+                  data: targetData,
+                  borderColor: "#8e5ea2",
+                  fill: false
+                },
+                {
+                  label: "생산량",
+                  data: actualData,
+                  borderColor: "#3e95cd",
+                  fill: false
+                }
+              ]
+            },
+            options: {
+              plugins: { title: { display: false, text: '생산현황' } },
+              scales: {
+//                 x: { title: { display: true, text: '기간' } },
+//                 y: { title: { display: true, text: '수량' } }
+              },
+              responsive: false,
+              devicePixelRatio: 2
+            }
+          });
+        })
+        .catch(err => console.error("생산 데이터 로드 실패:", err));
+    }
+    
+    document.querySelector('#pr').addEventListener('click',function(){
+        window.location.href = '/ktpn/pr'
+      })
+
+      document.querySelector('#mr').addEventListener('click',function(){
+        window.location.href = '/ktpn/mainmp'
+      })
+      document.querySelector('#prd').addEventListener('click',function(){
+        window.location.href = '/ktpn/tb_pr_mt2'
+      })
+  </script>
 </body>
 </html>
