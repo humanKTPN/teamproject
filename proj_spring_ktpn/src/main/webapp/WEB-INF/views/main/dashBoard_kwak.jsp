@@ -26,7 +26,11 @@
                         <div class="container">
                         <div class="border-1">
                             <div class="border-top">
+<<<<<<< HEAD
                                 <div class="title">작업/생산관리</div>
+=======
+                                <div class="title">작업관리<button type="button" class="mView" id="pr">더보기</button></div>
+>>>>>>> d88f12ab0bfe19efa5eb97fd0fa834c0b1b6922c
                                 <div class="dayWork" media="screen">
                                     <div id = "dayWork-board" >
                                         <div id = "day-list">
@@ -68,7 +72,7 @@
                     </div>
                         <div class="border-2">
                             <div class="border">
-                                <div class="title">재고현황</div>
+                                <div class="title">재고현황<button type="button" class="mView" id="mr">더보기</button></div>
                                 <div id="bad">
                                     <div id = "badChart">
                                         <canvas id = "bdChart"></canvas>
@@ -76,17 +80,25 @@
                                 </div>
                             </div>
                             <div class="border2">
+<<<<<<< HEAD
                                 <div class="title">불량률 현황</div>
+=======
+                                <div class="title">생산량 현황<button type="button" class="mView" id="prd">더보기</button></div>
+>>>>>>> d88f12ab0bfe19efa5eb97fd0fa834c0b1b6922c
                                 <div id="tempHu">
                                     <div class="th2-con">
                                         <select value="제품명">
                                             <option>싹싹지우개</option>
                                             <option>처음처럼지우개</option>
                                             <option>다지우개</option>
-                                            <option>하츄핑지우개</option>
+                                            <option selected>하츄핑지우개</option>
                                         </select>
                                         <div id = "thchart-con">
+<<<<<<< HEAD
                                             <canvas id="thchart" style="width: 60%; height: auto; "></canvas>
+=======
+                                            <canvas id="thchart" style="width: 30vw; height: 230px; "></canvas>
+>>>>>>> d88f12ab0bfe19efa5eb97fd0fa834c0b1b6922c
                                         </div>
                                     </div>
                                 </div>
@@ -189,10 +201,15 @@ function dashBoard (dashCheck){
                   legend: { display: true },
                   
               },
+<<<<<<< HEAD
               indexAxis: 'y',
             title: {
               display: true,
               text: 'Predicted world population (millions) in 2050'
+=======
+              responsive: false,
+              devicePixelRatio: 2
+>>>>>>> d88f12ab0bfe19efa5eb97fd0fa834c0b1b6922c
             }
           }
       });
@@ -230,10 +247,25 @@ function dashBoard (dashCheck){
         }
       });
     }
+<<<<<<< HEAD
   }
 
 // }
 
 </script>
+=======
+    
+    document.querySelector('#pr').addEventListener('click',function(){
+        window.location.href = '/ktpn/pr'
+      })
+
+      document.querySelector('#mr').addEventListener('click',function(){
+        window.location.href = '/ktpn/mainmp'
+      })
+      document.querySelector('#prd').addEventListener('click',function(){
+        window.location.href = '/ktpn/tb_pr_mt2'
+      })
+  </script>
+>>>>>>> d88f12ab0bfe19efa5eb97fd0fa834c0b1b6922c
 </body>
 </html>
