@@ -18,4 +18,6 @@ public class TAK_PR_1100MTDTO {
 	private String eqpm_oprt_stts_val;			//장비가동상태값
 	private String prod_end_yn;					//생산완료여부
 	private int dfc_rt;						//불량률
+
+	private int total_prod_qntt; //일별 생산량
 }

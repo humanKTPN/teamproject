@@ -371,65 +371,7 @@ function init() {
 
     }
 
-    //품목별 월별 총 생산량 셀렉별 표시변환
-    let arr = new Array();
-    let mu_box = document.querySelector('.mu_box')
-    console.log("mu_box : ", mu_box)
-    mu_box.addEventListener('click', function (evt) {
-        let mu_boxs = evt.target.value
-        console.log("mu_boxs : ", mu_boxs)
-        for(let i=0; i<4; i++){
-            arr[i] = document.getElementById('es_'+i)
-            console.log("요거요거요거요거"+arr[0])
-        }
-        if (mu_boxs == "1") {
-            arr[0].innerHTML = 10;
-            arr[1].innerHTML = 20;
-            arr[2].innerHTML = 30;
-            arr[3].innerHTML = 40;
-        } else if (mu_boxs == "2") {
-            arr[0].innerHTML = 110;
-            arr[1].innerHTML = 210;
-            arr[2].innerHTML = 301;
-            arr[3].innerHTML = 401;
-        } else if (mu_boxs == "3") {
-            arr[0].innerHTML = 1110;
-            arr[1].innerHTML = 210;
-            arr[2].innerHTML = 3110;
-            arr[3].innerHTML = 4101;
-        } else if (mu_boxs == "4") {
-            arr[0].innerHTML = 110;
-            arr[1].innerHTML = 20;
-            arr[2].innerHTML = 130;
-            arr[3].innerHTML = 410;
-        } else if (mu_boxs == "5") {
-            arr[0].innerHTML = 110;
-            arr[1].innerHTML = 210;
-            arr[2].innerHTML = 31110;
-            arr[3].innerHTML = 40;
-        } else if (mu_boxs == "6") {
-            arr[0].innerHTML = 110;
-            arr[1].innerHTML = 20;
-            arr[2].innerHTML = 301;
-            arr[3].innerHTML = 40;
-        } else if (mu_boxs == "7") {
-            arr[0].innerHTML = 101;
-            arr[1].innerHTML = 20;
-            arr[2].innerHTML = 30;
-            arr[3].innerHTML = 4011;
-        } else if (mu_boxs == "8") {
-            arr[0].innerHTML = 110;
-            arr[1].innerHTML = 210;
-            arr[2].innerHTML = 30;
-            arr[3].innerHTML = 410;
-        } else if (mu_boxs == "9") {
-            arr[0].innerHTML = 10111;
-            arr[1].innerHTML = 210;
-            arr[2].innerHTML = 30;
-            arr[3].innerHTML = 40;
-        }
-
-    })
+    
 
 
 

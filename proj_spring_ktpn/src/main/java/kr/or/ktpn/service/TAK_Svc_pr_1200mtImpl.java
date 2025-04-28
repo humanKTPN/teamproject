@@ -16,9 +16,23 @@ public class TAK_Svc_pr_1200mtImpl implements TAK_Svc_pr_1200mt {
 	@Autowired
 	TAK_PR_1200MTDAO tb_pr_1200MTDAO;
 	
+//	@Override
+//	public List selectDayDAO() {
+//		List PR_1200MTSVC = tb_pr_1200MTDAO.selectDayDTO();
+//		System.out.println("PR_1200MTSVC : "+PR_1200MTSVC);
+//		return PR_1200MTSVC;
+//	}
+
+	//라인별호기 셀렉
 	@Override
-	public List selectDayDAO() {
-		List PR_1200MTSVC = tb_pr_1200MTDAO.selectDayDTO();
+	public TAK_PR_1100MTDTO selectLineA1DAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectLineA1DTO();
+		System.out.println("PR_1200MTSVC : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineC3DAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectLineC3DTO();
 		System.out.println("PR_1200MTSVC : "+PR_1200MTSVC);
 		return PR_1200MTSVC;
 	}

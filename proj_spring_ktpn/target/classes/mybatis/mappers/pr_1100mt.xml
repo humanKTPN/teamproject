@@ -128,8 +128,7 @@
 		#{liun_nm},
 		#{item_nm},
 		#{item_cd},
-		TO_CHAR(SYSDATE,
-		'yyyy/mm/dd hh24:mi:ss'),
+		TO_CHAR(CURRENT_TIMESTAMP AT TIME ZONE 'UTC' + INTERVAL '9' HOUR, 'yyyy/mm/dd hh24:mi:ss'),
 		'00:00:00',
 		#{indc_qntt},
 		#{prod_qntt},
@@ -147,8 +146,7 @@
 		LIUN_NM = #{liun_nm},
 		ITEM_NM = #{item_nm},
 		ITEM_CD = #{item_cd},
-		PROD_STRT_TIME = TO_CHAR(SYSDATE, 'yyyy/mm/dd
-		hh24:mi:ss'),
+		PROD_STRT_TIME = TO_CHAR(CURRENT_TIMESTAMP AT TIME ZONE 'UTC' + INTERVAL '9' HOUR, 'yyyy/mm/dd hh24:mi:ss'),
 		PROD_END_TIME = '00:00:00',
 		INDC_QNTT = #{indc_qntt},
 		PROD_QNTT = #{prod_qntt},
@@ -164,8 +162,7 @@
 	<update id="PM_1100MT_complete" parameterType="TAK_PR_1100MTDTO">
 		UPDATE
 		TB_PR_1100MT SET
-		PROD_END_TIME = TO_CHAR(SYSDATE, 'yyyy/mm/dd
-		hh24:mi:ss'),
+		PROD_END_TIME = TO_CHAR(CURRENT_TIMESTAMP AT TIME ZONE 'UTC' + INTERVAL '9' HOUR, 'yyyy/mm/dd hh24:mi:ss'),
 		EQPM_OPRT_STTS_VAL = 'N',
 		PROD_END_YN = 'Y',
 		DFC_RT =
