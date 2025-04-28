@@ -16,10 +16,9 @@ public class KW_Ctrl_fboard_1000mt {
 	@Autowired
 	KW_Svc_fb_1000mt serv;
 	
-	@RequestMapping(value = "/notice", method = RequestMethod.GET)
-	
+	@RequestMapping(value = "/free", method = RequestMethod.GET)
 	public String listcontents() {
-		System.out.println("notice 작동테스트");
+		System.out.println("free 작동테스트");
 
 		List<KW_DTO_BR_1000MT> list = serv.getfboardlist();
 		

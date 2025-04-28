@@ -71,8 +71,8 @@
 
                         <!-- 검색 결과 리스트 출력 -->
                         <c:choose>
-                            <c:when test="${not empty list}">
-                                <c:forEach var="dt" items="${list}">
+                            <c:when test="${not empty pagedList}">
+                                <c:forEach var="dt" items="${pagedList}">
                                     <tr>
                                         <td class="command-td"><a href="prDetail?prod_cd=${dt.prod_cd}">${dt.prod_cd}</a></td>
                                         <td class="command-td">${dt.prod_pln_cd}</td>

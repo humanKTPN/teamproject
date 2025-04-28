@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Human MES Solution</title>
+<link rel="icon" href="	https://cdn-icons-png.flaticon.com/512/262/262047.png" type="image/x-icon">
 <link rel="stylesheet" href="resources/css/layOut_kwak.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
@@ -38,7 +39,7 @@
                 <div class="menu">작업관리</div>
                 <div class="menu">생산관리</div>
                 <div class="menu">생산리포팅</div>
-                <div class="menu">자재관리</div>
+                <div class="menu">재고관리</div>
                 <div class="menu">품질관리</div>
             </div>
         </div>

@@ -4,7 +4,7 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.TAK_PR_1200MTDTO">
 
-	<!-- 호기별 생산량 A-1 -->
+	<!-- 호기별 생산량 금일 A-1 -->
 	<select id="pr_1100MT_lineA1" resultType="TAK_PR_1100MTDTO">
 		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
 		FROM
@@ -14,7 +14,7 @@
 		AND PROD_END_TIME IS NOT NULL
 		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) =TRUNC(SYSDATE)
 	</select>
-	<!-- 호기별 생산량 A-2 -->
+	<!-- 호기별 생산량 금일 A-2 -->
 	<select id="pr_1100MT_lineA2" resultType="TAK_PR_1100MTDTO">
 		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
 		FROM
@@ -24,7 +24,7 @@
 		AND PROD_END_TIME IS NOT NULL
 		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) =TRUNC(SYSDATE)
 	</select>
-	<!-- 호기별 생산량 A-3 -->
+	<!-- 호기별 생산량 금일 A-3 -->
 	<select id="pr_1100MT_lineA3" resultType="TAK_PR_1100MTDTO">
 		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
 		FROM
@@ -35,7 +35,7 @@
 		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) =TRUNC(SYSDATE)
 	</select>
 
-	<!-- 호기별 생산량 B-1 -->
+	<!-- 호기별 생산량 금일 B-1 -->
 	<select id="pr_1100MT_lineB1" resultType="TAK_PR_1100MTDTO">
 		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
 		FROM
@@ -45,7 +45,7 @@
 		AND PROD_END_TIME IS NOT NULL
 		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) =TRUNC(SYSDATE)
 	</select>
-	<!-- 호기별 생산량 B-2 -->
+	<!-- 호기별 생산량 금일 B-2 -->
 	<select id="pr_1100MT_lineB2" resultType="TAK_PR_1100MTDTO">
 		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
 		FROM
@@ -55,7 +55,7 @@
 		AND PROD_END_TIME IS NOT NULL
 		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) =TRUNC(SYSDATE)
 	</select>
-	<!-- 호기별 생산량 B-3 -->
+	<!-- 호기별 생산량 금일 B-3 -->
 	<select id="pr_1100MT_lineB3" resultType="TAK_PR_1100MTDTO">
 		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
 		FROM
@@ -66,7 +66,7 @@
 		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) =TRUNC(SYSDATE)
 	</select>
 
-	<!-- 호기별 생산량 C-1 -->
+	<!-- 호기별 생산량 금일 C-1 -->
 	<select id="pr_1100MT_lineC1" resultType="TAK_PR_1100MTDTO">
 		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
 		FROM
@@ -76,7 +76,7 @@
 		AND PROD_END_TIME IS NOT NULL
 		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) =TRUNC(SYSDATE)
 	</select>
-	<!-- 호기별 생산량 C-2 -->
+	<!-- 호기별 생산량 금일 C-2 -->
 	<select id="pr_1100MT_lineC2" resultType="TAK_PR_1100MTDTO">
 		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
 		FROM
@@ -86,7 +86,7 @@
 		AND PROD_END_TIME IS NOT NULL
 		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) =TRUNC(SYSDATE)
 	</select>
-	<!-- 호기별 생산량 C-3 -->
+	<!-- 호기별 생산량 금일 C-3 -->
 	<select id="pr_1100MT_lineC3" resultType="TAK_PR_1100MTDTO">
 		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
 		FROM
@@ -95,6 +95,112 @@
 		AND PROD_END_YN = 'Y'
 		AND PROD_END_TIME IS NOT NULL
 		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) =TRUNC(SYSDATE)
+	</select>
+	
+
+<!-- 	호기별 금주 생산량 -->
+
+
+	<!-- 호기별 생산량 금주 A-1 -->
+	<select id="pr_1100MT_lineA1_week" resultType="TAK_PR_1100MTDTO">
+		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
+		FROM
+		TB_PR_1100MT
+		WHERE LIUN_NM = 'A라인1호기'
+		AND PROD_END_YN = 'Y'
+		AND PROD_END_TIME IS NOT NULL
+		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) 
+      BETWEEN TRUNC(SYSDATE - 6) AND TRUNC(SYSDATE)
+	</select>
+	<!-- 호기별 생산량 금주 A-2 -->
+	<select id="pr_1100MT_lineA2_week" resultType="TAK_PR_1100MTDTO">
+		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
+		FROM
+		TB_PR_1100MT
+		WHERE LIUN_NM = 'A라인2호기'
+		AND PROD_END_YN = 'Y'
+		AND PROD_END_TIME IS NOT NULL
+		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) 
+      BETWEEN TRUNC(SYSDATE - 6) AND TRUNC(SYSDATE)
+	</select>
+	<!-- 호기별 생산량 금주 A-3 -->
+	<select id="pr_1100MT_lineA3_week" resultType="TAK_PR_1100MTDTO">
+		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
+		FROM
+		TB_PR_1100MT
+		WHERE LIUN_NM = 'A라인3호기'
+		AND PROD_END_YN = 'Y'
+		AND PROD_END_TIME IS NOT NULL
+		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) 
+      BETWEEN TRUNC(SYSDATE - 6) AND TRUNC(SYSDATE)
+	</select>
+
+	<!-- 호기별 생산량 금주 B-1 -->
+	<select id="pr_1100MT_lineB1_week" resultType="TAK_PR_1100MTDTO">
+		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
+		FROM
+		TB_PR_1100MT
+		WHERE LIUN_NM = 'B라인1호기'
+		AND PROD_END_YN = 'Y'
+		AND PROD_END_TIME IS NOT NULL
+		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) 
+      BETWEEN TRUNC(SYSDATE - 6) AND TRUNC(SYSDATE)
+	</select>
+	<!-- 호기별 생산량 금주 B-2 -->
+	<select id="pr_1100MT_lineB2_week" resultType="TAK_PR_1100MTDTO">
+		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
+		FROM
+		TB_PR_1100MT
+		WHERE LIUN_NM = 'B라인2호기'
+		AND PROD_END_YN = 'Y'
+		AND PROD_END_TIME IS NOT NULL
+		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) 
+      BETWEEN TRUNC(SYSDATE - 6) AND TRUNC(SYSDATE)
+	</select>
+	<!-- 호기별 생산량 금주 B-3 -->
+	<select id="pr_1100MT_lineB3_week" resultType="TAK_PR_1100MTDTO">
+		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
+		FROM
+		TB_PR_1100MT
+		WHERE LIUN_NM = 'B라인3호기'
+		AND PROD_END_YN = 'Y'
+		AND PROD_END_TIME IS NOT NULL
+		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) 
+      BETWEEN TRUNC(SYSDATE - 6) AND TRUNC(SYSDATE)
+	</select>
+
+	<!-- 호기별 생산량 금주 C-1 -->
+	<select id="pr_1100MT_lineC1_week" resultType="TAK_PR_1100MTDTO">
+		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
+		FROM
+		TB_PR_1100MT
+		WHERE LIUN_NM = 'C라인1호기'
+		AND PROD_END_YN = 'Y'
+		AND PROD_END_TIME IS NOT NULL
+		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) 
+      BETWEEN TRUNC(SYSDATE - 6) AND TRUNC(SYSDATE)
+	</select>
+	<!-- 호기별 생산량 금주 C-2 -->
+	<select id="pr_1100MT_lineC2_week" resultType="TAK_PR_1100MTDTO">
+		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
+		FROM
+		TB_PR_1100MT
+		WHERE LIUN_NM = 'C라인2호기'
+		AND PROD_END_YN = 'Y'
+		AND PROD_END_TIME IS NOT NULL
+		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) 
+      BETWEEN TRUNC(SYSDATE - 6) AND TRUNC(SYSDATE)
+	</select>
+	<!-- 호기별 생산량 금주 C-3 -->
+	<select id="pr_1100MT_lineC3_week" resultType="TAK_PR_1100MTDTO">
+		SELECT NVL(SUM(PROD_QNTT), 0) AS TOTAL_PROD_QNTT
+		FROM
+		TB_PR_1100MT
+		WHERE LIUN_NM = 'C라인3호기'
+		AND PROD_END_YN = 'Y'
+		AND PROD_END_TIME IS NOT NULL
+		AND TRUNC(TO_DATE(PROD_END_TIME, 'YYYY/MM/DD HH24:MI:SS')) 
+      BETWEEN TRUNC(SYSDATE - 6) AND TRUNC(SYSDATE)
 	</select>
 
 </mapper>

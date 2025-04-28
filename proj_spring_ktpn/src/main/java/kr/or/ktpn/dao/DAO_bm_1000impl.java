@@ -74,6 +74,7 @@ public class DAO_bm_1000impl implements DAO_bm_1000mt{
  		  try {
 // 	 			count = sqlSession.insert("mapper.emp.insertEmp", empDTO);
  			  count = sqlSession.insert("mapper.bm_1000mt.insertMr", mrMap);
+// 			  count = sqlSession.insert("mapper.bm_1000mt.insertBm", mrMap);
  			  System.out.println("DAO : "+mrMap); // empno가 채워져 있음
  			  // 그러면 아래 같은데에서 재사용 가능
 // 	 			count = sqlSession.insert("mapper.emp.insertEmp4", empDTO);

@@ -2,6 +2,8 @@ package kr.or.ktpn.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -82,16 +84,40 @@ public class KW_Ctrl_mb_1000mt {
 	    return "redirect:/member"; // 목록으로 이동
 	}
 	    
-//	@RequestMapping(value = "/loginone", method = RequestMethod.GET) // 로그인 인증프로세스 만들거임(미개봉)
-//	public String oneMember(
-//			@ModelAttribute
-//			KW_DTO_MB_1000MT dto) {
-//		System.out.println("login창 들어간다능");
-//		
-//		KW_DTO_MB_1000MT result = serv.getMemberone(dto);
-//		
-//		System.out.println("result : " + result);
-//		
-//		return "/login/login";
-//	}
+	@RequestMapping(value = "/login", method = RequestMethod.GET) // 로그인 인증프로세스 만들거임(미개봉)
+	public String oneMember(
+			@ModelAttribute
+//			KW_DTO_MB_1000MT dto
+			String id) {
+		System.out.println("login창 들어간다능");
+		
+		KW_DTO_MB_1000MT result = serv.getMemberId(id);
+		
+		System.out.println("result : " + result);
+		
+		return "/login/login";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String loginProcess(
+	        @RequestParam("id") String id,
+	        @RequestParam("pw") String pw,
+	        HttpSession session,
+	        Model model) {
+
+	    System.out.println("🛂 로그인 시도: " + id + "/" + pw);
+
+	    KW_DTO_MB_1000MT user = serv.getMemberId(id); // DB에서 해당 ID 조회
+	    System.out.println("user : "+user);
+
+	    if (user != null && user.getPw().equals(pw)) {
+	        System.out.println("✅ 로그인 성공");
+	        session.setAttribute("loginUser", user); // 세션 저장
+	        return "redirect:/"; // 로그인 후 메인 페이지로 이동
+	    } else {
+	        System.out.println("❌ 로그인 실패");
+	        model.addAttribute("msg", "아이디 또는 비밀번호가 틀렸습니다.");
+	        return "/login/login"; // 다시 로그인 페이지로
+	    }
+	}
 }

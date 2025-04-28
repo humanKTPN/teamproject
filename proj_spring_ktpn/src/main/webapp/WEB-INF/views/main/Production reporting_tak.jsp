@@ -565,63 +565,63 @@
 		//A라인 1호기
 		if (mu_boxs == "1") {
 			arr[0].innerHTML = `${LineA1.total_prod_qntt }`;
-			arr[1].innerHTML = 20;
+			arr[1].innerHTML = `${LineA1_week.total_prod_qntt }`;
 			arr[2].innerHTML = 30;
 			arr[3].innerHTML = 40;
 		}
 		//A라인 2호기
 		else if (mu_boxs == "2") {
-			arr[0].innerHTML = 110;
-			arr[1].innerHTML = 210;
+			arr[0].innerHTML = `${LineA2.total_prod_qntt }`;
+			arr[1].innerHTML = `${LineA2_week.total_prod_qntt }`;
 			arr[2].innerHTML = 301;
 			arr[3].innerHTML = 401;
 		}
 		//A라인 3호기
 		else if (mu_boxs == "3") {
-			arr[0].innerHTML = 1110;
-			arr[1].innerHTML = 210;
+			arr[0].innerHTML = `${LineA3.total_prod_qntt }`;
+			arr[1].innerHTML = `${LineA3_week.total_prod_qntt }`;
 			arr[2].innerHTML = 3110;
 			arr[3].innerHTML = 4101;
 		}
 		//B라인 1호기
 		else if (mu_boxs == "4") {
-			arr[0].innerHTML = 110;
-			arr[1].innerHTML = 20;
+			arr[0].innerHTML = `${LineB1.total_prod_qntt }`;
+			arr[1].innerHTML = `${LineB1_week.total_prod_qntt }`;
 			arr[2].innerHTML = 130;
 			arr[3].innerHTML = 410;
 		}
 		//B라인 2호기
 		else if (mu_boxs == "5") {
-			arr[0].innerHTML = 110;
-			arr[1].innerHTML = 210;
+			arr[0].innerHTML = `${LineB2.total_prod_qntt }`;
+			arr[1].innerHTML = `${LineB2_week.total_prod_qntt }`;
 			arr[2].innerHTML = 31110;
 			arr[3].innerHTML = 40;
 		}
 		//B라인 3호기
 		else if (mu_boxs == "6") {
-			arr[0].innerHTML = 110;
-			arr[1].innerHTML = 20;
+			arr[0].innerHTML = `${LineB3.total_prod_qntt }`;
+			arr[1].innerHTML = `${LineB3_week.total_prod_qntt }`;
 			arr[2].innerHTML = 301;
 			arr[3].innerHTML = 40;
 		}
 		//C라인 1호기
 		else if (mu_boxs == "7") {
-			arr[0].innerHTML = 101;
-			arr[1].innerHTML = 20;
+			arr[0].innerHTML = `${LineC1.total_prod_qntt }`;
+			arr[1].innerHTML = `${LineC1_week.total_prod_qntt }`;
 			arr[2].innerHTML = 30;
 			arr[3].innerHTML = 4011;
 		}
 		//C라인 2호기
 		else if (mu_boxs == "8") {
-			arr[0].innerHTML = 110;
-			arr[1].innerHTML = 210;
+			arr[0].innerHTML = `${LineC2.total_prod_qntt }`;
+			arr[1].innerHTML = `${LineC2_week.total_prod_qntt }`;
 			arr[2].innerHTML = 30;
 			arr[3].innerHTML = 410;
 		}
 		//C라인 3호기
 		else if (mu_boxs == "9") {
 			arr[0].innerHTML = `${LineC3.total_prod_qntt }`;
-			arr[1].innerHTML = 10;
+			arr[1].innerHTML = `${LineC3_week.total_prod_qntt }`;
 			arr[2].innerHTML = 30;
 			arr[3].innerHTML = 40;
 		}

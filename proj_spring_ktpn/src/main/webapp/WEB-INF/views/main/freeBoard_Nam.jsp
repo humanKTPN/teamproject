@@ -12,12 +12,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
 <!-- 여기에 대시보드 css 파일옮기기 -->
-<link rel="stylesheet" href="resources/css/noticeBoard_Nam.css">
+<link rel="stylesheet" href="resources/css/freeBoard_Nam.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<!-- <script src="resources/js/noticeBoard_Nam.js"></script> -->
+<script src="resources/js/freeBoard_Nam.js"></script>
 <style>
 /******************
         모바일 버전 구현(불량쪽 차트는 ....)
@@ -32,7 +32,7 @@
 			<div class='boardarea'>
 				<div class="margin-con">
 					<div class='pagecon'>
-						<p id='pageinfo'>공지사항</p>
+						<p id='pageinfo'>자유게시판</p>
 					</div>
 					<div class='middle_board'>
 						<div class='searcharea'>

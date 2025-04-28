@@ -36,19 +36,6 @@ public class KW_Svc_mb_1000mtimpl implements KW_Svc_mb_1000mt {
 	public int delete(String id) {
         return mb.delete(id);
     }
+	
 
-	
-	
-	
-	// 작업자(일반회원) 가져오는 메소드
-	@Override
-	public List getWorker() {
-		// TODO Auto-generated method stub
-			
-		System.out.println("service member");
-		List list = mb.selectWorker();
-		System.out.println("all Worker : " + list);
-			
-		return list;
-	}
 }
