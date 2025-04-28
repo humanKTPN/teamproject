@@ -109,7 +109,6 @@ public class KW_Ctrl_mb_1000mt {
 
 	    KW_DTO_MB_1000MT user = serv.getMemberId(id); // DB에서 해당 ID 조회
 	    System.out.println("user : "+user);
-
 	    if (user != null && user.getPw().equals(pw)) {
 	        System.out.println("✅ 로그인 성공");
 	        session.setAttribute("loginUser", user); // 세션 저장

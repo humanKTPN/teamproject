@@ -98,7 +98,7 @@ function init(){
     
     // 로그아웃 버튼 
       document.querySelector('.subBut').addEventListener('click',function(){
-        window.location.href = "#"
+        window.location.href = "/ktpn/login"
       })
   
       // 로고버튼

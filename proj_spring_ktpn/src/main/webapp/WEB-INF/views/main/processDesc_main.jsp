@@ -118,11 +118,13 @@
 			       </c:choose>
 			    </div>
             </div>
+         <c:if test="${loginUser.mbr_nm eq '관리자'}">
             <div class="add-con">
                 <div class="add">
                     추가
                 </div>
             </div> 
+         </c:if>
         </div>
     </div>
 </body>
