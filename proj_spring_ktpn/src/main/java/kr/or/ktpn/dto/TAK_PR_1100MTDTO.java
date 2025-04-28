@@ -20,4 +20,6 @@ public class TAK_PR_1100MTDTO {
 	private int dfc_rt;						//불량률
 
 	private int total_prod_qntt; //일별 생산량
+	private int total_dfc_rt;
+	private int defect_rate;
 }

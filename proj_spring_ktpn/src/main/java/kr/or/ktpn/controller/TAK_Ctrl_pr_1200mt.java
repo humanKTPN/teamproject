@@ -38,7 +38,7 @@ public class TAK_Ctrl_pr_1200mt {
 		TAK_PR_1100MTDTO selectLineC3 = svc_pr_1200mt.selectLineC3DAO();
 		
 		
-		//라인별 호기 금일 셀렉
+		//라인별 호기 금주 셀렉
 		TAK_PR_1100MTDTO selectLineA1_week = svc_pr_1200mt.selectLineA1_weekDAO();
 		TAK_PR_1100MTDTO selectLineA2_week = svc_pr_1200mt.selectLineA2_weekDAO();
 		TAK_PR_1100MTDTO selectLineA3_week = svc_pr_1200mt.selectLineA3_weekDAO();
@@ -48,6 +48,29 @@ public class TAK_Ctrl_pr_1200mt {
 		TAK_PR_1100MTDTO selectLineC1_week = svc_pr_1200mt.selectLineC1_weekDAO();
 		TAK_PR_1100MTDTO selectLineC2_week = svc_pr_1200mt.selectLineC2_weekDAO();
 		TAK_PR_1100MTDTO selectLineC3_week = svc_pr_1200mt.selectLineC3_weekDAO();
+
+		
+		//라인별 호기 금월 셀렉
+		TAK_PR_1100MTDTO selectLineA1_month = svc_pr_1200mt.selectLineA1_monthDAO();
+		TAK_PR_1100MTDTO selectLineA2_month = svc_pr_1200mt.selectLineA2_monthDAO();
+		TAK_PR_1100MTDTO selectLineA3_month = svc_pr_1200mt.selectLineA3_monthDAO();
+		TAK_PR_1100MTDTO selectLineB1_month = svc_pr_1200mt.selectLineB1_monthDAO();
+		TAK_PR_1100MTDTO selectLineB2_month = svc_pr_1200mt.selectLineB2_monthDAO();
+		TAK_PR_1100MTDTO selectLineB3_month = svc_pr_1200mt.selectLineB3_monthDAO();
+		TAK_PR_1100MTDTO selectLineC1_month = svc_pr_1200mt.selectLineC1_monthDAO();
+		TAK_PR_1100MTDTO selectLineC2_month = svc_pr_1200mt.selectLineC2_monthDAO();
+		TAK_PR_1100MTDTO selectLineC3_month = svc_pr_1200mt.selectLineC3_monthDAO();
+
+		//라인별 호기 금월 불량률 셀렉
+		TAK_PR_1100MTDTO selectLineA1_month_DR = svc_pr_1200mt.selectLineA1_month_DRDAO();
+		TAK_PR_1100MTDTO selectLineA2_month_DR = svc_pr_1200mt.selectLineA2_month_DRDAO();
+		TAK_PR_1100MTDTO selectLineA3_month_DR = svc_pr_1200mt.selectLineA3_month_DRDAO();
+		TAK_PR_1100MTDTO selectLineB1_month_DR = svc_pr_1200mt.selectLineB1_month_DRDAO();
+		TAK_PR_1100MTDTO selectLineB2_month_DR = svc_pr_1200mt.selectLineB2_month_DRDAO();
+		TAK_PR_1100MTDTO selectLineB3_month_DR = svc_pr_1200mt.selectLineB3_month_DRDAO();
+		TAK_PR_1100MTDTO selectLineC1_month_DR = svc_pr_1200mt.selectLineC1_month_DRDAO();
+		TAK_PR_1100MTDTO selectLineC2_month_DR = svc_pr_1200mt.selectLineC2_month_DRDAO();
+		TAK_PR_1100MTDTO selectLineC3_month_DR = svc_pr_1200mt.selectLineC3_month_DRDAO();
 		
 		
 		
@@ -65,7 +88,7 @@ public class TAK_Ctrl_pr_1200mt {
 		model.addAttribute("LineC2", selectLineC2);
 		model.addAttribute("LineC3", selectLineC3);
 
-		//라인별 호기 금일 셀렉
+		//라인별 호기 금주 셀렉
 		model.addAttribute("LineA1_week", selectLineA1_week);
 		model.addAttribute("LineA2_week", selectLineA2_week);
 		model.addAttribute("LineA3_week", selectLineA3_week);
@@ -75,7 +98,30 @@ public class TAK_Ctrl_pr_1200mt {
 		model.addAttribute("LineC1_week", selectLineC1_week);
 		model.addAttribute("LineC2_week", selectLineC2_week);
 		model.addAttribute("LineC3_week", selectLineC3_week);
-//		System.out.println("selectDayList : "+selectDayList);
+
+		//라인별 호기 금월 셀렉
+		model.addAttribute("LineA1_month", selectLineA1_month);
+		model.addAttribute("LineA2_month", selectLineA2_month);
+		model.addAttribute("LineA3_month", selectLineA3_month);
+		model.addAttribute("LineB1_month", selectLineB1_month);
+		model.addAttribute("LineB2_month", selectLineB2_month);
+		model.addAttribute("LineB3_month", selectLineB3_month);
+		model.addAttribute("LineC1_month", selectLineC1_month);
+		model.addAttribute("LineC2_month", selectLineC2_month);
+		model.addAttribute("LineC3_month", selectLineC3_month);
+
+		//라인별 호기 금월 불량률 셀렉
+		model.addAttribute("LineA1_month_DR", selectLineA1_month_DR);
+		model.addAttribute("LineA2_month_DR", selectLineA2_month_DR);
+		model.addAttribute("LineA3_month_DR", selectLineA3_month_DR);
+		model.addAttribute("LineB1_month_DR", selectLineB1_month_DR);
+		model.addAttribute("LineB2_month_DR", selectLineB2_month_DR);
+		model.addAttribute("LineB3_month_DR", selectLineB3_month_DR);
+		model.addAttribute("LineC1_month_DR", selectLineC1_month_DR);
+		model.addAttribute("LineC2_month_DR", selectLineC2_month_DR);
+		model.addAttribute("LineC3_month_DR", selectLineC3_month_DR);
+		
+		//		System.out.println("selectDayList : "+selectDayList);
 		
 		return "Production reporting_tak.tiles";
 	}

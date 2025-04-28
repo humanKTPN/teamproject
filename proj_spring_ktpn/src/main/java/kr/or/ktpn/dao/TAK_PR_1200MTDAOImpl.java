@@ -176,5 +176,154 @@ public class TAK_PR_1200MTDAOImpl implements TAK_PR_1200MTDAO {
 	}
 	
 	
+	//라인별호기 금월 셀렉
+	@Override
+	public TAK_PR_1100MTDTO selectLineA1_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineA1_month");
+		System.out.println("PR_1200MTDAOLineA1_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineA2_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineA2_month");
+		System.out.println("PR_1200MTDAOLineA2_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineA3_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineA3_month");
+		System.out.println("PR_1200MTDAOLineA3_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineB1_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineB1_month");
+		System.out.println("PR_1200MTDAOLineB1_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineB2_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineB2_month");
+		System.out.println("PR_1200MTDAOLineB2_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineB3_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineB3_month");
+		System.out.println("PR_1200MTDAOLineB3_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineC1_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineC1_month");
+		System.out.println("PR_1200MTDAOLineC1_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineC2_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineC2_month");
+		System.out.println("PR_1200MTDAOLineC2_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineC3_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineC3_month");
+		System.out.println("PR_1200MTDAOLineC3_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	
+	//라인별호기 금월 불량률 셀렉
+	@Override
+	public TAK_PR_1100MTDTO selectLineA1_month_DRDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineA1_month_DR");
+		System.out.println("PR_1200MTDAOLineA1_month_DR : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineA2_month_DRDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineA2_month_DR");
+		System.out.println("PR_1200MTDAOLineA2_month_DR : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineA3_month_DRDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineA3_month_DR");
+		System.out.println("PR_1200MTDAOLineA3_month_DR : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineB1_month_DRDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineB1_month_DR");
+		System.out.println("PR_1200MTDAOLineB1_month_DR : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineB2_month_DRDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineB2_month_DR");
+		System.out.println("PR_1200MTDAOLineB2_month_DR : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineB3_month_DRDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineB3_month_DR");
+		System.out.println("PR_1200MTDAOLineB3_month_DR : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineC1_month_DRDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineC1_month_DR");
+		System.out.println("PR_1200MTDAOLineC1_month_DR : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineC2_month_DRDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineC2_month_DR");
+		System.out.println("PR_1200MTDAOLineC2_month_DR : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectLineC3_month_DRDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_lineC3_month_DR");
+		System.out.println("PR_1200MTDAOLineC3_month_DR : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	
+	
 	
 }

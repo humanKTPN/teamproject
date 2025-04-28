@@ -233,15 +233,15 @@
 								</tr>
 								<tr>
 									<td class="es1">금주 생산량</td>
-									<td class="es2" id="es_1">125 ea</td>
+									<td class="es2" id="es_1">${LineA1_week.total_prod_qntt }</td>
 								</tr>
 								<tr>
 									<td class="es1">금월 생산량</td>
-									<td class="es2" id="es_2">521 ea</td>
+									<td class="es2" id="es_2">${LineA1_month.total_prod_qntt }</td>
 								</tr>
 								<tr>
 									<td class="es1">금월 불량률</td>
-									<td class="es2" id="es_3">2%</td>
+									<td class="es2" id="es_3">${LineA1_month_DR.defect_rate }%</td>
 								</tr>
 							</table>
 						</div>
@@ -566,64 +566,64 @@
 		if (mu_boxs == "1") {
 			arr[0].innerHTML = `${LineA1.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineA1_week.total_prod_qntt }`;
-			arr[2].innerHTML = 30;
-			arr[3].innerHTML = 40;
+			arr[2].innerHTML = `${LineA1_month.total_prod_qntt }`;
+			arr[3].innerHTML = `${LineA1_month_DR.defect_rate }%`;
 		}
 		//A라인 2호기
 		else if (mu_boxs == "2") {
 			arr[0].innerHTML = `${LineA2.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineA2_week.total_prod_qntt }`;
-			arr[2].innerHTML = 301;
-			arr[3].innerHTML = 401;
+			arr[2].innerHTML = `${LineA2_month.total_prod_qntt }`;
+			arr[3].innerHTML = `${LineA2_month_DR.defect_rate }%`;
 		}
 		//A라인 3호기
 		else if (mu_boxs == "3") {
 			arr[0].innerHTML = `${LineA3.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineA3_week.total_prod_qntt }`;
-			arr[2].innerHTML = 3110;
-			arr[3].innerHTML = 4101;
+			arr[2].innerHTML = `${LineA3_month.total_prod_qntt }`;
+			arr[3].innerHTML = `${LineA3_month_DR.defect_rate }%`;
 		}
 		//B라인 1호기
 		else if (mu_boxs == "4") {
 			arr[0].innerHTML = `${LineB1.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineB1_week.total_prod_qntt }`;
-			arr[2].innerHTML = 130;
-			arr[3].innerHTML = 410;
+			arr[2].innerHTML = `${LineB1_month.total_prod_qntt }`;
+			arr[3].innerHTML = `${LineB1_month_DR.defect_rate }%`;
 		}
 		//B라인 2호기
 		else if (mu_boxs == "5") {
 			arr[0].innerHTML = `${LineB2.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineB2_week.total_prod_qntt }`;
-			arr[2].innerHTML = 31110;
-			arr[3].innerHTML = 40;
+			arr[2].innerHTML = `${LineB2_month.total_prod_qntt }`;
+			arr[3].innerHTML = `${LineB2_month_DR.defect_rate }%`;
 		}
 		//B라인 3호기
 		else if (mu_boxs == "6") {
 			arr[0].innerHTML = `${LineB3.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineB3_week.total_prod_qntt }`;
-			arr[2].innerHTML = 301;
-			arr[3].innerHTML = 40;
+			arr[2].innerHTML = `${LineB3_month.total_prod_qntt }`;
+			arr[3].innerHTML = `${LineB3_month_DR.defect_rate }%`;
 		}
 		//C라인 1호기
 		else if (mu_boxs == "7") {
 			arr[0].innerHTML = `${LineC1.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineC1_week.total_prod_qntt }`;
-			arr[2].innerHTML = 30;
-			arr[3].innerHTML = 4011;
+			arr[2].innerHTML = `${LineC1_month.total_prod_qntt }`;
+			arr[3].innerHTML = `${LineC1_month_DR.defect_rate }%`;
 		}
 		//C라인 2호기
 		else if (mu_boxs == "8") {
 			arr[0].innerHTML = `${LineC2.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineC2_week.total_prod_qntt }`;
-			arr[2].innerHTML = 30;
-			arr[3].innerHTML = 410;
+			arr[2].innerHTML = `${LineC2_month.total_prod_qntt }`;
+			arr[3].innerHTML = `${LineC2_month_DR.defect_rate }%`;
 		}
 		//C라인 3호기
 		else if (mu_boxs == "9") {
 			arr[0].innerHTML = `${LineC3.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineC3_week.total_prod_qntt }`;
-			arr[2].innerHTML = 30;
-			arr[3].innerHTML = 40;
+			arr[2].innerHTML = `${LineC3_month.total_prod_qntt }`;
+			arr[3].innerHTML = `${LineC3_month_DR.defect_rate }%`;
 		}
 
 	})
