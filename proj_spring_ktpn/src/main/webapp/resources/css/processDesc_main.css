@@ -137,6 +137,7 @@ form{
     margin: 5px;
     background-color: #2f373a;
     color: white;
+    cursor:pointer;
 
 }
 .command-table{
