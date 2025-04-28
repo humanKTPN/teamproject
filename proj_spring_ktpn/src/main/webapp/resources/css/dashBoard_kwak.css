@@ -562,7 +562,14 @@ body{
 #badChart,#badChart2{
     width: 80%;
     height: 88%;
+    
 }
+#badChart{
+	display: flex;
+	align-items: center;
+}
+
+
 #title-name{
     color: white;
     text-align: left;
