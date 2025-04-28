@@ -64,18 +64,18 @@ public class con_PMm {
 	
 
 	// 검색한 거래처 보여주는 메소드
-		@RequestMapping(value = "/searchorder", method = RequestMethod.GET)
-		public String searchCompany(Model model, tb_od_1000mt_DTO dto) {
+	@RequestMapping(value = "/searchorder", method = RequestMethod.GET)
+	public String searchCompany(Model model, tb_od_1000mt_DTO dto) {
 
-			System.out.println("type : " + dto.getType());
-			System.out.println("keyword : " + dto.getKeyword());
+		System.out.println("type : " + dto.getType());
+		System.out.println("keyword : " + dto.getKeyword());
 			
-			List list = svc_od_1000mt.testSearchCompanyList(dto);
-			model.addAttribute("companyList", list);
-			model.addAttribute("dto", dto);
+		List list = svc_od_1000mt.testSearchCompanyList(dto);
+		model.addAttribute("companyList", list);
+		model.addAttribute("dto", dto);
 
-			return "TestMM_order_park.tiles";
-		}
+		return "TestMM_order_park.tiles";
+	}
 	
 	// 거래처 보여주는 메소드
 	@RequestMapping(value = "/order", method = RequestMethod.GET)
@@ -444,9 +444,16 @@ public class con_PMm {
 				
 				if(mdto.getCrnt_aftr_cnt() < 0) {
 					System.out.println("오류! 출고할 수량이 현재 수량보다 많습니다");
-				} else if(mdto.getCrnt_aftr_cnt() >= 0) {
+				} else if(mdto.getCrnt_aftr_cnt() > 0) {
 					i = svc_mr_1000mt.updateMaterials(mdto);
 					System.out.println("원자재 현황 테이블에 " + i + "행이 수정되었습니다");
+					
+					if(i > 0) {
+						check = true;
+					}
+				} else {		// 변동 후 수량이 0이면 삭제
+					i = svc_mr_1000mt.deleteMaterials(mdto);
+					System.out.println("원자재 현황 테이블에 " + i + "행이 삭제되었습니다");
 					
 					if(i > 0) {
 						check = true;
@@ -877,7 +884,7 @@ public class con_PMm {
 		return i;
 	}
 
-	// 완제품재 현황 삭제, 완제품로그 추가하는 메소드
+	// 완제품 현황 삭제, 완제품로그 추가하는 메소드
 	@RequestMapping(value = "/deletep", method = RequestMethod.POST)
 	public String deleteP() {
 

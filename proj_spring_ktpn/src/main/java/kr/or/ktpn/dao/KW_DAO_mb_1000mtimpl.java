@@ -38,5 +38,21 @@ public class KW_DAO_mb_1000mtimpl implements KW_DAO_mb_1000mt {
 	public int delete(String id){
 		 System.out.println("너가 괴롭히는 "+id);
 	        return sqls.delete("mapper.TB_BR_1000MT.deletemb", id);
-	    }
+	}
+	
+	
+	
+	
+	
+	
+	// 작업자(일반회원) 가져오는 메소드
+	@Override
+	public List selectWorker() {
+		// TODO Auto-generated method stub
+				
+		List result = sqls.selectList("mapper.tb_mr_1000mt.selectAllWorker");
+		System.out.println("result : " + result);
+				
+		return result;
+	}
 }
