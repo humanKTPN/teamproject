@@ -81,7 +81,7 @@
 					<%
 							// 페이지 파라미터 처리
 							int currentPage = request.getParameter("page") == null ? 1 : Integer.parseInt(request.getParameter("page"));
-							int pageSize = 10;
+							int pageSize = 5;
 							int startRow = (currentPage - 1) * pageSize;
 							int endRow = startRow + pageSize;
 

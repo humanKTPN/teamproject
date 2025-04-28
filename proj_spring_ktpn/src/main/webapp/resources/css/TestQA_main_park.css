@@ -310,5 +310,9 @@ details[open] > summary:before {
     }
 }
 
-
+.span1 {
+	border: 1px solid darkgrey;
+    background-color: #2f373a;
+    color: white; 
+}
 

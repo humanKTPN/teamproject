@@ -58,7 +58,7 @@
 					<!-- 					</div> -->
 
 					<details>
-						<summary> 추가 </summary>
+						<summary><span class="span1">추가</span></summary>
 
 
 
