@@ -31,7 +31,7 @@
 			</p>
 			<div class='send'>
 				<!-- 아이디 입력창 -->
-				<form method="post" action="ktpn/">
+				<form method="post" action="login">
 					<div class='idarea'>
 						<input type='text' id='uid' name='id' placeholder="아이디 입력"
 							style='height: 30px'>
@@ -45,30 +45,30 @@
 						<!-- 비밀번호 입력창 -->
 						<input type='password' id='upw' name='pw' placeholder="비밀번호 입력"
 							style='height: 30px'>
+						<!-- 로그인 버튼 -->
+						<button type='submit' id='login' name="checking">로그인</button>
+					</div>
+					<br>
+					<!-- 유저여부체크 -->
+					<!--             <div id='uchkmessege'> 자바스크립트로 조건에 따라 추가할 예정 -->
+					<!--                 ( 여기는 회원이 맞는지 확인하는 구간입니다! 추후 자동으로 삽입될 예정 ) -->
+					<!--             </div> -->
+			
+			
+			
+					<!-- 주의사항메시지 -->
+					<div id='lost_messege'>** 회원가입이 필요한 경우 관리자에게 문의하시기 바랍니다. **</div>
+					<!-- 회원정보 찾기 메뉴 -->
+					<div class='buttons'>
+						<button type='button' id='idfind'>아이디찾기</button>
+						<button type='button' id='pwfind'>비밀번호찾기</button>
 					</div>
 				</form>
-				<button type='submit' id='login' name="checking">로그인</button>
 			</div>
 			<%-- 			<c:forEach var="dto" items="${resultList }"> --%>
 			<%-- 							${dto.id } --%>
 			<%-- 							${dto.pw } --%>
 			<%-- 				</c:forEach> --%>
-			<!-- 로그인 버튼 -->
-		</div>
-		<br>
-		<!-- 유저여부체크 -->
-		<!--             <div id='uchkmessege'> 자바스크립트로 조건에 따라 추가할 예정 -->
-		<!--                 ( 여기는 회원이 맞는지 확인하는 구간입니다! 추후 자동으로 삽입될 예정 ) -->
-		<!--             </div> -->
-
-
-
-		<!-- 주의사항메시지 -->
-		<div id='lost_messege'>** 회원가입이 필요한 경우 관리자에게 문의하시기 바랍니다. **</div>
-		<!-- 회원정보 찾기 메뉴 -->
-		<div class='buttons'>
-			<button type='button' id='idfind'>아이디찾기</button>
-			<button type='button' id='pwfind'>비밀번호찾기</button>
 		</div>
 		<br>
 	</div>
