@@ -23,6 +23,76 @@ public class TAK_Svc_pr_1200mtImpl implements TAK_Svc_pr_1200mt {
 //		return PR_1200MTSVC;
 //	}
 
+	//가동현황 데이터
+	@Override
+	public List selectNYDAO() {
+		List PR_1200MTSVC = tb_pr_1200MTDAO.selectNYDTO();
+		System.out.println("PR_1200MTSVC_NY : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	
+	//품목별 데이터
+	@Override
+	public TAK_PR_1100MTDTO selectSSGDAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectSSGDTO();
+		System.out.println("PR_1200MTSVC_SSG : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectHHDAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectHHDTO();
+		System.out.println("PR_1200MTSVC_HH : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectSSG_weekDAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectSSG_weekDTO();
+		System.out.println("PR_1200MTSVC_SSG_week : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectHH_weekDAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectHH_weekDTO();
+		System.out.println("PR_1200MTSVC_HH_week : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectSSG_monthDAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectSSG_monthDTO();
+		System.out.println("PR_1200MTSVC_SSG_month : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectHH_monthDAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectHH_monthDTO();
+		System.out.println("PR_1200MTSVC_HH_month : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	
+	
+	
+	//원형 그래프 데이터
+	@Override
+	public TAK_PR_1100MTDTO selectSSDAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectSSDTO();
+		System.out.println("PR_1200MTSVC_SS : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectSS_IQDAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectSS_IQDTO();
+		System.out.println("PR_1200MTSVCSS_IQ : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectSS_DRDAO() {
+		TAK_PR_1100MTDTO PR_1200MTSVC = tb_pr_1200MTDAO.selectSS_DRDTO();
+		System.out.println("PR_1200MTSVCSS_DR : "+PR_1200MTSVC);
+		return PR_1200MTSVC;
+	}
+	
+	
+	
 	//라인별호기 금일 셀렉
 	@Override
 	public TAK_PR_1100MTDTO selectLineA1DAO() {

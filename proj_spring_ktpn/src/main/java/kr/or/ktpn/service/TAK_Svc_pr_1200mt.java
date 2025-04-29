@@ -8,6 +8,25 @@ import kr.or.ktpn.dto.TAK_PR_1110MTDTO;
 public interface TAK_Svc_pr_1200mt {
 
 //	public List selectDayDAO();
+
+	//가동현황 데이터
+	public List selectNYDAO();
+	
+	//품목별 데이터
+	//일별
+	public TAK_PR_1100MTDTO selectSSGDAO();
+	public TAK_PR_1100MTDTO selectHHDAO();
+	//주별
+	public TAK_PR_1100MTDTO selectSSG_weekDAO();
+	public TAK_PR_1100MTDTO selectHH_weekDAO();
+	//월별
+	public TAK_PR_1100MTDTO selectSSG_monthDAO();
+	public TAK_PR_1100MTDTO selectHH_monthDAO();
+	
+	//원형 그래프 데이터
+	public TAK_PR_1100MTDTO selectSSDAO();
+	public TAK_PR_1100MTDTO selectSS_DRDAO();
+	public TAK_PR_1100MTDTO selectSS_IQDAO();
 	
 	//라인별호기 금일 셀렉
 	public TAK_PR_1100MTDTO selectLineA1DAO();

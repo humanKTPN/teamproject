@@ -10,6 +10,26 @@ public interface TAK_PR_1200MTDAO {
 	//일별 데이터
 //	public List<TAK_PR_1200MTDTO> selectDayDTO();
 	
+	//가동현황 데이터
+	public List selectNYDTO();
+	
+	//원형 그래프 데이터
+	public TAK_PR_1100MTDTO selectSSDTO();
+	public TAK_PR_1100MTDTO selectSS_DRDTO();
+	public TAK_PR_1100MTDTO selectSS_IQDTO();
+	
+	//품목별 데이터
+	//일별
+	public TAK_PR_1100MTDTO selectSSGDTO();
+	public TAK_PR_1100MTDTO selectHHDTO();
+	//주별
+	public TAK_PR_1100MTDTO selectSSG_weekDTO();
+	public TAK_PR_1100MTDTO selectHH_weekDTO();
+	//월별
+	public TAK_PR_1100MTDTO selectSSG_monthDTO();
+	public TAK_PR_1100MTDTO selectHH_monthDTO();
+	
+	
 	//라인별호기 금일 셀렉
 	public TAK_PR_1100MTDTO selectLineA1DTO();
 	public TAK_PR_1100MTDTO selectLineA2DTO();

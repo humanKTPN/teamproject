@@ -24,6 +24,14 @@ public class TAK_PR_1200MTDAOImpl implements TAK_PR_1200MTDAO {
 //		return PR_1200MTDAO;
 //	}
 
+	//가동현황 데이터
+	@Override
+	public List selectNYDTO() {
+		List PR_1200MTDAO = sqlSession.selectList("mapper.TAK_PR_1200MTDTO.pr_1100MT_NY");
+		System.out.println("PR_1200MTDAO_NY : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
 	
 	//라인별호기 금일 셀렉
 	@Override
@@ -34,6 +42,90 @@ public class TAK_PR_1200MTDAOImpl implements TAK_PR_1200MTDAO {
 		
 		return PR_1200MTDAO;
 	}
+	
+	//품목별 데이터
+	
+	//일별
+	@Override
+	public TAK_PR_1100MTDTO selectSSGDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_SSG");
+		System.out.println("PR_1200MTDAO_SSG : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectHHDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_HH");
+		System.out.println("PR_1200MTDAO_HH : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	//주별
+	@Override
+	public TAK_PR_1100MTDTO selectSSG_weekDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_SSG_week");
+		System.out.println("PR_1200MTDAOSSG_week : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectHH_weekDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_HH_week");
+		System.out.println("PR_1200MTDAOHH_week : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	//월별
+	@Override
+	public TAK_PR_1100MTDTO selectSSG_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_SSG_month");
+		System.out.println("PR_1200MTDAOSSG_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	@Override
+	public TAK_PR_1100MTDTO selectHH_monthDTO() {
+		
+		TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_HH_month");
+		System.out.println("PR_1200MTDAOHH_month : " + PR_1200MTDAO);
+		
+		return PR_1200MTDAO;
+	}
+	
+	
+	
+	//원형 그래프 데이터
+		@Override
+		public TAK_PR_1100MTDTO selectSSDTO() {
+			
+			TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_SS");
+			System.out.println("PR_1200MTDAO_SS : " + PR_1200MTDAO);
+			
+			return PR_1200MTDAO;
+		}
+		@Override
+		public TAK_PR_1100MTDTO selectSS_IQDTO() {
+			
+			TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_SS_IQ");
+			System.out.println("PR_1200MTDAO_SS_IQ : " + PR_1200MTDAO);
+			
+			return PR_1200MTDAO;
+		}
+		@Override
+		public TAK_PR_1100MTDTO selectSS_DRDTO() {
+			
+			TAK_PR_1100MTDTO PR_1200MTDAO = sqlSession.selectOne("mapper.TAK_PR_1200MTDTO.pr_1100MT_SS_DR");
+			System.out.println("PR_1200MTDAO_SS_DR : " + PR_1200MTDAO);
+			
+			return PR_1200MTDAO;
+		}
+		
+	
 	@Override
 	public TAK_PR_1100MTDTO selectLineA2DTO() {
 		

@@ -26,6 +26,25 @@ public class TAK_Ctrl_pr_1200mt {
 		
 //		List<TAK_PR_1100MTDTO> selectDayList = svc_pr_1200mt.selectDayDAO();
 		
+		//가동현황 데이터
+		List selectNY = svc_pr_1200mt.selectNYDAO();
+		System.out.println("selectNY : " + selectNY);
+		
+		//원형 그래프 데이터
+		TAK_PR_1100MTDTO selectSS = svc_pr_1200mt.selectSSDAO();
+		TAK_PR_1100MTDTO selectSS_IQ = svc_pr_1200mt.selectSS_IQDAO();
+		TAK_PR_1100MTDTO selectSS_DR = svc_pr_1200mt.selectSS_DRDAO();
+
+		
+		//품목별 그래프 데이터
+		TAK_PR_1100MTDTO selectSSG = svc_pr_1200mt.selectSSGDAO();
+		TAK_PR_1100MTDTO selectSSG_week = svc_pr_1200mt.selectSSG_weekDAO();
+		TAK_PR_1100MTDTO selectSSG_month = svc_pr_1200mt.selectSSG_monthDAO();
+		TAK_PR_1100MTDTO selectHH = svc_pr_1200mt.selectHHDAO();
+		TAK_PR_1100MTDTO selectHH_week = svc_pr_1200mt.selectHH_weekDAO();
+		TAK_PR_1100MTDTO selectHH_month = svc_pr_1200mt.selectHH_monthDAO();
+		
+		
 		//라인별 호기 금일 셀렉
 		TAK_PR_1100MTDTO selectLineA1 = svc_pr_1200mt.selectLineA1DAO();
 		TAK_PR_1100MTDTO selectLineA2 = svc_pr_1200mt.selectLineA2DAO();
@@ -76,6 +95,24 @@ public class TAK_Ctrl_pr_1200mt {
 		
 		
 //		model.addAttribute("pr_1200mt", selectDayList);
+		
+		//가동현황 데이터
+		model.addAttribute("selectNY", selectNY);
+		
+		
+		//원형 그래프 데이터
+		model.addAttribute("selectSS", selectSS);
+		model.addAttribute("selectSS_IQ", selectSS_IQ);
+		model.addAttribute("selectSS_DR", selectSS_DR);
+		
+		//품목별 그래프 데이터
+		model.addAttribute("selectSSG", selectSSG);
+		model.addAttribute("selectSSG_week", selectSSG_week);
+		model.addAttribute("selectSSG_month", selectSSG_month);
+		model.addAttribute("selectHH", selectHH);
+		model.addAttribute("selectHH_week", selectHH_week);
+		model.addAttribute("selectHH_month", selectHH_month);
+		
 		
 		//라인별 호기 금일 셀렉
 		model.addAttribute("LineA1", selectLineA1);

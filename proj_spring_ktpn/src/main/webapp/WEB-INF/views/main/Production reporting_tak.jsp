@@ -241,7 +241,7 @@
 								</tr>
 								<tr>
 									<td class="es1">금월 불량률</td>
-									<td class="es2" id="es_3">${LineA1_month_DR.defect_rate }%</td>
+									<td class="es2" id="es_3">${LineA1_month_DR.defect_rate }%(${LineA1_month_DR.total_dfc_rt })</td>
 								</tr>
 							</table>
 						</div>
@@ -258,64 +258,41 @@
 										<th class="es2">가동상태</th>
 									</tr>
 									<tr>
-										<td class="es1">A라인 1호기</td>
-										<td class="es2">가동중</td>
+										<td class="es1 NY11">A라인1호기</td>
+										<td class="es2 NY1">정지</td>
 									</tr>
 									<tr>
-										<td class="es1">A라인 2호기</td>
-										<td class="es2">가동중</td>
+										<td class="es1 NY22">A라인2호기</td>
+										<td class="es2 NY2">정지</td>
 									</tr>
 									<tr>
-										<td class="es1">A라인 3호기</td>
-										<td class="es2 stop">정지(유휴시간)</td>
+										<td class="es1 NY33">A라인3호기</td>
+										<td class="es2 NY3">정지</td>
 									</tr>
 									<tr>
-										<td class="es1">A라인 4호기</td>
-										<td class="es2">가동중</td>
+										<td class="es1 NY44">B라인1호기</td>
+										<td class="es2 NY4">정지</td>
 									</tr>
 									<tr>
-										<td class="es1">A라인 5호기</td>
-										<td class="es2">가동중</td>
+										<td class="es1 NY55">B라인2호기</td>
+										<td class="es2 NY5">정지</td>
 									</tr>
 									<tr>
-										<td class="es1">A라인 6호기</td>
-										<td class="es2">가동중</td>
+										<td class="es1 NY66">B라인3호기</td>
+										<td class="es2 NY6">정지</td>
+									</tr>
+
+									<tr>
+										<td class="es1 NY77">C라인1호기</td>
+										<td class="es2 NY7">정지</td>
 									</tr>
 									<tr>
-										<td class="es1">B라인 1호기</td>
-										<td class="es2">가동중</td>
+										<td class="es1 NY88">C라인2호기</td>
+										<td class="es2 NY8">정지</td>
 									</tr>
 									<tr>
-										<td class="es1">B라인 2호기</td>
-										<td class="es2">가동중</td>
-									</tr>
-									<tr>
-										<td class="es1">B라인 3호기</td>
-										<td class="es2">가동중</td>
-									</tr>
-									<tr>
-										<td class="es1">B라인 4호기</td>
-										<td class="es2">가동중</td>
-									</tr>
-									<tr>
-										<td class="es1">C라인 1호기</td>
-										<td class="es2 stop">정지(유휴시간)</td>
-									</tr>
-									<tr>
-										<td class="es1">C라인 2호기</td>
-										<td class="es2">가동중</td>
-									</tr>
-									<tr>
-										<td class="es1">C라인 3호기</td>
-										<td class="es2">가동중</td>
-									</tr>
-									<tr>
-										<td class="es1">C라인 4호기</td>
-										<td class="es2">가동중</td>
-									</tr>
-									<tr>
-										<td class="es1">A라인 1호기</td>
-										<td class="es2">가동중</td>
+										<td class="es1 NY99">C라인3호기</td>
+										<td class="es2 NY9">정지</td>
 									</tr>
 								</table>
 							</div>
@@ -331,7 +308,7 @@
 				<div class="date_ssBox" id="date_ssList1">
 					<div class="date_ssBox_tit">일별 생산량</div>
 					<div class="date_ssTable">
-						<table>
+						<table class="sticky">
 							<tr>
 								<th class="es3">설비명</th>
 								<th class="es4">생산량</th>
@@ -342,53 +319,42 @@
 							</tr>
 							<tr>
 								<td class="es3">A라인 1호기</td>
-								<td class="es4">15 ea</td>
+								<td class="es4">${LineA1.total_prod_qntt }</td>
 								<td class="es5">B라인 1호기</td>
-								<td class="es6">19 ea</td>
+								<td class="es6">${LineB1.total_prod_qntt }</td>
 								<td class="es7">C라인 1호기</td>
-								<td class="es8">17 ea</td>
+								<td class="es8">${LineC1.total_prod_qntt }</td>
 							</tr>
 							<tr>
 								<td class="es3">A라인 2호기</td>
-								<td class="es4">12 ea</td>
+								<td class="es4">${LineA2.total_prod_qntt }</td>
 								<td class="es5">B라인 2호기</td>
-								<td class="es6">13 ea</td>
+								<td class="es6">${LineB2.total_prod_qntt }</td>
 								<td class="es7">C라인 2호기</td>
-								<td class="es8">11 ea</td>
+								<td class="es8">${LineC2.total_prod_qntt }</td>
 							</tr>
 							<tr>
 								<td class="es3">A라인 3호기</td>
-								<td class="es4">15 ea</td>
+								<td class="es4">${LineA3.total_prod_qntt }</td>
 								<td class="es5">B라인 3호기</td>
-								<td class="es6">13 ea</td>
+								<td class="es6">${LineB3.total_prod_qntt }</td>
 								<td class="es7">C라인 3호기</td>
-								<td class="es8">11 ea</td>
-							</tr>
-							<tr>
-								<td class="es3">A라인 4호기</td>
-								<td class="es4">13 ea</td>
-								<td class="es5">B라인 4호기</td>
-								<td class="es6">15 ea</td>
-								<td class="es7">C라인 4호기</td>
-								<td class="es8">10 ea</td>
+								<td class="es8">${LineC3.total_prod_qntt }</td>
 							</tr>
 						</table>
 					</div>
 					<div class="date_ssBox_tit">품목별 금일 총 생산량</div>
 					<select class="pr_bay" style="margin-left: 20px;">
 						<option value="1">싹싹지우개</option>
-						<option value="2">처음처럼지우개</option>
-						<option value="3">우유빛지우개</option>
-						<option value="4">뭐든지우개</option>
-						<option value="5">리셋지우개</option>
+						<option value="2">하츄핑지우개</option>
 					</select>
-					<div class="ssTotal" id="ssTotal1">24ea</div>
+					<div class="ssTotal" id="ssTotal1">${selectSSG.total_prod_qntt_ssg}</div>
 				</div>
 				<!-- 주간별,품목별 총생산량 박스 -->
 				<div class="date_ssBox hide" id="date_ssList2">
 					<div class="date_ssBox_tit">주간별 생산량</div>
 					<div class="date_ssTable">
-						<table>
+						<table class="sticky">
 							<tr>
 								<th class="es3">설비명</th>
 								<th class="es4">생산량</th>
@@ -399,35 +365,27 @@
 							</tr>
 							<tr>
 								<td class="es3">A라인 1호기</td>
-								<td class="es4">56 ea</td>
+								<td class="es4">${LineA1_week.total_prod_qntt }</td>
 								<td class="es5">B라인 1호기</td>
-								<td class="es6">67 ea</td>
+								<td class="es6">${LineB1_week.total_prod_qntt }</td>
 								<td class="es7">C라인 1호기</td>
-								<td class="es8">65 ea</td>
+								<td class="es8">${LineC1_week.total_prod_qntt }</td>
 							</tr>
 							<tr>
 								<td class="es3">A라인 2호기</td>
-								<td class="es4">58 ea</td>
+								<td class="es4">${LineA2_week.total_prod_qntt }</td>
 								<td class="es5">B라인 2호기</td>
-								<td class="es6">64 ea</td>
+								<td class="es6">${LineB2_week.total_prod_qntt }</td>
 								<td class="es7">C라인 2호기</td>
-								<td class="es8">59 ea</td>
+								<td class="es8">${LineC2_week.total_prod_qntt }</td>
 							</tr>
 							<tr>
 								<td class="es3">A라인 3호기</td>
-								<td class="es4">71 ea</td>
+								<td class="es4">${LineA3_week.total_prod_qntt }</td>
 								<td class="es5">B라인 3호기</td>
-								<td class="es6">68 ea</td>
+								<td class="es6">${LineB3_week.total_prod_qntt }</td>
 								<td class="es7">C라인 3호기</td>
-								<td class="es8">61 ea</td>
-							</tr>
-							<tr>
-								<td class="es3">A라인 4호기</td>
-								<td class="es4">59 ea</td>
-								<td class="es5">B라인 4호기</td>
-								<td class="es6">67 ea</td>
-								<td class="es7">C라인 4호기</td>
-								<td class="es8">81 ea</td>
+								<td class="es8">${LineC3_week.total_prod_qntt }</td>
 							</tr>
 						</table>
 					</div>
@@ -435,18 +393,15 @@
 					<div class="date_ssBox_tit">품목별 주간 총 생산량</div>
 					<select class="pm_week" style="margin-left: 20px;">
 						<option value="1">싹싹지우개</option>
-						<option value="2">처음처럼지우개</option>
-						<option value="3">우유빛지우개</option>
-						<option value="4">뭐든지우개</option>
-						<option value="5">리셋지우개</option>
+						<option value="2">하츄핑지우개</option>
 					</select>
-					<div class="ssTotal" id="ssTotal2">213ea</div>
+					<div class="ssTotal" id="ssTotal2">${selectSSG_week.total_prod_qntt_ssg}</div>
 				</div>
 				<!-- 월별,품목별 총생산량 박스 -->
 				<div class="date_ssBox hide" id="date_ssList3">
 					<div class="date_ssBox_tit">월별 생산량</div>
 					<div class="date_ssTable">
-						<table>
+						<table class="sticky">
 							<tr>
 								<th class="es3">설비명</th>
 								<th class="es4">생산량</th>
@@ -457,47 +412,36 @@
 							</tr>
 							<tr>
 								<td class="es3">A라인 1호기</td>
-								<td class="es4">246 ea</td>
+								<td class="es4">${LineA1_month.total_prod_qntt }</td>
 								<td class="es5">B라인 1호기</td>
-								<td class="es6">278 ea</td>
+								<td class="es6">${LineB1_month.total_prod_qntt }</td>
 								<td class="es7">C라인 1호기</td>
-								<td class="es8">263 ea</td>
+								<td class="es8">${LineC1_month.total_prod_qntt }</td>
 							</tr>
 							<tr>
 								<td class="es3">A라인 2호기</td>
-								<td class="es4">269 ea</td>
+								<td class="es4">${LineA2_month.total_prod_qntt }</td>
 								<td class="es5">B라인 2호기</td>
-								<td class="es6">283 ea</td>
+								<td class="es6">${LineB2_month.total_prod_qntt }</td>
 								<td class="es7">C라인 2호기</td>
-								<td class="es8">258 ea</td>
+								<td class="es8">${LineC2_month.total_prod_qntt }</td>
 							</tr>
 							<tr>
 								<td class="es3">A라인 3호기</td>
-								<td class="es4">304 ea</td>
+								<td class="es4">${LineA3_month.total_prod_qntt }</td>
 								<td class="es5">B라인 3호기</td>
-								<td class="es6">285 ea</td>
+								<td class="es6">${LineB3_month.total_prod_qntt }</td>
 								<td class="es7">C라인 3호기</td>
-								<td class="es8">294 ea</td>
-							</tr>
-							<tr>
-								<td class="es3">A라인 4호기</td>
-								<td class="es4">279 ea</td>
-								<td class="es5">B라인 4호기</td>
-								<td class="es6">286 ea</td>
-								<td class="es7">C라인 4호기</td>
-								<td class="es8">283 ea</td>
+								<td class="es8">${LineC3_month.total_prod_qntt }</td>
 							</tr>
 						</table>
 					</div>
 					<div class="date_ssBox_tit">품목별 월 총 생산량</div>
 					<select class="pm_month" style="margin-left: 20px;">
 						<option value="1">싹싹지우개</option>
-						<option value="2">처음처럼지우개</option>
-						<option value="3">우유빛지우개</option>
-						<option value="4">뭐든지우개</option>
-						<option value="5">리셋지우개</option>
+						<option value="2">하츄핑지우개</option>
 					</select>
-					<div class="ssTotal" id="ssTotal3">935ea</div>
+					<div class="ssTotal" id="ssTotal3">${selectSSG_month.total_prod_qntt_ssg}</div>
 				</div>
 			</div>
 			<div class="main_piBox">
@@ -506,51 +450,63 @@
 				<!-- 2단계: DOM 컨테이너 준비하기: 너비(width), 높이(height) 설정하기 -->
 				<div id="main_pi" style="width: 100%; height: 100%;"></div>
 				<!-- 3단계: 초기화 및 차트 옵션 설정하기 -->
-				<!-- <script type="text/javascript">
-                            // 3-1. 준비한 DOM 컨테이너에서 echarts 초기화하기
-                            let myChart_pi = echarts.init(document.getElementById('main_pi'))
 
-                            option = {
-                                title: {
-                                    text: '월 통계 자료',
-                                    subtext: '',
-                                    left: 'center'
-                                },
-                                tooltip: {
-                                    trigger: 'item'
-                                },
-                                legend: {
-                                    orient: 'vertical',
-                                    left: 'left'
-                                },
-                                series: [
-                                    {
-                                        name: 'KTPN',
-                                        type: 'pie',
-                                        radius: '50%',
-                                        data: [
-                                            { value: 1048, name: '월 목표량' },
-                                            { value: 735, name: '월 생산량' },
-                                            { value: 735, name: '월 불량률' },
-                                        ],
-                                        emphasis: {
-                                            itemStyle: {
-                                                shadowBlur: 10,
-                                                shadowOffsetX: 0,
-                                                shadowColor: 'rgba(0, 0, 0, 0.5)'
-                                            }
-                                        }
-                                    }
-                                ]
-                            };
-                            // 3-3. 차트 옵션 설정하기
-                            myChart_pi.setOption(option)
-                        </script> -->
+
+				</script>
+
 			</div>
 		</div>
 	</div>
 </body>
 <script>
+
+//가동 설비 현황
+const selectNY = [
+        <c:forEach var="item" items="${selectNY}" varStatus="i">
+            {
+                liun_nm: "${item.liun_nm}"
+            }<c:if test="${!i.last}">,</c:if>
+        </c:forEach>
+    ];
+console.log(selectNY);
+
+    for(let j = 0; j < selectNY.length ; j++){
+    	
+    	let liun_nm = selectNY[j].liun_nm;  // 배열은 0부터 시작하므로, i-1로 접근
+		for (let i = 1; i < 10; i++) {
+    	// 템플릿 리터럴을 사용하여 .NYi 클래스를 선택
+	
+   		let NYII = document.querySelector('.NY'+i+''+i);
+    	let NYI = document.querySelector('.NY'+i);
+    	console.log(i, NYII )
+    	console.log(i, NYI )
+    	console.log(liun_nm )
+    
+   		 // 만약 NYII가 null이 아니면
+    	if (NYII) {
+        // 'selectNY[i].liun_nm'과 비교
+//		let liun_nm = '${selectNY[0].liun_nm}';  // 배열은 0부터 시작하므로, i-1로 접근
+            NYI.classList.remove('stop');
+            if(NYI.textContent==='정지'){
+            	
+            	
+      	 	 if (NYII.textContent === liun_nm) {
+        	    // '가동중' 상태로 변경
+            	NYI.textContent = '가동중';
+            	NYI.classList.remove('stop');
+      	 	 } else {
+        	    // '정지' 상태로 변경
+           	 NYI.textContent = '정지';
+           	 NYI.classList.add('stop');
+       	 } 
+            	
+       }
+    }
+    }
+}
+
+
+
 	//라인 호기별 셀렉별 표시변환
 	let arr = new Array();
 	let mu_box = document.querySelector('.mu_box')
@@ -567,65 +523,153 @@
 			arr[0].innerHTML = `${LineA1.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineA1_week.total_prod_qntt }`;
 			arr[2].innerHTML = `${LineA1_month.total_prod_qntt }`;
-			arr[3].innerHTML = `${LineA1_month_DR.defect_rate }%`;
+			arr[3].innerHTML = `${LineA1_month_DR.defect_rate }%(${LineA1_month_DR.total_dfc_rt })`;
 		}
 		//A라인 2호기
 		else if (mu_boxs == "2") {
 			arr[0].innerHTML = `${LineA2.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineA2_week.total_prod_qntt }`;
 			arr[2].innerHTML = `${LineA2_month.total_prod_qntt }`;
-			arr[3].innerHTML = `${LineA2_month_DR.defect_rate }%`;
+			arr[3].innerHTML = `${LineA2_month_DR.defect_rate }%(${LineA2_month_DR.total_dfc_rt })`;
 		}
 		//A라인 3호기
 		else if (mu_boxs == "3") {
 			arr[0].innerHTML = `${LineA3.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineA3_week.total_prod_qntt }`;
 			arr[2].innerHTML = `${LineA3_month.total_prod_qntt }`;
-			arr[3].innerHTML = `${LineA3_month_DR.defect_rate }%`;
+			arr[3].innerHTML = `${LineA3_month_DR.defect_rate }%(${LineA3_month_DR.total_dfc_rt })`;
 		}
 		//B라인 1호기
 		else if (mu_boxs == "4") {
 			arr[0].innerHTML = `${LineB1.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineB1_week.total_prod_qntt }`;
 			arr[2].innerHTML = `${LineB1_month.total_prod_qntt }`;
-			arr[3].innerHTML = `${LineB1_month_DR.defect_rate }%`;
+			arr[3].innerHTML = `${LineB1_month_DR.defect_rate }%(${LineB1_month_DR.total_dfc_rt })`;
 		}
 		//B라인 2호기
 		else if (mu_boxs == "5") {
 			arr[0].innerHTML = `${LineB2.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineB2_week.total_prod_qntt }`;
 			arr[2].innerHTML = `${LineB2_month.total_prod_qntt }`;
-			arr[3].innerHTML = `${LineB2_month_DR.defect_rate }%`;
+			arr[3].innerHTML = `${LineB2_month_DR.defect_rate }%(${LineB2_month_DR.total_dfc_rt })`;
 		}
 		//B라인 3호기
 		else if (mu_boxs == "6") {
 			arr[0].innerHTML = `${LineB3.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineB3_week.total_prod_qntt }`;
 			arr[2].innerHTML = `${LineB3_month.total_prod_qntt }`;
-			arr[3].innerHTML = `${LineB3_month_DR.defect_rate }%`;
+			arr[3].innerHTML = `${LineB3_month_DR.defect_rate }%(${LineB3_month_DR.total_dfc_rt })`;
 		}
 		//C라인 1호기
 		else if (mu_boxs == "7") {
 			arr[0].innerHTML = `${LineC1.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineC1_week.total_prod_qntt }`;
 			arr[2].innerHTML = `${LineC1_month.total_prod_qntt }`;
-			arr[3].innerHTML = `${LineC1_month_DR.defect_rate }%`;
+			arr[3].innerHTML = `${LineC1_month_DR.defect_rate }%(${LineC1_month_DR.total_dfc_rt })`;
 		}
 		//C라인 2호기
 		else if (mu_boxs == "8") {
 			arr[0].innerHTML = `${LineC2.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineC2_week.total_prod_qntt }`;
 			arr[2].innerHTML = `${LineC2_month.total_prod_qntt }`;
-			arr[3].innerHTML = `${LineC2_month_DR.defect_rate }%`;
+			arr[3].innerHTML = `${LineC2_month_DR.defect_rate }%(${LineC2_month_DR.total_dfc_rt })`;
 		}
 		//C라인 3호기
 		else if (mu_boxs == "9") {
 			arr[0].innerHTML = `${LineC3.total_prod_qntt }`;
 			arr[1].innerHTML = `${LineC3_week.total_prod_qntt }`;
 			arr[2].innerHTML = `${LineC3_month.total_prod_qntt }`;
-			arr[3].innerHTML = `${LineC3_month_DR.defect_rate }%`;
+			arr[3].innerHTML = `${LineC3_month_DR.defect_rate }%(${LineC3_month_DR.total_dfc_rt })`;
 		}
 
 	})
+	
+	
+	//원형 그래프
+	let myChart_pi = echarts.init(document.getElementById('main_pi'))
+
+        option = {
+            title: {
+                text: '월 통계 자료',
+                subtext: '',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left'
+            },
+            series: [
+                {
+                    name: 'KTPN',
+                    type: 'pie',
+                    radius: '50%',
+                    data: [
+                        { value: ${selectSS_IQ.total_prod_qntt}, name: '월 목표량' },
+                        { value: ${selectSS.total_prod_qntt}, name: '월 생산량' },
+                        { value: ${selectSS_DR.total_dfc_rt}, name: '월 불량수량' },
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        myChart_pi.setOption(option)
+        
+        
+  //품목별 생산량
+  let pr_bay = document.querySelector('.pr_bay')
+    console.log("pr_bay : ", pr_bay)
+    pr_bay.addEventListener('change', function (evt) {
+        let pr_bays = evt.target.value
+        console.log("pr_bays : ", pr_bays)
+        let ssTotal1 = document.querySelector('#ssTotal1')
+        console.log("bbbbb", ssTotal1)
+
+        if (pr_bays == "1") {
+            ssTotal1.innerHTML = `${selectSSG.total_prod_qntt_ssg}`;
+        } else if (pr_bays == "2") {
+            ssTotal1.innerHTML = `${selectHH.total_prod_qntt_hh}`;
+        } 
+    })
+
+    //품목별 주간별 총 생산량 셀렉별 표시변환
+    let pm_week = document.querySelector('.pm_week')
+    console.log("pm_week : ", pm_week)
+    pm_week.addEventListener('change', function (evt) {
+        let pm_weeks = evt.target.value
+        console.log("pm_weeks : ", pm_weeks)
+        let ssTotal2 = document.querySelector('#ssTotal2')
+        console.log("bbbbb", ssTotal2)
+
+        if (pm_weeks == "1") {
+            ssTotal2.innerHTML = `${selectSSG_week.total_prod_qntt_ssg}`;
+        } else if (pm_weeks == "2") {
+            ssTotal2.innerHTML = `${selectHH_week.total_prod_qntt_hh}`;
+        } 
+    })
+
+    //품목별 월별 총 생산량 셀렉별 표시변환
+    let pm_month = document.querySelector('.pm_month')
+    console.log("pm_month : ", pm_month)
+    pm_month.addEventListener('change', function (evt) {
+        let pm_months = evt.target.value
+        console.log("pm_months : ", pm_months)
+        let ssTotal3 = document.querySelector('#ssTotal3')
+        console.log("bbbbb", ssTotal3)
+
+        if (pm_months == "1") {
+            ssTotal3.innerHTML = `${selectSSG_month.total_prod_qntt_ssg}`;
+        } else if (pm_months == "2") {
+            ssTotal3.innerHTML = `${selectHH_month.total_prod_qntt_hh}`;
+        }
+    })
 </script>
 </html>
