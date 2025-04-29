@@ -24,7 +24,7 @@
                         <i id="ham" class=" main-menu fas fa-solid fa-bars fa-lg"></i>&nbsp;&nbsp;<i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution
                     </div>
                     <div class="icon-sub">
-                        ${loginUser.getMbr_nm()} 님 환영합니다.
+                        ${ID.getMbr_nm()} 님 환영합니다.
                         <!-- <i class="fas fa-solid fa-gear fa-lg" style="display: flex; width: 60px; justify-content: space-between;" > -->
                         <i class="fas fa-regular fa-arrow-right-from-bracket fa-md">
                             <span class="subBut">로그아웃</span>

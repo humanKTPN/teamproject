@@ -3,10 +3,12 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-	<mapper namespace="mapper.TB_BR_1000MT">
+	<mapper namespace="mapper.TB_nBR_1000MT">
 	
 	<select id = "selectnbc" resultType="nboardDTO" >
-		select * from TB_BR_1000MT ORDER BY BRD_NO DESC
+		select * from TB_BR_1000MB
+		where boardfn = 'notice'
+		ORDER BY BRD_NO DESC
 	</select>
 	
 	<select id = "selectnbdetail" resultType="nboardDTO" parameterType="int">
@@ -17,12 +19,12 @@
 	<insert id="insertnbc" parameterType = "nboardDTO">
 	
 	<selectKey keyProperty="BRD_NO" resultType="int" order="BEFORE">
-        SELECT SEQ_TB_BR_1000MT.NEXTVAL FROM DUAL
+        SELECT SEQ_TB_NBR_1000MT.NEXTVAL FROM DUAL
     </selectKey>
     
-		INSERT INTO tb_br_1000mt
-		VALUES(#{BRD_NO}, #{TTL_NM}, #{BRD_DESC},
-		#{BLND_YN}, #{VW_CNT}, #{DLT_YN}, sysdate, sysdate, #{ID} )
+		INSERT INTO tb_br_1000mt (BRD_NO, BOARDFN, TTL_NM, BRD_DESC, VW_CNT, DLT_YN, REG_DTTM, MOD_DTTM, ID)
+		VALUES(#{BRD_NO}, #{BOARDFN}, #{TTL_NM}, #{BRD_DESC},
+		#{VW_CNT}, #{DLT_YN}, sysdate, sysdate, #{ID} )
 		
 	</insert>
 	
@@ -34,7 +36,7 @@
 	
 	<delete id = "deletenbc" parameterType = "int">
 		DELETE FROM TB_BR_1000MT
-  		WHERE BRD_NO = #{BRD_NO}
+  		WHERE BRD_NO = #{value}
 	</delete>
 	
 	<!-- 
@@ -47,6 +49,7 @@
 		SELECT ROWNUM AS rnum, A.* 
 		FROM (
 			SELECT * FROM TB_BR_1000MT
+			where boardfn = 'notice'
 			ORDER BY BRD_NO DESC
 		) A
 		WHERE ROWNUM &lt;= #{end}

@@ -118,7 +118,7 @@
 			       </c:choose>
 			    </div>
             </div>
-         <c:if test="${loginUser.mbr_nm eq '관리자'}">
+         <c:if test="${ID.mbr_nm eq '관리자'}">
             <div class="add-con">
                 <div class="add">
                     추가

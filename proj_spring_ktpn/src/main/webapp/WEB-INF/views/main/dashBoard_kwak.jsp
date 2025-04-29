@@ -129,6 +129,7 @@
 //                   title: { display: true, text: '재고현황' },
                   legend: { display: false }
                 },
+                responsive: false,
                 scales: {
 //                   x: { title: { display: false, text: '수량' } },
 //                   y: { title: { display: false, text: '항목명' } }
