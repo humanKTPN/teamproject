@@ -21,7 +21,7 @@
             <div>
                 <div id="title-name">
                     <div class="titleName">
-                        <i id="ham" class=" main-menu fas fa-solid fa-bars fa-lg"></i>&nbsp;&nbsp;<i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;Human MES solution
+                        <i id="ham" class=" main-menu fas fa-solid fa-bars fa-lg"></i>&nbsp;&nbsp;<i class="fas fa-solid fa-infinity fa-lg"></i>&nbsp;<span id='logo'>Human MES solution</span>
                     </div>
                     <div class="icon-sub">
                         ${ID.getMbr_nm()} 님 환영합니다.

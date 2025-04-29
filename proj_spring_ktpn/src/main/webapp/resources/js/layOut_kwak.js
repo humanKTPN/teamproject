@@ -102,7 +102,7 @@ function init(){
       })
   
       // 로고버튼
-      document.querySelector('.titleName').addEventListener('click',function(){
+      document.querySelector('#logo').addEventListener('click',function(){
         window.location.href = '/ktpn/'
       })
 

@@ -26,7 +26,7 @@
 <script src="resources/js/TestMM_main_park.js" defer></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="resources/js/layOut_kwak.js"></script>
+<!-- <script src="resources/js/layOut_kwak.js"></script> -->
 
 <style>
 /******************
