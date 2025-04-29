@@ -35,7 +35,7 @@
 									<c:param name="filename" value="${dt.IMG_PATH_ADR}" />
 								</c:url>
 <!-- 								<img border="0" class="eraser-img" src="${dt.IMG_PATH_ADR}"/> -->
-								<img border="0" class="eraser-img" src="temp/upload/${dt.IMG_PATH_ADR}"/>
+								<img border="0" class="eraser-img" src="/ktpn/temp/upload/${dt.IMG_PATH_ADR}"/>
 							</c:otherwise>
 						</c:choose>
 						<table class="detail-table">
