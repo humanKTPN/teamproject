@@ -513,12 +513,14 @@ public class con_PMm {
 		
 		if("i".equals(plogdto.getIob_se_cd())) {
 			list = svc_fs_1000mt.getProducts(plogdto.getFnsh_code());
+			System.out.println("list : " + list);
 			
-			if(list == null) {
+			if(list.get(0) == null) {
 				pdto.setFnsh_code(plogdto.getFnsh_code());
 				pdto.setFnsh_nm(plogdto.getFnshd_item_nm());
 				pdto.setCrnt_aftr_cnt(0 + plogdto.getCrnt_cnt());
 				pdto.setFnsh_loc_nm(plogdto.getFnshl_loc_nm());
+				System.out.println("pdto : " + pdto);
 				
 				i = svc_fs_1000mt.insertProducts(pdto);
 				System.out.println("완제품 현황 테이블에 " + i + "행이 삽입되었습니다");
