@@ -1,5 +1,5 @@
 package kr.or.ktpn.dao;
- 
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,25 +14,32 @@ import kr.or.ktpn.dto.KW_DTO_BR_1000MT;
 public class KW_DAO_nboard_1000mtimpl implements KW_DAO_nboard_1000mt {
 
 	@Autowired
-	SqlSession sqls; 
+	SqlSession sqls;
 	
 	@Override
 	public List<KW_DTO_BR_1000MT> selectnBoard(){
-		List<KW_DTO_BR_1000MT> list = sqls.selectList("mapper.TB_BR_1000MT.selectnbc");
+		List<KW_DTO_BR_1000MT> list = sqls.selectList("mapper.TB_nBR_1000MT.selectnbc");
 		System.out.println("nb list : " + list);
 		return list;
 	}
 	
 	@Override
 	public KW_DTO_BR_1000MT selectnbnum(int BRD_NO) {
-		KW_DTO_BR_1000MT cn = sqls.selectOne("mapper.TB_BR_1000MT.selectnbdetail", BRD_NO);
+		KW_DTO_BR_1000MT cn = sqls.selectOne("mapper.TB_nBR_1000MT.selectnbdetail", BRD_NO);
+		System.out.println("nb cn : "+ cn);
+		return cn;
+	}
+	
+	@Override
+	public KW_DTO_BR_1000MT selectfn(String BOARDFN) {
+		KW_DTO_BR_1000MT cn = sqls.selectOne("mapper.TB_nBR_1000MT.selectnbdetail", BOARDFN);
 		System.out.println("nb cn : "+ cn);
 		return cn;
 	}
 	
 	@Override
 	public int update(KW_DTO_BR_1000MT dto) {
-		int cn = sqls.update("mapper.TB_BR_1000MT.updatenbc", dto);
+		int cn = sqls.update("mapper.TB_nBR_1000MT.updatenbc", dto);
 		System.out.println("nb1 cn : "+ cn);
 		return cn;
 	}
@@ -40,14 +47,16 @@ public class KW_DAO_nboard_1000mtimpl implements KW_DAO_nboard_1000mt {
 	@Override
     public int insert(KW_DTO_BR_1000MT dto) {
 		System.out.println("너가 괴롭히는 "+ dto);
-        return sqls.insert("mapper.TB_BR_1000MT.insertnbc", dto);
+        return sqls.insert("mapper.TB_nBR_1000MT.insertnbc", dto);
     }
 	
 	 @Override
 	 public int delete(int BRD_NO) {
 		 System.out.println("너가 괴롭히는 "+ BRD_NO);
-        return sqls.delete("mapper.TB_BR_1000MT.deletenbc", BRD_NO);
+        return sqls.delete("mapper.TB_nBR_1000MT.deletenbc", BRD_NO);
     }
+	 
+	 
 	 
 	 @Override
 	 /**
@@ -60,11 +69,11 @@ public class KW_DAO_nboard_1000mtimpl implements KW_DAO_nboard_1000mt {
 	        int start = (page - 1) * pageSize + 1;
 	        int end = page * pageSize;
 
-	        Map<String, Integer> param = new HashMap<String, Integer>();
+	        Map<String, Integer> param = new HashMap<>();
 	        param.put("start", start);
 	        param.put("end", end);
 
-	        return sqls.selectList("mapper.TB_BR_1000MT.getBoardPagingList", param);
+	        return sqls.selectList("mapper.TB_nBR_1000MT.getBoardPagingList", param);
 	    }
 
 	    /**
@@ -72,6 +81,6 @@ public class KW_DAO_nboard_1000mtimpl implements KW_DAO_nboard_1000mt {
 	     * @return 총 게시글 수
 	     */
 	    public int getTotalBoardCount() {
-	        return sqls.selectOne("mapper.TB_BR_1000MT.getTotalBoardCount");
+	        return sqls.selectOne("mapper.TB_nBR_1000MT.getTotalBoardCount");
 	    }
 }

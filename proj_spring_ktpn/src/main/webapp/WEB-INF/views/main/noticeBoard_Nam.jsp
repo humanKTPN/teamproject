@@ -17,7 +17,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<!-- <script src="resources/js/noticeBoard_Nam.js"></script> -->
+<script src="resources/js/noticeBoard_Nam.js"></script>
 <style>
 /******************
         모바일 버전 구현(불량쪽 차트는 ....)
@@ -58,6 +58,7 @@
 							<table class='boardtable'>
 								<tr class='boardlist th' style="height: 30px;">
 									<th class='num'>번호</th>
+									<th class='fn'>게시판분류</th>
 									<th class='writetitle'>제목</th>
 									<th class='writeuser'>작성자</th>
 									<th class='writedate'>작성일</th>
@@ -66,7 +67,8 @@
 								<c:forEach var="dto" items="${list}">
 									<tr class='boardlist' style="height: 30px;">
 										<td class="wnum">${dto.BRD_NO}</td>
-										<td class="writetitle"><a href="writeview_Nam?BRD_NO=${dto.BRD_NO}">${dto.TTL_NM}</a></td>
+										<td class="wfn">${dto.BOARDFN}</td>
+										<td class="writetitle"><a href="nwriteview_Nam?BRD_NO=${dto.BRD_NO}">${dto.TTL_NM}</a></td>
 										<td class="writeuser">${dto.ID}</td>
 										<td class='writedate'>${dto.REG_DTTM}</td>
 										<td class='viewcount'>${dto.VW_CNT}</td>

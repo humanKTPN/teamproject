@@ -13,5 +13,6 @@ public interface KW_Svc_nb_1000mt {
 	public int delete(int BRD_NO);
 	List<KW_DTO_BR_1000MT> getBoardPagingList(int page);
     int getTotalBoardCount();
+	public KW_DTO_BR_1000MT getfn(String bOARDFN);
 	
 }

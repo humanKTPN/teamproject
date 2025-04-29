@@ -55,10 +55,10 @@ function init(){
                 window.location.href = "dashBoard_kwak.jsp"
             } else if (e.target.textContent == '게시판') {
                 // 게시판 메인
-                window.location.href = "boardcon"
+                window.location.href = "free"
             } else if (e.target.textContent == '공지사항') {
                 // 공지사항 메인
-                window.location.href = "noticeBoard_Nam.jsp"
+                window.location.href = "notice"
             } 
         })
     }// 메뉴 버튼 눌렀을때 해당 내용 나오게 하기<끝>
@@ -108,7 +108,7 @@ function init(){
     function cancel(){
         let cancel = document.querySelector('.cancel')
         console.log('수정취소')
-        window.location.href = "writeview_Nam.jsp"
+        window.location.href = "notice"
     }
        // 로그아웃 버튼 
     document.querySelector('.subBut').addEventListener('click',function(){

@@ -16,5 +16,6 @@ public interface KW_DAO_nboard_1000mt {
     int getTotalBoardCount();
 	
 	List<KW_DTO_BR_1000MT> getBoardPagingList(int page);
+	public KW_DTO_BR_1000MT selectfn(String BOARDFN);
 
 }

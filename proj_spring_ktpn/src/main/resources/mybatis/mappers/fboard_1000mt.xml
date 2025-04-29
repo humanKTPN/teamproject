@@ -3,10 +3,12 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-	<mapper namespace="mapper.TB_BR_1000MT1">
+	<mapper namespace="mapper.TB_fBR_1000MT">
 	
 	<select id = "selectfbc" resultType="fboardDTO" >
-		select * from TB_BR_1000MT ORDER BY BRD_NO DESC
+		select * from TB_BR_1000M
+		where boardfn = 'free'
+		ORDER BY BRD_NO DESC
 	</select>
 	
 	<select id = "selectfbdetail" resultType="fboardDTO" parameterType="int">
@@ -20,21 +22,21 @@
         SELECT SEQ_TB_BR_1000MT.NEXTVAL FROM DUAL
     </selectKey>
     
-		INSERT INTO tb_br_1000mt
-		VALUES(#{BRD_NO}, #{TTL_NM}, #{BRD_DESC},
-		#{BLND_YN}, #{VW_CNT}, #{DLT_YN}, sysdate, sysdate, #{ID} )
+		INSERT INTO tb_br_1000mt (BRD_NO, BOARDFN, TTL_NM, BRD_DESC, VW_CNT, DLT_YN, REG_DTTM, MOD_DTTM, ID)
+		VALUES(#{BRD_NO}, #{BOARDFN}, #{TTL_NM}, #{BRD_DESC},
+		#{VW_CNT}, #{DLT_YN}, sysdate, sysdate, #{ID} )
 		
 	</insert>
 	
-	<update id = "updatefbc" parameterType = "fboardDTO">
+	<update id = "updatenbc" parameterType = "fboardDTO">
 		update TB_BR_1000MT
 		set ttl_nm = #{TTL_NM}, BRD_DESC = #{BRD_DESC}
 		where brd_no = #{BRD_NO}
 	</update>
 	
-	<delete id = "deletefbc" parameterType = "int">
+	<delete id = "deletenbc" parameterType = "int">
 		DELETE FROM TB_BR_1000MT
-  		WHERE BRD_NO = #{BRD_NO}
+  		WHERE BRD_NO = #{value}
 	</delete>
 	
 	<!-- 
@@ -47,6 +49,7 @@
 		SELECT ROWNUM AS rnum, A.* 
 		FROM (
 			SELECT * FROM TB_BR_1000MT
+			where boardfn = 'free'
 			ORDER BY BRD_NO DESC
 		) A
 		WHERE ROWNUM &lt;= #{end}

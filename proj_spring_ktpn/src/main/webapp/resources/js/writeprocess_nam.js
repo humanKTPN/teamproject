@@ -54,10 +54,10 @@ function init() {
                 window.location.href = "dashBoard_kwak.jsp"
             } else if (e.target.textContent == '게시판') {
                 // 게시판 메인
-                window.location.href = "boardcon"
+                window.location.href = "free"
             } else if (e.target.textContent == '공지사항') {
                 // 공지사항 메인
-                window.location.href = "noticeBoard_Nam.jsp"
+                window.location.href = "notice"
             } else if (e.target.textContent == '기준관리') {
                 // 기준관리 메인
                 window.location.href = "masterdataManage_main_kwak.jsp"

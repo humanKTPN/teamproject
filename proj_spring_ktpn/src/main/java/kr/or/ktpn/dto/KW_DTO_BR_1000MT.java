@@ -11,7 +11,7 @@ import lombok.ToString;
 public class KW_DTO_BR_1000MT {
 
 	Integer BRD_NO;
-	String BRD_SENM;
+	String BOARDFN;
 	String TTL_NM;
 	String BRD_DESC;
 	String BLND_YN;

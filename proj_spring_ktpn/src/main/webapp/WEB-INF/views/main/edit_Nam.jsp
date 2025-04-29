@@ -30,11 +30,11 @@
 			<span id='pageinfo'> 글수정 </span>
 		</div>
 		<hr>
-		<form method="post" action="edit_Nam">
+		<form method="post" action="nedit_Nam">
 			<div class="dom">
 				<div class="editprocess">
 					<div class='viewdom'>
-							<p>게시판 번호 : ${dto.BRD_NO }<input type="number" name="BRD_NO" value="${dto.BRD_NO }" disabled></p>
+							<p>게시판 번호 : ${dto.BRD_NO }<input type="hidden" name="BRD_NO" value="${dto.BRD_NO }"></p>
 						<table>
 							<tr class='title-con'>
 								<td><span class='text'>제목</span></td>

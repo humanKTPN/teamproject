@@ -26,6 +26,11 @@ public class KW_Svc_nb_1000mtimpl implements KW_Svc_nb_1000mt {
 		return cn;
 	}
 	
+	public KW_DTO_BR_1000MT getfn(String bOARDFN) {
+		KW_DTO_BR_1000MT cn = mnb.selectfn(bOARDFN);
+		return cn;
+	}
+	
 	@Override
 	public int getnbupdate(KW_DTO_BR_1000MT dto) {
 		int cn = mnb.update(dto);

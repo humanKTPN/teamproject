@@ -2,6 +2,8 @@ package kr.or.ktpn.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.or.ktpn.dto.KW_DTO_BR_1000MT;
+import kr.or.ktpn.dto.KW_DTO_MB_1000MT;
 import kr.or.ktpn.service.KW_Svc_nb_1000mt;
 
 @Controller
@@ -19,19 +22,21 @@ public class KW_Ctrl_nboard_1000mt {
 	@Autowired
 	KW_Svc_nb_1000mt serv;
 	
-	@RequestMapping(value = "/writeview_Nam", method = RequestMethod.GET)
-	public String detailcontents(@RequestParam("BRD_NO") int BRD_NO, Model model) {
+	@RequestMapping(value = "/nwriteview_Nam", method = RequestMethod.GET)
+	public String detailcontents(@RequestParam("BRD_NO") int BRD_NO, String BOARDFN, Model model) {
 		KW_DTO_BR_1000MT dto = serv.getnbnum(BRD_NO);
 		System.out.println("게시글조회 작동테스트");
 		
 		System.out.println("bn = " +BRD_NO);
+//		System.out.println("bn = " +BOARDFN);
 
 		model.addAttribute("dto", dto);
+//		model.addAttribute("dto2", dto2);
 		
-		return "writeview_Nam.tiles";
+		return "nwriteview_Nam.tiles";
 	}
 	
-	@RequestMapping(value = "/edit_Nam", method = RequestMethod.GET)
+	@RequestMapping(value = "/nedit_Nam", method = RequestMethod.GET)
 	public String detailctedit(
 			@RequestParam("BRD_NO")
 			int BRD_NO,
@@ -46,7 +51,7 @@ public class KW_Ctrl_nboard_1000mt {
 		return "edit_Nam.tiles";
 	}
 	
-	@RequestMapping(value = "/edit_Nam", method = RequestMethod.POST)
+	@RequestMapping(value = "/nedit_Nam", method = RequestMethod.POST)
 	public String editprocess(Model model,
 			@ModelAttribute	KW_DTO_BR_1000MT dto
 //			@RequestParam int BRD_NO
@@ -63,27 +68,49 @@ public class KW_Ctrl_nboard_1000mt {
 		
 		System.out.println("🔧 업데이트 결과: " + result);
 
-		return "redirect:/writeview_Nam?BRD_NO=" + dto.getBRD_NO();
+		return "redirect:/nwriteview_Nam?BRD_NO=" + dto.getBRD_NO();
 	}
 	
-	@RequestMapping(value = "writeprocess_nam", method = RequestMethod.GET)
+	@RequestMapping(value = "nwriteprocess_nam", method = RequestMethod.GET)
 	public String showWriteForm(
 			Model model
-//			@RequestParam("ID")
-//			String ID
+			,HttpSession ses
+//			@RequestParam("BOARDFN")
+//			String BOARDFN
 			) {
-	    model.addAttribute("dto", new KW_DTO_BR_1000MT()); // 빈 DTO 넘기기
+		KW_DTO_MB_1000MT loginUser = (KW_DTO_MB_1000MT) ses.getAttribute("loginUser");
+		model.addAttribute("ID", loginUser);
+//	    model.addAttribute("dto", new KW_DTO_BR_1000MT()); // 빈 DTO 넘기기
 	    return "writeprocess_nam.tiles"; // 글쓰기 폼 JSP
 	}
 	
-	@RequestMapping(value = "writeprocess_nam", method = RequestMethod.POST)
-	public String insert(@ModelAttribute KW_DTO_BR_1000MT dto
-//			@RequestParam("BRD_NO")
-//			int BRD_NO
+	@RequestMapping(value = "nwriteprocess_nam", method = RequestMethod.POST)
+	public String insert(
+//			@ModelAttribute KW_DTO_BR_1000MT dto
+			@RequestParam("ID")	String ID,
+			@RequestParam("BOARDFN") String BOARDFN,
+			@RequestParam("TTL_NM")	String TTL_NM,
+			@RequestParam("BRD_DESC") String BRD_DESC
+			,Model model
 			) 
 			{
+		
+		KW_DTO_BR_1000MT dto = new KW_DTO_BR_1000MT();
+
+		dto.setID(ID);
+		dto.setBOARDFN(BOARDFN);
+		dto.setTTL_NM(TTL_NM);
+		dto.setBRD_DESC(BRD_DESC);
+		
+		dto.setVW_CNT(0);
+		dto.setDLT_YN("N");
+		
+		System.out.println("🌟 글쓰기할 때 DTO에 들어간 ID: " + dto.getID());
+		
 		int result = serv.insert(dto);  // DB에 글 등록
+		
 		System.out.println("📥 받은 DTO: " + dto);
+		System.out.println("BOARDFN: " + dto.getBOARDFN());
 	    System.out.println("BRD_NO: " + dto.getBRD_NO());
 	    System.out.println("제목: " + dto.getTTL_NM());
 	    System.out.println("내용: " + dto.getBRD_DESC());
@@ -92,13 +119,14 @@ public class KW_Ctrl_nboard_1000mt {
 	    
 	    System.out.println("🔧 작성 결과: " + result);
 	    
-	    return "redirect:/writeview_Nam.tiles?BRD_NO=" + dto.getBRD_NO();  	// 게시판 목록으로 리다이렉트
+	    return "redirect:/nwriteview_Nam?BRD_NO=" + dto.getBRD_NO();  	// 게시판 목록으로 리다이렉트
 	    																	// 업데이트한 글을 받은 상세글페이지로 가야할거 같은데...
 	}
 	
-	@RequestMapping(value = "delete_Nam", method = RequestMethod.GET)
+	@RequestMapping(value = "ndelete_Nam", method = RequestMethod.GET)
 	public String delete(@RequestParam("BRD_NO") int BRD_NO) {
 		int result = serv.delete(BRD_NO);  // 글 삭제
+		System.out.println("넘어온 BRD_NO: " + BRD_NO);
 		System.out.println("result : " + result);
 	    return "redirect:/notice"; // 목록으로 이동
 	}
