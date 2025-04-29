@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.or.ktpn.dao.DAO_rt_1000mt;
+import kr.or.ktpn.dto.DTO_bm_1000mt;
 import kr.or.ktpn.dto.DTO_md_1000mt;
 import kr.or.ktpn.dto.DTO_mr_insert;
 import kr.or.ktpn.dto.DTO_rt_1000mt;
@@ -38,7 +39,7 @@ public class Svc_rt_1000impl implements Svc_rt_1000mt {
     
     @Override
     public int insertRt(DTO_rt_1000mt dto) {
-		int countUpdate = mdDAO.addRt(dto);
+		int countUpdate = mdDAO.addRt1(dto);
 		return countUpdate;
 	}
     
@@ -65,15 +66,25 @@ public class Svc_rt_1000impl implements Svc_rt_1000mt {
         // AJAX 페이로드에서 꺼낼 값들
         List<Map<String,Object>> comps = (List<Map<String,Object>>) mrMap.get("components");
         String rtCd   = (String) mrMap.get("rtCd");
-        String rtNm   = (String) mrMap.get("rtNm");
-        String itemCd = (String) mrMap.get("itemCd");
+//        String rtNm   = (String) mrMap.get("rtNm");
+//        String itemCd = (String) mrMap.get("itemCd");
+        
+        DTO_rt_1000mt header = new DTO_rt_1000mt();
+        header.setRt_cd(   (String)mrMap.get("rtCd"));    // JavaBean 표기
+        header.setRt_nm(   (String)mrMap.get("rtNm"));
+        header.setItem_cd(  (String)mrMap.get("itemCd"));
 
+        // 부모 테이블 insert
+        mdDAO.addRt1(header);
+        System.out.println(header);
+        
+        
         int totalInserted = 0;
         for (Map<String,Object> comp : comps) {
             // 매퍼 파라미터 이름과 정확히 일치시키기
             comp.put("rt_cd",   rtCd);               // 공정코드
-            comp.put("rt_nm",   rtNm);               // 공정명
-            comp.put("item_cd", itemCd);             // 품목코드
+//            comp.put("rt_nm",   rtNm);               // 공정명
+//            comp.put("item_cd", itemCd);             // 품목코드
             comp.put("rt_desc", comp.get("desc"));   // 설명(desc → rt_desc)
 
             // DAO 호출: mapper.rt_1000mt.insertRt2

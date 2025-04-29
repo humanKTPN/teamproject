@@ -66,21 +66,9 @@
         })
         .then(res => {
           if (!res.ok) throw new Error("HTTP 오류 " + res.status);
+          window.location.href = '/ktpn/rt'
           return res.text();  // 빈 문자열도 OK
         })
-        .then(text => {
-          console.log("서버 응답 본문:", text);
-          let count = 0;
-          try {
-            const obj = JSON.parse(text);
-            count = obj.count || 0;
-          } catch (ignore) {}
-//           alert("저장 완료! 총 " + count + "건 처리되었습니다.");
-        })
-        .catch(err => {
-          console.error("저장 오류:", err);
-          alert("저장 중 오류가 발생했습니다.");
-        });
       });
     });
   </script>

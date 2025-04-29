@@ -41,7 +41,7 @@ public class DAO_rt_1000impl implements DAO_rt_1000mt{
  	}
  	
  	  @Override
- 	 	public int addRt(DTO_rt_1000mt dto) { 
+ 	 	public int addRt1(DTO_rt_1000mt dto) { 
  	 		int count = -1;
  	 		
  	 		try {
@@ -84,7 +84,7 @@ public class DAO_rt_1000impl implements DAO_rt_1000mt{
 		  
 		  try {
 //	 			count = sqlSession.insert("mapper.emp.insertEmp", empDTO);
-			  count = sqlSession.insert("mapper.rt_1000mt.insertRt", mrMap);
+//			  count = sqlSession.insert("mapper.rt_1000mt.insertRt", mrMap);
 			  count = sqlSession.insert("mapper.rt_1000mt.insertRt2", mrMap);
 			  System.out.println("DAO : "+mrMap); // empno가 채워져 있음
 			  // 그러면 아래 같은데에서 재사용 가능
